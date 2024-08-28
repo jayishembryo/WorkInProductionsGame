@@ -1,0 +1,897 @@
+fileFormatVersion: 2
+guid: 2b6c3ee4e909ef24b895108f0b32cea9
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: DropkickSpriteSheetGrid_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4625
+        width: 761
+        height: 450
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 423c3e0e4737b9441a443558083c59e4
+      internalID: 1012304525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropkickSpriteSheetGrid_1
+      rect:
+        serializedVersion: 2
+        x: 2822
+        y: 4640
+        width: 121
+        height: 435
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd53932a752e5bf41b636df721129c88
+      internalID: -1075519277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropkickSpriteSheetGrid_2
+      rect:
+        serializedVersion: 2
+        x: 8298
+        y: 4838
+        width: 91
+        height: 237
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 136fb756f8fa4a74b9a3e14eefdd19ee
+      internalID: 2040253539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropkickSpriteSheetGrid_3
+      rect:
+        serializedVersion: 2
+        x: 5277
+        y: 4823
+        width: 214
+        height: 244
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e2d20434ac9fa54e842650f80c00853
+      internalID: 1548924703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropkickSpriteSheetGrid_4
+      rect:
+        serializedVersion: 2
+        x: 6192
+        y: 5006
+        width: 107
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9445c161f05cbb459d7acba1ecfdf99
+      internalID: -1378236697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropkickSpriteSheetGrid_5
+      rect:
+        serializedVersion: 2
+        x: 974
+        y: 4060
+        width: 832
+        height: 229
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3c3b13b8d9506d46b088e46874eb133
+      internalID: 1378888444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropkickSpriteSheetGrid_6
+      rect:
+        serializedVersion: 2
+        x: 2805
+        y: 4060
+        width: 809
+        height: 519
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 177da8db2184a4c448b13037987b3a7a
+      internalID: 1190052658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropkickSpriteSheetGrid_7
+      rect:
+        serializedVersion: 2
+        x: 2439
+        y: 3740
+        width: 138
+        height: 168
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92790eee6f0cff640810bf947ea4a968
+      internalID: 1277802044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropkickSpriteSheetGrid_8
+      rect:
+        serializedVersion: 2
+        x: 3767
+        y: 4777
+        width: 289
+        height: 137
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa4c182468a248f4b8faa36555567f7b
+      internalID: -1567057929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropkickSpriteSheetGrid_9
+      rect:
+        serializedVersion: 2
+        x: 3889
+        y: 4057
+        width: 1525
+        height: 644
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73d5772fcb9cdac478e97b67185f9032
+      internalID: -1269761891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropkickSpriteSheetGrid_10
+      rect:
+        serializedVersion: 2
+        x: 5750
+        y: 3526
+        width: 76
+        height: 92
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25e5d934dd48d4b4ab101ddc2e6a9ddc
+      internalID: -1695261281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropkickSpriteSheetGrid_11
+      rect:
+        serializedVersion: 2
+        x: 5567
+        y: 4777
+        width: 168
+        height: 122
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a889bb57dc40bf6448040e998f1a6dce
+      internalID: -1443440221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropkickSpriteSheetGrid_12
+      rect:
+        serializedVersion: 2
+        x: 5506
+        y: 4009
+        width: 1707
+        height: 844
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bfc29b4e18305f4495095d342993727
+      internalID: -594271372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropkickSpriteSheetGrid_13
+      rect:
+        serializedVersion: 2
+        x: 7257
+        y: 4853
+        width: 554
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00bc4dd643b54604e9ac7300910283b1
+      internalID: 1352073195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropkickSpriteSheetGrid_14
+      rect:
+        serializedVersion: 2
+        x: 7230
+        y: 4057
+        width: 1780
+        height: 1018
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aecf9259c73536f4b8c5be18d1dd53c4
+      internalID: 959955380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropkickSpriteSheetGrid_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1010
+        width: 600
+        height: 716
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ed3f6baa15d28447a8872ee8b7ea5fb
+      internalID: -145184916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropkickSpriteSheetGrid_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3041
+        width: 1806
+        height: 1004
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dca55532223d4e54e8b2bb192347a9de
+      internalID: 300382719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropkickSpriteSheetGrid_17
+      rect:
+        serializedVersion: 2
+        x: 1876
+        y: 3041
+        width: 1734
+        height: 1004
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6236d0ba6bbd7834885655e19ebd85e5
+      internalID: 1814920409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropkickSpriteSheetGrid_18
+      rect:
+        serializedVersion: 2
+        x: 3671
+        y: 3041
+        width: 1738
+        height: 1004
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba99c1c349e350947a89c50138c1fe7e
+      internalID: 977641979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropkickSpriteSheetGrid_19
+      rect:
+        serializedVersion: 2
+        x: 5484
+        y: 3801
+        width: 342
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f91f0e67398dc524f8762f868f3304bc
+      internalID: 2045048379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropkickSpriteSheetGrid_20
+      rect:
+        serializedVersion: 2
+        x: 5669
+        y: 3755
+        width: 127
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c9ea238530ed21458e3340647b6aa8e
+      internalID: -407398458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropkickSpriteSheetGrid_21
+      rect:
+        serializedVersion: 2
+        x: 5430
+        y: 3041
+        width: 1783
+        height: 594
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ccfdb0f891258b449e1a84757f52f5a
+      internalID: 1845830220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropkickSpriteSheetGrid_22
+      rect:
+        serializedVersion: 2
+        x: 8036
+        y: 3041
+        width: 974
+        height: 569
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47c4410bb0bf9994896db1aec48e3fca
+      internalID: -1691208909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropkickSpriteSheetGrid_23
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 2025
+        width: 937
+        height: 576
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 376fbbf7d6a63b549873929afd4ad985
+      internalID: 1572884064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropkickSpriteSheetGrid_24
+      rect:
+        serializedVersion: 2
+        x: 2651
+        y: 2025
+        width: 959
+        height: 572
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7104129fcc367c14497e3ccfafa67ff4
+      internalID: 1177881113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropkickSpriteSheetGrid_25
+      rect:
+        serializedVersion: 2
+        x: 4468
+        y: 2025
+        width: 941
+        height: 567
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c391005edc9564a48a8fd90879416ac8
+      internalID: -331589194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropkickSpriteSheetGrid_26
+      rect:
+        serializedVersion: 2
+        x: 6276
+        y: 2025
+        width: 937
+        height: 567
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e83a65c96fcaa4840845ad4561efefb5
+      internalID: -599472810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropkickSpriteSheetGrid_27
+      rect:
+        serializedVersion: 2
+        x: 8080
+        y: 2025
+        width: 930
+        height: 572
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb6fa33dcd2e4b54b90043829a6ce30f
+      internalID: -1869848955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropkickSpriteSheetGrid_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1727
+        height: 503
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e79051ebdd39b384f8ac166e5a7a48b7
+      internalID: 1545754645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropkickSpriteSheetGrid_29
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 1009
+        width: 937
+        height: 585
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d34f2ef3be1f0643bb18f7f99f2294f
+      internalID: -1880315326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropkickSpriteSheetGrid_30
+      rect:
+        serializedVersion: 2
+        x: 2668
+        y: 1009
+        width: 942
+        height: 603
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79afceb47339ef64eb2029f850a0f125
+      internalID: 1700055983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropkickSpriteSheetGrid_31
+      rect:
+        serializedVersion: 2
+        x: 2822
+        y: 0
+        width: 387
+        height: 191
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8038c635e72b7d344a536345eef0abfe
+      internalID: -1866105444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropkickSpriteSheetGrid_32
+      rect:
+        serializedVersion: 2
+        x: 4419
+        y: 1009
+        width: 990
+        height: 616
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e57f12b2b7f1f354a87e62b45f79c090
+      internalID: 539460866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropkickSpriteSheetGrid_33
+      rect:
+        serializedVersion: 2
+        x: 6082
+        y: 1009
+        width: 1131
+        height: 590
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efbc4cabec324494c94acfa9c84d450b
+      internalID: -1643889144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropkickSpriteSheetGrid_34
+      rect:
+        serializedVersion: 2
+        x: 7794
+        y: 1009
+        width: 1216
+        height: 559
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d98f625abfd06e84eb708ad1e2b3105d
+      internalID: -1167475462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5c0e8509fc2d1f542b34c7f9152e672a
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      DropkickSpriteSheetGrid_0: 1012304525
+      DropkickSpriteSheetGrid_1: -1075519277
+      DropkickSpriteSheetGrid_10: -1695261281
+      DropkickSpriteSheetGrid_11: -1443440221
+      DropkickSpriteSheetGrid_12: -594271372
+      DropkickSpriteSheetGrid_13: 1352073195
+      DropkickSpriteSheetGrid_14: 959955380
+      DropkickSpriteSheetGrid_15: -145184916
+      DropkickSpriteSheetGrid_16: 300382719
+      DropkickSpriteSheetGrid_17: 1814920409
+      DropkickSpriteSheetGrid_18: 977641979
+      DropkickSpriteSheetGrid_19: 2045048379
+      DropkickSpriteSheetGrid_2: 2040253539
+      DropkickSpriteSheetGrid_20: -407398458
+      DropkickSpriteSheetGrid_21: 1845830220
+      DropkickSpriteSheetGrid_22: -1691208909
+      DropkickSpriteSheetGrid_23: 1572884064
+      DropkickSpriteSheetGrid_24: 1177881113
+      DropkickSpriteSheetGrid_25: -331589194
+      DropkickSpriteSheetGrid_26: -599472810
+      DropkickSpriteSheetGrid_27: -1869848955
+      DropkickSpriteSheetGrid_28: 1545754645
+      DropkickSpriteSheetGrid_29: -1880315326
+      DropkickSpriteSheetGrid_3: 1548924703
+      DropkickSpriteSheetGrid_30: 1700055983
+      DropkickSpriteSheetGrid_31: -1866105444
+      DropkickSpriteSheetGrid_32: 539460866
+      DropkickSpriteSheetGrid_33: -1643889144
+      DropkickSpriteSheetGrid_34: -1167475462
+      DropkickSpriteSheetGrid_4: -1378236697
+      DropkickSpriteSheetGrid_5: 1378888444
+      DropkickSpriteSheetGrid_6: 1190052658
+      DropkickSpriteSheetGrid_7: 1277802044
+      DropkickSpriteSheetGrid_8: -1567057929
+      DropkickSpriteSheetGrid_9: -1269761891
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
