@@ -17,8 +17,7 @@ public class OutBounds : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             // You can adjust variables through the Inspector
-            Player1.position = new Vector3(xPos,yPos,zPos);
-            HealthSystem.instance.Damage(outBoundsDmg);
+            ScoreboardManager.Instance.StopGame();
         }
     }
 }
