@@ -4,15 +4,30 @@ using UnityEngine;
 
 public class EnemyCollision : MonoBehaviour
 {
-    // Damage value set as SerialzeField for ease of access.
-    [SerializeField] float enemyDamage = Random.Range(1f, 10f);
+
+    PlayerKnockback playerKnockbackInstance;
+
+    private void Awake()
+    {
+
+        playerKnockbackInstance = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerKnockback>();
+
+    }
 
     void OnTriggerStay(Collider other)
     {
         // When colliding with anything tagged "enemy", recieve damage.
         if(other.gameObject.CompareTag("Enemy"))
         {
-            HealthSystem.instance.Damage(enemyDamage);
+            HealthSystem.instance.Damage(Random.Range(1f, 10f));
+
+            if (playerKnockbackInstance.CanBeKnockedBack == true)
+            {
+
+                playerKnockbackInstance.CallKnockBack();
+
+            }
+            
         }
     }
 
