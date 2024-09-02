@@ -25931,8 +25931,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 367827874}
-  - component: {fileID: 367827873}
-  - component: {fileID: 367827872}
   - component: {fileID: 367827871}
   - component: {fileID: 367827870}
   - component: {fileID: 367827869}
@@ -26029,30 +26027,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &367827872
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 367827867}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ca002da428252441b92f28d83c8a65f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &367827873
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 367827867}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8233d90336aea43098adf6dbabd606a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &367827874
 Transform:
   m_ObjectHideFlags: 0
@@ -125125,6 +125099,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerControllerInstance: {fileID: 1581557666}
+  CanBeKnockedBack: 1
 --- !u!1 &2117325448
 GameObject:
   m_ObjectHideFlags: 0

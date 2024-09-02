@@ -103,11 +103,11 @@ public class EnemyBehavior : MonoBehaviour
         //Updates the enemy animations if the enemy is moving or not
         if (gameObject.GetComponent<Rigidbody>().velocity.x != 0 || gameObject.GetComponent<Rigidbody>().velocity.z != 0)
         {
-            anim.SetBool("Moving", true);
+           // anim.SetBool("Moving", true);
         }
         else
         {
-            anim.SetBool("Moving", false);
+            //anim.SetBool("Moving", false);
         }
     }
 
