@@ -21,6 +21,8 @@ public class EnemyBehaviour : MonoBehaviour
     public float health;
     [SerializeField]
     private float speed = 2f;
+    private Rigidbody enemyRB;
+    
     
     private LayerMask whatIsGround, whatIsPlayer;
 
@@ -118,6 +120,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     public void TakeDamage(int damage)//enemy gets hit
     {
+        
         health -= damage;
 
         if(health <= 0)
