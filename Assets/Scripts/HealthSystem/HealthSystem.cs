@@ -7,16 +7,18 @@ using UnityEngine.UI;
 public class HealthSystem : MonoBehaviour
 {
     // Health bar implementation aided by tutorial by Tarodev tutorial
-    
+
     // Getting access to the Slider function.
 
     public static HealthSystem instance;
-     
+
     [SerializeField] public float maxHealth = 100f;
+    [SerializeField] public float maxKnockBack = 200f;
+    [SerializeField] public float knockBack = 100f;
     [SerializeField] public float playerHealth;
     [SerializeField] private Collider HitBox;
     [SerializeField] private bool isHit;
-    [SerializeField] private float iFrameDuration;
+    [SerializeField] private float iFrameDuration = 3f;
   
 
     public Image HealthFill;
