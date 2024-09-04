@@ -13,18 +13,21 @@ using UnityEngine.AI;
 
 public class EnemyBehaviour : MonoBehaviour
 {
-
+    [SerializeField]
     private GameObject player;
-
+    [SerializeField]
     private NavMeshAgent agent;
-
+    [SerializeField]
     public float health;
+    [SerializeField]
     private float speed = 2f;
+    
     private LayerMask whatIsGround, whatIsPlayer;
 
     //Patrolling
     public Vector3 walkPoint;
     bool walkPointSet;
+    [SerializeField]
     private float walkPointRange;
 
     //Attacking
@@ -32,6 +35,7 @@ public class EnemyBehaviour : MonoBehaviour
     bool alreadyAttacked;
 
     //States
+    [SerializeField]
     private float sightRange, attackRange;
     private bool playerInSightRange, playerInAttackRange;
 
@@ -56,7 +60,7 @@ public class EnemyBehaviour : MonoBehaviour
         if(playerInSightRange && !playerInAttackRange) ChasePlayer();
         if(playerInSightRange && playerInAttackRange) AttackPlayer();
         
-        
+        OnDrawGizmosSelected();
     }
 
     private void Patrolling()
