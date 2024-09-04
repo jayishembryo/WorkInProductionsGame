@@ -20,7 +20,7 @@ public class PlayerKnockback : MonoBehaviour
     {
 
         rb = GetComponent<Rigidbody>();
-        healthSystemInstance = GameObject.FindGameObjectWithTag("Health").GetComponent<HealthSystem>();
+        healthSystemInstance = GameObject.FindGameObjectWithTag("PlayerHitbox").GetComponent<HealthSystem>();
 
     }
 
@@ -39,8 +39,8 @@ public class PlayerKnockback : MonoBehaviour
         knockBackForce = 5f * (healthSystemInstance.knockBack / 10f);
         launchForce = 5f * (healthSystemInstance.launch / 10f);
 
-        rb.AddForce(transform.forward * 50f, ForceMode.Impulse);
-        rb.AddForce(transform.up * 10f, ForceMode.Impulse);
+        rb.AddForce(transform.forward * -knockBackForce, ForceMode.Impulse);
+        rb.AddForce(transform.up * launchForce, ForceMode.Impulse);
 
         CanBeKnockedBack = false;
 

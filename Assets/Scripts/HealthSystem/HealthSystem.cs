@@ -71,7 +71,7 @@ public class HealthSystem : MonoBehaviour
 
         if (launch < maxLaunch)
         {
-            launch += (damage / 5f);
+            launch += (damage / 2f);
         }
 
         if (launch > maxLaunch)
