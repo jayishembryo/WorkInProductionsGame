@@ -18,7 +18,7 @@ public class HealthSystem : MonoBehaviour
     [SerializeField] public float playerHealth;
     [SerializeField] private Collider HitBox;
     [SerializeField] private bool isHit;
-    [SerializeField] private float iFrameDuration = 3f;
+    [SerializeField] private float iFrameDuration = 1f;
   
 
     public Image HealthFill;

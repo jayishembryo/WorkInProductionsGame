@@ -24,13 +24,28 @@ public abstract class AbstractAbility : MonoBehaviour, IAbility
 
     protected float currentCooldown = 0;
 
+    PlayerKnockback playerKnockback;
+
     // Should be called via input event
+
+    void Start()
+    {
+
+        playerKnockback = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerKnockback>();
+
+    }
+
     public void OnAbilityTrigger()
     {
         if (currentCooldown > 0)
             return;
 
-        Execute();
+        if (playerKnockback.CanKick == true)
+        {
+
+            Execute();
+
+        }
 
         TriggerCooldown();
     }

@@ -10,6 +10,7 @@ public class PlayerKnockback : MonoBehaviour
     public PlayerController PlayerControllerInstance;
 
     public bool CanBeKnockedBack = true;
+    public bool CanKick = true;
 
     void Start()
     {
@@ -28,12 +29,24 @@ public class PlayerKnockback : MonoBehaviour
     public IEnumerator KnockBack()
     {
 
+        CanKick = false;
+
         rb.AddForce(transform.forward * -50f, ForceMode.Impulse);
         rb.AddForce(transform.up * 10f, ForceMode.Impulse);
 
         CanBeKnockedBack = false;
 
-        yield return new WaitForSeconds(0.3f);
+
+        yield return new WaitForSeconds(0.5f);
+
+        CanKick = true;
+        Invoke("Reactivation", 0.5f);
+
+
+    }
+
+    public void Reactivation()
+    {
 
         CanBeKnockedBack = true;
 
