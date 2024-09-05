@@ -12,13 +12,15 @@ public class HealthSystem : MonoBehaviour
 
     public static HealthSystem instance;
 
-    [SerializeField] public float maxHealth = 100f;
+    [SerializeField] public float maxRes = 100f;
+    [SerializeField] public float playerRes;
     [SerializeField] public float maxKnockBack = 200f;
     [SerializeField] public float knockBack = 100f;
-    [SerializeField] public float playerHealth;
+    [SerializeField] public float maxLaunch = 50f;
+    [SerializeField] public float launch = 20f;
     [SerializeField] private Collider HitBox;
     [SerializeField] private bool isHit;
-    [SerializeField] private float iFrameDuration = 3f;
+    [SerializeField] private float iFrameDuration = 1f;
   
 
     public Image HealthFill;
@@ -26,25 +28,25 @@ public class HealthSystem : MonoBehaviour
     void Start()
     {
         instance = this;
-        playerHealth = maxHealth;
+        playerRes = maxRes;
     }
 
     // Update is called once per frame
     void Update()
     {
         // Function aided with 
-        if(playerHealth < 0f)
+        if(playerRes < 0f)
         {
-            playerHealth = 0f;
+            playerRes = 0f;
         }
-        else if(playerHealth > maxHealth)
+        else if(playerRes > maxRes)
         {
-            playerHealth = maxHealth;
+            playerRes = maxRes;
         }
         
         // Divison here is done because value of fill is between 0 & 1.
         HealthFill.fillAmount = Mathf.Lerp(HealthFill.fillAmount,
-            (playerHealth / maxHealth), 0.5f);
+            (playerRes / maxRes), 0.5f);
 
         
     }
@@ -55,7 +57,28 @@ public class HealthSystem : MonoBehaviour
         {
             return;
         }
-        playerHealth -= damage;
+        playerRes -= damage;
+
+        if (knockBack < maxKnockBack)
+        {
+            knockBack += damage;
+        }
+
+        if (knockBack > maxKnockBack)
+        {
+            knockBack = maxKnockBack;
+        }
+
+        if (launch < maxLaunch)
+        {
+            launch += (damage / 2f);
+        }
+
+        if (launch > maxLaunch)
+        {
+            launch = maxLaunch;
+        }
+
         isHit = true;
         StartCoroutine(IFrames());
        
@@ -63,11 +86,11 @@ public class HealthSystem : MonoBehaviour
 
     public void Heal(float amt)
     {
-        float temp = playerHealth + amt;
-        if (temp > maxHealth)
-            temp = maxHealth;
+        float temp = playerRes + amt;
+        if (temp > maxRes)
+            temp = maxRes;
 
-        playerHealth = temp;
+        playerRes = temp;
     }
 
     IEnumerator IFrames()

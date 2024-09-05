@@ -125076,6 +125076,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerControllerInstance: {fileID: 1581557666}
   CanBeKnockedBack: 1
+  CanKick: 1
 --- !u!1 &2117325448
 GameObject:
   m_ObjectHideFlags: 0

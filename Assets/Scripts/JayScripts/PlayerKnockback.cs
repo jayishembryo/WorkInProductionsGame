@@ -8,13 +8,19 @@ public class PlayerKnockback : MonoBehaviour
     Rigidbody rb;
 
     public PlayerController PlayerControllerInstance;
+    HealthSystem healthSystemInstance;
 
     public bool CanBeKnockedBack = true;
+    public bool CanKick = true;
+
+    float knockBackForce;
+    float launchForce;
 
     void Start()
     {
 
         rb = GetComponent<Rigidbody>();
+        healthSystemInstance = GameObject.FindGameObjectWithTag("PlayerHitbox").GetComponent<HealthSystem>();
 
     }
 
@@ -28,12 +34,27 @@ public class PlayerKnockback : MonoBehaviour
     public IEnumerator KnockBack()
     {
 
-        rb.AddForce(transform.forward * -50f, ForceMode.Impulse);
-        rb.AddForce(transform.up * 10f, ForceMode.Impulse);
+        CanKick = false;
+
+        knockBackForce = 5f * (healthSystemInstance.knockBack / 10f);
+        launchForce = 5f * (healthSystemInstance.launch / 10f);
+
+        rb.AddForce(transform.forward * -knockBackForce, ForceMode.Impulse);
+        rb.AddForce(transform.up * launchForce, ForceMode.Impulse);
 
         CanBeKnockedBack = false;
 
-        yield return new WaitForSeconds(0.3f);
+
+        yield return new WaitForSeconds(0.5f);
+
+        CanKick = true;
+        Invoke("Reactivation", 0.5f);
+
+
+    }
+
+    public void Reactivation()
+    {
 
         CanBeKnockedBack = true;
 
