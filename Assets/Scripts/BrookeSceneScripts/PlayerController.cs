@@ -49,6 +49,7 @@ public class PlayerController : MonoBehaviour
     public PlayerInput PlayerInputInstance;
     public InputAction Movement;
     public InputAction Pause;
+    public InputAction Grapple;
     public bool isMoving;
     public float moveDirection;
     public Vector2 moveInput;
@@ -57,7 +58,7 @@ public class PlayerController : MonoBehaviour
     bool isTouchingGround = true;
 
     [SerializeField]
-    private GameObject pauseMenu;
+    public GameObject pauseMenu;
     [SerializeField]
     private ScoreboardManager ScoreboardManager;
 
@@ -71,11 +72,15 @@ public class PlayerController : MonoBehaviour
 
         Movement = PlayerInputInstance.currentActionMap.FindAction("Movement");
         Pause = PlayerInputInstance.currentActionMap.FindAction("Pause");
+        Grapple = PlayerInputInstance.currentActionMap.FindAction("Grapple");
 
         Movement.started += Movement_started;
         Movement.canceled += Movement_canceled;
         Pause.started += Pause_started;
         Pause.canceled += Pause_canceled;
+
+        Grapple.started += Grapple_started;
+        Grapple.canceled += Grapple_canceled;
         //controller = GetComponent<CharacterController>();
         //inputManager = InputManager.Instance;
         //cameraTransform = Camera.main.transform;
@@ -116,6 +121,21 @@ public class PlayerController : MonoBehaviour
         isMoving = true;
     }
 
+    void Grapple_started(InputAction.CallbackContext obj)
+    {
+
+        GameObject.FindGameObjectWithTag("Player").GetComponent<GrapplingHook>().StartGrapple();
+        
+    }
+
+    void Grapple_canceled(InputAction.CallbackContext obj)
+    {
+
+        GameObject.FindGameObjectWithTag("Player").GetComponent<GrapplingHook>().StopGrapple();
+
+    }
+
+    void 
     //private void FixedUpdate()
     //{
     //    rb.velocity = new Vector3(moveDirection * playerSpeed, 0.0f, moveDirection * playerSpeed); ;
