@@ -8,8 +8,10 @@
 //Gunna mess up some code and see what happens :)
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Rendering;
 
 public class EnemyBehaviour : MonoBehaviour
 {
@@ -27,7 +29,7 @@ public class EnemyBehaviour : MonoBehaviour
     private LayerMask whatIsGround, whatIsPlayer;
 
     //Patrolling
-    public Vector3 walkPoint;
+    public UnityEngine.Vector3 walkPoint;
     bool walkPointSet;
     [SerializeField]
     private float walkPointRange;
@@ -74,7 +76,7 @@ public class EnemyBehaviour : MonoBehaviour
             agent.SetDestination(walkPoint);
         }
 
-        Vector3 distanceToWalkPoint = transform.position - walkPoint;
+        UnityEngine.Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
         if(distanceToWalkPoint.magnitude < 1f)
         {
@@ -86,7 +88,7 @@ public class EnemyBehaviour : MonoBehaviour
         float randomZ = Random.Range(-walkPointRange,walkPointRange);
         float randomX = Random.Range(-walkPointRange,walkPointRange);
 
-        walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
+        walkPoint = new UnityEngine.Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
 
         if(Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
         {
@@ -142,4 +144,23 @@ public class EnemyBehaviour : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, sightRange);
     }
+
+    void OnCollisionEnter(Collision other)
+    {
+        if(other.gameObject.CompareTag("Water"))
+        {
+            //Uncomment this when we have a SplashEffect
+            //Instantiate(SplashEffect, transform.position, Quaternion.identity);
+        }
+
+        if(other.gameObject.CompareTag("Kick"))
+        {
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            var launchDirection = player.GetComponent<Rigidbody>().position - enemyRB.GetComponent<Rigidbody>().position;
+            var launchDirNormalized = launchDirection.normalized;
+            float launchVelocity = player.GetComponent<Rigidbody>().velocity.magnitude;
+            enemyRB.AddForce(launchDirNormalized * launchVelocity);
+        }
+    }
+
 }
