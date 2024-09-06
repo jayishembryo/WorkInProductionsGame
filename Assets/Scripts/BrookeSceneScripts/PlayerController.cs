@@ -216,6 +216,13 @@ public class PlayerController : MonoBehaviour
         EB.SpawnEnemy();
     }
 
+    public IEnumerator KnockBack()
+    {
+
+        yield return new WaitForSeconds(1f);
+
+    }
+
     void Update()
     {
         //// If they player is grounded and their y velocity is less than 0, then set the y velocity to 0.

@@ -56,10 +56,7 @@ public class HealthSystem : MonoBehaviour
         playerHealth -= damage;
         isHit = true;
         StartCoroutine(IFrames());
-        if (playerHealth <= 0)
-        {
-            ScoreboardManager.Instance.StopGame();
-        }
+       
     }
 
     public void Heal(float amt)

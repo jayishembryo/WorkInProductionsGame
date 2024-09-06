@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyCollision : MonoBehaviour
 {
     // Damage value set as SerialzeField for ease of access.
-    [SerializeField] float enemyDamage = 10f;
+    [SerializeField] float enemyDamage = Random.Range(1f, 10f);
 
     void OnTriggerStay(Collider other)
     {
