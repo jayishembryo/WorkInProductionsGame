@@ -124949,6 +124949,10 @@ PrefabInstance:
       value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6934599026606150273, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: Grapple.m_Name
+      value: Grapple
+      objectReference: {fileID: 0}
+    - target: {fileID: 6934599026606150273, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: cameraTransform
       value: 
       objectReference: {fileID: 1536215262}
@@ -125056,6 +125060,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7182574327882956369, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       insertIndex: 4
       addedObject: {fileID: 2116781687}
+    - targetCorrespondingSourceObject: {fileID: 7182574327882956369, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2116781688}
   m_SourcePrefab: {fileID: 100100000, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
 --- !u!4 &2116781680 stripped
 Transform:
@@ -125077,6 +125084,29 @@ MonoBehaviour:
   PlayerControllerInstance: {fileID: 1581557666}
   CanBeKnockedBack: 1
   CanKick: 1
+--- !u!114 &2116781688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1068234887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f70f31ec0b43a3d4b91ae96572fbac00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  maxDistanceFromPointMultiplier: 0.8
+  minDistanceFromPointMultiplier: 0.25
+  jointSpring: 4.5
+  jointDamper: 7
+  jumpingSpring: 9
+  jumpingDamper: 4
+  jointMassScale: 4.5
+  jointForceBoost: 20
 --- !u!1 &2117325448
 GameObject:
   m_ObjectHideFlags: 0

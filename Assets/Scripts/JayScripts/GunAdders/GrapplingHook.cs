@@ -6,9 +6,9 @@ public class GrapplingHook : MonoBehaviour
 {
 
     private Vector3 hitPoint;
-    public LayerMask shootLayers;
     private SpringJoint joint;
     private float maxDist = 1000f;
+    public LayerMask shootLayers;
     private LineRenderer hookRenderer;
     private Transform cam;
 
@@ -40,76 +40,18 @@ public class GrapplingHook : MonoBehaviour
     [Tooltip("Force to send the player in the direction of the grapple.")]
     public float jointForceBoost = 20f;
 
-    [SerializeField] private Transform gunModel, gunFirePoint, gunFollowPoint, gunExitPoint;
     private Rigidbody rb;
-
-    [Header("Snake town")]
-    [SerializeField] private Transform Head;
-    [SerializeField] private Material BodyMaterial;
 
     public static bool isGrappling;
 
     void Start()
     {
-        hookRenderer = gameObject.AddComponent<LineRenderer>();
-        //hookRenderer.endWidth = 0.05f;
-        //hookRenderer.startWidth = 0.05f;
-        hookRenderer.positionCount = 2;
+
         cam = Camera.main.transform;
         rb = GetComponent<Rigidbody>();
 
-        //snake
-        hookRenderer.material = BodyMaterial;
-        hookRenderer.startWidth = 1;
-        hookRenderer.endWidth = 1;
-        hookRenderer.textureMode = LineTextureMode.Tile;
-
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
 
-    }
-
-    // Update is called once per frame
-    void LateUpdate()
-    {
-
-        if (joint == null)
-        {
-            hookRenderer.positionCount = 0;
-            gunModel.position = Vector3.MoveTowards(gunModel.position, gunExitPoint.position, Time.deltaTime * 2.5f);
-            gunModel.rotation =
-                Quaternion.RotateTowards(gunModel.rotation, gunExitPoint.rotation, Time.deltaTime * 2.5f);
-        }
-        else
-        {
-            gunModel.position = Vector3.MoveTowards(gunModel.position, gunFollowPoint.position, Time.deltaTime * 15f);
-            gunModel.rotation =
-                Quaternion.RotateTowards(gunModel.rotation, gunFollowPoint.rotation, Time.deltaTime * 15f);
-            hookRenderer.positionCount = 2;
-            hookRenderer.SetPosition(0, gunFirePoint.position);
-            hookRenderer.SetPosition(1, hitPoint);
-
-            if (Head != null) //so no head?
-            {
-                Head.position = hitPoint;
-                Head.eulerAngles = gunModel.forward;
-            }
-        }
-    }
-
-    private void Update()
-    {
-        if (joint == null) return;
-
-        if (InputEvents.Instance.JumpPressed)
-        {
-            joint.spring = jumpingSpring;
-            joint.damper = jumpingDamper;
-        }
-        else
-        {
-            joint.spring = jointSpring;
-            joint.damper = jointDamper;
-        }
     }
 
     public void StartGrapple()

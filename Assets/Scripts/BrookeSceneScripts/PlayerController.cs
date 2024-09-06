@@ -135,12 +135,6 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    void 
-    //private void FixedUpdate()
-    //{
-    //    rb.velocity = new Vector3(moveDirection * playerSpeed, 0.0f, moveDirection * playerSpeed); ;
-    //}
-
     private void FixedUpdate()
     {
         Look();
