@@ -63,8 +63,6 @@ public class EnemyBehaviour : MonoBehaviour
         if(!playerInSightRange && !playerInAttackRange) Patrolling();
         if(playerInSightRange && !playerInAttackRange) ChasePlayer();
         if(playerInSightRange && playerInAttackRange) AttackPlayer();
-        
-        OnDrawGizmosSelected();
     }
 
     private void Patrolling()
@@ -147,19 +145,20 @@ public class EnemyBehaviour : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        if(other.gameObject.CompareTag("Water"))
+        //if(other.gameObject.CompareTag("Ocean"))//if they fall in the water
         {
             //Uncomment this when we have a SplashEffect
             //Instantiate(SplashEffect, transform.position, Quaternion.identity);
         }
 
-        if(other.gameObject.CompareTag("Kick"))
+        if(other.gameObject.layer == 8)//kick layer for if they get kicked by the player
         {
             GameObject player = GameObject.FindGameObjectWithTag("Player");
             var launchDirection = player.GetComponent<Rigidbody>().position - enemyRB.GetComponent<Rigidbody>().position;
             var launchDirNormalized = launchDirection.normalized;
             float launchVelocity = player.GetComponent<Rigidbody>().velocity.magnitude;
             enemyRB.AddForce(launchDirNormalized * launchVelocity);
+
         }
     }
 
