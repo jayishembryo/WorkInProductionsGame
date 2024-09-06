@@ -8,6 +8,8 @@ TagManager:
   - Ground
   - PlayerHitbox
   - Ocean
+  - KillBarrier
+  - Health
   layers:
   - Default
   - TransparentFX
