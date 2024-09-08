@@ -26037,6 +26037,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &389632348 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6887855374695562748, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
+  m_PrefabInstance: {fileID: 3092801834631978298}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &435984445 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4414408294056304160, guid: 377060b0ff336b94ea94dadbb79245a5, type: 3}
@@ -125077,6 +125082,7 @@ MonoBehaviour:
   PlayerControllerInstance: {fileID: 1581557666}
   CanBeKnockedBack: 1
   CanKick: 1
+  playermodelAnim: {fileID: 389632348}
 --- !u!1 &2117325448
 GameObject:
   m_ObjectHideFlags: 0
@@ -125229,6 +125235,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 927597350377789264, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e18b2c715d6cc034c8bef9327a65ee2a, type: 3}
     - target: {fileID: 1110779864240766043, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
       propertyPath: m_Pivot.x
       value: 0
