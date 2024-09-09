@@ -10,6 +10,7 @@ TagManager:
   - Ocean
   - KillBarrier
   - Health
+  - Wall
   layers:
   - Default
   - TransparentFX
