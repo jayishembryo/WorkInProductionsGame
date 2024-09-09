@@ -16,6 +16,8 @@ public class PlayerKnockback : MonoBehaviour
     float knockBackForce;
     float launchForce;
 
+    [SerializeField] private Animator playermodelAnim;
+
     void Start()
     {
 
@@ -44,12 +46,13 @@ public class PlayerKnockback : MonoBehaviour
 
         CanBeKnockedBack = false;
 
+        playermodelAnim.SetTrigger("hurt");
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.5f); //<--- should be scalable
 
         CanKick = true;
         Invoke("Reactivation", 0.5f);
-
+        playermodelAnim.SetTrigger("hurtEnd");
 
     }
 
