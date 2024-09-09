@@ -72,15 +72,15 @@ public class PlayerController : MonoBehaviour
 
         Movement = PlayerInputInstance.currentActionMap.FindAction("Movement");
         Pause = PlayerInputInstance.currentActionMap.FindAction("Pause");
-        Grapple = PlayerInputInstance.currentActionMap.FindAction("Grapple");
+        //Grapple = PlayerInputInstance.currentActionMap.FindAction("Grapple");
 
         Movement.started += Movement_started;
         Movement.canceled += Movement_canceled;
         Pause.started += Pause_started;
         Pause.canceled += Pause_canceled;
 
-        Grapple.started += Grapple_started;
-        Grapple.canceled += Grapple_canceled;
+        //Grapple.started += Grapple_started;
+        //Grapple.canceled += Grapple_canceled;
         //controller = GetComponent<CharacterController>();
         //inputManager = InputManager.Instance;
         //cameraTransform = Camera.main.transform;

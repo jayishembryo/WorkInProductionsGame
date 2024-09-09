@@ -31,7 +31,7 @@ public abstract class AbstractAbility : MonoBehaviour, IAbility
     void Start()
     {
 
-        playerKnockback = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerKnockback>();
+        playerKnockback = GameObject.FindObjectOfType<PlayerController>().GetComponent<PlayerKnockback>();
 
     }
 
@@ -40,12 +40,7 @@ public abstract class AbstractAbility : MonoBehaviour, IAbility
         if (currentCooldown > 0)
             return;
 
-        if (playerKnockback.CanKick == true)
-        {
-
-            Execute();
-
-        }
+        Execute();
 
         TriggerCooldown();
     }
