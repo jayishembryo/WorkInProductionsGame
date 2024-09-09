@@ -1015,14 +1015,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 0}
-      propertyPath: m_Convex
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6962173230801030583, guid: 41c9be6efbf6b3f44a982fe2173d570a, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1077,7 +1069,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7770199221576226573, guid: 41c9be6efbf6b3f44a982fe2173d570a, type: 3}
       propertyPath: m_Name
-      value: VSBoat
+      value: Boat
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
