@@ -45,19 +45,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityName: Bottle Toss
-  maxCooldown: 0.5
-  cooldownRate: 1
-  shootLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  maxDistanceFromPointMultiplier: 0.8
-  minDistanceFromPointMultiplier: 0.25
-  jointSpring: 4.5
-  jointDamper: 7
-  jumpingSpring: 9
-  jumpingDamper: 4
-  jointMassScale: 4.5
-  jointForceBoost: 20
+  maxCooldown: 2.5
+  cooldownRate: 2.5
+  bottlePrefab: {fileID: 732830574514542439, guid: dbc6626f089144542b124fcd81ac836c, type: 3}
+  objectPoolSize: 5
+  bottleSpawnpoint: {fileID: 3867547746096971857}
+  aim: {fileID: 0}
+  animDuration: 0.25
+  throwForce: 50
+  upwardForce: 2
 --- !u!1 &2012980429216343543
 GameObject:
   m_ObjectHideFlags: 0
@@ -377,7 +373,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6882769587637518739}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 2, z: -0.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -444,9 +440,9 @@ GameObject:
   m_Component:
   - component: {fileID: 210607900284234145}
   - component: {fileID: 6934599026606150273}
-  - component: {fileID: 7930044822621804674}
   - component: {fileID: 6119630809766995737}
   - component: {fileID: 7449557632932427471}
+  - component: {fileID: 6665112728080414914}
   - component: {fileID: 1309564412491857265}
   m_Layer: 7
   m_Name: Player 1
@@ -475,7 +471,7 @@ Transform:
   - {fileID: 624866364724670831}
   - {fileID: 218389113460362761}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6934599026606150273
 MonoBehaviour:
@@ -492,9 +488,9 @@ MonoBehaviour:
   playerSpeed: 130
   jumpHeight: 9
   physicMaterial: {fileID: 13400000, guid: e7782c51880ce5d47adfb1c43ae5cb18, type: 2}
-  groundSpeedLimit: 9
-  airSpeedLimit: 9
-  airDrag: 7
+  groundSpeedLimit: 10
+  airSpeedLimit: 11
+  airDrag: 6.9
   groundDrag: 7
   enemy: {fileID: 8474295532616176723, guid: 9a801a72a065d524aa007bc9486081e6, type: 3}
   kickAbility: {fileID: 8640629303739564876}
@@ -521,35 +517,11 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
-  Grapple:
-    m_Name: Grapple
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 20797287-ab72-4c33-892a-6846f8e5ff5c
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
   isMoving: 0
   moveDirection: 0
   moveInput: {x: 0, y: 0}
   pauseMenu: {fileID: 0}
   ScoreboardManager: {fileID: 0}
---- !u!114 &7930044822621804674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7182574327882956369}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d23d926f3d49f14a85242573f91aa7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxFeedBar: 100
-  startHunger: 1
-  hungerScalar: 0.1
 --- !u!54 &6119630809766995737
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -659,19 +631,7 @@ MonoBehaviour:
     m_ActionId: ef9c43a6-7a3c-4a5e-8a5a-e1bc1eb00cd2
     m_ActionName: Player/Kick[/Keyboard/f,/Mouse/leftButton]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ScoreboardManager, Assembly-CSharp
-        m_MethodName: StartGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 13252737-df9e-4710-961d-fb6efb9d85bd
     m_ActionName: Player/StartGame[/Keyboard/p,/Keyboard/f]
   - m_PersistentCalls:
@@ -703,6 +663,22 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &6665112728080414914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7182574327882956369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd6d221efcc2e5f4fb23ebb2398bc222, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerControllerInstance: {fileID: 6934599026606150273}
+  CanBeKnockedBack: 1
+  CanKick: 1
+  playermodelAnim: {fileID: 0}
 --- !u!65 &1309564412491857265
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -866,9 +842,9 @@ MonoBehaviour:
   maxCooldown: 0.4
   cooldownRate: 1
   dash: {fileID: 5625408014531569091}
-  directionAnchor: {fileID: 210607900284234145}
+  directionAnchor: {fileID: 0}
   hitbox: {fileID: 7796476864955446340}
-  forceScalar: 100
+  forceScalar: 200
   empoweredScalar: 1.6
   hitboxDuration: 0.2
   impulseVector: {x: 0, y: 12, z: 0}
@@ -896,8 +872,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.507213, y: 2.5, z: 4.6289506}
-  m_Center: {x: -0.1392436, y: 0.11432147, z: 0.91414}
+  m_Size: {x: 3.507213, y: 2.5, z: 5.2643204}
+  m_Center: {x: -0.1392436, y: 0.11432147, z: 0.5964552}
 --- !u!1 &8683352764493818980
 GameObject:
   m_ObjectHideFlags: 0
