@@ -43,12 +43,22 @@ public abstract class AbstractAbility : MonoBehaviour, IAbility
         if (abilityName == "Kick" && playerKnockback.CanKick == true)
         {
 
+            Debug.Log("test");
             Execute();
 
         }
         if (abilityName == "Dash")
         {
+
             Execute();
+
+        }
+        if (abilityName == "Grapple")
+        {
+
+            Debug.Log("AUGH");
+            Execute();
+
         }
 
         TriggerCooldown();

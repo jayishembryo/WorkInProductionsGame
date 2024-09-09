@@ -47974,6 +47974,38 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!1 &936372289 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 828302697126866389, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+  m_PrefabInstance: {fileID: 2116781679}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &936372291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 936372289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3f2495053e7f6848a81d91133073bf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityName: Grapple
+  maxCooldown: 1
+  cooldownRate: 1
+  playerKnockback: {fileID: 1581557667}
+  shootLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  maxDistanceFromPointMultiplier: 0.8
+  minDistanceFromPointMultiplier: 0.25
+  jointSpring: 4.5
+  jointDamper: 7
+  jumpingSpring: 9
+  jumpingDamper: 4
+  jointMassScale: 4.5
+  jointForceBoost: 20
 --- !u!1 &938233693
 GameObject:
   m_ObjectHideFlags: 0
@@ -98296,6 +98328,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beca8c634e42b8f448b999bf7c54c964, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1581557667 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6665112728080414914, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+  m_PrefabInstance: {fileID: 2116781679}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd6d221efcc2e5f4fb23ebb2398bc222, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1608693805
 GameObject:
   m_ObjectHideFlags: 0
@@ -124643,6 +124686,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 828302697126866389, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: m_Name
+      value: Grapple
+      objectReference: {fileID: 0}
     - target: {fileID: 3413766053300227710, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: HealthFill
       value: 
@@ -124656,6 +124703,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1856613861}
     - target: {fileID: 6934599026606150273, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: Grapple.m_Name
+      value: Grapple
+      objectReference: {fileID: 0}
+    - target: {fileID: 6934599026606150273, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: grappleAbility
+      value: 
+      objectReference: {fileID: 936372291}
+    - target: {fileID: 6934599026606150273, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: cameraTransform
       value: 
       objectReference: {fileID: 1536215262}
@@ -124667,6 +124722,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7449557632932427471, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8640629303739564876, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: directionAnchor
       value: 
@@ -124675,10 +124734,26 @@ PrefabInstance:
       propertyPath: aim
       value: 
       objectReference: {fileID: 1536215262}
-    m_RemovedComponents: []
+    - target: {fileID: 8960608921949906834, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: abilityName
+      value: Grapple
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960608921949906834, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: playerKnockback
+      value: 
+      objectReference: {fileID: 1581557667}
+    - target: {fileID: 8960608921949906834, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: shootLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8960608921949906834, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 828302697126866389, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 936372291}
   m_SourcePrefab: {fileID: 100100000, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
 --- !u!4 &2116781680 stripped
 Transform:
@@ -124833,6 +124908,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 927597350377789264, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0b06350027f0a1345866ca3f657bbe2f, type: 3}
     - target: {fileID: 1110779864240766043, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
       propertyPath: m_Pivot.x
       value: 0

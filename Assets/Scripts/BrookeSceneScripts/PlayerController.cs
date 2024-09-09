@@ -32,6 +32,8 @@ public class PlayerController : MonoBehaviour
     Kick kickAbility;
     [SerializeField]
     Dash dashAbility;
+    [SerializeField]
+    Grapple grappleAbility;
 
     [SerializeField]
     float enemySpawnCD = 0.5f;
@@ -57,7 +59,7 @@ public class PlayerController : MonoBehaviour
     bool isTouchingGround = true;
 
     [SerializeField]
-    private GameObject pauseMenu;
+    public GameObject pauseMenu;
     [SerializeField]
     private ScoreboardManager ScoreboardManager;
 
@@ -71,11 +73,15 @@ public class PlayerController : MonoBehaviour
 
         Movement = PlayerInputInstance.currentActionMap.FindAction("Movement");
         Pause = PlayerInputInstance.currentActionMap.FindAction("Pause");
+        //Grapple = PlayerInputInstance.currentActionMap.FindAction("Grapple");
 
         Movement.started += Movement_started;
         Movement.canceled += Movement_canceled;
         Pause.started += Pause_started;
         Pause.canceled += Pause_canceled;
+
+        //Grapple.started += Grapple_started;
+        //Grapple.canceled += Grapple_canceled;
         //controller = GetComponent<CharacterController>();
         //inputManager = InputManager.Instance;
         //cameraTransform = Camera.main.transform;
@@ -115,11 +121,6 @@ public class PlayerController : MonoBehaviour
         //print("Player should be moving");
         isMoving = true;
     }
-
-    //private void FixedUpdate()
-    //{
-    //    rb.velocity = new Vector3(moveDirection * playerSpeed, 0.0f, moveDirection * playerSpeed); ;
-    //}
 
     private void FixedUpdate()
     {
@@ -250,6 +251,7 @@ public class PlayerController : MonoBehaviour
 
         Dash();
         Kick();
+        Grapple();
 
         //Vector2 direction = Movement.ReadValue<Vector2>();
         //Vector3 move = new Vector3(direction.x, 0f, direction.y);
@@ -274,6 +276,13 @@ public class PlayerController : MonoBehaviour
         //    return;
 
         //dashAbility.OnAbilityTrigger();
+    }
+
+    void Grapple()
+    {
+        
+
+        
     }
 
     private void OnDestroy()
