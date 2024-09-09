@@ -46,7 +46,7 @@ public class GrapplingHookAbility : AbstractAbility
     private void Start()
     {
         cam = Camera.main.transform;
-        rb = GetComponent<Rigidbody>();
+        rb = GameObject.FindObjectOfType<PlayerController>().GetComponent<Rigidbody>();
 
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
 

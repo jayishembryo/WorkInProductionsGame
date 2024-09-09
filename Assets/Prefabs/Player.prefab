@@ -275,10 +275,20 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
+  Grapple:
+    m_Name: Grapple
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 847fe5bc-79ab-475b-adda-38895eecfbca
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
   isMoving: 0
   moveDirection: 0
   moveInput: {x: 0, y: 0}
   pauseMenu: {fileID: 0}
+  ScoreboardManager: {fileID: 0}
 --- !u!143 &5157702197355410462
 CharacterController:
   m_ObjectHideFlags: 0
@@ -362,6 +372,9 @@ MonoBehaviour:
   impulseVector: {x: 0, y: 1, z: 0}
   explosionScalar: 1
   explosionRadius: 1
+  kickVFX: {fileID: 0}
+  dropkickVFX: {fileID: 0}
+  vfxSpawnPoint: {fileID: 0}
 --- !u!65 &5068072759724160424
 BoxCollider:
   m_ObjectHideFlags: 0

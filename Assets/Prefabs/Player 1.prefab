@@ -47,13 +47,17 @@ MonoBehaviour:
   abilityName: Bottle Toss
   maxCooldown: 0.5
   cooldownRate: 1
-  bottlePrefab: {fileID: 732830574514542439, guid: dbc6626f089144542b124fcd81ac836c, type: 3}
-  objectPoolSize: 5
-  bottleSpawnpoint: {fileID: 3867547746096971857}
-  aim: {fileID: 0}
-  animDuration: 0.25
-  throwForce: 50
-  upwardForce: 2
+  shootLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  maxDistanceFromPointMultiplier: 0.8
+  minDistanceFromPointMultiplier: 0.25
+  jointSpring: 4.5
+  jointDamper: 7
+  jumpingSpring: 9
+  jumpingDamper: 4
+  jointMassScale: 4.5
+  jointForceBoost: 20
 --- !u!1 &2012980429216343543
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,7 +329,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 178b8090135fbff4f9386fe4bd1eea56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyDamage: 10
 --- !u!114 &3413766053300227710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -338,8 +341,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d0b2622712951949ac26a143437d8f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  playerHealth: 100
+  maxRes: 100
+  playerRes: 0
+  maxKnockBack: 200
+  knockBack: 100
+  maxLaunch: 50
+  launch: 20
   HitBox: {fileID: 7493272938843226930}
   isHit: 0
   iFrameDuration: 0.5
@@ -514,10 +521,20 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
+  Grapple:
+    m_Name: Grapple
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 20797287-ab72-4c33-892a-6846f8e5ff5c
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
   isMoving: 0
   moveDirection: 0
   moveInput: {x: 0, y: 0}
   pauseMenu: {fileID: 0}
+  ScoreboardManager: {fileID: 0}
 --- !u!114 &7930044822621804674
 MonoBehaviour:
   m_ObjectHideFlags: 0
