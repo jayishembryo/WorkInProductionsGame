@@ -32,6 +32,8 @@ public class PlayerController : MonoBehaviour
     Kick kickAbility;
     [SerializeField]
     Dash dashAbility;
+    [SerializeField]
+    Grapple grappleAbility;
 
     [SerializeField]
     float enemySpawnCD = 0.5f;
@@ -49,7 +51,6 @@ public class PlayerController : MonoBehaviour
     public PlayerInput PlayerInputInstance;
     public InputAction Movement;
     public InputAction Pause;
-    public InputAction Grapple;
     public bool isMoving;
     public float moveDirection;
     public Vector2 moveInput;
@@ -119,20 +120,6 @@ public class PlayerController : MonoBehaviour
     {
         //print("Player should be moving");
         isMoving = true;
-    }
-
-    void Grapple_started(InputAction.CallbackContext obj)
-    {
-
-        GameObject.FindGameObjectWithTag("Player").GetComponent<GrapplingHook>().StartGrapple();
-        
-    }
-
-    void Grapple_canceled(InputAction.CallbackContext obj)
-    {
-
-        GameObject.FindGameObjectWithTag("Player").GetComponent<GrapplingHook>().StopGrapple();
-
     }
 
     private void FixedUpdate()
@@ -264,6 +251,7 @@ public class PlayerController : MonoBehaviour
 
         Dash();
         Kick();
+        Grapple();
 
         //Vector2 direction = Movement.ReadValue<Vector2>();
         //Vector3 move = new Vector3(direction.x, 0f, direction.y);
@@ -288,6 +276,13 @@ public class PlayerController : MonoBehaviour
         //    return;
 
         //dashAbility.OnAbilityTrigger();
+    }
+
+    void Grapple()
+    {
+        
+
+        
     }
 
     private void OnDestroy()

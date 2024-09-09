@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GrapplingHookAbility : AbstractAbility
+public class Grapple : AbstractAbility
 {
     private Vector3 hitPoint;
     private SpringJoint joint;
@@ -66,6 +66,9 @@ public class GrapplingHookAbility : AbstractAbility
 
     public void StartGrapple()
     {
+
+        Debug.Log("yippee!!!!");
+
         if (Physics.Raycast(cam.position, cam.forward, out RaycastHit hit, maxDist, shootLayers))
         {
             isGrappling = true;
