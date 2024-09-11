@@ -52,12 +52,14 @@ public class PlayerController : MonoBehaviour
     public PlayerInput PlayerInputInstance;
     public InputAction Movement;
     public InputAction Pause;
+    public InputAction Grappling;
+    Grapple grapplingInstance;
     public bool isMoving;
     public float moveDirection;
     public Vector2 moveInput;
     private Rigidbody rb;
 
-    bool isTouchingGround = true;
+    public bool IsTouchingGround = true;
 
     [SerializeField]
     public GameObject pauseMenu;
@@ -74,15 +76,15 @@ public class PlayerController : MonoBehaviour
 
         Movement = PlayerInputInstance.currentActionMap.FindAction("Movement");
         Pause = PlayerInputInstance.currentActionMap.FindAction("Pause");
-        //Grapple = PlayerInputInstance.currentActionMap.FindAction("Grapple");
+        Grappling = PlayerInputInstance.currentActionMap.FindAction("Grapple");
 
         Movement.started += Movement_started;
         Movement.canceled += Movement_canceled;
         Pause.started += Pause_started;
         Pause.canceled += Pause_canceled;
 
-        //Grapple.started += Grapple_started;
-        //Grapple.canceled += Grapple_canceled;
+        Grappling.started += Grappling_started;
+        Grappling.canceled += Grappling_canceled;
         //controller = GetComponent<CharacterController>();
         //inputManager = InputManager.Instance;
         //cameraTransform = Camera.main.transform;
@@ -92,6 +94,9 @@ public class PlayerController : MonoBehaviour
 
         rb.drag = airDrag;
         Time.timeScale = 1.0f;
+
+        grapplingInstance = GameObject.FindObjectOfType<Grapple>().GetComponent<Grapple>();
+
     }
 
     private void Pause_canceled(InputAction.CallbackContext obj)
@@ -123,6 +128,20 @@ public class PlayerController : MonoBehaviour
         isMoving = true;
     }
 
+    private void Grappling_started(InputAction.CallbackContext obj)
+    {
+
+        grapplingInstance.StartGrapple();
+
+    }
+
+    private void Grappling_canceled(InputAction.CallbackContext obj)
+    {
+
+        grapplingInstance.StopGrapple();
+
+    }
+
     private void FixedUpdate()
     {
         Look();
@@ -137,7 +156,7 @@ public class PlayerController : MonoBehaviour
 
     private void Gravity()
     {
-        float gravForce = (rb.velocity.y < 0 && !isTouchingGround ? GravityManager.Instance.PlayerGravity * GravityManager.Instance.PlayerFallMult : GravityManager.Instance.PlayerGravity);
+        float gravForce = (rb.velocity.y < 0 && !IsTouchingGround ? GravityManager.Instance.PlayerGravity * GravityManager.Instance.PlayerFallMult : GravityManager.Instance.PlayerGravity);
 
         rb.AddForce(Vector3.down * gravForce);
 
@@ -149,7 +168,7 @@ public class PlayerController : MonoBehaviour
         Vector3 newVelocity = GetMoveInput3D();
         newVelocity = playerSpeed * newVelocity.normalized;
 
-        newVelocity = VectorUtils.ClampHorizontalVelocity(rb.velocity, newVelocity, (isTouchingGround ? groundSpeedLimit : airSpeedLimit));
+        newVelocity = VectorUtils.ClampHorizontalVelocity(rb.velocity, newVelocity, (IsTouchingGround ? groundSpeedLimit : airSpeedLimit));
 
         rb.AddForce(newVelocity, ForceMode.Acceleration);
         //rb.AddRelativeForce(1000 * Time.fixedDeltaTime * newVelocity, ForceMode.Acceleration);
@@ -174,7 +193,7 @@ public class PlayerController : MonoBehaviour
 
     public void Jump()
     {
-        if (!isTouchingGround)
+        if (!IsTouchingGround)
             return;
 
         rb.velocity += new Vector3(0, jumpHeight, 0);
@@ -182,14 +201,14 @@ public class PlayerController : MonoBehaviour
 
     public void SetTouchedGround(bool touchedGrass)
     {
-        isTouchingGround = touchedGrass;
+        IsTouchingGround = touchedGrass;
 
         ToggleAirDrag(!touchedGrass);
     }
 
     public bool IsGrounded()
     {
-        return isTouchingGround;
+        return IsTouchingGround;
     }
 
     private void ToggleAirDrag(bool isInAir)
@@ -252,7 +271,7 @@ public class PlayerController : MonoBehaviour
 
         Dash();
         Kick();
-        Grapple();
+        //Grapple();
 
         //Vector2 direction = Movement.ReadValue<Vector2>();
         //Vector3 move = new Vector3(direction.x, 0f, direction.y);
@@ -279,11 +298,6 @@ public class PlayerController : MonoBehaviour
         //dashAbility.OnAbilityTrigger();
     }
 
-    void Grapple()
-    {
-
-        
-    }
 
     private void OnDestroy()
     {
