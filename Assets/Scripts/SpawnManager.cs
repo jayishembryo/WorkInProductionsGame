@@ -16,7 +16,15 @@ public class SpawnManager : MonoBehaviour
     public float waveTime;//time since this wave started.
     private bool endSignal = false;
     
-    public GameObject[] spawnPoint;
+    public GameObject[] spawnPoints;
+
+    [SerializeField]
+    private GameObject normal;
+    [SerializeField]
+    private GameObject tank;
+    [SerializeField]
+    private GameObject stinger;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,19 +37,45 @@ public class SpawnManager : MonoBehaviour
         if(endSignal)
         {
             newWaveStart();
+            
         }
     }
     
     private void newWaveStart()
     {
-        waveTime = Time.deltatime;//update start of current wave
-        waveNumber++;//change wave start   
+        waveTime = Time.deltaTime;//update start of current wave
+        waveNumber++;//change wave start 
+        
              
     }
 
     private void GroupAssignment()
     {
+        
+        int NormNumber = Random.Range(4, 8);
+        int TankNumber = Random.Range(0, 3);
+        int StingNumber = Random.Range(0, 5);
 
+        for (int y = 0; y < spawnPoints.Length; y++)
+        {
+            Vector3 spawnPicked = spawnPoints[y].transform.position;
+
+            for (int x = 0; x < NormNumber; x++)
+            {
+                Instantiate(normal, spawnPicked, Quaternion.identity);
+            }
+
+            for (int x = 0; x < TankNumber; x++)
+            {
+                Instantiate(tank, spawnPicked, Quaternion.identity);
+            }
+
+            for (int x = 0; x < StingNumber; x++)
+            {
+                Instantiate(stinger, spawnPicked, Quaternion.identity);
+            }
+
+        }
     }
 
     public void enemyHasDied(GameObject enemy)//when an enemy dies it reduces the counter for it's type that can spawn that wave as well as the total number of dudes

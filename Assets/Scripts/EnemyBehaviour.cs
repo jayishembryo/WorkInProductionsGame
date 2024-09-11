@@ -59,10 +59,10 @@ public class EnemyBehaviour : MonoBehaviour
     {
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
-        
-        if(!playerInSightRange && !playerInAttackRange) Patrolling();
-        if(playerInSightRange && !playerInAttackRange) ChasePlayer();
-        if(playerInSightRange && playerInAttackRange) AttackPlayer();
+        Patrolling();
+        //if(!playerInSightRange && !playerInAttackRange) Patrolling();
+        //if(playerInSightRange && !playerInAttackRange) ChasePlayer();
+        //if(playerInSightRange && playerInAttackRange) AttackPlayer();
     }
 
     private void Patrolling()
