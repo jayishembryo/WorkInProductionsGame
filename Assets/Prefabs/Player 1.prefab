@@ -1,5 +1,64 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &828302697126866389
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7831622925417868142}
+  - component: {fileID: 5619905699408340879}
+  m_Layer: 0
+  m_Name: Grapple
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7831622925417868142
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 828302697126866389}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5516920442618832756}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5619905699408340879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 828302697126866389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3f2495053e7f6848a81d91133073bf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityName: Grapple
+  maxCooldown: 1
+  cooldownRate: 1
+  playerKnockback: {fileID: 6665112728080414914}
+  shootLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  maxDistanceFromPointMultiplier: 0.8
+  minDistanceFromPointMultiplier: 0.25
+  jointSpring: 4.5
+  jointDamper: 7
+  jumpingSpring: 9
+  jumpingDamper: 4
+  jointMassScale: 4.5
+  jointForceBoost: 20
 --- !u!1 &2012980429216343543
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,7 +70,7 @@ GameObject:
   - component: {fileID: 4053689875230094823}
   - component: {fileID: 3264781136052931407}
   - component: {fileID: 2824016474760707766}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: GroundDetection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -294,65 +353,6 @@ MonoBehaviour:
   isHit: 0
   iFrameDuration: 0.5
   HealthFill: {fileID: 0}
---- !u!1 &6381777854815754519
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7879881608274353145}
-  - component: {fileID: 8602468326900684836}
-  m_Layer: 0
-  m_Name: Grapple
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7879881608274353145
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6381777854815754519}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5516920442618832756}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8602468326900684836
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6381777854815754519}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3f2495053e7f6848a81d91133073bf0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  abilityName: Grapple
-  maxCooldown: 1
-  cooldownRate: 1
-  playerKnockback: {fileID: 6665112728080414914}
-  shootLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  maxDistanceFromPointMultiplier: 0.8
-  minDistanceFromPointMultiplier: 0.25
-  jointSpring: 4.5
-  jointDamper: 7
-  jumpingSpring: 9
-  jumpingDamper: 4
-  jointMassScale: 4.5
-  jointForceBoost: 20
 --- !u!1 &6882769587637518739
 GameObject:
   m_ObjectHideFlags: 0
@@ -450,7 +450,6 @@ GameObject:
   - component: {fileID: 7449557632932427471}
   - component: {fileID: 6665112728080414914}
   - component: {fileID: 1309564412491857265}
-  - component: {fileID: 641917643491693235}
   m_Layer: 7
   m_Name: Player 1
   m_TagString: Player
@@ -478,7 +477,7 @@ Transform:
   - {fileID: 624866364724670831}
   - {fileID: 218389113460362761}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6934599026606150273
 MonoBehaviour:
@@ -497,12 +496,12 @@ MonoBehaviour:
   physicMaterial: {fileID: 13400000, guid: e7782c51880ce5d47adfb1c43ae5cb18, type: 2}
   groundSpeedLimit: 10
   airSpeedLimit: 11
-  airDrag: 6.9
+  airDrag: 3.35
   groundDrag: 7
   enemy: {fileID: 8474295532616176723, guid: 9a801a72a065d524aa007bc9486081e6, type: 3}
   kickAbility: {fileID: 8640629303739564876}
   dashAbility: {fileID: 5625408014531569091}
-  grappleAbility: {fileID: 8602468326900684836}
+  grappleAbility: {fileID: 5619905699408340879}
   enemySpawnCD: 0.5
   cameraTransform: {fileID: 0}
   EB: {fileID: 2484880184004467935, guid: 9a801a72a065d524aa007bc9486081e6, type: 3}
@@ -686,7 +685,7 @@ MonoBehaviour:
   PlayerControllerInstance: {fileID: 6934599026606150273}
   CanBeKnockedBack: 1
   CanKick: 1
-  playermodelAnim: {fileID: 641917643491693235}
+  playermodelAnim: {fileID: 0}
 --- !u!65 &1309564412491857265
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -708,27 +707,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!95 &641917643491693235
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7182574327882956369}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3cdc41d1ac93b7d408667d2fb38caa73, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7774002295957858768
 GameObject:
   m_ObjectHideFlags: 0
@@ -934,7 +912,7 @@ Transform:
   m_Children:
   - {fileID: 5324706121291827275}
   - {fileID: 3853018186932291569}
-  - {fileID: 7879881608274353145}
+  - {fileID: 7831622925417868142}
   m_Father: {fileID: 210607900284234145}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
