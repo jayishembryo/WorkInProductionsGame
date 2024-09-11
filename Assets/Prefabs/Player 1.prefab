@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7831622925417868142}
-  - component: {fileID: 8960608921949906834}
+  - component: {fileID: 5619905699408340879}
   m_Layer: 0
-  m_Name: BottleToss
+  m_Name: Grapple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 5516920442618832756}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8960608921949906834
+--- !u!114 &5619905699408340879
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44,16 +44,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3f2495053e7f6848a81d91133073bf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilityName: Bottle Toss
-  maxCooldown: 2.5
-  cooldownRate: 2.5
-  bottlePrefab: {fileID: 732830574514542439, guid: dbc6626f089144542b124fcd81ac836c, type: 3}
-  objectPoolSize: 5
-  bottleSpawnpoint: {fileID: 3867547746096971857}
-  aim: {fileID: 0}
-  animDuration: 0.25
-  throwForce: 50
-  upwardForce: 2
+  abilityName: Grapple
+  maxCooldown: 1
+  cooldownRate: 1
+  playerKnockback: {fileID: 6665112728080414914}
+  shootLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  maxDistanceFromPointMultiplier: 0.8
+  minDistanceFromPointMultiplier: 0.25
+  jointSpring: 4.5
+  jointDamper: 7
+  jumpingSpring: 9
+  jumpingDamper: 4
+  jointMassScale: 4.5
+  jointForceBoost: 20
 --- !u!1 &2012980429216343543
 GameObject:
   m_ObjectHideFlags: 0
@@ -65,7 +70,7 @@ GameObject:
   - component: {fileID: 4053689875230094823}
   - component: {fileID: 3264781136052931407}
   - component: {fileID: 2824016474760707766}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: GroundDetection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,6 +172,7 @@ MonoBehaviour:
   abilityName: Dash
   maxCooldown: 0.7
   cooldownRate: 1
+  playerKnockback: {fileID: 0}
   player: {fileID: 6934599026606150273}
   characterRB: {fileID: 6119630809766995737}
   rotationAnchor: {fileID: 210607900284234145}
@@ -490,11 +496,12 @@ MonoBehaviour:
   physicMaterial: {fileID: 13400000, guid: e7782c51880ce5d47adfb1c43ae5cb18, type: 2}
   groundSpeedLimit: 10
   airSpeedLimit: 11
-  airDrag: 6.9
+  airDrag: 3.35
   groundDrag: 7
   enemy: {fileID: 8474295532616176723, guid: 9a801a72a065d524aa007bc9486081e6, type: 3}
   kickAbility: {fileID: 8640629303739564876}
   dashAbility: {fileID: 5625408014531569091}
+  grappleAbility: {fileID: 5619905699408340879}
   enemySpawnCD: 0.5
   cameraTransform: {fileID: 0}
   EB: {fileID: 2484880184004467935, guid: 9a801a72a065d524aa007bc9486081e6, type: 3}
@@ -640,7 +647,7 @@ MonoBehaviour:
     m_ActionName: Player/SpawnEnemies[/Keyboard/r]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8960608921949906834}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AbstractAbility, Assembly-CSharp
         m_MethodName: OnAbilityTrigger
         m_Mode: 1
@@ -841,6 +848,7 @@ MonoBehaviour:
   abilityName: Kick
   maxCooldown: 0.4
   cooldownRate: 1
+  playerKnockback: {fileID: 0}
   dash: {fileID: 5625408014531569091}
   directionAnchor: {fileID: 0}
   hitbox: {fileID: 7796476864955446340}
