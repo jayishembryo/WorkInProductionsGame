@@ -47974,38 +47974,6 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!1 &936372289 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 828302697126866389, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
-  m_PrefabInstance: {fileID: 2116781679}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &936372291
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 936372289}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3f2495053e7f6848a81d91133073bf0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  abilityName: Grapple
-  maxCooldown: 1
-  cooldownRate: 1
-  playerKnockback: {fileID: 1581557667}
-  shootLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  maxDistanceFromPointMultiplier: 0.8
-  minDistanceFromPointMultiplier: 0.25
-  jointSpring: 4.5
-  jointDamper: 7
-  jumpingSpring: 9
-  jumpingDamper: 4
-  jointMassScale: 4.5
-  jointForceBoost: 20
 --- !u!1 &938233693
 GameObject:
   m_ObjectHideFlags: 0
@@ -123827,6 +123795,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1875457723}
   m_CullTransparentMesh: 1
+--- !u!114 &1880371022 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8602468326900684836, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+  m_PrefabInstance: {fileID: 2116781679}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3f2495053e7f6848a81d91133073bf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1932368340
 GameObject:
   m_ObjectHideFlags: 0
@@ -124709,7 +124688,7 @@ PrefabInstance:
     - target: {fileID: 6934599026606150273, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: grappleAbility
       value: 
-      objectReference: {fileID: 936372291}
+      objectReference: {fileID: 1880371022}
     - target: {fileID: 6934599026606150273, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: cameraTransform
       value: 
@@ -124750,10 +124729,7 @@ PrefabInstance:
     - {fileID: 8960608921949906834, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 828302697126866389, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 936372291}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
 --- !u!4 &2116781680 stripped
 Transform:
@@ -124996,6 +124972,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4050541155268352615, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4157353081175729505, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5492368936605829855, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -125003,6 +124987,10 @@ PrefabInstance:
     - target: {fileID: 5607057123960240364, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8268701767955966716, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8286971289105936814, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
       propertyPath: kickScript
@@ -125012,6 +125000,10 @@ PrefabInstance:
       propertyPath: playerController
       value: 
       objectReference: {fileID: 1581557666}
+    - target: {fileID: 8556755305787684480, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
