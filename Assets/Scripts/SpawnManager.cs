@@ -16,6 +16,7 @@ public class SpawnManager : MonoBehaviour
     public float waveTime;//time since this wave started.
     private bool endSignal = false;
     
+    public GameObject[] spawnPoint;
     // Start is called before the first frame update
     void Start()
     {
@@ -52,7 +53,7 @@ public class SpawnManager : MonoBehaviour
 
         if(enemy.name == "stinger") numberOfStingers--;
 
-        if(totalEnemies =< 0)
+        if(totalEnemies <= 0)
         {
             StartCoroutine(endWave());
         }

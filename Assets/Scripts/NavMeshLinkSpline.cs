@@ -6,7 +6,7 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class NavMeshLinkSpline : MonoBehaviour
 {
-    [SerializedField]
+    /*[SerializedField]
     private Spline splineVisualization;
     [SerializedField]
     private navMeshLink navMeshLinkData;
@@ -30,5 +30,5 @@ public class NavMeshLinkSpline : MonoBehaviour
     }
 
 #endif
-
+*/
 }

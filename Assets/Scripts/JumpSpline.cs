@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class JumpSpline : MonoBehaviour
 {
-    [SerializedField]
+    /*[SerializedField]
     private Transform start, middle, end;
 
     [SerializedField]
@@ -52,5 +52,5 @@ public class JumpSpline : MonoBehaviour
                 showGizmos.DrawLine(startPoint,endPoint);
             }
         }
-    }
+    }*/
 }
