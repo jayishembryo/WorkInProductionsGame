@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Grapple : AbstractAbility
+public class Grapple : MonoBehaviour
 {
     private Vector3 hitPoint;
     private SpringJoint joint;
@@ -64,16 +64,6 @@ public class Grapple : AbstractAbility
         hookRenderer.endWidth = 1;
         hookRenderer.textureMode = LineTextureMode.Tile;
 
-    }
-
-    protected override void ChildTick()
-    {
-
-    }
-
-    protected override void Execute()
-    {
-        
     }
 
     void LateUpdate()
