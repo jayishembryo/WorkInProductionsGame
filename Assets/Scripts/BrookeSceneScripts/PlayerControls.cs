@@ -91,7 +91,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Throw Bottle"",
+                    ""name"": ""Grapple"",
                     ""type"": ""Button"",
                     ""id"": ""3ee17af1-ddef-4846-90ef-0096a57a406d"",
                     ""expectedControlType"": ""Button"",
@@ -260,7 +260,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Throw Bottle"",
+                    ""action"": ""Grapple"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -300,7 +300,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Player_Kick = m_Player.FindAction("Kick", throwIfNotFound: true);
         m_Player_StartGame = m_Player.FindAction("StartGame", throwIfNotFound: true);
         m_Player_SpawnEnemies = m_Player.FindAction("SpawnEnemies", throwIfNotFound: true);
-        m_Player_ThrowBottle = m_Player.FindAction("Throw Bottle", throwIfNotFound: true);
+        m_Player_Grapple = m_Player.FindAction("Grapple", throwIfNotFound: true);
         m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
     }
 
@@ -370,7 +370,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Kick;
     private readonly InputAction m_Player_StartGame;
     private readonly InputAction m_Player_SpawnEnemies;
-    private readonly InputAction m_Player_ThrowBottle;
+    private readonly InputAction m_Player_Grapple;
     private readonly InputAction m_Player_Pause;
     public struct PlayerActions
     {
@@ -383,7 +383,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @Kick => m_Wrapper.m_Player_Kick;
         public InputAction @StartGame => m_Wrapper.m_Player_StartGame;
         public InputAction @SpawnEnemies => m_Wrapper.m_Player_SpawnEnemies;
-        public InputAction @ThrowBottle => m_Wrapper.m_Player_ThrowBottle;
+        public InputAction @Grapple => m_Wrapper.m_Player_Grapple;
         public InputAction @Pause => m_Wrapper.m_Player_Pause;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
@@ -415,9 +415,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @SpawnEnemies.started += instance.OnSpawnEnemies;
             @SpawnEnemies.performed += instance.OnSpawnEnemies;
             @SpawnEnemies.canceled += instance.OnSpawnEnemies;
-            @ThrowBottle.started += instance.OnThrowBottle;
-            @ThrowBottle.performed += instance.OnThrowBottle;
-            @ThrowBottle.canceled += instance.OnThrowBottle;
+            @Grapple.started += instance.OnGrapple;
+            @Grapple.performed += instance.OnGrapple;
+            @Grapple.canceled += instance.OnGrapple;
             @Pause.started += instance.OnPause;
             @Pause.performed += instance.OnPause;
             @Pause.canceled += instance.OnPause;
@@ -446,9 +446,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @SpawnEnemies.started -= instance.OnSpawnEnemies;
             @SpawnEnemies.performed -= instance.OnSpawnEnemies;
             @SpawnEnemies.canceled -= instance.OnSpawnEnemies;
-            @ThrowBottle.started -= instance.OnThrowBottle;
-            @ThrowBottle.performed -= instance.OnThrowBottle;
-            @ThrowBottle.canceled -= instance.OnThrowBottle;
+            @Grapple.started -= instance.OnGrapple;
+            @Grapple.performed -= instance.OnGrapple;
+            @Grapple.canceled -= instance.OnGrapple;
             @Pause.started -= instance.OnPause;
             @Pause.performed -= instance.OnPause;
             @Pause.canceled -= instance.OnPause;
@@ -478,7 +478,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnKick(InputAction.CallbackContext context);
         void OnStartGame(InputAction.CallbackContext context);
         void OnSpawnEnemies(InputAction.CallbackContext context);
-        void OnThrowBottle(InputAction.CallbackContext context);
+        void OnGrapple(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
     }
 }

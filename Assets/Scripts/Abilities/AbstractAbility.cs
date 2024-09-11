@@ -24,14 +24,14 @@ public abstract class AbstractAbility : MonoBehaviour, IAbility
 
     protected float currentCooldown = 0;
 
-    PlayerKnockback playerKnockback;
+    public PlayerKnockback playerKnockback;
 
     // Should be called via input event
 
     void Start()
     {
 
-        playerKnockback = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerKnockback>();
+        playerKnockback = FindObjectOfType<PlayerKnockback>();
 
     }
 
@@ -40,9 +40,23 @@ public abstract class AbstractAbility : MonoBehaviour, IAbility
         if (currentCooldown > 0)
             return;
 
-        if (playerKnockback.CanKick == true)
+        if (abilityName == "Kick" && playerKnockback.CanKick == true)
         {
 
+            Debug.Log("test");
+            Execute();
+
+        }
+        if (abilityName == "Dash")
+        {
+
+            Execute();
+
+        }
+        if (abilityName == "Grapple")
+        {
+
+            Debug.Log("AUGH");
             Execute();
 
         }
