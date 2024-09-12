@@ -91,18 +91,18 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Throw Bottle"",
+                    ""name"": ""Pause"",
                     ""type"": ""Button"",
-                    ""id"": ""3ee17af1-ddef-4846-90ef-0096a57a406d"",
+                    ""id"": ""23bc2739-2cb6-491c-a129-6e70cbd564bd"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Pause"",
+                    ""name"": ""Grapple"",
                     ""type"": ""Button"",
-                    ""id"": ""23bc2739-2cb6-491c-a129-6e70cbd564bd"",
+                    ""id"": ""83722aea-63fb-493e-a7c4-da4e60f856c5"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -255,17 +255,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""1b87dd74-7490-46e0-b387-9df8d15ae112"",
-                    ""path"": ""<Mouse>/rightButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Throw Bottle"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""cfb026fa-625b-4a90-8e23-333972b9f8ff"",
                     ""path"": ""<Keyboard>/p"",
                     ""interactions"": """",
@@ -285,6 +274,17 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5d57b14f-51b9-496d-9540-f6450da4438f"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Grapple"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -300,8 +300,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Player_Kick = m_Player.FindAction("Kick", throwIfNotFound: true);
         m_Player_StartGame = m_Player.FindAction("StartGame", throwIfNotFound: true);
         m_Player_SpawnEnemies = m_Player.FindAction("SpawnEnemies", throwIfNotFound: true);
-        m_Player_ThrowBottle = m_Player.FindAction("Throw Bottle", throwIfNotFound: true);
         m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
+        m_Player_Grapple = m_Player.FindAction("Grapple", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -370,8 +370,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Kick;
     private readonly InputAction m_Player_StartGame;
     private readonly InputAction m_Player_SpawnEnemies;
-    private readonly InputAction m_Player_ThrowBottle;
     private readonly InputAction m_Player_Pause;
+    private readonly InputAction m_Player_Grapple;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -383,8 +383,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @Kick => m_Wrapper.m_Player_Kick;
         public InputAction @StartGame => m_Wrapper.m_Player_StartGame;
         public InputAction @SpawnEnemies => m_Wrapper.m_Player_SpawnEnemies;
-        public InputAction @ThrowBottle => m_Wrapper.m_Player_ThrowBottle;
         public InputAction @Pause => m_Wrapper.m_Player_Pause;
+        public InputAction @Grapple => m_Wrapper.m_Player_Grapple;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -415,12 +415,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @SpawnEnemies.started += instance.OnSpawnEnemies;
             @SpawnEnemies.performed += instance.OnSpawnEnemies;
             @SpawnEnemies.canceled += instance.OnSpawnEnemies;
-            @ThrowBottle.started += instance.OnThrowBottle;
-            @ThrowBottle.performed += instance.OnThrowBottle;
-            @ThrowBottle.canceled += instance.OnThrowBottle;
             @Pause.started += instance.OnPause;
             @Pause.performed += instance.OnPause;
             @Pause.canceled += instance.OnPause;
+            @Grapple.started += instance.OnGrapple;
+            @Grapple.performed += instance.OnGrapple;
+            @Grapple.canceled += instance.OnGrapple;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -446,12 +446,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @SpawnEnemies.started -= instance.OnSpawnEnemies;
             @SpawnEnemies.performed -= instance.OnSpawnEnemies;
             @SpawnEnemies.canceled -= instance.OnSpawnEnemies;
-            @ThrowBottle.started -= instance.OnThrowBottle;
-            @ThrowBottle.performed -= instance.OnThrowBottle;
-            @ThrowBottle.canceled -= instance.OnThrowBottle;
             @Pause.started -= instance.OnPause;
             @Pause.performed -= instance.OnPause;
             @Pause.canceled -= instance.OnPause;
+            @Grapple.started -= instance.OnGrapple;
+            @Grapple.performed -= instance.OnGrapple;
+            @Grapple.canceled -= instance.OnGrapple;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -478,7 +478,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnKick(InputAction.CallbackContext context);
         void OnStartGame(InputAction.CallbackContext context);
         void OnSpawnEnemies(InputAction.CallbackContext context);
-        void OnThrowBottle(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+        void OnGrapple(InputAction.CallbackContext context);
     }
 }
