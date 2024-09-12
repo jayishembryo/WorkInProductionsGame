@@ -124865,7 +124865,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootLayers:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 32768
   maxDistanceFromPointMultiplier: 0.8
   minDistanceFromPointMultiplier: 0.25
   jointSpring: 4.5
@@ -125401,9 +125401,57 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1000977528168657876, guid: d200edd5ab119e44684301eab920c204, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1726905355639553574, guid: d200edd5ab119e44684301eab920c204, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2122560988701991734, guid: d200edd5ab119e44684301eab920c204, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3179905387032400787, guid: d200edd5ab119e44684301eab920c204, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4074237753075466282, guid: d200edd5ab119e44684301eab920c204, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6548575172156954159, guid: d200edd5ab119e44684301eab920c204, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6912792049707195057, guid: d200edd5ab119e44684301eab920c204, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7221132512363391111, guid: d200edd5ab119e44684301eab920c204, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7246881702182074195, guid: d200edd5ab119e44684301eab920c204, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277302839907633886, guid: d200edd5ab119e44684301eab920c204, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8412713690908329554, guid: d200edd5ab119e44684301eab920c204, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 8414357986408042784, guid: d200edd5ab119e44684301eab920c204, type: 3}
       propertyPath: m_Name
       value: BoatMovingAnimator
+      objectReference: {fileID: 0}
+    - target: {fileID: 8628704082826942261, guid: d200edd5ab119e44684301eab920c204, type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
