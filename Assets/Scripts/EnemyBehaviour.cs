@@ -25,7 +25,7 @@ public class EnemyBehaviour : MonoBehaviour
     private float speed = 2f;
     private Rigidbody enemyRB;
     
-    
+    [SerializeField]
     private LayerMask whatIsGround, whatIsPlayer;
 
     //Patrolling
@@ -60,9 +60,11 @@ public class EnemyBehaviour : MonoBehaviour
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
         
-        if(!playerInSightRange && !playerInAttackRange) Patrolling();
+
+        Patrolling();
+        /*if(!playerInSightRange && !playerInAttackRange) Patrolling();
         if(playerInSightRange && !playerInAttackRange) ChasePlayer();
-        if(playerInSightRange && playerInAttackRange) AttackPlayer();
+        if(playerInSightRange && playerInAttackRange) AttackPlayer();*/
     }
 
     private void Patrolling()
@@ -88,7 +90,7 @@ public class EnemyBehaviour : MonoBehaviour
 
         walkPoint = new UnityEngine.Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
 
-        if(Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
+        if(Physics.Raycast(walkPoint, -transform.up, Mathf.Infinity, whatIsGround))
         {
             walkPointSet = true;
         }
@@ -158,7 +160,13 @@ public class EnemyBehaviour : MonoBehaviour
             var launchDirNormalized = launchDirection.normalized;
             float launchVelocity = player.GetComponent<Rigidbody>().velocity.magnitude;
             enemyRB.AddForce(launchDirNormalized * launchVelocity);
+            agent.enabled = false;
 
+        }
+
+        if(other.gameObject.CompareTag("Ground"))  
+        {
+            agent.enabled = true;
         }
     }
 

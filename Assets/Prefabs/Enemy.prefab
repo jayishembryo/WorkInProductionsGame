@@ -258,6 +258,12 @@ MonoBehaviour:
   agent: {fileID: 2554958408834568949}
   health: 100
   speed: 3.5
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 8
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 128
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 10
   sightRange: 10
