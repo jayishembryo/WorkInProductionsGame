@@ -13,6 +13,11 @@ public class Grapple : MonoBehaviour
     private LineRenderer hookRenderer;
     private Transform cam;
 
+    public int grappleTimer = 0;
+
+    float whenToAddTime = 1;
+    float lastAddedToTime = 0;
+
     PlayerController playerController;
 
 
@@ -44,6 +49,7 @@ public class Grapple : MonoBehaviour
     private Rigidbody rb;
 
     public static bool isGrappling;
+    bool canGrapple = true;
 
     [SerializeField] private Material BodyMaterial;
 
@@ -89,9 +95,10 @@ public class Grapple : MonoBehaviour
     }
 
 
-    private void Update()
+    private void FixedUpdate()
     {
-        
+        lastAddedToTime += Time.fixedDeltaTime;
+
         if (joint == null)
         {
 
@@ -114,10 +121,43 @@ public class Grapple : MonoBehaviour
 
         }
 
+        if (playerController.IsTouchingGround == false && isGrappling == true)
+        {
+
+            if(lastAddedToTime > whenToAddTime)
+            {
+
+                AddToTimer();
+                lastAddedToTime = 0;
+
+            }
+
+        }
+
+        if (playerController.IsTouchingGround == true && isGrappling == false)
+        {
+
+            if(canGrapple == false && lastAddedToTime > whenToAddTime)
+            {
+
+                SubtractFromTimer();
+                lastAddedToTime = 0;
+
+            }
+
+        }
+
     }
 
     public void StartGrapple()
     {
+
+        if(canGrapple == false)
+        {
+
+            return;
+
+        }
 
         Debug.Log("yippee!!!!");
 
@@ -140,6 +180,7 @@ public class Grapple : MonoBehaviour
             joint.damper = jointDamper;
             joint.massScale = jointMassScale;
             rb.AddForce((hitPoint - transform.position).normalized * jointForceBoost, ForceMode.Impulse);
+
         }
     }
 
@@ -150,5 +191,42 @@ public class Grapple : MonoBehaviour
         {
             Destroy(joint);
         }
+    }
+
+    public void AddToTimer()
+    {
+
+        if(grappleTimer <= 4)
+        {
+
+            grappleTimer = grappleTimer += 1;
+
+        }
+        else if (grappleTimer > 4)
+        {
+
+            StopGrapple();
+            canGrapple = false;
+
+        }
+
+    }
+
+    public void SubtractFromTimer()
+    {
+
+        if(grappleTimer > 0)
+        {
+
+            grappleTimer = grappleTimer -= 1;
+
+        }
+        else if (grappleTimer == 0)
+        {
+
+            canGrapple = true;
+
+        }
+
     }
 }
