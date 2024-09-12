@@ -6,13 +6,21 @@ public class SpawnManager : MonoBehaviour
 {
     [SerializeField]
     private int waveNumber = 1;
-    private int totalEnemies;
+    [SerializeField]
+    private int totalEnemies = 10;
     private int totalEnemiesRemaining;
+    [SerializeField]
     private int numberOfNormals;//medium dude spawns allowed this wave.
+    [SerializeField]
     private int numberOfTanks;//large dude spawns allowed this wave.
+    [SerializeField]
     private int numberOfStingers;//flying dude spawns allowed this wave.
+    
     [SerializeField]
     private float groupCooldown = 30.0f;//time since last group spawned.
+    private float groupTime;
+
+    private float waitTime;
     public float waveTime;//time since this wave started.
     private bool endSignal = false;
     
@@ -25,10 +33,13 @@ public class SpawnManager : MonoBehaviour
     [SerializeField]
     private GameObject stinger;
 
+    private int normNumber;
+    private int tankNumber;
+    private int stingNumber;
     // Start is called before the first frame update
     void Start()
     {
-        
+        newWaveStart();
     }
 
     // Update is called once per frame
@@ -39,42 +50,71 @@ public class SpawnManager : MonoBehaviour
             newWaveStart();
             
         }
+
+        if(waitTime >= groupTime)
+        {
+            GroupAssignment();
+            groupTime = Time.deltaTime;
+            waitTime = groupTime + groupCooldown;
+        }
     }
     
     private void newWaveStart()
     {
         waveTime = Time.deltaTime;//update start of current wave
+        groupTime = waveTime;
         waveNumber++;//change wave start 
+        endSignal = false;
         
-             
     }
 
     private void GroupAssignment()
     {
-        
-        int NormNumber = Random.Range(4, 8);
-        int TankNumber = Random.Range(0, 3);
-        int StingNumber = Random.Range(0, 5);
-
-        for (int y = 0; y < spawnPoints.Length; y++)
+        if(numberOfNormals > 6)
         {
-            Vector3 spawnPicked = spawnPoints[y].transform.position;
+            normNumber = Random.Range(4, 8);
+        }
+        else normNumber = numberOfNormals;
 
-            for (int x = 0; x < NormNumber; x++)
+        if(numberOfTanks > 2)
+        {
+        tankNumber = Random.Range(0, 3);
+        }
+        else tankNumber = numberOfTanks;
+
+        if(numberOfStingers > 4)
+        {
+        stingNumber = Random.Range(0, 5);
+        }
+        else stingNumber = numberOfStingers;// spawns max nymber of remaining stingers
+
+
+        for (int y = 0; y < spawnPoints.Length; y++)//shuffles through spawn points for spawning enemies
+        {
+            Vector3 spawnPicked = spawnPoints[y].transform.position;//sets the chosen spawn point for spawning enemies
+
+            for (int x = 0; x < normNumber; x++)
             {
-                Instantiate(normal, spawnPicked, Quaternion.identity);
+                Instantiate(normal, spawnPicked, Quaternion.identity);//spawns normal dudes
+                numberOfNormals -= normNumber;
             }
 
-            for (int x = 0; x < TankNumber; x++)
+            if(tankNumber > 0)
             {
-                Instantiate(tank, spawnPicked, Quaternion.identity);
+                for (int x = 0; x < tankNumber; x++)
+                {  
+                    //Instantiate(tank, spawnPicked, Quaternion.identity);//spawns tanks
+                    //numberOfTanks -= tankNumber;
+                }
             }
-
-            for (int x = 0; x < StingNumber; x++)
+            if(stingNumber > 0)
             {
-                Instantiate(stinger, spawnPicked, Quaternion.identity);
+                for (int x = 0; x < stingNumber; x++)
+                {
+                    //Instantiate(stinger, spawnPicked, Quaternion.identity);//spawns stingers
+                    //numberOfStingers -= stingNumber;
+                }
             }
-
         }
     }
 

@@ -118,7 +118,6 @@ GameObject:
   - component: {fileID: 7935760008041834198}
   - component: {fileID: 8349904747588755512}
   - component: {fileID: 4271845901635955997}
-  - component: {fileID: 2484880184004467935}
   - component: {fileID: -8883011158434808188}
   - component: {fileID: 2770839071601962939}
   - component: {fileID: 988199538715887914}
@@ -223,25 +222,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2484880184004467935
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8474295532616176723}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 828ff64b14209cb42afc17ce43dd2cdc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemy: {fileID: 8474295532616176723}
-  amount: 10
-  radiusVariance: 4
-  radius: 15
-  randomIndex: 14
-  where: {x: -19.5, y: 15.81718, z: 15.8}
-  blastoffStar: {fileID: 7475981058959313317, guid: b30babd5d260aab409eaf47a0159fa9c, type: 3}
 --- !u!95 &-8883011158434808188
 Animator:
   serializedVersion: 5
@@ -299,7 +279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  agent: {fileID: 0}
+  agent: {fileID: -6182037698584118289}
   health: 10
   speed: 2
   walkPoint: {x: 0, y: 0, z: 0}
