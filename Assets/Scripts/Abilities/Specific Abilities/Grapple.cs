@@ -48,12 +48,12 @@ public class Grapple : MonoBehaviour
     [SerializeField] private Material BodyMaterial;
 
     [SerializeField] private Transform gunModel, gunFirePoint, gunFollowPoint, gunExitPoint;
-    [SerializeField] private Transform Head;
+   // [SerializeField] private Transform Head;
 
     private void Start()
     {
         cam = Camera.main.transform;
-        rb = GameObject.FindObjectOfType<PlayerController>().GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
 
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
 
@@ -85,11 +85,6 @@ public class Grapple : MonoBehaviour
             hookRenderer.SetPosition(0, gunFirePoint.position);
             hookRenderer.SetPosition(1, hitPoint);
 
-            if (Head != null) //so no head?
-            {
-                Head.position = hitPoint;
-                Head.eulerAngles = gunModel.forward;
-            }
         }
     }
 

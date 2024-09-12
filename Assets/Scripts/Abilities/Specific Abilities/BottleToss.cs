@@ -29,8 +29,8 @@ public class BottleToss : AbstractAbility
 
     Vector3 upVector;
 
-    Stack<
-        > inactiveBottles = new();
+   // Stack<
+       // > inactiveBottles = new();
 
     private void Start()
     {
@@ -63,14 +63,14 @@ public class BottleToss : AbstractAbility
     {
         yield return new WaitForSeconds(animDuration);
 
-        Bottle bottle = inactiveBottles.Pop();
+       // Bottle bottle = inactiveBottles.Pop();
 
-        bottle.Activate(bottleSpawnpoint.position, aim.forward * throwForce + upVector);
+       // bottle.Activate(bottleSpawnpoint.position, aim.forward * throwForce + upVector);
 
     }
 
     private void OnBottleDeactivation(object sender, BottleEventArgs e)
     {
-        inactiveBottles.Push(e.Bottle);
+        //inactiveBottles.Push(e.Bottle);
     }
 }
