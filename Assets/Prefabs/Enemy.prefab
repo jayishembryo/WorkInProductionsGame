@@ -118,10 +118,11 @@ GameObject:
   - component: {fileID: 7935760008041834198}
   - component: {fileID: 8349904747588755512}
   - component: {fileID: 4271845901635955997}
+  - component: {fileID: 2484880184004467935}
+  - component: {fileID: 7700276924306017274}
   - component: {fileID: -8883011158434808188}
   - component: {fileID: 2770839071601962939}
-  - component: {fileID: 988199538715887914}
-  - component: {fileID: -6182037698584118289}
+  - component: {fileID: 2554958408834568949}
   m_Layer: 9
   m_Name: Enemy
   m_TagString: Enemy
@@ -222,6 +223,51 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2484880184004467935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8474295532616176723}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 828ff64b14209cb42afc17ce43dd2cdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 8474295532616176723}
+  amount: 10
+  radiusVariance: 4
+  radius: 15
+  randomIndex: 5
+  where: {x: -21.6, y: 15.81718, z: 7}
+  blastoffStar: {fileID: 7475981058959313317, guid: b30babd5d260aab409eaf47a0159fa9c, type: 3}
+--- !u!114 &7700276924306017274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8474295532616176723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29e455e28a8a62943a54e240f119c7df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  agent: {fileID: 2554958408834568949}
+  health: 100
+  speed: 5
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 8
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 128
+  walkPoint: {x: 0, y: 0, z: 0}
+  walkPointRange: 50
+  sightRange: 30
+  attackRange: 2
 --- !u!95 &-8883011158434808188
 Animator:
   serializedVersion: 5
@@ -266,27 +312,7 @@ CapsuleCollider:
   m_Height: 3.5310328
   m_Direction: 1
   m_Center: {x: 0, y: 1.2655164, z: 0}
---- !u!114 &988199538715887914
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8474295532616176723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29e455e28a8a62943a54e240f119c7df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  agent: {fileID: -6182037698584118289}
-  health: 10
-  speed: 2
-  walkPoint: {x: 0, y: 0, z: 0}
-  walkPointRange: 10
-  sightRange: 10
-  attackRange: 10
---- !u!195 &-6182037698584118289
+--- !u!195 &2554958408834568949
 NavMeshAgent:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
