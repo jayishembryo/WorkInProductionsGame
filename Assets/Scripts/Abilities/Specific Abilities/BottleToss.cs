@@ -29,7 +29,8 @@ public class BottleToss : AbstractAbility
 
     Vector3 upVector;
 
-    Stack<Bottle> inactiveBottles = new();
+    Stack<
+        > inactiveBottles = new();
 
     private void Start()
     {

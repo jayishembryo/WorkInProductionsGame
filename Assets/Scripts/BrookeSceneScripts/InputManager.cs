@@ -93,6 +93,13 @@ public class InputManager : MonoBehaviour
         return playerControls.Player.Kick.triggered;
     }
 
+    public bool PlayerGrappled()
+    {
+
+        return playerControls.Player.Grapple.triggered;
+
+    }
+
     /*public bool KickPressed()
     {
         return playerControls.Player.Kick.

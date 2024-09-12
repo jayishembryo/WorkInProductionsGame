@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class Grapple : AbstractAbility
+public class Grapple : MonoBehaviour
 {
     private Vector3 hitPoint;
     private SpringJoint joint;
@@ -43,6 +45,11 @@ public class Grapple : AbstractAbility
 
     public static bool isGrappling;
 
+    [SerializeField] private Material BodyMaterial;
+
+    [SerializeField] private Transform gunModel, gunFirePoint, gunFollowPoint, gunExitPoint;
+    [SerializeField] private Transform Head;
+
     private void Start()
     {
         cam = Camera.main.transform;
@@ -50,17 +57,67 @@ public class Grapple : AbstractAbility
 
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
 
+        hookRenderer = gameObject.AddComponent<LineRenderer>();
+        hookRenderer.positionCount = 2;
+        hookRenderer.material = BodyMaterial;
+        hookRenderer.startWidth = 1;
+        hookRenderer.endWidth = 1;
+        hookRenderer.textureMode = LineTextureMode.Tile;
+
     }
 
-    protected override void ChildTick()
+    void LateUpdate()
+    {
+
+        if (joint == null)
+        {
+            hookRenderer.positionCount = 0;
+            gunModel.position = Vector3.MoveTowards(gunModel.position, gunExitPoint.position, Time.deltaTime * 2.5f);
+            gunModel.rotation =
+                Quaternion.RotateTowards(gunModel.rotation, gunExitPoint.rotation, Time.deltaTime * 2.5f);
+        }
+        else
+        {
+            gunModel.position = Vector3.MoveTowards(gunModel.position, gunFollowPoint.position, Time.deltaTime * 15f);
+            gunModel.rotation =
+                Quaternion.RotateTowards(gunModel.rotation, gunFollowPoint.rotation, Time.deltaTime * 15f);
+            hookRenderer.positionCount = 2;
+            hookRenderer.SetPosition(0, gunFirePoint.position);
+            hookRenderer.SetPosition(1, hitPoint);
+
+            if (Head != null) //so no head?
+            {
+                Head.position = hitPoint;
+                Head.eulerAngles = gunModel.forward;
+            }
+        }
+    }
+
+
+    private void Update()
     {
         
-    }
+        if (joint == null)
+        {
 
-    protected override void Execute()
-    {
+            return;
 
-        StartGrapple();
+        }
+
+        if(playerController.IsTouchingGround == false)
+        {
+
+            joint.spring = jumpingSpring;
+            joint.damper = jumpingDamper;
+
+        }
+        else
+        {
+
+            joint.spring = jointSpring;
+            joint.damper = jointDamper;
+
+        }
 
     }
 
