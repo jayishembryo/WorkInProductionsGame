@@ -39,7 +39,7 @@ public class Grapple : MonoBehaviour
     public float jointMassScale = 4.5f;
 
     [Tooltip("Force to send the player in the direction of the grapple.")]
-    public float jointForceBoost = 20f;
+    public float jointForceBoost = 100f;
 
     private Rigidbody rb;
 
