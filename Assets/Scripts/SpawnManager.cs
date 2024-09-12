@@ -47,21 +47,23 @@ public class SpawnManager : MonoBehaviour
     {
         if(endSignal)
         {
-            newWaveStart();
+            newWaveStart();//this starts a new wave after all the enemies have died
             
         }
+        
+        groupTime = Time.time;
 
-        if(waitTime >= groupTime)
+        if(groupTime >= waitTime)// the cooldown between bursts of enemies
         {
             GroupAssignment();
-            groupTime = Time.deltaTime;
             waitTime = groupTime + groupCooldown;
         }
+        
     }
     
     private void newWaveStart()
     {
-        waveTime = Time.deltaTime;//update start of current wave
+        waveTime = Time.time;//update start of current wave
         groupTime = waveTime;
         waveNumber++;//change wave start 
         endSignal = false;
@@ -86,7 +88,7 @@ public class SpawnManager : MonoBehaviour
         {
         stingNumber = Random.Range(0, 5);
         }
-        else stingNumber = numberOfStingers;// spawns max nymber of remaining stingers
+        else stingNumber = numberOfStingers;// spawns max number of remaining stingers
 
 
         for (int y = 0; y < spawnPoints.Length; y++)//shuffles through spawn points for spawning enemies
@@ -96,7 +98,6 @@ public class SpawnManager : MonoBehaviour
             for (int x = 0; x < normNumber; x++)
             {
                 Instantiate(normal, spawnPicked, Quaternion.identity);//spawns normal dudes
-                numberOfNormals -= normNumber;
             }
 
             if(tankNumber > 0)
@@ -104,28 +105,26 @@ public class SpawnManager : MonoBehaviour
                 for (int x = 0; x < tankNumber; x++)
                 {  
                     //Instantiate(tank, spawnPicked, Quaternion.identity);//spawns tanks
-                    //numberOfTanks -= tankNumber;
+                    
                 }
+                //numberOfTanks -= tankNumber;
             }
             if(stingNumber > 0)
             {
                 for (int x = 0; x < stingNumber; x++)
                 {
                     //Instantiate(stinger, spawnPicked, Quaternion.identity);//spawns stingers
-                    //numberOfStingers -= stingNumber;
+                    
                 }
+                //numberOfStingers -= stingNumber;
             }
         }
+        numberOfNormals = System.Math.Clamp(numberOfNormals - normNumber, 0, 100);
     }
 
     public void enemyHasDied(GameObject enemy)//when an enemy dies it reduces the counter for it's type that can spawn that wave as well as the total number of dudes
     {
         totalEnemies--;
-        if(enemy.name == "normal") numberOfNormals--;
-
-        if(enemy.name == "tank") numberOfTanks--;
-
-        if(enemy.name == "stinger") numberOfStingers--;
 
         if(totalEnemies <= 0)
         {
