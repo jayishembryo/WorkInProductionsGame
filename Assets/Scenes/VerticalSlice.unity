@@ -124772,6 +124772,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1856613861}
     - target: {fileID: 6934599026606150273, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: airSpeedLimit
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 6934599026606150273, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: grappleAbility
       value: 
       objectReference: {fileID: 0}
@@ -124782,6 +124786,10 @@ PrefabInstance:
     - target: {fileID: 6934599026606150273, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: Grappling.m_Name
       value: Grappling
+      objectReference: {fileID: 0}
+    - target: {fileID: 6934599026606150273, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: groundSpeedLimit
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6934599026606150273, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: ScoreboardManager
