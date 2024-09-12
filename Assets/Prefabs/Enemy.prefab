@@ -257,7 +257,7 @@ MonoBehaviour:
   player: {fileID: 0}
   agent: {fileID: 2554958408834568949}
   health: 100
-  speed: 3.5
+  speed: 5
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8
@@ -265,9 +265,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   walkPoint: {x: 0, y: 0, z: 0}
-  walkPointRange: 10
-  sightRange: 10
-  attackRange: 0
+  walkPointRange: 50
+  sightRange: 30
+  attackRange: 2
 --- !u!95 &-8883011158434808188
 Animator:
   serializedVersion: 5
