@@ -42421,6 +42421,17 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &762668480 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5619905699408340879, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+  m_PrefabInstance: {fileID: 2116781679}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3f2495053e7f6848a81d91133073bf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &781735427
 GameObject:
   m_ObjectHideFlags: 0
@@ -123937,17 +123948,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1875457723}
   m_CullTransparentMesh: 1
---- !u!114 &1880371022 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8602468326900684836, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
-  m_PrefabInstance: {fileID: 2116781679}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3f2495053e7f6848a81d91133073bf0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1932368340
 GameObject:
   m_ObjectHideFlags: 0
@@ -124819,6 +124819,10 @@ PrefabInstance:
       propertyPath: HealthFill
       value: 
       objectReference: {fileID: 1870480523}
+    - target: {fileID: 5619905699408340879, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: shootLayers.m_Bits
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6665112728080414914, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: playermodelAnim
       value: 
@@ -124838,11 +124842,15 @@ PrefabInstance:
     - target: {fileID: 6934599026606150273, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: grappleAbility
       value: 
-      objectReference: {fileID: 1880371022}
+      objectReference: {fileID: 762668480}
     - target: {fileID: 6934599026606150273, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: cameraTransform
       value: 
       objectReference: {fileID: 1536215262}
+    - target: {fileID: 6934599026606150273, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: Grappling.m_Name
+      value: Grappling
+      objectReference: {fileID: 0}
     - target: {fileID: 6934599026606150273, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: ScoreboardManager
       value: 
