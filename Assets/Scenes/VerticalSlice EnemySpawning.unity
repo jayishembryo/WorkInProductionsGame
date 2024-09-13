@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.06791, g: 0.10743823, b: 0.17212683, a: 1}
+  m_IndirectSpecularColor: {r: 0.06791059, g: 0.10743927, b: 0.17212775, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -48208,10 +48208,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3f2495053e7f6848a81d91133073bf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilityName: Grapple
-  maxCooldown: 1
-  cooldownRate: 1
-  playerKnockback: {fileID: 1581557667}
   shootLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -48223,6 +48219,11 @@ MonoBehaviour:
   jumpingDamper: 4
   jointMassScale: 4.5
   jointForceBoost: 20
+  BodyMaterial: {fileID: 0}
+  gunModel: {fileID: 0}
+  gunFirePoint: {fileID: 0}
+  gunFollowPoint: {fileID: 0}
+  gunExitPoint: {fileID: 0}
 --- !u!1 &938233693
 GameObject:
   m_ObjectHideFlags: 0
@@ -125088,6 +125089,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grapple
       objectReference: {fileID: 0}
+    - target: {fileID: 828302697126866389, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2012980429216343543, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -125120,6 +125125,10 @@ PrefabInstance:
       propertyPath: cameraTransform
       value: 
       objectReference: {fileID: 1536215262}
+    - target: {fileID: 6934599026606150273, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: Grappling.m_Name
+      value: Grappling
+      objectReference: {fileID: 0}
     - target: {fileID: 6934599026606150273, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: ScoreboardManager
       value: 
