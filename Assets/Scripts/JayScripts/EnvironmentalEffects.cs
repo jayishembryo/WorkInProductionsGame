@@ -5,34 +5,49 @@ using UnityEngine;
 
 public class EnvironmentalEffects : MonoBehaviour
 {
-
+    public GameObject threatPrefab;
+    public Transform[] positions;
+    
     int environment;
     private List<int> alreadyUsed = new List<int>();
+
+    /*public float decideInterval = 2f;
+    private float timer;
+
+    private void Update()
+    {
+        timer += Time.deltaTime;
+        if (timer >= decideInterval)
+        {
+            timer = 0f;
+            Decide();
+        }
+    }*/
 
     public void Decide()
     {
 
         //make the max value higher as we add more environmental effects
-        environment = Random.Range(0, 0);
-
-        if(alreadyUsed.Contains(environment))
+        if (positions.Length == 0)
         {
+            return;
+        }
 
+        if(alreadyUsed.Count >= (positions.Length))
+        {
             Reroll();
-
+            return;
         }
-        else
+
+        int environment;
+        do
         {
-
-            if(environment == 0)
-            {
-
-                FlamesOfDisaster();
-                alreadyUsed.Add(environment);
-
-            }
-
+            environment = Random.Range(0, positions.Length);
         }
+        while (alreadyUsed.Contains(environment));
+
+        FlamesOfDisaster(environment);
+        alreadyUsed.Add(environment);
 
     }
 
@@ -40,7 +55,7 @@ public class EnvironmentalEffects : MonoBehaviour
     {
 
         //max value can still be changed
-        if(alreadyUsed.Count > 0)
+        if(alreadyUsed.Count >= positions.Length)
         {
 
             //end game here and/or call boss i think
@@ -56,11 +71,12 @@ public class EnvironmentalEffects : MonoBehaviour
     }
 
     //the one we need for the vertical slice
-    void FlamesOfDisaster()
+    void FlamesOfDisaster(int positionIndex)
     {
-
-
-
+        if (positions.Length > positionIndex)
+        {
+            Instantiate(threatPrefab, positions[positionIndex].position, Quaternion.identity);
+        }
     }
 
 }
