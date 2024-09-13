@@ -15,8 +15,8 @@ public class Grapple : MonoBehaviour
     private LineRenderer hookRenderer;
     private Transform cam;
 
-    public float grappleTimer = 0;
-    float maxGrappleTimer = 5;
+    public float GrappleTimer = 0;
+    float maxGrappleTimer = 4;
 
     float whenToAddTime = 1;
     float lastAddedToTime = 0;
@@ -53,7 +53,7 @@ public class Grapple : MonoBehaviour
 
     private Rigidbody rb;
 
-    public bool isGrappling;
+    public bool IsGrappling;
     bool canGrapple = true;
 
     [SerializeField] private Material BodyMaterial;
@@ -70,7 +70,7 @@ public class Grapple : MonoBehaviour
 
         hookRenderer = gameObject.AddComponent<LineRenderer>();
         hookRenderer.positionCount = 2;
-        hookRenderer.material = BodyMaterial;
+        //hookRenderer.material = BodyMaterial;
         hookRenderer.startWidth = 1;
         hookRenderer.endWidth = 1;
         hookRenderer.textureMode = LineTextureMode.Tile;
@@ -104,29 +104,7 @@ public class Grapple : MonoBehaviour
     {
         lastAddedToTime += Time.fixedDeltaTime;
 
-        if (joint == null)
-        {
-
-            return;
-
-        }
-
-        if(playerController.IsTouchingGround == false)
-        {
-
-            joint.spring = jumpingSpring;
-            joint.damper = jumpingDamper;
-
-        }
-        else
-        {
-
-            joint.spring = jointSpring;
-            joint.damper = jointDamper;
-
-        }
-
-        if (playerController.IsTouchingGround == false && isGrappling == true)
+        if (playerController.IsTouchingGround == false && IsGrappling == true)
         {
 
             if(lastAddedToTime > whenToAddTime)
@@ -139,13 +117,12 @@ public class Grapple : MonoBehaviour
 
         }
 
-        if (playerController.IsTouchingGround == true && isGrappling == false)
+        if (playerController.IsTouchingGround == true && IsGrappling == false)
         {
 
-            if(canGrapple == false && lastAddedToTime > whenToAddTime)
+            if (lastAddedToTime > whenToAddTime)
             {
 
-                //Debug.Log("WHAT");
                 SubtractFromTimer();
                 lastAddedToTime = 0;
 
@@ -153,7 +130,7 @@ public class Grapple : MonoBehaviour
 
         }
 
-        GrappleStamina.fillAmount = Mathf.Lerp(GrappleStamina.fillAmount, (grappleTimer / maxGrappleTimer), 5f);
+        GrappleStamina.fillAmount = Mathf.Lerp(GrappleStamina.fillAmount, (GrappleTimer / maxGrappleTimer), 5f);
 
     }
 
@@ -171,7 +148,7 @@ public class Grapple : MonoBehaviour
 
         if (Physics.Raycast(cam.position, cam.forward, out RaycastHit hit, maxDist, shootLayers))
         {
-            isGrappling = true;
+            IsGrappling = true;
 
             hitPoint = hit.point;
             joint = gameObject.AddComponent<SpringJoint>();
@@ -194,7 +171,7 @@ public class Grapple : MonoBehaviour
 
     public void StopGrapple()
     {
-        isGrappling = false;
+        IsGrappling = false;
         if (joint)
         {
             Destroy(joint);
@@ -204,13 +181,13 @@ public class Grapple : MonoBehaviour
     public void AddToTimer()
     {
 
-        if(grappleTimer != maxGrappleTimer)
+        if(GrappleTimer != maxGrappleTimer)
         {
 
-            grappleTimer = grappleTimer += 1;
+            GrappleTimer = GrappleTimer += 1;
 
         }
-        else if (grappleTimer >= maxGrappleTimer)
+        else if (GrappleTimer >= maxGrappleTimer)
         {
 
             StopGrapple();
@@ -223,13 +200,13 @@ public class Grapple : MonoBehaviour
     public void SubtractFromTimer()
     {
 
-        if(grappleTimer > 0)
+        if(GrappleTimer > 0)
         {
 
-            grappleTimer = grappleTimer -= 1;
+            GrappleTimer = GrappleTimer -= 1;
 
         }
-        else if (grappleTimer == 0)
+        else if (GrappleTimer == 0)
         {
 
             canGrapple = true;

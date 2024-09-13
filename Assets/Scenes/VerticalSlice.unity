@@ -124760,6 +124760,10 @@ PrefabInstance:
       value: Grappling
       objectReference: {fileID: 0}
     - target: {fileID: 6934599026606150273, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: IsTouchingGround
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6934599026606150273, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: groundSpeedLimit
       value: 11
       objectReference: {fileID: 0}
