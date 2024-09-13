@@ -15,7 +15,7 @@ public class Grapple : MonoBehaviour
     private LineRenderer hookRenderer;
     private Transform cam;
 
-    float grappleTimer = 0;
+    public float grappleTimer = 0;
     float maxGrappleTimer = 5;
 
     float whenToAddTime = 1;
@@ -53,7 +53,7 @@ public class Grapple : MonoBehaviour
 
     private Rigidbody rb;
 
-    public static bool isGrappling;
+    public bool isGrappling;
     bool canGrapple = true;
 
     [SerializeField] private Material BodyMaterial;
@@ -145,6 +145,7 @@ public class Grapple : MonoBehaviour
             if(canGrapple == false && lastAddedToTime > whenToAddTime)
             {
 
+                //Debug.Log("WHAT");
                 SubtractFromTimer();
                 lastAddedToTime = 0;
 
@@ -152,7 +153,7 @@ public class Grapple : MonoBehaviour
 
         }
 
-        GrappleStamina.fillAmount = Mathf.Lerp(GrappleStamina.fillAmount, -(grappleTimer / maxGrappleTimer), 0.5f);
+        GrappleStamina.fillAmount = Mathf.Lerp(GrappleStamina.fillAmount, (grappleTimer / maxGrappleTimer), 5f);
 
     }
 
