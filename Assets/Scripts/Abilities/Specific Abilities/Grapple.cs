@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.UI;
 
 public class Grapple : MonoBehaviour
 {
@@ -13,10 +15,13 @@ public class Grapple : MonoBehaviour
     private LineRenderer hookRenderer;
     private Transform cam;
 
-    public int grappleTimer = 0;
+    float grappleTimer = 0;
+    float maxGrappleTimer = 5;
 
     float whenToAddTime = 1;
     float lastAddedToTime = 0;
+
+    public Image GrappleStamina;
 
     PlayerController playerController;
 
@@ -147,6 +152,8 @@ public class Grapple : MonoBehaviour
 
         }
 
+        GrappleStamina.fillAmount = Mathf.Lerp(GrappleStamina.fillAmount, -(grappleTimer / maxGrappleTimer), 0.5f);
+
     }
 
     public void StartGrapple()
@@ -196,13 +203,13 @@ public class Grapple : MonoBehaviour
     public void AddToTimer()
     {
 
-        if(grappleTimer <= 4)
+        if(grappleTimer != maxGrappleTimer)
         {
 
             grappleTimer = grappleTimer += 1;
 
         }
-        else if (grappleTimer > 4)
+        else if (grappleTimer >= maxGrappleTimer)
         {
 
             StopGrapple();
