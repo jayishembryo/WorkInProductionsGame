@@ -69,18 +69,18 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Throw Bottle",
+                    "name": "Pause",
                     "type": "Button",
-                    "id": "3ee17af1-ddef-4846-90ef-0096a57a406d",
+                    "id": "23bc2739-2cb6-491c-a129-6e70cbd564bd",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Pause",
+                    "name": "Grapple",
                     "type": "Button",
-                    "id": "23bc2739-2cb6-491c-a129-6e70cbd564bd",
+                    "id": "83722aea-63fb-493e-a7c4-da4e60f856c5",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -233,17 +233,6 @@
                 },
                 {
                     "name": "",
-                    "id": "1b87dd74-7490-46e0-b387-9df8d15ae112",
-                    "path": "<Mouse>/rightButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Throw Bottle",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "cfb026fa-625b-4a90-8e23-333972b9f8ff",
                     "path": "<Keyboard>/p",
                     "interactions": "",
@@ -261,6 +250,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5d57b14f-51b9-496d-9540-f6450da4438f",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Grapple",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
