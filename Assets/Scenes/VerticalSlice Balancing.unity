@@ -41743,7 +41743,7 @@ PrefabInstance:
       objectReference: {fileID: 8474295532616176723, guid: 3bc68e634b266d44ab5e8dfe7524ea83, type: 3}
     - target: {fileID: 4391708680455760431, guid: c385128fc3a36313fa00c0bca6b0cb32, type: 3}
       propertyPath: totalEnemies
-      value: 40
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4391708680455760431, guid: c385128fc3a36313fa00c0bca6b0cb32, type: 3}
       propertyPath: groupCooldown
@@ -41755,7 +41755,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4391708680455760431, guid: c385128fc3a36313fa00c0bca6b0cb32, type: 3}
       propertyPath: numberOfNormals
-      value: 4
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4391708680455760431, guid: c385128fc3a36313fa00c0bca6b0cb32, type: 3}
       propertyPath: numberOfStingers
