@@ -36,6 +36,8 @@ public class SpawnManager : MonoBehaviour
     private int normNumber;
     private int tankNumber;
     private int stingNumber;
+
+    private int nextSpawnPoint = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -80,45 +82,49 @@ public class SpawnManager : MonoBehaviour
 
         if(numberOfTanks > 2)
         {
-        tankNumber = Random.Range(0, 3);
+            tankNumber = Random.Range(0, 3);
         }
         else tankNumber = numberOfTanks;
 
         if(numberOfStingers > 4)
         {
-        stingNumber = Random.Range(0, 5);
+            stingNumber = Random.Range(0, 5);
         }
         else stingNumber = numberOfStingers;// spawns max number of remaining stingers
 
 
-        for (int y = 0; y < spawnPoints.Length; y++)//shuffles through spawn points for spawning enemies
+        
+        
+
+        for (int x = 0; x < normNumber; x++)
         {
-            Vector3 spawnPicked = spawnPoints[y].transform.position;//sets the chosen spawn point for spawning enemies
-
-            for (int x = 0; x < normNumber; x++)
-            {
-                Instantiate(normal, spawnPicked, Quaternion.identity);//spawns normal dudes
-            }
-
-            if(tankNumber > 0)
-            {
-                for (int x = 0; x < tankNumber; x++)
-                {  
-                    //Instantiate(tank, spawnPicked, Quaternion.identity);//spawns tanks
-                    
-                }
-                //numberOfTanks -= tankNumber;
-            }
-            if(stingNumber > 0)
-            {
-                for (int x = 0; x < stingNumber; x++)
-                {
-                    //Instantiate(stinger, spawnPicked, Quaternion.identity);//spawns stingers
-                    
-                }
-                //numberOfStingers -= stingNumber;
-            }
+            Vector3 spawnPicked = spawnPoints[nextSpawnPoint].transform.position;//sets the chosen spawn point for spawning enemies
+            Instantiate(normal, spawnPicked, Quaternion.identity);//spawns normal dudes
+            nextSpawnPoint = (nextSpawnPoint + 1) % spawnPoints.Length;//makes sure the next spawn point spawns enemies more spread out
         }
+
+        if(tankNumber > 0)
+        {
+            for (int x = 0; x < tankNumber; x++)
+            {  
+                Vector3 spawnPicked = spawnPoints[nextSpawnPoint].transform.position;//sets the chosen spawn point for spawning enemies
+                Instantiate(tank, spawnPicked, Quaternion.identity);//spawns tanks
+                nextSpawnPoint = (nextSpawnPoint + 1) % spawnPoints.Length;//makes sure the next spawn point spawns enemies more spread out   
+            }
+            //numberOfTanks -= tankNumber;
+        }
+        if(stingNumber > 0)
+        {
+            for (int x = 0; x < stingNumber; x++)
+            {
+                Vector3 spawnPicked = spawnPoints[nextSpawnPoint].transform.position;//sets the chosen spawn point for spawning enemies
+                Instantiate(stinger, spawnPicked, Quaternion.identity);//spawns stingers
+                nextSpawnPoint = (nextSpawnPoint + 1) % spawnPoints.Length;//makes sure the next spawn point spawns enemies more spread out
+                
+            }
+            //numberOfStingers -= stingNumber;
+        }
+
         numberOfNormals = System.Math.Clamp(numberOfNormals - normNumber, 0, 100);
     }
 

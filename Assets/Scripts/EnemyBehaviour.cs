@@ -6,9 +6,6 @@
 //Jake Gorski
 //Modifying 9/3/2024
 //Gunna mess up some code and see what happens :)
-using System.Collections;
-using System.Collections.Generic;
-using System.Numerics;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Rendering;
@@ -72,13 +69,13 @@ public class EnemyBehaviour : MonoBehaviour
         if(!walkPointSet) SearchWalkPoint();
 
         if(walkPointSet)
-        {
+        {   
             agent.SetDestination(walkPoint);
         }
 
-        UnityEngine.Vector3 distanceToWalkPoint = transform.position - walkPoint;
+        Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
-        if(distanceToWalkPoint.magnitude < 1f)
+        if(distanceToWalkPoint.magnitude < 2f)
         {
             walkPointSet = false;
         }
@@ -88,7 +85,7 @@ public class EnemyBehaviour : MonoBehaviour
         float randomZ = Random.Range(-walkPointRange,walkPointRange);
         float randomX = Random.Range(-walkPointRange,walkPointRange);
 
-        walkPoint = new UnityEngine.Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
+        walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
 
         if(Physics.Raycast(walkPoint, -transform.up, Mathf.Infinity, whatIsGround))
         {
@@ -99,7 +96,10 @@ public class EnemyBehaviour : MonoBehaviour
 
     private void ChasePlayer()
     {
-        agent.SetDestination(player.transform.position); //the switch to chasing the player
+        Vector3 playerVariance = player.transform.position;
+        playerVariance.x += Random.Range(0,1.5f);//adding in some difference between each enemy so they don't clump up as much
+        playerVariance.z += Random.Range(0,1.5f);
+        agent.SetDestination(playerVariance); //the switch to chasing the player
     }
 
     private void AttackPlayer()//this is for a claw attack for when the player is up in their face or the other way around.
