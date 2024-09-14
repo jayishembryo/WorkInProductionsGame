@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
     public Vector2 moveInput;
     private Rigidbody rb;
 
-    public bool IsTouchingGround = true;
+    public bool IsTouchingGround = false;
 
     [SerializeField]
     public GameObject pauseMenu;
