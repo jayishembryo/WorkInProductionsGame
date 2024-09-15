@@ -11,6 +11,7 @@ TagManager:
   - KillBarrier
   - Health
   - Wall
+  - PillarDestroyer
   layers:
   - Default
   - TransparentFX
