@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.06791074, g: 0.10743927, b: 0.1721279, a: 1}
+  m_IndirectSpecularColor: {r: 0.06791074, g: 0.10743927, b: 0.17212787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5517,6 +5517,7 @@ MonoBehaviour:
   - {fileID: 1072987138}
   - {fileID: 1378556700}
   - {fileID: 616520799}
+  decideInterval: 60
 --- !u!4 &166124758
 Transform:
   m_ObjectHideFlags: 0
@@ -126656,6 +126657,10 @@ PrefabInstance:
     - target: {fileID: 1392971191758325464, guid: d200edd5ab119e44684301eab920c204, type: 3}
       propertyPath: m_Layer
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3193071225530321931, guid: d200edd5ab119e44684301eab920c204, type: 3}
+      propertyPath: m_TagString
+      value: Ocean
       objectReference: {fileID: 0}
     - target: {fileID: 4036367464563644987, guid: d200edd5ab119e44684301eab920c204, type: 3}
       propertyPath: m_Layer
