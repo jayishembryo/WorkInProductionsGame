@@ -125620,12 +125620,12 @@ MonoBehaviour:
   GrappleStamina: {fileID: 247971241}
   maxDistanceFromPointMultiplier: 0.8
   minDistanceFromPointMultiplier: 0.25
-  jointSpring: 4.5
-  jointDamper: 7
+  jointSpring: 10.61
+  jointDamper: 2.16
   jumpingSpring: 9
   jumpingDamper: 4
   jointMassScale: 4.5
-  jointForceBoost: 20
+  jointForceBoost: 45.6
   IsGrappling: 0
   BodyMaterial: {fileID: 0}
   gunModel: {fileID: 2037571139}
