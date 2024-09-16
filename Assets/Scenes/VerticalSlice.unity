@@ -125828,9 +125828,9 @@ MonoBehaviour:
     m_Bits: 32768
   GrappleTimer: 0
   GrappleStamina: {fileID: 247971241}
-  maxDistanceFromPointMultiplier: 0.8
+  maxDistanceFromPointMultiplier: 0.25
   minDistanceFromPointMultiplier: 0.25
-  jointSpring: 4.5
+  jointSpring: 50
   jointDamper: 7
   jumpingSpring: 9
   jumpingDamper: 4
