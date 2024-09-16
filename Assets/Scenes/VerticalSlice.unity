@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.06791074, g: 0.10743927, b: 0.1721279, a: 1}
+  m_IndirectSpecularColor: {r: 0.06791074, g: 0.10743927, b: 0.17212787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -125734,7 +125734,7 @@ PrefabInstance:
     - target: {fileID: 6934599026606150273, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: grappleAbility
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2116781682}
     - target: {fileID: 6934599026606150273, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: cameraTransform
       value: 
@@ -125749,7 +125749,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6934599026606150273, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: groundSpeedLimit
-      value: 11
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 6934599026606150273, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: ScoreboardManager
@@ -125780,9 +125780,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8640629303739564876, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: forceScalar
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8640629303739564876, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: directionAnchor
       value: 
       objectReference: {fileID: 1536215262}
+    - target: {fileID: 8640629303739564876, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: empoweredScalar
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 828302697126866389, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
@@ -125826,16 +125834,16 @@ MonoBehaviour:
   shootLayers:
     serializedVersion: 2
     m_Bits: 32768
-  GrappleTimer: 0
+  GrappleTimer: 3
   GrappleStamina: {fileID: 247971241}
-  maxDistanceFromPointMultiplier: 0.8
-  minDistanceFromPointMultiplier: 0.25
-  jointSpring: 10.61
-  jointDamper: 2.16
-  jumpingSpring: 9
-  jumpingDamper: 4
-  jointMassScale: 4.5
-  jointForceBoost: 45.6
+  maxDistanceFromPointMultiplier: 0.3
+  minDistanceFromPointMultiplier: 0.1
+  jointSpring: 5.22
+  jointDamper: 0.96
+  jumpingSpring: 9.85
+  jumpingDamper: 7.4
+  jointMassScale: 3.81
+  jointForceBoost: 101.4
   IsGrappling: 0
   BodyMaterial: {fileID: 0}
   gunModel: {fileID: 2037571139}
