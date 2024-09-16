@@ -71,7 +71,6 @@ public class SpawnManager : MonoBehaviour
     private void newWaveStart()
     {
 
-        StartCoroutine(NewWaveText());
         waveTime = Time.time;//update start of current wave
         groupTime = waveTime;
         waveNumber++;//change wave start 
@@ -81,6 +80,13 @@ public class SpawnManager : MonoBehaviour
         {
 
             FindObjectOfType<EnvironmentalEffects>().GetComponent<EnvironmentalEffects>().Decide();
+
+        }
+
+        if(waveNumber == 2)
+        {
+
+            StartCoroutine(NewWaveText());
 
         }
 
