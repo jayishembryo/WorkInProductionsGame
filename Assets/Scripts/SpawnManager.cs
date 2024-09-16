@@ -71,6 +71,14 @@ public class SpawnManager : MonoBehaviour
         groupTime = waveTime;
         waveNumber++;//change wave start 
         endSignal = false;
+
+        if(waveNumber > 1)
+        {
+
+            FindObjectOfType<EnvironmentalEffects>().GetComponent<EnvironmentalEffects>().Decide();
+
+        }
+
         if (waveNumber <= maxWaveNumber)
         {
 
