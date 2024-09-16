@@ -38,6 +38,8 @@ public class SpawnManager : MonoBehaviour
     private int tankNumber;
     private int stingNumber;
 
+    public GameObject NewWaveTextBox;
+
     private int nextSpawnPoint = 0;
     // Start is called before the first frame update
     void Start()
@@ -69,6 +71,7 @@ public class SpawnManager : MonoBehaviour
     private void newWaveStart()
     {
 
+        StartCoroutine(NewWaveText());
         waveTime = Time.time;//update start of current wave
         groupTime = waveTime;
         waveNumber++;//change wave start 
@@ -175,6 +178,17 @@ public class SpawnManager : MonoBehaviour
         yield return new WaitForSeconds(5);
 
         endSignal = true;
+
+    }
+
+    public IEnumerator NewWaveText()
+    {
+
+        NewWaveTextBox.SetActive(true);
+
+        yield return new WaitForSeconds(2);
+
+        NewWaveTextBox.SetActive(false);
 
     }
 }
