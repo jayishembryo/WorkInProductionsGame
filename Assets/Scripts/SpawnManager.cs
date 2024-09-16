@@ -6,6 +6,7 @@ public class SpawnManager : MonoBehaviour
 {
     [SerializeField]
     private int waveNumber = 1;
+    int maxWaveNumber = 2;
     [SerializeField]
     private int totalEnemies = 10;
     private int totalEnemiesRemaining;
@@ -65,11 +66,25 @@ public class SpawnManager : MonoBehaviour
     
     private void newWaveStart()
     {
+
         waveTime = Time.time;//update start of current wave
         groupTime = waveTime;
         waveNumber++;//change wave start 
         endSignal = false;
-        
+        if (waveNumber <= maxWaveNumber)
+        {
+
+            return;
+
+        }
+        else
+        {
+
+            ScoreboardManager.Instance.StopGame();
+
+        }
+
+
     }
 
     private void GroupAssignment()
