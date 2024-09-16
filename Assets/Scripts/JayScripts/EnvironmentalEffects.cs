@@ -11,7 +11,7 @@ public class EnvironmentalEffects : MonoBehaviour
     int environment;
     private List<int> alreadyUsed = new List<int>();
 
-    /*public float decideInterval = 2f;
+    public float decideInterval = 60f;
     private float timer;
 
     private void Update()
@@ -22,7 +22,7 @@ public class EnvironmentalEffects : MonoBehaviour
             timer = 0f;
             Decide();
         }
-    }*/
+    }
 
     public void Decide()
     {
