@@ -17,7 +17,22 @@ public class OutBounds : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             // You can adjust variables through the Inspector
-            ScoreboardManager.Instance.StopGame();
+            StartCoroutine(Drowning());
         }
+        if(other.gameObject.tag == "Enemy")
+        {
+
+            Destroy(other.gameObject);
+            FindObjectOfType<SpawnManager>().GetComponent<SpawnManager>().enemyHasDied(other.gameObject);
+
+        }
+    }
+    IEnumerator Drowning()
+    {
+
+        new WaitForSeconds(1.5f);
+        ScoreboardManager.Instance.StopGame();
+        yield return null;
+
     }
 }
