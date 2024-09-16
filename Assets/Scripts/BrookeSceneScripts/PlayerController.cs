@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -234,7 +235,7 @@ public class PlayerController : MonoBehaviour
 
         timeTillNextEnemySpawn = enemySpawnCD;
 
-        EB.SpawnEnemy();
+        //EB.SpawnEnemy();
     }
 
     public IEnumerator KnockBack()
@@ -305,5 +306,10 @@ public class PlayerController : MonoBehaviour
         Movement.canceled -= Movement_canceled;
         Pause.started -= Pause_started;
         Pause.canceled -= Pause_canceled;
+    }
+
+    public void GameOverRestart()
+    {
+        SceneManager.LoadScene(sceneName: "VerticalSlice");
     }
 }

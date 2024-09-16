@@ -6,6 +6,8 @@
 //Jake Gorski
 //Modifying 9/3/2024
 //Gunna mess up some code and see what happens :)
+using System.Collections;
+using System.Net.Sockets;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Rendering;
@@ -40,15 +42,13 @@ public class EnemyBehaviour : MonoBehaviour
     private float sightRange, attackRange;
     private bool playerInSightRange, playerInAttackRange;
 
+    [SerializeField] private bool knocked;
+
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");  //Finds the player
         agent = GetComponent<NavMeshAgent>();
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+        enemyRB = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -56,19 +56,26 @@ public class EnemyBehaviour : MonoBehaviour
     {
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
-        
 
-        
-        if(!playerInSightRange && !playerInAttackRange) Patrolling();
-        if(playerInSightRange && !playerInAttackRange) ChasePlayer();
-        if(playerInSightRange && playerInAttackRange) AttackPlayer();
+
+        if (agent.isActiveAndEnabled && knocked == false)
+        {
+            if (!playerInSightRange && !playerInAttackRange) Patrolling();
+            if (playerInSightRange && !playerInAttackRange) ChasePlayer();
+            if (playerInSightRange && playerInAttackRange) AttackPlayer();
+        }
+        if (knocked == true)
+        {
+            agent.enabled = false;
+            //transform.Translate(transform.position.x, transform.position.y + 5, transform.position.z);
+        }
     }
 
     private void Patrolling()
     {
         if(!walkPointSet) SearchWalkPoint();
 
-        if(walkPointSet)
+        if(walkPointSet && agent.isActiveAndEnabled == true)
         {   
             agent.SetDestination(walkPoint);
         }
@@ -85,7 +92,7 @@ public class EnemyBehaviour : MonoBehaviour
         float randomZ = Random.Range(-walkPointRange,walkPointRange);
         float randomX = Random.Range(-walkPointRange,walkPointRange);
 
-        walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
+        if (knocked == false) { walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ); }
 
         if(Physics.Raycast(walkPoint, -transform.up, Mathf.Infinity, whatIsGround))
         {
@@ -99,12 +106,12 @@ public class EnemyBehaviour : MonoBehaviour
         Vector3 playerVariance = player.transform.position;
         playerVariance.x += Random.Range(0,1.5f);//adding in some difference between each enemy so they don't clump up as much
         playerVariance.z += Random.Range(0,1.5f);
-        agent.SetDestination(playerVariance); //the switch to chasing the player
+        if (knocked == false) { agent.SetDestination(playerVariance); } //the switch to chasing the player
     }
 
     private void AttackPlayer()//this is for a claw attack for when the player is up in their face or the other way around.
     {
-        agent.SetDestination(transform.position); //make the enemy stop moving when attacking.
+        //agent.SetDestination(transform.position); //make the enemy stop moving when attacking.
 
         transform.LookAt(player.transform.position);
         
@@ -153,21 +160,33 @@ public class EnemyBehaviour : MonoBehaviour
             //Instantiate(SplashEffect, transform.position, Quaternion.identity);
         }
 
-        if(other.gameObject.layer == 8)//kick layer for if they get kicked by the player
-        {
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
-            var launchDirection = player.GetComponent<Rigidbody>().position - enemyRB.GetComponent<Rigidbody>().position;
-            var launchDirNormalized = launchDirection.normalized;
-            float launchVelocity = player.GetComponent<Rigidbody>().velocity.magnitude;
-            enemyRB.AddForce(launchDirNormalized * launchVelocity);
-            agent.enabled = false;
-
-        }
-
         if(other.gameObject.CompareTag("Ground"))  
         {
             agent.enabled = true;
         }
     }
-
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == 8)
+        {
+            if (other.gameObject.layer == 8)//kick layer for if they get kicked by the player
+            {
+                agent.enabled = false;
+                Vector3 launchDirection = player.transform.position - enemyRB.position;
+                Vector3 launchDirNormalized = launchDirection.normalized;
+                float launchVelocity = player.GetComponent<Rigidbody>().velocity.magnitude;
+                enemyRB.AddForce((launchDirNormalized * launchVelocity) + new Vector3(0, 10, 0));
+                StartCoroutine(EnemyKnocked());
+                Debug.Log(gameObject.name + " has been kicked.");
+            }
+        }
+    }
+    private IEnumerator EnemyKnocked()
+    {
+        Debug.Log("AAHHHH");
+        knocked = true;
+        yield return new WaitForSeconds(2f); //replace this with a scalable variable
+        knocked = false;
+        agent.enabled = true;
+    }
 }
