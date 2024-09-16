@@ -23,6 +23,8 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField]
     private float speed = 2f;
     private Rigidbody enemyRB;
+    [SerializeField]
+    public float damageToPlayer;
     
     [SerializeField]
     private LayerMask whatIsGround, whatIsPlayer;
@@ -104,8 +106,8 @@ public class EnemyBehaviour : MonoBehaviour
     private void ChasePlayer()
     {
         Vector3 playerVariance = player.transform.position;
-        playerVariance.x += Random.Range(0,1.5f);//adding in some difference between each enemy so they don't clump up as much
-        playerVariance.z += Random.Range(0,1.5f);
+        playerVariance.x += Random.Range(0,3.5f);//adding in some difference between each enemy so they don't clump up as much
+        playerVariance.z += Random.Range(0,3.5f);
         if (knocked == false) { agent.SetDestination(playerVariance); } //the switch to chasing the player
     }
 
