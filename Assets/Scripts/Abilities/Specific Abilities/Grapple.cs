@@ -130,7 +130,7 @@ public class Grapple : MonoBehaviour
 
         }
 
-        GrappleStamina.fillAmount = Mathf.Lerp(GrappleStamina.fillAmount, (GrappleTimer / maxGrappleTimer), 5f);
+        GrappleStamina.fillAmount = Mathf.Lerp(GrappleStamina.fillAmount, -(maxGrappleTimer/GrappleTimer), 5f);
 
     }
 
@@ -171,11 +171,19 @@ public class Grapple : MonoBehaviour
 
     public void StopGrapple()
     {
+
         IsGrappling = false;
+
         if (joint)
+
         {
+
             Destroy(joint);
+
         }
+
+        StartCoroutine(GrapplingHookCooldown());
+
     }
 
     public void AddToTimer()
@@ -212,6 +220,17 @@ public class Grapple : MonoBehaviour
             canGrapple = true;
 
         }
+
+    }
+
+    IEnumerator GrapplingHookCooldown()
+    {
+
+        canGrapple = false;
+
+        yield return new WaitForSeconds(0.5f);
+
+        canGrapple = true;
 
     }
 }
