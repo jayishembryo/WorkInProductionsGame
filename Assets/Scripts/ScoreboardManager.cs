@@ -67,7 +67,7 @@ public class ScoreboardManager : MonoBehaviour
 
         start.Invoke();
 
-        StartCoroutine(TimeKeeper());
+       // StartCoroutine(TimeKeeper());
     }
 
     public void StopGame()
@@ -100,7 +100,7 @@ public class ScoreboardManager : MonoBehaviour
 
         timer.faceColor = Color.red;
 
-        StopGame();
+      //  StopGame();
     }
 
     public void AddScore(int amt)

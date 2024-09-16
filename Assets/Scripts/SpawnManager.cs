@@ -8,7 +8,7 @@ public class SpawnManager : MonoBehaviour
     private int waveNumber = 1;
     int maxWaveNumber = 2;
     [SerializeField]
-    private int totalEnemies = 10;
+    private int totalEnemies;
     private int totalEnemiesRemaining;
     [SerializeField]
     private int numberOfNormals;//medium dude spawns allowed this wave.
@@ -61,6 +61,8 @@ public class SpawnManager : MonoBehaviour
             GroupAssignment();
             waitTime = groupTime + groupCooldown;
         }
+
+        totalEnemies = GameObject.FindObjectsOfType<EnemyBehaviour>().Length;
         
     }
     
