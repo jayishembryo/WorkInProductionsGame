@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1be6ae6f8aee5d942b035c19ece40627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zSpeed: -0.5
+  zSpeed: -0.4
   ySpeed: 0
   destroyParticle: {fileID: 6790166928548400614}
 --- !u!54 &3146171849897800762

@@ -70,6 +70,9 @@ public class PlayerController : MonoBehaviour
     float whenToAddTime = 1;
     float lastAddedToTime = 0;
 
+    [SerializeField]
+    private Animator playerAnim;
+
 
     // Creates the controller, gets an instance of the InputManager, and the camera transform.
     private void Start()
@@ -136,16 +139,14 @@ public class PlayerController : MonoBehaviour
 
     private void Grappling_started(InputAction.CallbackContext obj)
     {
-
         grapplingInstance.StartGrapple();
-
+        playerAnim.SetBool("point", true);
     }
 
     private void Grappling_canceled(InputAction.CallbackContext obj)
     {
-
         grapplingInstance.StopGrapple();
-
+        playerAnim.SetBool("point", false);
     }
 
     private void FixedUpdate()
