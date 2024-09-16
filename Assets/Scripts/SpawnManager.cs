@@ -58,11 +58,11 @@ public class SpawnManager : MonoBehaviour
         
         groupTime = Time.time;
 
-        if(groupTime >= waitTime)// the cooldown between bursts of enemies
-        {
-            GroupAssignment();
-            waitTime = groupTime + groupCooldown;
-        }
+       // if(groupTime >= waitTime)// the cooldown between bursts of enemies
+       // {
+         //   GroupAssignment();
+        //    waitTime = groupTime + groupCooldown;
+       // }
 
         totalEnemies = GameObject.FindObjectsOfType<EnemyBehaviour>().Length;
         
@@ -74,6 +74,7 @@ public class SpawnManager : MonoBehaviour
         waveTime = Time.time;//update start of current wave
         groupTime = waveTime;
         waveNumber++;//change wave start 
+        GroupAssignment();
         endSignal = false;
 
         if(waveNumber > 1)
@@ -96,7 +97,7 @@ public class SpawnManager : MonoBehaviour
             return;
 
         }
-        else
+        else if (waveNumber > maxWaveNumber)
         {
 
             ScoreboardManager.Instance.StopGame();
