@@ -49,6 +49,7 @@ MonoBehaviour:
   abilityName: Kick
   maxCooldown: 0.5
   cooldownRate: 1
+  playerKnockback: {fileID: 0}
   dash: {fileID: 0}
   directionAnchor: {fileID: 608199800161083029}
   hitbox: {fileID: 6537490270989728165}
@@ -58,6 +59,9 @@ MonoBehaviour:
   impulseVector: {x: 0, y: 8, z: 0}
   explosionScalar: 1
   explosionRadius: 1
+  kickVFX: {fileID: 0}
+  dropkickVFX: {fileID: 0}
+  vfxSpawnPoint: {fileID: 0}
 --- !u!136 &6537490270989728165
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -152,6 +156,7 @@ MonoBehaviour:
   enemy: {fileID: 8474295532616176723, guid: 9a801a72a065d524aa007bc9486081e6, type: 3}
   kickAbility: {fileID: 292746151600796399}
   dashAbility: {fileID: 6200847433362757135}
+  grappleAbility: {fileID: 0}
   enemySpawnCD: 0.5
   cameraTransform: {fileID: 0}
   EB: {fileID: 2484880184004467935, guid: 9a801a72a065d524aa007bc9486081e6, type: 3}
@@ -174,10 +179,21 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
+  Grappling:
+    m_Name: Grappling
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 61ab12db-4d7d-4210-bd67-311ad165b60f
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
   isMoving: 0
   moveDirection: 0
   moveInput: {x: 0, y: 0}
+  IsTouchingGround: 1
   pauseMenu: {fileID: 0}
+  ScoreboardManager: {fileID: 0}
 --- !u!143 &2993742199839959286
 CharacterController:
   m_ObjectHideFlags: 0
@@ -631,6 +647,7 @@ MonoBehaviour:
   abilityName: Dash
   maxCooldown: 1
   cooldownRate: 1
+  playerKnockback: {fileID: 0}
   player: {fileID: 0}
   characterRB: {fileID: 0}
   rotationAnchor: {fileID: 0}

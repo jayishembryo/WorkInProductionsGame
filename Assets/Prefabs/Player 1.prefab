@@ -44,13 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3f2495053e7f6848a81d91133073bf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilityName: Grapple
-  maxCooldown: 1
-  cooldownRate: 1
-  playerKnockback: {fileID: 6665112728080414914}
   shootLayers:
     serializedVersion: 2
     m_Bits: 4294967295
+  GrappleTimer: 0
+  GrappleStamina: {fileID: 0}
   maxDistanceFromPointMultiplier: 0.8
   minDistanceFromPointMultiplier: 0.25
   jointSpring: 4.5
@@ -59,6 +57,12 @@ MonoBehaviour:
   jumpingDamper: 4
   jointMassScale: 4.5
   jointForceBoost: 20
+  IsGrappling: 0
+  BodyMaterial: {fileID: 0}
+  gunModel: {fileID: 0}
+  gunFirePoint: {fileID: 0}
+  gunFollowPoint: {fileID: 0}
+  gunExitPoint: {fileID: 0}
 --- !u!1 &2012980429216343543
 GameObject:
   m_ObjectHideFlags: 0
@@ -524,9 +528,19 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
+  Grappling:
+    m_Name: Grappling
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 97cb9a5d-600b-452d-8ecb-3c468cd23b4c
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
   isMoving: 0
   moveDirection: 0
   moveInput: {x: 0, y: 0}
+  IsTouchingGround: 0
   pauseMenu: {fileID: 0}
   ScoreboardManager: {fileID: 0}
 --- !u!54 &6119630809766995737
