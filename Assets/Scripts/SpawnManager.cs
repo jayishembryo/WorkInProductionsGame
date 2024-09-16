@@ -8,7 +8,7 @@ public class SpawnManager : MonoBehaviour
     private int waveNumber = 1;
     int maxWaveNumber = 2;
     [SerializeField]
-    private int totalEnemies = 10;
+    private int totalEnemies;
     private int totalEnemiesRemaining;
     [SerializeField]
     private int numberOfNormals;//medium dude spawns allowed this wave.
@@ -38,6 +38,8 @@ public class SpawnManager : MonoBehaviour
     private int tankNumber;
     private int stingNumber;
 
+    public GameObject NewWaveTextBox;
+
     private int nextSpawnPoint = 0;
     // Start is called before the first frame update
     void Start()
@@ -56,11 +58,13 @@ public class SpawnManager : MonoBehaviour
         
         groupTime = Time.time;
 
-        if(groupTime >= waitTime)// the cooldown between bursts of enemies
-        {
-            GroupAssignment();
-            waitTime = groupTime + groupCooldown;
-        }
+       // if(groupTime >= waitTime)// the cooldown between bursts of enemies
+       // {
+         //   GroupAssignment();
+        //    waitTime = groupTime + groupCooldown;
+       // }
+
+        totalEnemies = GameObject.FindObjectsOfType<EnemyBehaviour>().Length;
         
     }
     
@@ -70,6 +74,7 @@ public class SpawnManager : MonoBehaviour
         waveTime = Time.time;//update start of current wave
         groupTime = waveTime;
         waveNumber++;//change wave start 
+        GroupAssignment();
         endSignal = false;
 
         if(waveNumber > 1)
@@ -79,13 +84,20 @@ public class SpawnManager : MonoBehaviour
 
         }
 
+        if(waveNumber == 2)
+        {
+
+            StartCoroutine(NewWaveText());
+
+        }
+
         if (waveNumber <= maxWaveNumber)
         {
 
             return;
 
         }
-        else
+        else if (waveNumber > maxWaveNumber)
         {
 
             ScoreboardManager.Instance.StopGame();
@@ -173,6 +185,17 @@ public class SpawnManager : MonoBehaviour
         yield return new WaitForSeconds(5);
 
         endSignal = true;
+
+    }
+
+    public IEnumerator NewWaveText()
+    {
+
+        NewWaveTextBox.SetActive(true);
+
+        yield return new WaitForSeconds(2);
+
+        NewWaveTextBox.SetActive(false);
 
     }
 }
