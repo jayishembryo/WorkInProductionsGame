@@ -98,6 +98,8 @@ public class PlayerController : MonoBehaviour
 
         grapplingInstance = GameObject.FindObjectOfType<Grapple>().GetComponent<Grapple>();
 
+        Physics.IgnoreLayerCollision(7, 16);
+
     }
 
     private void Pause_canceled(InputAction.CallbackContext obj)

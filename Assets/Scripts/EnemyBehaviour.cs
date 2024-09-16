@@ -180,6 +180,14 @@ public class EnemyBehaviour : MonoBehaviour
                 Debug.Log(gameObject.name + " has been kicked.");
             }
         }
+        if(other.gameObject.layer == 16)
+        {
+
+            Debug.Log("gbaeruihfgijnvrskdf");
+            DestroyEnemy();
+            FindObjectOfType<SpawnManager>().GetComponent<SpawnManager>().enemyHasDied(other.gameObject);
+
+        }
     }
     private IEnumerator EnemyKnocked()
     {

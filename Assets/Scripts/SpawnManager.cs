@@ -153,6 +153,9 @@ public class SpawnManager : MonoBehaviour
 
     public void enemyHasDied(GameObject enemy)//when an enemy dies it reduces the counter for it's type that can spawn that wave as well as the total number of dudes
     {
+
+        Debug.Log("working");
+
         totalEnemies--;
 
         if(totalEnemies <= 0)
