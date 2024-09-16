@@ -27,8 +27,8 @@ public class PillarScript : MonoBehaviour
 
     private IEnumerator DestroyPillar()
     {
-        ySpeed = -0.7f;
-        zSpeed = -0.4f;
+        ySpeed = -0.222f;
+        zSpeed = -0.2f;
         destroyParticle.Play();
         yield return new WaitForSeconds(6f);
         Destroy(gameObject.transform.parent.gameObject);

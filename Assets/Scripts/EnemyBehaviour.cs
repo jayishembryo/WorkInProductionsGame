@@ -23,6 +23,8 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField]
     private float speed = 2f;
     private Rigidbody enemyRB;
+    [SerializeField]
+    public float damageToPlayer;
     
     [SerializeField]
     private LayerMask whatIsGround, whatIsPlayer;
@@ -179,6 +181,14 @@ public class EnemyBehaviour : MonoBehaviour
                 StartCoroutine(EnemyKnocked());
                 Debug.Log(gameObject.name + " has been kicked.");
             }
+        }
+        if(other.gameObject.layer == 16)
+        {
+
+            Debug.Log("gbaeruihfgijnvrskdf");
+            DestroyEnemy();
+            FindObjectOfType<SpawnManager>().GetComponent<SpawnManager>().enemyHasDied(other.gameObject);
+
         }
     }
     private IEnumerator EnemyKnocked()

@@ -67,6 +67,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private ScoreboardManager ScoreboardManager;
 
+    float whenToAddTime = 1;
+    float lastAddedToTime = 0;
+
+    [SerializeField]
+    private Animator playerAnim;
+
 
     // Creates the controller, gets an instance of the InputManager, and the camera transform.
     private void Start()
@@ -97,6 +103,8 @@ public class PlayerController : MonoBehaviour
         Time.timeScale = 1.0f;
 
         grapplingInstance = GameObject.FindObjectOfType<Grapple>().GetComponent<Grapple>();
+
+        Physics.IgnoreLayerCollision(7, 16);
 
     }
 
@@ -131,16 +139,14 @@ public class PlayerController : MonoBehaviour
 
     private void Grappling_started(InputAction.CallbackContext obj)
     {
-
         grapplingInstance.StartGrapple();
-
+        playerAnim.SetBool("point", true);
     }
 
     private void Grappling_canceled(InputAction.CallbackContext obj)
     {
-
         grapplingInstance.StopGrapple();
-
+        playerAnim.SetBool("point", false);
     }
 
     private void FixedUpdate()
@@ -148,6 +154,8 @@ public class PlayerController : MonoBehaviour
         Look();
         Move();
         Gravity();
+
+        lastAddedToTime += Time.fixedDeltaTime;
 
         if (timeTillNextEnemySpawn > 0)
             timeTillNextEnemySpawn -= Time.fixedDeltaTime;
@@ -311,5 +319,30 @@ public class PlayerController : MonoBehaviour
     public void GameOverRestart()
     {
         SceneManager.LoadScene(sceneName: "VerticalSlice");
+    }
+
+    public void OnTriggerStay(Collider other)
+    {
+        
+        if(other.gameObject.layer == 13)
+        {
+
+            if (lastAddedToTime > whenToAddTime)
+            {
+
+                TakeDamage();
+                lastAddedToTime = 0;
+
+            }
+
+        }
+
+    }
+
+    public void TakeDamage()
+    {
+
+        HealthSystem.instance.Damage(1);
+
     }
 }

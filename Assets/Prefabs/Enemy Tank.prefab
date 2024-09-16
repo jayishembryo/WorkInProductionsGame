@@ -238,6 +238,7 @@ MonoBehaviour:
   agent: {fileID: 2554958408834568949}
   health: 150
   speed: 3.5
+  damageToPlayer: 10
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8
