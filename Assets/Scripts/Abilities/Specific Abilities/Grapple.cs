@@ -75,6 +75,8 @@ public class Grapple : MonoBehaviour
         hookRenderer.endWidth = 1;
         hookRenderer.textureMode = LineTextureMode.Tile;
 
+        //GrappleStamina.fillAmount = 0;
+
     }
 
     void LateUpdate()
@@ -130,7 +132,7 @@ public class Grapple : MonoBehaviour
 
         }
 
-        GrappleStamina.fillAmount = Mathf.Lerp(GrappleStamina.fillAmount, -(maxGrappleTimer/GrappleTimer), 5f);
+        GrappleStamina.fillAmount = Mathf.Lerp(GrappleStamina.fillAmount, (maxGrappleTimer/GrappleTimer), 5f);
 
     }
 
