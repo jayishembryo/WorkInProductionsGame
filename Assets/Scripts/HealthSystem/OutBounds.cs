@@ -7,8 +7,8 @@ public class OutBounds : MonoBehaviour
     // Created with aid of tutorial by ZER0 Unity Tutorials
 
     public Transform Player1;
-    [SerializeField] float xPos,yPos,zPos;
-    [SerializeField] float outBoundsDmg = 5f;
+   // [SerializeField] float xPos,yPos,zPos;
+   // [SerializeField] float outBoundsDmg = 5f;
 
 
     // Method for when Player1 object leaves the desired bounds
@@ -16,8 +16,19 @@ public class OutBounds : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         {
-            // You can adjust variables through the Inspector
-            ScoreboardManager.Instance.StopGame();
+            StartCoroutine(EndGame());
         }
     }
+
+    IEnumerator EndGame()
+    {
+
+        new WaitForSeconds(1.5f);
+
+        FindObjectOfType<ScoreboardManager>().GetComponent<ScoreboardManager>().StopGame();
+
+        yield return null;
+
+    }
+
 }
