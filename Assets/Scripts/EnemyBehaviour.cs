@@ -23,6 +23,8 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField]
     private float speed = 2f;
     private Rigidbody enemyRB;
+    [SerializeField]
+    public float damageToPlayer;
     
     [SerializeField]
     private LayerMask whatIsGround, whatIsPlayer;

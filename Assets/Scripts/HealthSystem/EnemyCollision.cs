@@ -19,7 +19,7 @@ public class EnemyCollision : MonoBehaviour
         // When colliding with anything tagged "enemy", recieve damage.
         if(other.gameObject.CompareTag("Enemy"))
         {
-            HealthSystem.instance.Damage(Random.Range(1f, 10f));
+            HealthSystem.instance.Damage(other.gameObject.GetComponent<EnemyBehaviour>().damageToPlayer);
 
             if (playerKnockbackInstance.CanBeKnockedBack == true)
             {
