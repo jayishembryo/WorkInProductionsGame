@@ -126654,6 +126654,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 16
       objectReference: {fileID: 0}
+    - target: {fileID: 1129131762072788102, guid: d200edd5ab119e44684301eab920c204, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1129131762072788102, guid: d200edd5ab119e44684301eab920c204, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1176694909544912831, guid: d200edd5ab119e44684301eab920c204, type: 3}
       propertyPath: m_Layer
       value: 15
@@ -126661,6 +126669,14 @@ PrefabInstance:
     - target: {fileID: 1392971191758325464, guid: d200edd5ab119e44684301eab920c204, type: 3}
       propertyPath: m_Layer
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2552402528140053565, guid: d200edd5ab119e44684301eab920c204, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2552402528140053565, guid: d200edd5ab119e44684301eab920c204, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4036367464563644987, guid: d200edd5ab119e44684301eab920c204, type: 3}
       propertyPath: m_Layer
@@ -126693,6 +126709,14 @@ PrefabInstance:
     - target: {fileID: 8147338794075180189, guid: d200edd5ab119e44684301eab920c204, type: 3}
       propertyPath: m_Layer
       value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8312746458448226200, guid: d200edd5ab119e44684301eab920c204, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8312746458448226200, guid: d200edd5ab119e44684301eab920c204, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8414357986408042784, guid: d200edd5ab119e44684301eab920c204, type: 3}
       propertyPath: m_Name
