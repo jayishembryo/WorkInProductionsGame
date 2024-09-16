@@ -130,7 +130,7 @@ public class Grapple : MonoBehaviour
 
         }
 
-        GrappleStamina.fillAmount = Mathf.Lerp(GrappleStamina.fillAmount, -(maxGrappleTimer/GrappleTimer), 5f);
+        GrappleStamina.fillAmount = Mathf.Lerp(GrappleStamina.fillAmount, (GrappleTimer / maxGrappleTimer), 5f);
 
     }
 
