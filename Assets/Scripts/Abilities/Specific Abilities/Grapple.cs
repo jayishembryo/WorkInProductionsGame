@@ -28,13 +28,13 @@ public class Grapple : MonoBehaviour
 
 
     [Tooltip("How much of the distance between the grapple hook and the player will be used.")]
-    public float maxDistanceFromPointMultiplier = 0.8f;
+    public float maxDistanceFromPointMultiplier = 0.25f;
 
     [Tooltip("Multiplier between the min distance between the player and the hook point.")]
     public float minDistanceFromPointMultiplier = 0.25f;
 
     [Tooltip("Spring to keep the player moving towards the target.")]
-    public float jointSpring = 4.5f;
+    public float jointSpring = 50f;
 
     [Tooltip("Damper force of the joint.")]
     public float jointDamper = 7f;
