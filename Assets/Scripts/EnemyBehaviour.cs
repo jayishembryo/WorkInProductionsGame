@@ -186,8 +186,8 @@ public class EnemyBehaviour : MonoBehaviour
         {
 
             Debug.Log("gbaeruihfgijnvrskdf");
-            DestroyEnemy();
-            FindObjectOfType<SpawnManager>().GetComponent<SpawnManager>().enemyHasDied(other.gameObject);
+          //  DestroyEnemy();
+            FindObjectOfType<SpawnManager>().enemyHasDied(other.gameObject);
 
         }
     }

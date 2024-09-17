@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
     [SerializeField]
-    private int waveNumber = 1;
+    private int waveNumber;
     int maxWaveNumber = 2;
     [SerializeField]
     private int totalEnemies;
@@ -50,11 +51,6 @@ public class SpawnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(endSignal)
-        {
-            newWaveStart();//this starts a new wave after all the enemies have died
-            
-        }
         
         groupTime = Time.time;
 
@@ -63,8 +59,6 @@ public class SpawnManager : MonoBehaviour
          //   GroupAssignment();
         //    waitTime = groupTime + groupCooldown;
        // }
-
-        totalEnemies = GameObject.FindObjectsOfType<EnemyBehaviour>().Length;
         
     }
     
@@ -75,7 +69,7 @@ public class SpawnManager : MonoBehaviour
         groupTime = waveTime;
         waveNumber++;//change wave start 
         GroupAssignment();
-        endSignal = false;
+        //endSignal = false;
 
         if(waveNumber > 1)
         {
@@ -104,6 +98,7 @@ public class SpawnManager : MonoBehaviour
 
         }
 
+        totalEnemies = GameObject.FindObjectsOfType<EnemyBehaviour>().Length;
 
     }
 
@@ -166,14 +161,16 @@ public class SpawnManager : MonoBehaviour
     public void enemyHasDied(GameObject enemy)//when an enemy dies it reduces the counter for it's type that can spawn that wave as well as the total number of dudes
     {
 
-        Debug.Log("working");
+        totalEnemies = GameObject.FindObjectsOfType<EnemyBehaviour>().Length;
 
-        totalEnemies--;
-
-        if(totalEnemies <= 0)
+        if (totalEnemies <= 0)
         {
+
             StartCoroutine(endWave());
+
         }
+
+        Destroy(enemy);
 
     }
 
@@ -184,7 +181,7 @@ public class SpawnManager : MonoBehaviour
 
         yield return new WaitForSeconds(5);
 
-        endSignal = true;
+        newWaveStart();
 
     }
 
