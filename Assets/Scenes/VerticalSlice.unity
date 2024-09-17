@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.06791, g: 0.10743823, b: 0.17212683, a: 1}
+  m_IndirectSpecularColor: {r: 0.06791074, g: 0.10743927, b: 0.17212787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5981,10 +5981,10 @@ RectTransform:
   m_Father: {fileID: 554192911}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 389, y: 245}
-  m_SizeDelta: {x: 966.26855, y: 50}
+  m_SizeDelta: {x: -953.73145, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &257273293
 MonoBehaviour:
@@ -6006,19 +6006,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Keep kicking enemies to feed the feedbar.
+  m_text: 'Kick the enemies off the ship
 
 
-    Kick enemies through the
-    red/green portals to gain points.
+    Avoid getting hit off the ship
 
 
-    Kick enemies through the pink portal
-    to gain health.
+    Getting
+    hit will make it harder to
 
-
-    When your healthbar, feedbar, or both is empty, the game
-    ends.'
+    stay on the ship'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: de0fb6f98de60ad499ee2b54911b5a4e, type: 2}
   m_sharedMaterial: {fileID: 6629309195542654611, guid: de0fb6f98de60ad499ee2b54911b5a4e, type: 2}
@@ -6053,7 +6050,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 1024
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -63736,17 +63733,22 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Kick - Left Mouse
+  m_text: 'Wasd - Move
 
 
-    Throw Bottle - Right Mouse
+    Dash - Left Shift
 
 
-    Pause Menu -
-    P, Esc
+    Jump - Space
 
 
-    Dash - Left Shift'
+    Kick - Left
+    Mouse
+
+
+    Grapple  - Right Mouse
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: de0fb6f98de60ad499ee2b54911b5a4e, type: 2}
   m_sharedMaterial: {fileID: 6629309195542654611, guid: de0fb6f98de60ad499ee2b54911b5a4e, type: 2}
@@ -63781,7 +63783,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -126149,6 +126151,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4050541155268352615, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 110.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 4157353081175729505, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 110.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 4532911660831416200, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5492368936605829855, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -126166,15 +126180,33 @@ PrefabInstance:
         Right click: Grapple
 
         Space:
-        Jump'
+        Jump
+
+        Shift: Dash'
       objectReference: {fileID: 0}
     - target: {fileID: 6915753488849775877, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
       propertyPath: m_fontSize
       value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 6915753488849775877, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6915753488849775877, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6915753488849775877, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6915753488849775877, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
       propertyPath: m_fontSizeBase
       value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 6915753488849775877, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6915753488849775877, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
       propertyPath: m_VerticalAlignment
@@ -126183,6 +126215,30 @@ PrefabInstance:
     - target: {fileID: 7200890812058081952, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
       propertyPath: m_text
       value: Controls
+      objectReference: {fileID: 0}
+    - target: {fileID: 7200890812058081952, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7200890812058081952, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.7264151
+      objectReference: {fileID: 0}
+    - target: {fileID: 7200890812058081952, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.065368466
+      objectReference: {fileID: 0}
+    - target: {fileID: 7200890812058081952, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278237457
+      objectReference: {fileID: 0}
+    - target: {fileID: 7607416756052680421, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8268701767955966716, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8286971289105936814, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
       propertyPath: kickScript
@@ -126198,7 +126254,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8556755305787684480, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 282.72
+      value: 110.45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
