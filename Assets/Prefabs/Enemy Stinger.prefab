@@ -221,7 +221,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 80
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &7700276924306017274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,6 +250,8 @@ MonoBehaviour:
   sightRange: 20
   attackRange: 10
   knocked: 0
+  enemyID: 1
+  knockedObject: {fileID: 8474295532616176723, guid: 5784ecbb8408193488e735c89e1e5bdf, type: 3}
 --- !u!95 &-8883011158434808188
 Animator:
   serializedVersion: 5

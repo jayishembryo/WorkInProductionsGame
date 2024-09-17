@@ -9,9 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6136041595161489834}
-  - component: {fileID: 2354427212491742789}
   - component: {fileID: 3053395140928752325}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: AnimationHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33,27 +32,6 @@ Transform:
   m_Father: {fileID: 8914494141670872221}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &2354427212491742789
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2297694828917507748}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8b0c918f33619e34993fb498bf99ede8, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!212 &3053395140928752325
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -95,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9335fb7d83305d14ca2ae3288883dadb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 67946a225e9668b409c741d349d0fe86, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -118,12 +96,11 @@ GameObject:
   - component: {fileID: 7935760008041834198}
   - component: {fileID: 8349904747588755512}
   - component: {fileID: 4271845901635955997}
-  - component: {fileID: 7700276924306017274}
   - component: {fileID: 2770839071601962939}
-  - component: {fileID: 2554958408834568949}
-  m_Layer: 9
-  m_Name: Enemy Normal
-  m_TagString: Enemy
+  - component: {fileID: 9070251382076492797}
+  m_Layer: 0
+  m_Name: EnemyKnockedNormal
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -203,8 +180,8 @@ Rigidbody:
   m_GameObject: {fileID: 8474295532616176723}
   serializedVersion: 4
   m_Mass: 5
-  m_Drag: 2.75
-  m_AngularDrag: 0.1
+  m_Drag: 0
+  m_AngularDrag: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -219,37 +196,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &7700276924306017274
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8474295532616176723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29e455e28a8a62943a54e240f119c7df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  agent: {fileID: 2554958408834568949}
-  health: 100.3
-  speed: 5
-  damageToPlayer: 6
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 8
-  whatIsPlayer:
-    serializedVersion: 2
-    m_Bits: 128
-  walkPoint: {x: 0, y: 0, z: 0}
-  walkPointRange: 30
-  sightRange: 20
-  attackRange: 2
-  knocked: 0
-  knockedObject: {fileID: 8474295532616176723, guid: 8cf84bf5365b0434988940014a30a4a1, type: 3}
 --- !u!136 &2770839071601962939
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -273,25 +221,25 @@ CapsuleCollider:
   m_Height: 3.5310328
   m_Direction: 1
   m_Center: {x: 0, y: 1.2655164, z: 0}
---- !u!195 &2554958408834568949
-NavMeshAgent:
+--- !u!114 &9070251382076492797
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8474295532616176723}
   m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 0
-  m_AutoRepath: 1
-  m_Height: 1
-  m_BaseOffset: 0.5
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5923dff2107bcfb4abcabf59a53bf445, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  projSpeed: 119
+  rb: {fileID: 4271845901635955997}
+  lifetime: 0
+  burst:
+  - {fileID: 6893226736054396642, guid: 67b4c174ee79f8741b771cda6df5e2b5, type: 3}
+  - {fileID: 6893226736054396642, guid: 326596ba55feabb4a898bfd2f5788968, type: 3}
+  - {fileID: 6893226736054396642, guid: 7630e605851ad5c45988d69511faa6a7, type: 3}
+  - {fileID: 6893226736054396642, guid: 2ede53f92bb8a7a4198847373f84c7fb, type: 3}
+  enemyToSpawn: {fileID: 8474295532616176723, guid: 9a801a72a065d524aa007bc9486081e6, type: 3}

@@ -9,7 +9,7 @@ public class OutBounds : MonoBehaviour
     public Transform Player1;
     [SerializeField] float xPos,yPos,zPos;
     [SerializeField] float outBoundsDmg = 5f;
-
+    [SerializeField] private GameObject drowning;
 
     // Method for when Player1 object leaves the desired bounds
     void OnTriggerExit(Collider other)
@@ -17,7 +17,8 @@ public class OutBounds : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             // You can adjust variables through the Inspector
-            StartCoroutine(Drowning());
+            StartCoroutine(nameof(Drowning));
+            drowning.SetActive(true);
         }
        // if(other.gameObject.tag == "Enemy")
        // {
@@ -27,11 +28,18 @@ public class OutBounds : MonoBehaviour
 
        // }
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            // You can adjust variables through the Inspector
+            StopCoroutine(nameof(Drowning));
+            drowning.SetActive(false);
+        }
+    }
     IEnumerator Drowning()
     {
-
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2f);
         ScoreboardManager.Instance.StopGame();
-
     }
 }

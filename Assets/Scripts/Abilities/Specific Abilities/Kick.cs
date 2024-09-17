@@ -94,16 +94,19 @@ public class Kick : AbstractAbility
         float empowerMult = dash.IsKickEmpowered() ? empoweredScalar : 1;
         //Debug.Log("Empower: " + empowerMult);
         dash.ResetEmpoweredKick();
-
+        
         foreach (Rigidbody rb in enemies)
         {
             // The kick itself
-            rb.AddForce(force * empowerMult, ForceMode.Impulse);
+            if (rb != null)
+            {
+                rb.AddForce(force * empowerMult, ForceMode.Impulse);
 
-            // Small random force
-            rb.AddExplosionForce(explosionScalar, transform.position, explosionRadius, 0, ForceMode.Impulse);
+                // Small random force
+                rb.AddExplosionForce(explosionScalar, transform.position, explosionRadius, 0, ForceMode.Impulse);
+            }
         }
-
+        
         //Debug.Log("KICKKKK!");
         enemies.Clear();
     }
