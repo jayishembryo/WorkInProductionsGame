@@ -46,11 +46,20 @@ public class EnemyBehaviour : MonoBehaviour
 
     [SerializeField] private bool knocked;
 
+    public int enemyID; // used to define what type of enemy this is. 0: normal 1: stinger 2: tank 3: boss?
+
+    public GameObject knockedObject; // object to be spawned in the event of this enemy being kicked
+    private ParticleSystem skid; // for use with tank enemy being knocked back
+
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");  //Finds the player
         agent = GetComponent<NavMeshAgent>();
         enemyRB = GetComponent<Rigidbody>();
+        if (enemyID == 2) // if the enemy is a tank
+        {
+            skid = GetComponent<ParticleSystem>();
+        }
     }
 
     // Update is called once per frame
@@ -169,34 +178,51 @@ public class EnemyBehaviour : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == 8)
+        if (other.gameObject.layer == 8)//kick layer for if they get kicked by the player
         {
-            if (other.gameObject.layer == 8)//kick layer for if they get kicked by the player
+            //defines the different reactions to being kicked.
+            switch (enemyID)
             {
-                agent.enabled = false;
-                Vector3 launchDirection = player.transform.position - enemyRB.position;
-                Vector3 launchDirNormalized = launchDirection.normalized;
-                float launchVelocity = player.GetComponent<Rigidbody>().velocity.magnitude;
-                enemyRB.AddForce((launchDirNormalized * launchVelocity) + new Vector3(0, 10, 0));
-                StartCoroutine(EnemyKnocked());
-                Debug.Log(gameObject.name + " has been kicked.");
+                case 0:
+                case 1:
+                    EnemyKnocked();
+                    break;
+                case 2:
+                    agent.enabled = false;
+                    Vector3 launchDirection = player.transform.position - enemyRB.position;
+                    Vector3 launchDirNormalized = launchDirection.normalized;
+                    float launchVelocity = player.GetComponent<Rigidbody>().velocity.magnitude;
+                    enemyRB.AddForce((launchDirNormalized * launchVelocity));
+                    skid.Play(); // this will throw an error if called when the enemy is not a tank
+                    Invoke("ReEnableTank", 1.8f);
+                    break;
+                case 3:
+                    // poo
+                    break;
+                default:
+                    break;
             }
         }
-        if(other.gameObject.layer == 16)
+        if (other.gameObject.layer == 16)
         {
 
-            Debug.Log("gbaeruihfgijnvrskdf");
-          //  DestroyEnemy();
+            Debug.Log("Enemy fell like a dumb idiot. -20 aura.");
             FindObjectOfType<SpawnManager>().enemyHasDied(other.gameObject);
-
+            DestroyEnemy();
         }
     }
-    private IEnumerator EnemyKnocked()
+    private void ReEnableTank()
     {
-        Debug.Log("AAHHHH");
-        knocked = true;
-        yield return new WaitForSeconds(2f); //replace this with a scalable variable
-        knocked = false;
         agent.enabled = true;
+        skid.Stop();
+    }
+    private void EnemyKnocked()
+    {
+        Debug.Log(gameObject.name + " has been kicked.");
+        if (knockedObject != null)
+        {
+            Instantiate(knockedObject, transform.position, Quaternion.identity);
+        }
+        Destroy(gameObject);
     }
 }

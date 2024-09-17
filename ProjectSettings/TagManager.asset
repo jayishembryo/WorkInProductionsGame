@@ -12,6 +12,8 @@ TagManager:
   - Health
   - Wall
   - PillarDestroyer
+  - Water
+  - Hurt
   layers:
   - Default
   - TransparentFX
