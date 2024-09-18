@@ -23,6 +23,7 @@ public class EnemyCollision : MonoBehaviour
             if (otherEnemy != null)
             {
                 HealthSystem.instance.Damage(otherEnemy.damageToPlayer);
+                Debug.Log(otherEnemy.name + " has damaged player.");
             }
 
             if (playerKnockbackInstance.CanBeKnockedBack == true)
