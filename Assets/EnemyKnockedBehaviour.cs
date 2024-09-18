@@ -48,6 +48,11 @@ public class EnemyKnockedBehaviour : MonoBehaviour
             Instantiate(burst[0], transform.position, Quaternion.identity);
             KillEnemy(gameObject);
         }
+        if (other.gameObject.CompareTag("Water"))
+        {
+            Instantiate(burst[1], transform.position, Quaternion.identity);
+            KillEnemy(gameObject);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
