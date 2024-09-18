@@ -104,7 +104,7 @@ public class PlayerController : MonoBehaviour
         rb.drag = airDrag;
         Time.timeScale = 1.0f;
 
-        grapplingInstance = GameObject.FindObjectOfType<Grapple>().GetComponent<Grapple>();
+        grapplingInstance = GameObject.FindObjectOfType<Grapple>();
 
         Physics.IgnoreLayerCollision(7, 16);
 

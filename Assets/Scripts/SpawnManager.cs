@@ -91,7 +91,7 @@ public class SpawnManager : MonoBehaviour
         else if (waveNumber > maxWaveNumber)
         {
 
-            ScoreboardManager.Instance.StopGame();
+            ScoreboardManager.Instance.YouWin();
 
         }
 
