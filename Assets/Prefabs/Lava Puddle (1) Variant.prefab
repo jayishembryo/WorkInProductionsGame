@@ -13,6 +13,18 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 996795180116363752, guid: 529392041b031954ab51290b84961859, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 996795180116363752, guid: 529392041b031954ab51290b84961859, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 996795180116363752, guid: 529392041b031954ab51290b84961859, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 996795180116363752, guid: 529392041b031954ab51290b84961859, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -54,7 +66,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2480099846540930456, guid: 529392041b031954ab51290b84961859, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 4088163771520771687, guid: 529392041b031954ab51290b84961859, type: 3}
       propertyPath: m_Name
@@ -62,11 +74,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4088163771520771687, guid: 529392041b031954ab51290b84961859, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 4088163771520771687, guid: 529392041b031954ab51290b84961859, type: 3}
       propertyPath: m_TagString
-      value: Enemy
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7683592465691541541, guid: 529392041b031954ab51290b84961859, type: 3}

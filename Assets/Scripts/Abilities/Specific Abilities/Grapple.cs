@@ -16,7 +16,7 @@ public class Grapple : MonoBehaviour
     private Transform cam;
 
     public float GrappleTimer = 0;
-    float maxGrappleTimer = 4;
+    float maxGrappleTimer = 5;
 
     float whenToAddTime = 1;
     float lastAddedToTime = 0;
@@ -75,7 +75,7 @@ public class Grapple : MonoBehaviour
         hookRenderer.endWidth = 1;
         hookRenderer.textureMode = LineTextureMode.Tile;
 
-        GrappleStamina.fillAmount = 0;
+       // GrappleStamina.fillAmount = 0;
 
     }
 
@@ -102,9 +102,9 @@ public class Grapple : MonoBehaviour
     }
 
 
-    private void FixedUpdate()
+    private void Update()
     {
-        lastAddedToTime += Time.fixedDeltaTime;
+        lastAddedToTime += Time.deltaTime;
 
         if (playerController.IsTouchingGround == false && IsGrappling == true)
         {
@@ -131,8 +131,6 @@ public class Grapple : MonoBehaviour
             }
 
         }
-
-        GrappleStamina.fillAmount = Mathf.Lerp(GrappleStamina.fillAmount, (GrappleTimer/maxGrappleTimer), 5f);
 
     }
 
@@ -194,7 +192,8 @@ public class Grapple : MonoBehaviour
         if(GrappleTimer != maxGrappleTimer)
         {
 
-            GrappleTimer = GrappleTimer += 1;
+            GrappleTimer = GrappleTimer += 1; // * Time.deltaTime;
+            GrappleStamina.fillAmount -= 0.20f;
 
         }
         else if (GrappleTimer >= maxGrappleTimer)
@@ -213,7 +212,8 @@ public class Grapple : MonoBehaviour
         if(GrappleTimer > 0)
         {
 
-            GrappleTimer = GrappleTimer -= 1;
+            GrappleTimer = GrappleTimer -= 1; // * Time.deltaTime;
+            GrappleStamina.fillAmount += 0.20f;
 
         }
         else if (GrappleTimer == 0)

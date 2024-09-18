@@ -73,6 +73,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private Animator playerAnim;
 
+    public GameObject FireScreen;
+
 
     // Creates the controller, gets an instance of the InputManager, and the camera transform.
     private void Start()
@@ -327,6 +329,8 @@ public class PlayerController : MonoBehaviour
         if(other.gameObject.layer == 13)
         {
 
+            FireScreen.SetActive(true);
+
             if (lastAddedToTime > whenToAddTime)
             {
 
@@ -339,10 +343,20 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    public void OnTriggerExit(Collider other)
+    {
+        if(other.gameObject.layer == 13)
+        {
+
+            FireScreen.SetActive(false);
+
+        }
+    }
+
     public void TakeDamage()
     {
 
-        HealthSystem.instance.Damage(1);
+        HealthSystem.instance.FireDamage(1);
 
     }
 }

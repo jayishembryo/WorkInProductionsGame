@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using TMPro;
 
 public class SpawnManager : MonoBehaviour
 {
     [SerializeField]
-    private int waveNumber = 1;
+    private int waveNumber;
     int maxWaveNumber = 2;
     [SerializeField]
-    private int totalEnemies;
+    public int TotalEnemies;
     private int totalEnemiesRemaining;
     [SerializeField]
     private int numberOfNormals;//medium dude spawns allowed this wave.
@@ -39,6 +41,7 @@ public class SpawnManager : MonoBehaviour
     private int stingNumber;
 
     public GameObject NewWaveTextBox;
+    public TMP_Text NewWave;
 
     private int nextSpawnPoint = 0;
     // Start is called before the first frame update
@@ -50,11 +53,6 @@ public class SpawnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(endSignal)
-        {
-            newWaveStart();//this starts a new wave after all the enemies have died
-            
-        }
         
         groupTime = Time.time;
 
@@ -63,8 +61,6 @@ public class SpawnManager : MonoBehaviour
          //   GroupAssignment();
         //    waitTime = groupTime + groupCooldown;
        // }
-
-        totalEnemies = GameObject.FindObjectsOfType<EnemyBehaviour>().Length;
         
     }
     
@@ -73,21 +69,16 @@ public class SpawnManager : MonoBehaviour
 
         waveTime = Time.time;//update start of current wave
         groupTime = waveTime;
-        waveNumber++;//change wave start 
         GroupAssignment();
-        endSignal = false;
+        waveNumber++;
+        StartCoroutine(NewWaveText());
+        TotalEnemies = GameObject.FindObjectsOfType<EnemyBehaviour>().Length;
+        //endSignal = false;
 
-        if(waveNumber > 1)
+        if (waveNumber > 1)
         {
 
-            FindObjectOfType<EnvironmentalEffects>().GetComponent<EnvironmentalEffects>().Decide();
-
-        }
-
-        if(waveNumber == 2)
-        {
-
-            StartCoroutine(NewWaveText());
+            FindObjectOfType<EnvironmentalEffects>().FlamesOfDisaster();
 
         }
 
@@ -103,7 +94,6 @@ public class SpawnManager : MonoBehaviour
             ScoreboardManager.Instance.StopGame();
 
         }
-
 
     }
 
@@ -163,28 +153,23 @@ public class SpawnManager : MonoBehaviour
         numberOfNormals = System.Math.Clamp(numberOfNormals - normNumber, 0, 100);
     }
 
-    public void enemyHasDied(GameObject enemy)//when an enemy dies it reduces the counter for it's type that can spawn that wave as well as the total number of dudes
+    public void StartEndWave()
     {
 
-        Debug.Log("working");
+        StartCoroutine(endWave());
 
-        totalEnemies--;
-
-        if(totalEnemies <= 0)
-        {
-            StartCoroutine(endWave());
-        }
+       // Destroy(enemy);
 
     }
 
-    private IEnumerator endWave()
+    public IEnumerator endWave()
     {
         //stuff that happens as the wave ends goes here
         //like play a noise or a phase shift
 
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(1.5f);
 
-        endSignal = true;
+        newWaveStart();
 
     }
 
@@ -192,6 +177,7 @@ public class SpawnManager : MonoBehaviour
     {
 
         NewWaveTextBox.SetActive(true);
+        NewWave.text = "WAVE " + waveNumber.ToString() + " STARTED";
 
         yield return new WaitForSeconds(2);
 
