@@ -76,8 +76,29 @@ public class EnemyKnockedBehaviour : MonoBehaviour
 
     public void KillEnemy(GameObject killed)
     {
-        // report the death of this enemy to the spawn manager here
-        Destroy(killed); // destroys the inputed gameObject parameter
+
+        Destroy(killed);
+
+        FindObjectOfType<SpawnManager>().TotalEnemies -= 1;
+
+        if (FindObjectOfType<SpawnManager>().TotalEnemies <= 0)
+        {
+
+            FindObjectOfType<SpawnManager>().StartEndWave();
+
+        }
+        if (FindObjectOfType<SpawnManager>().TotalEnemies == 1)
+        {
+
+            if(FindObjectOfType<EnemyBehaviour>().enemyID == 2)
+            {
+
+                FindObjectOfType<SpawnManager>().StartEndWave();
+
+            }
+
+        }
+
     }
 
     private IEnumerator SmackAgainstWall()

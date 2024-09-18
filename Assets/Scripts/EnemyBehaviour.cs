@@ -207,7 +207,6 @@ public class EnemyBehaviour : MonoBehaviour
         {
 
             Debug.Log("Enemy fell like a dumb idiot. -20 aura.");
-            FindObjectOfType<SpawnManager>().enemyHasDied(other.gameObject);
             DestroyEnemy();
         }
     }
