@@ -5788,6 +5788,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 574339481500867356, guid: c4476037edeac0d4f9f2e0b33668c947, type: 3}
   m_PrefabInstance: {fileID: 227442710}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &235157392 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8640629303739564876, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+  m_PrefabInstance: {fileID: 2116781679}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841913ea106ce414b9e9d215cf4fa313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &247971241 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 545488753223261812, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
@@ -125670,30 +125681,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 793290439249900706, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 917080998153203271, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 1920
-      objectReference: {fileID: 0}
-    - target: {fileID: 917080998153203271, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 1080
-      objectReference: {fileID: 0}
-    - target: {fileID: 917080998153203271, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 917080998153203271, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 917080998153203271, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1110779864240766043, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -125782,10 +125769,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 7194671486221966643, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
-      propertyPath: m_Color.a
-      value: 0.7058824
-      objectReference: {fileID: 0}
+    - target: {fileID: 8286971289105936814, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
+      propertyPath: kickScript
+      value: 
+      objectReference: {fileID: 235157392}
+    - target: {fileID: 8286971289105936814, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 1581557666}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
