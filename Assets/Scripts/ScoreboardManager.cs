@@ -53,6 +53,7 @@ public class ScoreboardManager : MonoBehaviour
 
         time = maxTime;
         gameOver.enabled = false;
+        youWin.enabled = false;
 
         StartGame();
     }
