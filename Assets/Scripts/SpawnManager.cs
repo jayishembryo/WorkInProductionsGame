@@ -67,8 +67,8 @@ public class SpawnManager : MonoBehaviour
     private void newWaveStart()
     {
 
-        waveTime = Time.time;//update start of current wave
-        groupTime = waveTime;
+        //waveTime = Time.time;//update start of current wave
+       // groupTime = waveTime;
         GroupAssignment();
         waveNumber++;
         StartCoroutine(NewWaveText());
@@ -166,8 +166,16 @@ public class SpawnManager : MonoBehaviour
     {
         //stuff that happens as the wave ends goes here
         //like play a noise or a phase shift
+        float timer = 1.5f;
 
-        yield return new WaitForSeconds(1.5f);
+        while (timer > 0)
+        {
+
+            timer -= Time.deltaTime;
+            yield return null;
+
+        }
+       
 
         newWaveStart();
 

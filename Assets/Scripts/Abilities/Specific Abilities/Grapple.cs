@@ -70,7 +70,7 @@ public class Grapple : MonoBehaviour
 
         hookRenderer = gameObject.AddComponent<LineRenderer>();
         hookRenderer.positionCount = 2;
-        //hookRenderer.material = BodyMaterial;
+        hookRenderer.material = BodyMaterial;
         hookRenderer.startWidth = 1;
         hookRenderer.endWidth = 1;
         hookRenderer.textureMode = LineTextureMode.Tile;
