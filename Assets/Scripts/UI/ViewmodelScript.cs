@@ -9,24 +9,17 @@ using UnityEngine;
 public class ViewmodelScript : MonoBehaviour
 {
     public static Animator viewmodelAnim; // static, so it can be called from anywhere without directly referencing this script.
-    [SerializeField]
     private PlayerController playerController;
-    [SerializeField]
     private Kick kickScript;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        kickScript =FindObjectOfType<Kick>();
+        playerController = FindObjectOfType<PlayerController>();
         viewmodelAnim = GetComponent<Animator>();
-
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
 
     // The following functions are all implemented as animation events and are called during specific frames of the viewmodel animations.
