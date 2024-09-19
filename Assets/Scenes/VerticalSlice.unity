@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.06791059, g: 0.10743927, b: 0.17212775, a: 1}
+  m_IndirectSpecularColor: {r: 0.06791074, g: 0.10743927, b: 0.1721279, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -43129,6 +43129,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 836931626}
   m_CullTransparentMesh: 1
+--- !u!114 &851186715 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6954729071763416716, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
+  m_PrefabInstance: {fileID: 3092801834631978298}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &884467919
 GameObject:
   m_ObjectHideFlags: 0
@@ -125348,6 +125359,14 @@ PrefabInstance:
       propertyPath: HealthFill
       value: 
       objectReference: {fileID: 1870480523}
+    - target: {fileID: 4964857247302402449, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 55e7d4d340381b3469ff9181c018011e, type: 2}
+    - target: {fileID: 6290617412062290127, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: BodyMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 55e7d4d340381b3469ff9181c018011e, type: 2}
     - target: {fileID: 6290617412062290127, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: GrappleStamina
       value: 
@@ -125842,6 +125861,10 @@ PrefabInstance:
       propertyPath: timer
       value: 
       objectReference: {fileID: 1704752928142793269}
+    - target: {fileID: 7930592150206927151, guid: aa907b7dc527c754da81f171e42953aa, type: 3}
+      propertyPath: youWin
+      value: 
+      objectReference: {fileID: 851186715}
     - target: {fileID: 7930592150206927151, guid: aa907b7dc527c754da81f171e42953aa, type: 3}
       propertyPath: gameOver
       value: 
