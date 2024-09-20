@@ -1315,8 +1315,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 452627891a8e6a142a08e98ea212e9f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 0}
-  kickScript: {fileID: 0}
 --- !u!95 &6887855374695562748
 Animator:
   serializedVersion: 5
@@ -1449,7 +1447,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 138}
   m_SizeDelta: {x: 1000, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5885023367757229606
