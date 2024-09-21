@@ -64,7 +64,7 @@ public class SpawnManager : MonoBehaviour
         
     }
     
-    private void newWaveStart()
+    public void newWaveStart()
     {
 
         //waveTime = Time.time;//update start of current wave
@@ -151,33 +151,6 @@ public class SpawnManager : MonoBehaviour
         }
 
         numberOfNormals = System.Math.Clamp(numberOfNormals - normNumber, 0, 100);
-    }
-
-    public void StartEndWave()
-    {
-
-        StartCoroutine(endWave());
-
-       // Destroy(enemy);
-
-    }
-
-    public IEnumerator endWave()
-    {
-        //stuff that happens as the wave ends goes here
-        //like play a noise or a phase shift
-        float timer = 1.5f;
-
-        while (timer > 0)
-        {
-
-            timer -= Time.deltaTime;
-            yield return null;
-
-        }
-       
-
-        newWaveStart();
 
     }
 

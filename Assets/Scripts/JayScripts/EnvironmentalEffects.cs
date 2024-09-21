@@ -18,6 +18,9 @@ public class EnvironmentalEffects : MonoBehaviour
     public GameObject Puddle1;
     public GameObject Puddle2;
     public GameObject Puddle3;
+    public GameObject Puddle4;
+    public GameObject Puddle5;
+    public GameObject Puddle6;
 
     private void Update()
     {
@@ -82,6 +85,9 @@ public class EnvironmentalEffects : MonoBehaviour
         Puddle1.SetActive(true);
         Puddle2.SetActive(true);
         Puddle3.SetActive(true);
+        Puddle4.SetActive(true);
+        Puddle5.SetActive(true);
+        Puddle6.SetActive(true);
 
     }
 

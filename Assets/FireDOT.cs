@@ -14,6 +14,7 @@ public class FireDOT : MonoBehaviour
     {
 
         lastAddedToTime += Time.fixedDeltaTime;
+       // transform.LookAt(FindObjectOfType<PlayerController>().transform.position);
 
     }
 
