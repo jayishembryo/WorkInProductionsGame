@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/PrototypeLevel.unity
     guid: 7ea76ea869a3dfc41b1a31cfa579b97e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/VerticalSlice.unity
     guid: 544d917b1a6ba4646acfa2fcb8139f98
   m_configObjects: {}

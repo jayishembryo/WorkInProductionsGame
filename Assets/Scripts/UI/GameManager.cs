@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene("PrototypeLevel");
+        SceneManager.LoadScene("VerticalSlice");
     }
 
     public void BackToGame()

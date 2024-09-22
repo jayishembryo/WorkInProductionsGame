@@ -104,7 +104,7 @@ public class PlayerController : MonoBehaviour
         rb.drag = airDrag;
         Time.timeScale = 1.0f;
 
-        grapplingInstance = GameObject.FindObjectOfType<Grapple>().GetComponent<Grapple>();
+        grapplingInstance = GameObject.FindObjectOfType<Grapple>();
 
         Physics.IgnoreLayerCollision(7, 16);
 
@@ -334,7 +334,7 @@ public class PlayerController : MonoBehaviour
             if (lastAddedToTime > whenToAddTime)
             {
 
-                TakeDamage();
+                HealthSystem.instance.FireDamage(1);
                 lastAddedToTime = 0;
 
             }
@@ -353,10 +353,4 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void TakeDamage()
-    {
-
-        HealthSystem.instance.FireDamage(1);
-
-    }
 }

@@ -102,7 +102,7 @@ public class HealthSystem : MonoBehaviour
     public void FireDamage(float damage)
     {
         playerRes -= damage;
-
+        Debug.Log("Player has taken fire damage");
     }
 
 }

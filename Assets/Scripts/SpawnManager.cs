@@ -64,11 +64,11 @@ public class SpawnManager : MonoBehaviour
         
     }
     
-    private void newWaveStart()
+    public void newWaveStart()
     {
 
-        waveTime = Time.time;//update start of current wave
-        groupTime = waveTime;
+        //waveTime = Time.time;//update start of current wave
+       // groupTime = waveTime;
         GroupAssignment();
         waveNumber++;
         StartCoroutine(NewWaveText());
@@ -91,7 +91,7 @@ public class SpawnManager : MonoBehaviour
         else if (waveNumber > maxWaveNumber)
         {
 
-            ScoreboardManager.Instance.StopGame();
+            ScoreboardManager.Instance.YouWin();
 
         }
 
@@ -151,25 +151,6 @@ public class SpawnManager : MonoBehaviour
         }
 
         numberOfNormals = System.Math.Clamp(numberOfNormals - normNumber, 0, 100);
-    }
-
-    public void StartEndWave()
-    {
-
-        StartCoroutine(endWave());
-
-       // Destroy(enemy);
-
-    }
-
-    public IEnumerator endWave()
-    {
-        //stuff that happens as the wave ends goes here
-        //like play a noise or a phase shift
-
-        yield return new WaitForSeconds(1.5f);
-
-        newWaveStart();
 
     }
 

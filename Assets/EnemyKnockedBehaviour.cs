@@ -89,18 +89,7 @@ public class EnemyKnockedBehaviour : MonoBehaviour
         if (FindObjectOfType<SpawnManager>().TotalEnemies <= 0)
         {
 
-            FindObjectOfType<SpawnManager>().StartEndWave();
-
-        }
-        if (FindObjectOfType<SpawnManager>().TotalEnemies == 1)
-        {
-
-            if(FindObjectOfType<EnemyBehaviour>().enemyID == 2)
-            {
-
-                FindObjectOfType<SpawnManager>().StartEndWave();
-
-            }
+            FindObjectOfType<SpawnManager>().newWaveStart();
 
         }
 
