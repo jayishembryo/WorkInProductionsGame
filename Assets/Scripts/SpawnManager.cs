@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using TMPro;
 
 public class SpawnManager : MonoBehaviour
 {
     [SerializeField]
-    private int waveNumber = 1;
+    private int waveNumber;
+    int maxWaveNumber = 2;
     [SerializeField]
-    private int totalEnemies = 10;
+    public int TotalEnemies;
     private int totalEnemiesRemaining;
     [SerializeField]
     private int numberOfNormals;//medium dude spawns allowed this wave.
@@ -36,6 +39,11 @@ public class SpawnManager : MonoBehaviour
     private int normNumber;
     private int tankNumber;
     private int stingNumber;
+
+    public GameObject NewWaveTextBox;
+    public TMP_Text NewWave;
+
+    private int nextSpawnPoint = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,29 +53,48 @@ public class SpawnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(endSignal)
-        {
-            newWaveStart();//this starts a new wave after all the enemies have died
-            
-        }
         
         groupTime = Time.time;
 
-        if(groupTime >= waitTime)// the cooldown between bursts of enemies
-        {
-            GroupAssignment();
-            waitTime = groupTime + groupCooldown;
-        }
+       // if(groupTime >= waitTime)// the cooldown between bursts of enemies
+       // {
+         //   GroupAssignment();
+        //    waitTime = groupTime + groupCooldown;
+       // }
         
     }
     
-    private void newWaveStart()
+    public void newWaveStart()
     {
-        waveTime = Time.time;//update start of current wave
-        groupTime = waveTime;
-        waveNumber++;//change wave start 
-        endSignal = false;
-        
+
+        //waveTime = Time.time;//update start of current wave
+       // groupTime = waveTime;
+        GroupAssignment();
+        waveNumber++;
+        StartCoroutine(NewWaveText());
+        TotalEnemies = GameObject.FindObjectsOfType<EnemyBehaviour>().Length;
+        //endSignal = false;
+
+        if (waveNumber > 1)
+        {
+
+            FindObjectOfType<EnvironmentalEffects>().FlamesOfDisaster();
+
+        }
+
+        if (waveNumber <= maxWaveNumber)
+        {
+
+            return;
+
+        }
+        else if (waveNumber > maxWaveNumber)
+        {
+            Debug.Log("HUH");
+            ScoreboardManager.Instance.YouWin();
+
+        }
+
     }
 
     private void GroupAssignment()
@@ -80,67 +107,62 @@ public class SpawnManager : MonoBehaviour
 
         if(numberOfTanks > 2)
         {
-        tankNumber = Random.Range(0, 3);
+            tankNumber = Random.Range(0, 3);
         }
         else tankNumber = numberOfTanks;
 
         if(numberOfStingers > 4)
         {
-        stingNumber = Random.Range(0, 5);
+            stingNumber = Random.Range(0, 5);
         }
         else stingNumber = numberOfStingers;// spawns max number of remaining stingers
 
 
-        for (int y = 0; y < spawnPoints.Length; y++)//shuffles through spawn points for spawning enemies
+        
+        
+
+        for (int x = 0; x < normNumber; x++)
         {
-            Vector3 spawnPicked = spawnPoints[y].transform.position;//sets the chosen spawn point for spawning enemies
-
-            for (int x = 0; x < normNumber; x++)
-            {
-                Instantiate(normal, spawnPicked, Quaternion.identity);//spawns normal dudes
-            }
-
-            if(tankNumber > 0)
-            {
-                for (int x = 0; x < tankNumber; x++)
-                {  
-                    //Instantiate(tank, spawnPicked, Quaternion.identity);//spawns tanks
-                    
-                }
-                //numberOfTanks -= tankNumber;
-            }
-            if(stingNumber > 0)
-            {
-                for (int x = 0; x < stingNumber; x++)
-                {
-                    //Instantiate(stinger, spawnPicked, Quaternion.identity);//spawns stingers
-                    
-                }
-                //numberOfStingers -= stingNumber;
-            }
+            Vector3 spawnPicked = spawnPoints[nextSpawnPoint].transform.position;//sets the chosen spawn point for spawning enemies
+            Instantiate(normal, spawnPicked, Quaternion.identity);//spawns normal dudes
+            nextSpawnPoint = (nextSpawnPoint + 1) % spawnPoints.Length;//makes sure the next spawn point spawns enemies more spread out
         }
+
+        if(tankNumber > 0)
+        {
+            for (int x = 0; x < tankNumber; x++)
+            {  
+                Vector3 spawnPicked = spawnPoints[nextSpawnPoint].transform.position;//sets the chosen spawn point for spawning enemies
+                Instantiate(tank, spawnPicked, Quaternion.identity);//spawns tanks
+                nextSpawnPoint = (nextSpawnPoint + 1) % spawnPoints.Length;//makes sure the next spawn point spawns enemies more spread out   
+            }
+            //numberOfTanks -= tankNumber;
+        }
+        if(stingNumber > 0)
+        {
+            for (int x = 0; x < stingNumber; x++)
+            {
+                Vector3 spawnPicked = spawnPoints[nextSpawnPoint].transform.position;//sets the chosen spawn point for spawning enemies
+                Instantiate(stinger, spawnPicked, Quaternion.identity);//spawns stingers
+                nextSpawnPoint = (nextSpawnPoint + 1) % spawnPoints.Length;//makes sure the next spawn point spawns enemies more spread out
+                
+            }
+            //numberOfStingers -= stingNumber;
+        }
+
         numberOfNormals = System.Math.Clamp(numberOfNormals - normNumber, 0, 100);
-    }
-
-    public void enemyHasDied(GameObject enemy)//when an enemy dies it reduces the counter for it's type that can spawn that wave as well as the total number of dudes
-    {
-        totalEnemies--;
-
-        if(totalEnemies <= 0)
-        {
-            StartCoroutine(endWave());
-        }
 
     }
 
-    private IEnumerator endWave()
+    public IEnumerator NewWaveText()
     {
-        //stuff that happens as the wave ends goes here
-        //like play a noise or a phase shift
 
-        yield return new WaitForSeconds(5);
+        NewWaveTextBox.SetActive(true);
+        NewWave.text = "WAVE " + waveNumber.ToString() + " STARTED";
 
-        endSignal = true;
+        yield return new WaitForSeconds(2);
+
+        NewWaveTextBox.SetActive(false);
 
     }
 }

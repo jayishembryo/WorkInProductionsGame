@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -59,12 +60,20 @@ public class PlayerController : MonoBehaviour
     public Vector2 moveInput;
     private Rigidbody rb;
 
-    public bool IsTouchingGround = true;
+    public bool IsTouchingGround = false;
 
     [SerializeField]
     public GameObject pauseMenu;
     [SerializeField]
     private ScoreboardManager ScoreboardManager;
+
+    float whenToAddTime = 1;
+    float lastAddedToTime = 0;
+
+    [SerializeField]
+    private Animator playerAnim;
+
+    public GameObject FireScreen;
 
 
     // Creates the controller, gets an instance of the InputManager, and the camera transform.
@@ -95,7 +104,9 @@ public class PlayerController : MonoBehaviour
         rb.drag = airDrag;
         Time.timeScale = 1.0f;
 
-        grapplingInstance = GameObject.FindObjectOfType<Grapple>().GetComponent<Grapple>();
+        grapplingInstance = GameObject.FindObjectOfType<Grapple>();
+
+        Physics.IgnoreLayerCollision(7, 16);
 
     }
 
@@ -130,16 +141,14 @@ public class PlayerController : MonoBehaviour
 
     private void Grappling_started(InputAction.CallbackContext obj)
     {
-
         grapplingInstance.StartGrapple();
-
+        playerAnim.SetBool("point", true);
     }
 
     private void Grappling_canceled(InputAction.CallbackContext obj)
     {
-
         grapplingInstance.StopGrapple();
-
+        playerAnim.SetBool("point", false);
     }
 
     private void FixedUpdate()
@@ -147,6 +156,8 @@ public class PlayerController : MonoBehaviour
         Look();
         Move();
         Gravity();
+
+        lastAddedToTime += Time.fixedDeltaTime;
 
         if (timeTillNextEnemySpawn > 0)
             timeTillNextEnemySpawn -= Time.fixedDeltaTime;
@@ -234,7 +245,7 @@ public class PlayerController : MonoBehaviour
 
         timeTillNextEnemySpawn = enemySpawnCD;
 
-        EB.SpawnEnemy();
+        //EB.SpawnEnemy();
     }
 
     public IEnumerator KnockBack()
@@ -306,4 +317,40 @@ public class PlayerController : MonoBehaviour
         Pause.started -= Pause_started;
         Pause.canceled -= Pause_canceled;
     }
+
+    public void GameOverRestart()
+    {
+        SceneManager.LoadScene(sceneName: "VerticalSlice");
+    }
+
+    public void OnTriggerStay(Collider other)
+    {
+        
+        if(other.gameObject.layer == 13)
+        {
+
+            FireScreen.SetActive(true);
+
+            if (lastAddedToTime > whenToAddTime)
+            {
+
+                HealthSystem.instance.FireDamage(1);
+                lastAddedToTime = 0;
+
+            }
+
+        }
+
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        if(other.gameObject.layer == 13)
+        {
+
+            FireScreen.SetActive(false);
+
+        }
+    }
+
 }

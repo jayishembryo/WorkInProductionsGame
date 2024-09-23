@@ -7,8 +7,7 @@
 //Modifying 9/3/2024
 //Gunna mess up some code and see what happens :)
 using System.Collections;
-using System.Collections.Generic;
-using System.Numerics;
+using System.Net.Sockets;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Rendering;
@@ -24,6 +23,8 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField]
     private float speed = 2f;
     private Rigidbody enemyRB;
+    [SerializeField]
+    public float damageToPlayer;
     
     [SerializeField]
     private LayerMask whatIsGround, whatIsPlayer;
@@ -43,15 +44,22 @@ public class EnemyBehaviour : MonoBehaviour
     private float sightRange, attackRange;
     private bool playerInSightRange, playerInAttackRange;
 
+    [SerializeField] private bool knocked;
+
+    public int enemyID; // used to define what type of enemy this is. 0: normal 1: stinger 2: tank 3: boss?
+
+    public GameObject knockedObject; // object to be spawned in the event of this enemy being kicked
+    private ParticleSystem skid; // for use with tank enemy being knocked back
+
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");  //Finds the player
         agent = GetComponent<NavMeshAgent>();
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+        enemyRB = GetComponent<Rigidbody>();
+        if (enemyID == 2) // if the enemy is a tank
+        {
+            skid = GetComponent<ParticleSystem>();
+        }
     }
 
     // Update is called once per frame
@@ -59,26 +67,33 @@ public class EnemyBehaviour : MonoBehaviour
     {
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
-        
 
-        
-        if(!playerInSightRange && !playerInAttackRange) Patrolling();
-        if(playerInSightRange && !playerInAttackRange) ChasePlayer();
-        if(playerInSightRange && playerInAttackRange) AttackPlayer();
+
+        if (agent.isActiveAndEnabled && knocked == false)
+        {
+            if (!playerInSightRange && !playerInAttackRange) Patrolling();
+            if (playerInSightRange && !playerInAttackRange) ChasePlayer();
+            if (playerInSightRange && playerInAttackRange) AttackPlayer();
+        }
+        if (knocked == true)
+        {
+            agent.enabled = false;
+            //transform.Translate(transform.position.x, transform.position.y + 5, transform.position.z);
+        }
     }
 
     private void Patrolling()
     {
         if(!walkPointSet) SearchWalkPoint();
 
-        if(walkPointSet)
-        {
+        if(walkPointSet && agent.isActiveAndEnabled == true)
+        {   
             agent.SetDestination(walkPoint);
         }
 
-        UnityEngine.Vector3 distanceToWalkPoint = transform.position - walkPoint;
+        Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
-        if(distanceToWalkPoint.magnitude < 1f)
+        if(distanceToWalkPoint.magnitude < 2f)
         {
             walkPointSet = false;
         }
@@ -88,7 +103,7 @@ public class EnemyBehaviour : MonoBehaviour
         float randomZ = Random.Range(-walkPointRange,walkPointRange);
         float randomX = Random.Range(-walkPointRange,walkPointRange);
 
-        walkPoint = new UnityEngine.Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
+        if (knocked == false) { walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ); }
 
         if(Physics.Raycast(walkPoint, -transform.up, Mathf.Infinity, whatIsGround))
         {
@@ -99,12 +114,15 @@ public class EnemyBehaviour : MonoBehaviour
 
     private void ChasePlayer()
     {
-        agent.SetDestination(player.transform.position); //the switch to chasing the player
+        Vector3 playerVariance = player.transform.position;
+        playerVariance.x += Random.Range(0,3.5f);//adding in some difference between each enemy so they don't clump up as much
+        playerVariance.z += Random.Range(0,3.5f);
+        if (knocked == false) { agent.SetDestination(playerVariance); } //the switch to chasing the player
     }
 
     private void AttackPlayer()//this is for a claw attack for when the player is up in their face or the other way around.
     {
-        agent.SetDestination(transform.position); //make the enemy stop moving when attacking.
+        //agent.SetDestination(transform.position); //make the enemy stop moving when attacking.
 
         transform.LookAt(player.transform.position);
         
@@ -153,21 +171,57 @@ public class EnemyBehaviour : MonoBehaviour
             //Instantiate(SplashEffect, transform.position, Quaternion.identity);
         }
 
-        if(other.gameObject.layer == 8)//kick layer for if they get kicked by the player
-        {
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
-            var launchDirection = player.GetComponent<Rigidbody>().position - enemyRB.GetComponent<Rigidbody>().position;
-            var launchDirNormalized = launchDirection.normalized;
-            float launchVelocity = player.GetComponent<Rigidbody>().velocity.magnitude;
-            enemyRB.AddForce(launchDirNormalized * launchVelocity);
-            agent.enabled = false;
-
-        }
-
         if(other.gameObject.CompareTag("Ground"))  
         {
             agent.enabled = true;
         }
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == 8)//kick layer for if they get kicked by the player
+        {
+            //defines the different reactions to being kicked.
+            switch (enemyID)
+            {
+                case 0:
+                case 1:
+                    EnemyKnocked();
+                    break;
+                case 2:
+                    agent.enabled = false;
+                    Vector3 launchDirection = player.transform.position - enemyRB.position;
+                    Vector3 launchDirNormalized = launchDirection.normalized;
+                    float launchVelocity = player.GetComponent<Rigidbody>().velocity.magnitude;
+                    enemyRB.AddForce((launchDirNormalized * launchVelocity));
+                    skid.Play(); // this will throw an error if called when the enemy is not a tank
+                    Invoke("ReEnableTank", 1.8f);
+                    break;
+                case 3:
+                    // poo
+                    break;
+                default:
+                    break;
+            }
+        }
+        if (other.gameObject.layer == 16)
+        {
 
+            Debug.Log("Enemy fell like a dumb idiot. -20 aura.");
+            DestroyEnemy();
+        }
+    }
+    private void ReEnableTank()
+    {
+        agent.enabled = true;
+        skid.Stop();
+    }
+    private void EnemyKnocked()
+    {
+        Debug.Log(gameObject.name + " has been kicked.");
+        if (knockedObject != null)
+        {
+            Instantiate(knockedObject, transform.position, Quaternion.identity);
+        }
+        Destroy(gameObject);
+    }
 }

@@ -99,4 +99,10 @@ public class HealthSystem : MonoBehaviour
         isHit = false;
     }
 
+    public void FireDamage(float damage)
+    {
+        playerRes -= damage;
+        Debug.Log("Player has taken fire damage");
+    }
+
 }

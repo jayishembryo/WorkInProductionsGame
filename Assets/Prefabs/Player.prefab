@@ -185,6 +185,7 @@ MonoBehaviour:
   abilityName: Dash
   maxCooldown: 1
   cooldownRate: 1
+  playerKnockback: {fileID: 0}
   player: {fileID: 0}
   characterRB: {fileID: 0}
   rotationAnchor: {fileID: 0}
@@ -253,6 +254,7 @@ MonoBehaviour:
   enemy: {fileID: 0}
   kickAbility: {fileID: 0}
   dashAbility: {fileID: 0}
+  grappleAbility: {fileID: 0}
   enemySpawnCD: 0.5
   cameraTransform: {fileID: 0}
   EB: {fileID: 0}
@@ -275,11 +277,11 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
-  Grapple:
-    m_Name: Grapple
+  Grappling:
+    m_Name: Grappling
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: 847fe5bc-79ab-475b-adda-38895eecfbca
+    m_Id: 4e03a3c1-8a87-4aad-9680-08e27ee5dcf5
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings: []
@@ -287,6 +289,7 @@ MonoBehaviour:
   isMoving: 0
   moveDirection: 0
   moveInput: {x: 0, y: 0}
+  IsTouchingGround: 1
   pauseMenu: {fileID: 0}
   ScoreboardManager: {fileID: 0}
 --- !u!143 &5157702197355410462
@@ -363,6 +366,7 @@ MonoBehaviour:
   abilityName: Kick
   maxCooldown: 1
   cooldownRate: 1
+  playerKnockback: {fileID: 0}
   dash: {fileID: 0}
   directionAnchor: {fileID: 0}
   hitbox: {fileID: 5068072759724160424}

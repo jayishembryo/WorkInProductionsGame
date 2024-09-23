@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.UI;
 
 public class Grapple : MonoBehaviour
 {
@@ -13,23 +15,26 @@ public class Grapple : MonoBehaviour
     private LineRenderer hookRenderer;
     private Transform cam;
 
-    public int grappleTimer = 0;
+    public float GrappleTimer = 0;
+    float maxGrappleTimer = 5;
 
     float whenToAddTime = 1;
     float lastAddedToTime = 0;
+
+    public Image GrappleStamina;
 
     PlayerController playerController;
 
 
 
     [Tooltip("How much of the distance between the grapple hook and the player will be used.")]
-    public float maxDistanceFromPointMultiplier = 0.8f;
+    public float maxDistanceFromPointMultiplier = 0.25f;
 
     [Tooltip("Multiplier between the min distance between the player and the hook point.")]
     public float minDistanceFromPointMultiplier = 0.25f;
 
     [Tooltip("Spring to keep the player moving towards the target.")]
-    public float jointSpring = 4.5f;
+    public float jointSpring = 50f;
 
     [Tooltip("Damper force of the joint.")]
     public float jointDamper = 7f;
@@ -48,7 +53,7 @@ public class Grapple : MonoBehaviour
 
     private Rigidbody rb;
 
-    public static bool isGrappling;
+    public bool IsGrappling;
     bool canGrapple = true;
 
     [SerializeField] private Material BodyMaterial;
@@ -69,6 +74,8 @@ public class Grapple : MonoBehaviour
         hookRenderer.startWidth = 1;
         hookRenderer.endWidth = 1;
         hookRenderer.textureMode = LineTextureMode.Tile;
+
+       // GrappleStamina.fillAmount = 0;
 
     }
 
@@ -95,33 +102,11 @@ public class Grapple : MonoBehaviour
     }
 
 
-    private void FixedUpdate()
+    private void Update()
     {
-        lastAddedToTime += Time.fixedDeltaTime;
+        lastAddedToTime += Time.deltaTime;
 
-        if (joint == null)
-        {
-
-            return;
-
-        }
-
-        if(playerController.IsTouchingGround == false)
-        {
-
-            joint.spring = jumpingSpring;
-            joint.damper = jumpingDamper;
-
-        }
-        else
-        {
-
-            joint.spring = jointSpring;
-            joint.damper = jointDamper;
-
-        }
-
-        if (playerController.IsTouchingGround == false && isGrappling == true)
+        if (playerController.IsTouchingGround == false && IsGrappling == true)
         {
 
             if(lastAddedToTime > whenToAddTime)
@@ -134,10 +119,10 @@ public class Grapple : MonoBehaviour
 
         }
 
-        if (playerController.IsTouchingGround == true && isGrappling == false)
+        if (playerController.IsTouchingGround == true && IsGrappling == false)
         {
 
-            if(canGrapple == false && lastAddedToTime > whenToAddTime)
+            if (lastAddedToTime > whenToAddTime)
             {
 
                 SubtractFromTimer();
@@ -163,7 +148,7 @@ public class Grapple : MonoBehaviour
 
         if (Physics.Raycast(cam.position, cam.forward, out RaycastHit hit, maxDist, shootLayers))
         {
-            isGrappling = true;
+            IsGrappling = true;
 
             hitPoint = hit.point;
             joint = gameObject.AddComponent<SpringJoint>();
@@ -186,23 +171,32 @@ public class Grapple : MonoBehaviour
 
     public void StopGrapple()
     {
-        isGrappling = false;
+
+        IsGrappling = false;
+
         if (joint)
+
         {
+
             Destroy(joint);
+
         }
+
+        StartCoroutine(GrapplingHookCooldown());
+
     }
 
     public void AddToTimer()
     {
 
-        if(grappleTimer <= 4)
+        if(GrappleTimer != maxGrappleTimer)
         {
 
-            grappleTimer = grappleTimer += 1;
+            GrappleTimer = GrappleTimer += 1; // * Time.deltaTime;
+            GrappleStamina.fillAmount -= 0.20f;
 
         }
-        else if (grappleTimer > 4)
+        else if (GrappleTimer >= maxGrappleTimer)
         {
 
             StopGrapple();
@@ -215,18 +209,30 @@ public class Grapple : MonoBehaviour
     public void SubtractFromTimer()
     {
 
-        if(grappleTimer > 0)
+        if(GrappleTimer > 0)
         {
 
-            grappleTimer = grappleTimer -= 1;
+            GrappleTimer = GrappleTimer -= 1; // * Time.deltaTime;
+            GrappleStamina.fillAmount += 0.20f;
 
         }
-        else if (grappleTimer == 0)
+        else if (GrappleTimer == 0)
         {
 
             canGrapple = true;
 
         }
+
+    }
+
+    IEnumerator GrapplingHookCooldown()
+    {
+
+        canGrapple = false;
+
+        yield return new WaitForSeconds(0.5f);
+
+        canGrapple = true;
 
     }
 }

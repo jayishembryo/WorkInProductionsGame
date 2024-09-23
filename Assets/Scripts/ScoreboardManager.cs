@@ -26,6 +26,9 @@ public class ScoreboardManager : MonoBehaviour
     TMP_Text gameOver;
 
     [SerializeField]
+    TMP_Text youWin;
+
+    [SerializeField]
     UnityEvent start;
 
     [SerializeField]
@@ -50,6 +53,7 @@ public class ScoreboardManager : MonoBehaviour
 
         time = maxTime;
         gameOver.enabled = false;
+        youWin.enabled = false;
 
         StartGame();
     }
@@ -67,7 +71,7 @@ public class ScoreboardManager : MonoBehaviour
 
         start.Invoke();
 
-        StartCoroutine(TimeKeeper());
+       // StartCoroutine(TimeKeeper());
     }
 
     public void StopGame()
@@ -88,6 +92,27 @@ public class ScoreboardManager : MonoBehaviour
 
     }
 
+    public void YouWin()
+    {
+
+        if(!isRunning)
+        {
+
+            return;
+
+        }
+
+        stop.Invoke();
+        youWin.enabled = true;
+        mainMenuButton.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        Time.timeScale = 0.0f;
+        GameIsRunning = false;
+        isRunning = false;
+
+    }
+
     IEnumerator TimeKeeper()
     {
 
@@ -100,7 +125,7 @@ public class ScoreboardManager : MonoBehaviour
 
         timer.faceColor = Color.red;
 
-        StopGame();
+      //  StopGame();
     }
 
     public void AddScore(int amt)

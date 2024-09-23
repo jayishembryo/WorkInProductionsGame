@@ -11,8 +11,16 @@ public class EnvironmentalEffects : MonoBehaviour
     int environment;
     private List<int> alreadyUsed = new List<int>();
 
-    /*public float decideInterval = 2f;
+    public float decideInterval = 60f;
     private float timer;
+
+    //temporary fix
+    public GameObject Puddle1;
+    public GameObject Puddle2;
+    public GameObject Puddle3;
+   // public GameObject Puddle4;
+   // public GameObject Puddle5;
+   // public GameObject Puddle6;
 
     private void Update()
     {
@@ -22,7 +30,7 @@ public class EnvironmentalEffects : MonoBehaviour
             timer = 0f;
             Decide();
         }
-    }*/
+    }
 
     public void Decide()
     {
@@ -46,7 +54,7 @@ public class EnvironmentalEffects : MonoBehaviour
         }
         while (alreadyUsed.Contains(environment));
 
-        FlamesOfDisaster(environment);
+       // FlamesOfDisaster(environment);
         alreadyUsed.Add(environment);
 
     }
@@ -71,12 +79,16 @@ public class EnvironmentalEffects : MonoBehaviour
     }
 
     //the one we need for the vertical slice
-    void FlamesOfDisaster(int positionIndex)
+    public void FlamesOfDisaster()
     {
-        if (positions.Length > positionIndex)
-        {
-            Instantiate(threatPrefab, positions[positionIndex].position, Quaternion.identity);
-        }
+
+        Puddle1.SetActive(true);
+        Puddle2.SetActive(true);
+        Puddle3.SetActive(true);
+       // Puddle4.SetActive(true);
+       // Puddle5.SetActive(true);
+        //Puddle6.SetActive(true);
+
     }
 
 }
