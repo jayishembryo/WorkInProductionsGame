@@ -17365,25 +17365,27 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Producer, Game Designer, UI/UX
 
-    Artist
+    Lead Game Designer
 
     Game Designer
 
-    Game
-    Designer
+    Lead
+    Programmer
 
-    Game Designer & SFX
-
-    Programmer & SFX
-
-    Programmer, Music,
-    VFX
+    Programmer, Game Designer
 
     Programmer
 
-    Programmer
+    Programmer, Music/SFX
 
-    Programmer
+    Lead
+    Game Artist
+
+    Game Artist
+
+    Game Artist
+
+    Game Artist
 
 '
   m_isRightToLeft: 0
@@ -18441,7 +18443,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -9.7256775, w: 0}
+  m_margin: {x: 0, y: 0, z: -9.7256775, w: 48.261044}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -19821,25 +19823,27 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Jacob Lee
 
-    Mary Larsen
+    Andrea Drees
 
-    Brad Dixon
+    Charlie O''Shaughnessy
 
-    Zaden Richardson
+    Jay Embry
 
     Harrison
     Weber
 
-    Joey Consoli
+    Jake Gorski
 
-    Claire Noto
+    Solomon Litty
 
-    Trinity Huston
+    Colin Wilcox
 
-    Brooke Boster
+    Madison McWhorter
 
-    John
-    Paul Fairbanks'
+    Drew
+    Mulacek
+
+    Madalyn McDonnell'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
   m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
