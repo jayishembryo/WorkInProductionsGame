@@ -90,7 +90,7 @@ public class SpawnManager : MonoBehaviour
         }
         else if (waveNumber > maxWaveNumber)
         {
-            Debug.Log("HUH");
+           // Debug.Log("HUH");
             ScoreboardManager.Instance.YouWin();
 
         }
