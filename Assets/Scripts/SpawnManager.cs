@@ -78,7 +78,7 @@ public class SpawnManager : MonoBehaviour
         if (waveNumber > 1)
         {
 
-            FindObjectOfType<EnvironmentalEffects>().FlamesOfDisaster();
+            FindObjectOfType<EnvironmentalEffects>().Decide();
 
         }
 
