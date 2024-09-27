@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.06791074, g: 0.10743927, b: 0.1721279, a: 1}
+  m_IndirectSpecularColor: {r: 0.06791074, g: 0.10743927, b: 0.17212787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5272,9 +5272,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae3663fca90428f48bc8c7f5ce9da096, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  threatPrefab: {fileID: 574339481500867356, guid: c4476037edeac0d4f9f2e0b33668c947, type: 3}
-  positions: []
-  decideInterval: 60
   Puddle1: {fileID: 2145956556}
   Puddle2: {fileID: 227442712}
   Puddle3: {fileID: 2125744444}
