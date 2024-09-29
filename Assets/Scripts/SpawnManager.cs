@@ -22,7 +22,7 @@ public class SpawnManager : MonoBehaviour
     private int numberOfStingers;//flying dude spawns allowed this wave.
     
     [SerializeField]
-    private float groupCooldown = 30.0f;//time since last group spawned.
+    private float groupCooldown;//time since last group spawned.
     private float groupTime;
 
     private float waitTime;
@@ -41,25 +41,19 @@ public class SpawnManager : MonoBehaviour
     [SerializeField]
     private List<WaveOrganizer> waveOrganizer;
     
-    /*
+
     [SerializeField]
     private int normNumber;
-    [SerializeField]
-    private int minNormalPerGroup;
-    [SerializeField]
-    private int maxNormalPerGroup;
+    //private int minNormalPerGroup;
+    //private int maxNormalPerGroup;
     [SerializeField]
     private int tankNumber;
-    [SerializeField]
-    private int minTankPerGroup;
-    [SerializeField]
-    private int maxTankPerGroup;
+    //private int minTankPerGroup;
+    //private int maxTankPerGroup;
     [SerializeField]
     private int stingNumber;
-    [SerializeField]
-    private int minStingerPerGroup;
-    [SerializeField]
-    private int maxStingerPerGroup; */
+    //private int minStingerPerGroup;
+    //private int maxStingerPerGroup;
 
 
     public GameObject NewWaveTextBox;
@@ -78,11 +72,11 @@ public class SpawnManager : MonoBehaviour
         
         groupTime = Time.time;
 
-       // if(groupTime >= waitTime)// the cooldown between bursts of enemies
-       // {
-         //   GroupAssignment();
-        //    waitTime = groupTime + groupCooldown;
-       // }
+       if(groupTime >= waitTime)// the cooldown between bursts of enemies
+       {
+            GroupAssignment();
+            waitTime = groupTime + groupCooldown;
+       }
         
     }
     
@@ -91,12 +85,18 @@ public class SpawnManager : MonoBehaviour
 
         //waveTime = Time.time;//update start of current wave
        // groupTime = waveTime;
-        GroupAssignment();
         waveNumber++;
         StartCoroutine(NewWaveText());
+
+        groupCooldown = waveOrganizer[waveNumber].groupCooldown;
+        numberOfNormals = waveOrganizer[waveNumber].totalNormals;
+        numberOfTanks = waveOrganizer[waveNumber].totalTanks;
+        numberOfStingers = waveOrganizer[waveNumber].totalStingers;
+
+        GroupAssignment();
         TotalEnemies = GameObject.FindObjectsOfType<EnemyBehaviour>().Length;
         //endSignal = false;
-
+        
         if (waveNumber > 1)
         {
 
@@ -121,33 +121,36 @@ public class SpawnManager : MonoBehaviour
 
     private void GroupAssignment()
     {
-        if(waveOrganizer[waveNumber].totalENEMIES > waveOrganizer[waveNumber].maxNormalsInGroup - 1)//if the number of normals is greater than the spawn amount
+        if(numberOfNormals > waveOrganizer[waveNumber].maxNormalsInGroup - 1)//if the number of normals is greater than the spawn amount
         {
             normNumber = Random.Range(waveOrganizer[waveNumber].minNormalsInGroup, waveOrganizer[waveNumber].maxNormalsInGroup);//set it to spawn a few of them. should set variables for max and minimum based on wave.
         }
         else normNumber = numberOfNormals;//spawn the remainder of normals
 
-        if(numberOfTanks > maxTankPerGroup - 1)//if the number of tank is greater than the spawn amount
+        if(numberOfTanks > waveOrganizer[waveNumber].maxTanksInGroup - 1)//if the number of tank is greater than the spawn amount
         {
-            tankNumber = Random.Range(minTankPerGroup, maxTankPerGroup);//set it to spawn a few of them. should set variables for max and minimum based on wave.
+            tankNumber = Random.Range(waveOrganizer[waveNumber].minTanksInGroup, waveOrganizer[waveNumber].maxTanksInGroup);//set it to spawn a few of them. should set variables for max and minimum based on wave.
         }
         else tankNumber = numberOfTanks;//spawn the remainder of tanks
 
-        if(numberOfStingers > maxStingerPerGroup - 1)//if the number of stingers is greater than the spawn amount
+        if(numberOfStingers > waveOrganizer[waveNumber].maxStingersInGroup - 1)//if the number of stingers is greater than the spawn amount
         {
-            stingNumber = Random.Range(minStingerPerGroup, maxStingerPerGroup);//set it to spawn a few of them. should set variables for max and minimum based on wave.
+            stingNumber = Random.Range(waveOrganizer[waveNumber].minStingersInGroup, waveOrganizer[waveNumber].maxStingersInGroup);//set it to spawn a few of them. should set variables for max and minimum based on wave.
         }
         else stingNumber = numberOfStingers;// spawns max number of remaining stingers
 
 
         //TAKE THE STUFF FROM ABOVE HERE TO SPAWN A NUMBER OF DUDES
         
-
-        for (int x = 0; x < normNumber; x++)
+        if(normNumber > 0)
         {
-            Vector3 spawnPicked = spawnPoints[nextSpawnPoint].transform.position;//sets the chosen spawn point for spawning enemies
-            Instantiate(normal, spawnPicked, Quaternion.identity);//spawns normal dudes
-            nextSpawnPoint = (nextSpawnPoint + 1) % spawnPoints.Length;//makes sure the next spawn point spawns enemies more spread out
+            for (int x = 0; x < normNumber; x++)
+            {
+                Vector3 spawnPicked = spawnPoints[nextSpawnPoint].transform.position;//sets the chosen spawn point for spawning enemies
+                Instantiate(normal, spawnPicked, Quaternion.identity);//spawns normal dudes
+                nextSpawnPoint = (nextSpawnPoint + 1) % spawnPoints.Length;//makes sure the next spawn point spawns enemies more spread out
+            }
+            numberOfNormals -= normNumber;
         }
 
         if(tankNumber > 0)
@@ -158,7 +161,7 @@ public class SpawnManager : MonoBehaviour
                 Instantiate(tank, spawnPicked, Quaternion.identity);//spawns tanks
                 nextSpawnPoint = (nextSpawnPoint + 1) % spawnPoints.Length;//makes sure the next spawn point spawns enemies more spread out   
             }
-            //numberOfTanks -= tankNumber;
+            numberOfTanks -= tankNumber;
         }
         if(stingNumber > 0)
         {
@@ -169,7 +172,7 @@ public class SpawnManager : MonoBehaviour
                 nextSpawnPoint = (nextSpawnPoint + 1) % spawnPoints.Length;//makes sure the next spawn point spawns enemies more spread out
                 
             }
-            //numberOfStingers -= stingNumber;
+            numberOfStingers -= stingNumber;
         }
 
         numberOfNormals = System.Math.Clamp(numberOfNormals - normNumber, 0, 100);
