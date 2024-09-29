@@ -12,6 +12,8 @@ public class SpawnManager : MonoBehaviour
     [SerializeField]
     public int TotalEnemies;
     private int totalEnemiesRemaining;
+
+
     [SerializeField]
     private int numberOfNormals;//medium dude spawns allowed this wave.
     [SerializeField]
@@ -36,9 +38,29 @@ public class SpawnManager : MonoBehaviour
     [SerializeField]
     private GameObject stinger;
 
+    [SerializeField]
+    private List<WaveOrganizer> waveOrganizer;
+    
+    /*
+    [SerializeField]
     private int normNumber;
+    [SerializeField]
+    private int minNormalPerGroup;
+    [SerializeField]
+    private int maxNormalPerGroup;
+    [SerializeField]
     private int tankNumber;
+    [SerializeField]
+    private int minTankPerGroup;
+    [SerializeField]
+    private int maxTankPerGroup;
+    [SerializeField]
     private int stingNumber;
+    [SerializeField]
+    private int minStingerPerGroup;
+    [SerializeField]
+    private int maxStingerPerGroup; */
+
 
     public GameObject NewWaveTextBox;
     public TMP_Text NewWave;
@@ -99,21 +121,21 @@ public class SpawnManager : MonoBehaviour
 
     private void GroupAssignment()
     {
-        if(numberOfNormals > 6)//if the number of normals is greater than the spawn amount
+        if(waveOrganizer[waveNumber].totalENEMIES > waveOrganizer[waveNumber].maxNormalsInGroup - 1)//if the number of normals is greater than the spawn amount
         {
-            normNumber = Random.Range(4, 8);//set it to spawn a few of them. should set variables for max and minimum based on wave.
+            normNumber = Random.Range(waveOrganizer[waveNumber].minNormalsInGroup, waveOrganizer[waveNumber].maxNormalsInGroup);//set it to spawn a few of them. should set variables for max and minimum based on wave.
         }
         else normNumber = numberOfNormals;//spawn the remainder of normals
 
-        if(numberOfTanks > 2)//if the number of tank is greater than the spawn amount
+        if(numberOfTanks > maxTankPerGroup - 1)//if the number of tank is greater than the spawn amount
         {
-            tankNumber = Random.Range(0, 3);//set it to spawn a few of them. should set variables for max and minimum based on wave.
+            tankNumber = Random.Range(minTankPerGroup, maxTankPerGroup);//set it to spawn a few of them. should set variables for max and minimum based on wave.
         }
         else tankNumber = numberOfTanks;//spawn the remainder of tanks
 
-        if(numberOfStingers > 4)//if the number of stingers is greater than the spawn amount
+        if(numberOfStingers > maxStingerPerGroup - 1)//if the number of stingers is greater than the spawn amount
         {
-            stingNumber = Random.Range(0, 5);//set it to spawn a few of them. should set variables for max and minimum based on wave.
+            stingNumber = Random.Range(minStingerPerGroup, maxStingerPerGroup);//set it to spawn a few of them. should set variables for max and minimum based on wave.
         }
         else stingNumber = numberOfStingers;// spawns max number of remaining stingers
 

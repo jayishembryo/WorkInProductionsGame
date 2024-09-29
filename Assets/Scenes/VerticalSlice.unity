@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.06791074, g: 0.10743927, b: 0.17212787, a: 1}
+  m_IndirectSpecularColor: {r: 0.06791, g: 0.10743823, b: 0.17212683, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -41713,6 +41713,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4391708680455760431, guid: c385128fc3a36313fa00c0bca6b0cb32, type: 3}
+      propertyPath: waveOrganizer.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4391708680455760431, guid: c385128fc3a36313fa00c0bca6b0cb32, type: 3}
       propertyPath: spawnPoints.Array.data[3]
       value: 
       objectReference: {fileID: 1799649825}
@@ -41748,6 +41752,10 @@ PrefabInstance:
       propertyPath: spawnPoints.Array.data[11]
       value: 
       objectReference: {fileID: 1590295584}
+    - target: {fileID: 4391708680455760431, guid: c385128fc3a36313fa00c0bca6b0cb32, type: 3}
+      propertyPath: waveOrganizer.Array.data[0]
+      value: 
+      objectReference: {fileID: 694979621}
     - target: {fileID: 6951500018344560132, guid: c385128fc3a36313fa00c0bca6b0cb32, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -41803,6 +41811,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7582192613918342320, guid: c385128fc3a36313fa00c0bca6b0cb32, type: 3}
       insertIndex: -1
       addedObject: {fileID: 694979620}
+    - targetCorrespondingSourceObject: {fileID: 7582192613918342320, guid: c385128fc3a36313fa00c0bca6b0cb32, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 694979621}
   m_SourcePrefab: {fileID: 100100000, guid: c385128fc3a36313fa00c0bca6b0cb32, type: 3}
 --- !u!850595691 &678003872
 LightingSettings:
@@ -41904,6 +41915,29 @@ MonoBehaviour:
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 0}
   m_BuildHeightMesh: 0
+--- !u!114 &694979621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694979614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5209eff1d5ef2c0699aaeabe0c5e6852, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groupCooldown: 0
+  totalENEMIES: 0
+  totalNormals: 0
+  minNormalsInGroup: 0
+  maxNormalsInGroup: 0
+  totalTanks: 0
+  minTanksInGroup: 0
+  maxTanksInGroup: 0
+  totalStingers: 0
+  minStingersInGroup: 0
+  maxStingersInGroup: 0
 --- !u!1 &707004676
 GameObject:
   m_ObjectHideFlags: 0
@@ -78085,6 +78119,61 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 161.481, z: 0}
+--- !u!1 &1304973172
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1304973174}
+  - component: {fileID: 1304973173}
+  m_Layer: 0
+  m_Name: Wave2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1304973173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304973172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5209eff1d5ef2c0699aaeabe0c5e6852, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groupCooldown: 0
+  totalENEMIES: 0
+  totalNormals: 0
+  minNormalsInGroup: 0
+  maxNormalsInGroup: 0
+  totalTanks: 0
+  minTanksInGroup: 0
+  maxTanksInGroup: 0
+  totalStingers: 0
+  minStingersInGroup: 0
+  maxStingersInGroup: 0
+--- !u!4 &1304973174
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304973172}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1552819113}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1305706935
 GameObject:
   m_ObjectHideFlags: 0
@@ -78199,11 +78288,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2182452950474149683, guid: c385128fc3a36313fa00c0bca6b0cb32, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -50.8
+      value: -50.76
       objectReference: {fileID: 0}
     - target: {fileID: 2182452950474149683, guid: c385128fc3a36313fa00c0bca6b0cb32, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 16.22
+      value: 16.18
       objectReference: {fileID: 0}
     - target: {fileID: 2182452950474149683, guid: c385128fc3a36313fa00c0bca6b0cb32, type: 3}
       propertyPath: m_LocalPosition.z
@@ -78696,6 +78785,61 @@ MonoBehaviour:
   _debug:
     _drawBounds: 0
     _drawSlicesInEditor: 0
+--- !u!1 &1442445728
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1442445730}
+  - component: {fileID: 1442445729}
+  m_Layer: 0
+  m_Name: Wave1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1442445729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1442445728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5209eff1d5ef2c0699aaeabe0c5e6852, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groupCooldown: 0
+  totalENEMIES: 0
+  totalNormals: 0
+  minNormalsInGroup: 0
+  maxNormalsInGroup: 0
+  totalTanks: 0
+  minTanksInGroup: 0
+  maxTanksInGroup: 0
+  totalStingers: 0
+  minStingersInGroup: 0
+  maxStingersInGroup: 0
+--- !u!4 &1442445730
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1442445728}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1552819113}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1443805316
 GameObject:
   m_ObjectHideFlags: 0
@@ -84134,6 +84278,79 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 574339481500867356, guid: c4476037edeac0d4f9f2e0b33668c947, type: 3}
   m_PrefabInstance: {fileID: 1551669585}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1552819111
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1552819113}
+  - component: {fileID: 1552819112}
+  m_Layer: 0
+  m_Name: WaveManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1552819112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552819111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a2ef3676ff2bcc418bf369ee79cdc60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveNumber: 0
+  TotalEnemies: 0
+  numberOfNormals: 0
+  numberOfTanks: 0
+  numberOfStingers: 0
+  groupCooldown: 30
+  waveTime: 0
+  spawnPoints: []
+  normal: {fileID: 8474295532616176723, guid: 9a801a72a065d524aa007bc9486081e6, type: 3}
+  tank: {fileID: 0}
+  stinger: {fileID: 0}
+  waveOrganizer:
+  - {fileID: 1442445729}
+  - {fileID: 1304973173}
+  - {fileID: 0}
+  - {fileID: 0}
+  normNumber: 0
+  minNormalPerGroup: 0
+  maxNormalPerGroup: 0
+  tankNumber: 0
+  minTankPerGroup: 0
+  maxTankPerGroup: 0
+  stingNumber: 0
+  minStingerPerGroup: 0
+  maxStingerPerGroup: 0
+  NewWaveTextBox: {fileID: 0}
+  NewWave: {fileID: 0}
+--- !u!4 &1552819113
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552819111}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.5119772, y: 42.345203, z: -46.237617}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1442445730}
+  - {fileID: 1304973174}
+  m_Father: {fileID: 0}
+  m_RootOrder: 30
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1557214667
 GameObject:
   m_ObjectHideFlags: 0
