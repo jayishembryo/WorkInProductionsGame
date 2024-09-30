@@ -5,14 +5,11 @@ using UnityEngine;
 
 public class EnvironmentalEffects : MonoBehaviour
 {
-    public GameObject threatPrefab;
-    public Transform[] positions;
-    
     int environment;
-    private List<int> alreadyUsed = new List<int>();
+    //change to match # of environments designed
+    int allEnvironments =  0;
 
-    public float decideInterval = 60f;
-    private float timer;
+    private List<int> alreadyUsed = new List<int>();
 
     //temporary fix
     public GameObject Puddle1;
@@ -24,49 +21,41 @@ public class EnvironmentalEffects : MonoBehaviour
 
     private void Update()
     {
-        timer += Time.deltaTime;
-        if (timer >= decideInterval)
-        {
-            timer = 0f;
-            Decide();
-        }
+       
     }
 
     public void Decide()
     {
 
-        //make the max value higher as we add more environmental effects
-        if (positions.Length == 0)
+        environment = Random.Range(0, allEnvironments += 1);
+        
+        if(alreadyUsed.Contains(environment))
         {
-            return;
-        }
 
-        if(alreadyUsed.Count >= (positions.Length))
-        {
             Reroll();
             return;
+
         }
 
-        int environment;
-        do
+        if(environment == 0)
         {
-            environment = Random.Range(0, positions.Length);
-        }
-        while (alreadyUsed.Contains(environment));
 
-       // FlamesOfDisaster(environment);
-        alreadyUsed.Add(environment);
+            FlamesOfDisaster();
+            alreadyUsed.Add(environment);
+
+        }
+        
+        //ADD OTHER ENVIRONMENT FUNCTIONS
 
     }
 
     void Reroll()
     {
 
-        //max value can still be changed
-        if(alreadyUsed.Count >= positions.Length)
+        if (alreadyUsed.Count >= allEnvironments)
         {
 
-            //end game here and/or call boss i think
+            //call either the end of the game or boss fight here
 
         }
         else
