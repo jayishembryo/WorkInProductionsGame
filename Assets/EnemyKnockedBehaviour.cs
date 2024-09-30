@@ -84,7 +84,7 @@ public class EnemyKnockedBehaviour : MonoBehaviour
 
         Destroy(killed); 
 
-        if(killed.GetComponent<EnemyBehaviour>().doesHeal = true)
+       // if(killed.GetComponent<EnemyBehaviour>().doesHeal = true)
         {
 
             float healed = Random.Range(5f, 11f);

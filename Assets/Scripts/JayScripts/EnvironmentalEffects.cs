@@ -12,12 +12,13 @@ public class EnvironmentalEffects : MonoBehaviour
     private List<int> alreadyUsed = new List<int>();
 
     //temporary fix
-    public GameObject Puddle1;
-    public GameObject Puddle2;
-    public GameObject Puddle3;
-    public GameObject Puddle4;
-    public GameObject Puddle5;
-    public GameObject Puddle6;
+    public GameObject FireSpawn;
+    public GameObject IceSpawn;
+
+    bool fireActive = false;
+    bool iceActive = false;
+    bool tideActive = false;
+    bool beamsActive = false;
 
     private void Update()
     {
@@ -42,6 +43,24 @@ public class EnvironmentalEffects : MonoBehaviour
 
             FlamesOfDisaster();
             alreadyUsed.Add(environment);
+
+        }
+        if(environment == 1)
+        {
+
+
+
+        }
+        if(environment == 2)
+        {
+
+
+
+        }
+        if(environment == 3)
+        {
+
+
 
         }
         
@@ -71,12 +90,50 @@ public class EnvironmentalEffects : MonoBehaviour
     public void FlamesOfDisaster()
     {
 
-        Puddle1.SetActive(true);
-        Puddle2.SetActive(true);
-        Puddle3.SetActive(true);
-        Puddle4.SetActive(true);
-        Puddle5.SetActive(true);
-        Puddle6.SetActive(true);
+        fireActive = true;
+        FireSpawn.SetActive(true);
+
+    }
+
+    public void TideRising()
+    {
+
+
+
+    }
+
+    public void BoatFreezes()
+    {
+
+        iceActive = true;
+        IceSpawn.SetActive(true);
+
+    }
+
+    public void EnergyBeams()
+    {
+
+
+
+    }
+
+    public void ResetShip()
+    {
+
+        if(fireActive)
+        {
+
+            FireSpawn.SetActive(false);
+            fireActive = false;
+
+        }
+        if(iceActive)
+        {
+
+            IceSpawn.SetActive(false);
+            iceActive = false;
+
+        }
 
     }
 
