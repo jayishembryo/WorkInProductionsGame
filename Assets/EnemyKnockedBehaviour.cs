@@ -82,7 +82,15 @@ public class EnemyKnockedBehaviour : MonoBehaviour
     public void KillEnemy(GameObject killed)
     {
 
-        Destroy(killed);
+        Destroy(killed); 
+
+        if(killed.GetComponent<EnemyBehaviour>().doesHeal = true)
+        {
+
+            float healed = Random.Range(5f, 11f);
+            HealthSystem.instance.Heal(healed);
+
+        }
 
         FindObjectOfType<SpawnManager>().TotalEnemies -= 1;
 
