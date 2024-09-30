@@ -84,13 +84,11 @@ public class HealthSystem : MonoBehaviour
        
     }
 
-    public void Heal(float amt)
+    public void Heal(float heal)
     {
-        float temp = playerRes + amt;
-        if (temp > maxRes)
-            temp = maxRes;
 
-        playerRes = temp;
+        playerRes += heal;
+
     }
 
     IEnumerator IFrames()

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-7457390552680951247
+--- !u!114 &-8866091134410540709
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9,25 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/StoneWalking
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
   m_EditorClassIdentifier: 
-  Path: event:/StoneWalking
-  Guid:
-    Data1: 122354268
-    Data2: 1269325912
-    Data3: -1840531790
-    Data4: 620920362
-  Banks:
-  - {fileID: -1918245654055400620}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-6912780162676571608
+  Path: Assets/Audio/FMODBanks/Desktop/SFX.bank
+  Name: SFX
+  StudioPath: bank:/SFX
+  lastModified: 638632939238369437
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-5661498160020655783
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -46,7 +37,7 @@ MonoBehaviour:
     Data3: -1956612196
     Data4: -1709305051
   Banks:
-  - {fileID: -1918245654055400620}
+  - {fileID: -8866091134410540709}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -54,7 +45,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-2633122115791773688
+--- !u!114 &-4868934444797185269
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -73,7 +64,7 @@ MonoBehaviour:
     Data3: -1951872072
     Data4: -11613513
   Banks:
-  - {fileID: -1918245654055400620}
+  - {fileID: -8866091134410540709}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -81,7 +72,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-1918245654055400620
+--- !u!114 &-4480992904994930350
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -91,16 +82,57 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/SFX.bank
+  m_Name: bank:/Music.bank
   m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMODBanks/Desktop/SFX.bank
-  Name: SFX
-  StudioPath: bank:/SFX
-<<<<<<< Updated upstream
-  lastModified: 638630486854264724
-=======
-  lastModified: 638632936953166585
->>>>>>> Stashed changes
+  Path: Assets/Audio/FMODBanks/Desktop/Music.bank
+  Name: Music
+  StudioPath: bank:/Music
+  lastModified: 638632939238324059
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-1837556623563020639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/StoneWalking
+  m_EditorClassIdentifier: 
+  Path: event:/StoneWalking
+  Guid:
+    Data1: 122354268
+    Data2: 1269325912
+    Data3: -1840531790
+    Data4: 620920362
+  Banks:
+  - {fileID: -8866091134410540709}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-758032360001346327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Audio/FMODBanks/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638632939238303986
   FileSizes: []
   Exists: 1
 --- !u!114 &11400000
@@ -116,29 +148,25 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 1230724929348026607}
-  - {fileID: 6868334978939917845}
-  - {fileID: 9113243101405611020}
-  - {fileID: 4995026182121913702}
-  - {fileID: -1918245654055400620}
+  - {fileID: 5415380808188163300}
+  - {fileID: 4833383538034353540}
+  - {fileID: -758032360001346327}
+  - {fileID: -4480992904994930350}
+  - {fileID: -8866091134410540709}
   EditorEvents:
-  - {fileID: 2822505973964987023}
-  - {fileID: -6912780162676571608}
-  - {fileID: -7457390552680951247}
-  - {fileID: -2633122115791773688}
-  - {fileID: 2049163843473644753}
+  - {fileID: 4835633156656769474}
+  - {fileID: -5661498160020655783}
+  - {fileID: -1837556623563020639}
+  - {fileID: -4868934444797185269}
+  - {fileID: 6480829163984216416}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 9113243101405611020}
+  - {fileID: -758032360001346327}
   StringsBanks:
-  - {fileID: 1230724929348026607}
-<<<<<<< Updated upstream
-  cacheTime: 638630486854264724
-=======
-  cacheTime: 638632936953166585
->>>>>>> Stashed changes
+  - {fileID: 5415380808188163300}
+  cacheTime: 638632939238369437
   cacheVersion: 131619
---- !u!114 &1230724929348026607
+--- !u!114 &4833383538034353540
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -148,48 +176,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
+  m_Name: bank:/Ambiance.bank
   m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMODBanks/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-<<<<<<< Updated upstream
-  lastModified: 638630486854204534
-=======
-  lastModified: 638632936953081689
->>>>>>> Stashed changes
-  FileSizes:
-  - Name: 
-    Value: 1192
+  Path: Assets/Audio/FMODBanks/Desktop/Ambiance.bank
+  Name: Ambiance
+  StudioPath: bank:/Ambiance
+  lastModified: 638632939238293940
+  FileSizes: []
   Exists: 1
---- !u!114 &2049163843473644753
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ship Creaking
-  m_EditorClassIdentifier: 
-  Path: event:/Ship Creaking
-  Guid:
-    Data1: -1853553010
-    Data2: 1087686046
-    Data3: -1159762038
-    Data4: 530613893
-  Banks:
-  - {fileID: -1918245654055400620}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &2822505973964987023
+--- !u!114 &4835633156656769474
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -208,7 +203,7 @@ MonoBehaviour:
     Data3: 222395549
     Data4: -1772021935
   Banks:
-  - {fileID: -1918245654055400620}
+  - {fileID: -8866091134410540709}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -216,7 +211,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &4995026182121913702
+--- !u!114 &5415380808188163300
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -226,19 +221,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Music.bank
+  m_Name: bank:/Master.strings.bank
   m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMODBanks/Desktop/Music.bank
-  Name: Music
-  StudioPath: bank:/Music
-<<<<<<< Updated upstream
-  lastModified: 638630486854204534
-=======
-  lastModified: 638632936953096584
->>>>>>> Stashed changes
-  FileSizes: []
+  Path: Assets/Audio/FMODBanks/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638632939238314064
+  FileSizes:
+  - Name: 
+    Value: 1192
   Exists: 1
---- !u!114 &6868334978939917845
+--- !u!114 &6480829163984216416
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -247,38 +240,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Ambiance.bank
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ship Creaking
   m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMODBanks/Desktop/Ambiance.bank
-  Name: Ambiance
-  StudioPath: bank:/Ambiance
-<<<<<<< Updated upstream
-  lastModified: 638630486854163819
-=======
-  lastModified: 638632936953014879
->>>>>>> Stashed changes
-  FileSizes: []
-  Exists: 1
---- !u!114 &9113243101405611020
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMODBanks/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-<<<<<<< Updated upstream
-  lastModified: 638630486854204534
-=======
-  lastModified: 638632936953034989
->>>>>>> Stashed changes
-  FileSizes: []
-  Exists: 1
+  Path: event:/Ship Creaking
+  Guid:
+    Data1: -1853553010
+    Data2: 1087686046
+    Data3: -1159762038
+    Data4: 530613893
+  Banks:
+  - {fileID: -8866091134410540709}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
