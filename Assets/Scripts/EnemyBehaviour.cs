@@ -51,6 +51,10 @@ public class EnemyBehaviour : MonoBehaviour
     public GameObject knockedObject; // object to be spawned in the event of this enemy being kicked
     private ParticleSystem skid; // for use with tank enemy being knocked back
 
+    private Animator anim;
+
+    [SerializeField] private bool doesHeal;
+
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");  //Finds the player
@@ -60,6 +64,7 @@ public class EnemyBehaviour : MonoBehaviour
         {
             skid = GetComponent<ParticleSystem>();
         }
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -80,6 +85,8 @@ public class EnemyBehaviour : MonoBehaviour
             agent.enabled = false;
             //transform.Translate(transform.position.x, transform.position.y + 5, transform.position.z);
         }
+
+        anim.SetFloat("Speed", enemyRB.velocity.normalized.magnitude);
     }
 
     private void Patrolling()
