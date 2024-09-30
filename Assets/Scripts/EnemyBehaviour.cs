@@ -64,7 +64,7 @@ public class EnemyBehaviour : MonoBehaviour
         {
             skid = GetComponent<ParticleSystem>();
         }
-        anim = GetComponent<Animator>();
+        anim = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -86,7 +86,8 @@ public class EnemyBehaviour : MonoBehaviour
             //transform.Translate(transform.position.x, transform.position.y + 5, transform.position.z);
         }
 
-        anim.SetFloat("Speed", enemyRB.velocity.normalized.magnitude);
+        anim.SetFloat("speed", enemyRB.velocity.magnitude);
+        Debug.Log(enemyRB.velocity.magnitude);
     }
 
     private void Patrolling()
