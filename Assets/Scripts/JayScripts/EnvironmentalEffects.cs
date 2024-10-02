@@ -20,6 +20,11 @@ public class EnvironmentalEffects : MonoBehaviour
     bool tideActive = false;
     bool beamsActive = false;
 
+    public List<GameObject> beams = new List<GameObject>();
+    public List<GameObject> warnings = new List<GameObject>();
+
+    int lastBeam;
+
     private void Update()
     {
        
@@ -48,19 +53,19 @@ public class EnvironmentalEffects : MonoBehaviour
         if(environment == 1)
         {
 
-
+            TideRising();
 
         }
         if(environment == 2)
         {
 
-
+            BoatFreezes();
 
         }
         if(environment == 3)
         {
 
-
+            EnergyBeams();
 
         }
         
@@ -113,7 +118,46 @@ public class EnvironmentalEffects : MonoBehaviour
     public void EnergyBeams()
     {
 
+        beamsActive = true;
+        StartCoroutine(BeamsActivated());
 
+    }
+
+    IEnumerator BeamsActivated()
+    {
+
+        while (beamsActive)
+        {
+            //randomizes beam/warning called
+            int currentBeam = Random.Range(0, 4);
+
+            //makes sure that it doesn't call the same beam twice in a row
+            if (currentBeam == lastBeam)
+            {
+
+                break;
+
+            }
+
+            lastBeam = currentBeam;
+
+            warnings[currentBeam].SetActive(true);
+
+            //warning should last for x amount of seconds before the beam is called
+            yield return new WaitForSeconds(3);
+
+            warnings[currentBeam].SetActive(false);
+
+            beams[currentBeam].SetActive(true);
+
+            yield return new WaitForSeconds(3);
+
+            beams[currentBeam].SetActive(false);
+
+            //loops
+            yield return new WaitForSeconds(5);
+
+        }
 
     }
 
@@ -132,6 +176,18 @@ public class EnvironmentalEffects : MonoBehaviour
 
             IceSpawn.SetActive(false);
             iceActive = false;
+
+        }
+        if(beamsActive)
+        {
+
+            beamsActive = false;
+
+        }
+        if(tideActive)
+        {
+
+            tideActive = false;
 
         }
 
