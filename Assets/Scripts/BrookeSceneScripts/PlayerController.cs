@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     private float jumpHeight = 1.0f;
     [Header("Physics")]
     [SerializeField]
-    PhysicMaterial physicMaterial;
+    public PhysicMaterial physicMaterial;
     [SerializeField]
     private float groundSpeedLimit = 10;
     [SerializeField]

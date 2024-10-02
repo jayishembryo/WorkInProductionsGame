@@ -28,6 +28,15 @@ public class EnvironmentalEffects : MonoBehaviour
     private void Update()
     {
        
+        while(iceActive && GameObject.FindObjectOfType<PlayerController>().IsTouchingGround == true)
+        {
+
+            //Debug.Log("weeeeeeeeeeeeeeee");
+            GameObject.FindObjectOfType<PlayerController>().physicMaterial.dynamicFriction = 0;
+            //GameObject.FindObjectOfType<PlayerController>().physicMaterial.staticFriction = 0;
+
+        }
+
     }
 
     public void Decide()
@@ -176,6 +185,12 @@ public class EnvironmentalEffects : MonoBehaviour
 
             IceSpawn.SetActive(false);
             iceActive = false;
+            if(GameObject.FindObjectOfType<PlayerController>().IsTouchingGround == true)
+            {
+
+                GameObject.FindObjectOfType<PlayerController>().physicMaterial.dynamicFriction = 0.6f;
+
+            }
 
         }
         if(beamsActive)
