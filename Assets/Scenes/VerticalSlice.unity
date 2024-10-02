@@ -5273,10 +5273,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FireSpawn: {fileID: 1632707840}
-  FireActive: 0
-  IceActive: 0
-  TideActive: 0
-  BeamsActive: 0
+  IceSpawn: {fileID: 0}
+  beams: []
+  warnings: []
 --- !u!4 &166124758
 Transform:
   m_ObjectHideFlags: 0
@@ -125186,6 +125185,10 @@ PrefabInstance:
       propertyPath: playerAnim
       value: 
       objectReference: {fileID: 389632348}
+    - target: {fileID: 6934599026606150273, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: physicMaterial
+      value: 
+      objectReference: {fileID: 13400000, guid: e7782c51880ce5d47adfb1c43ae5cb18, type: 2}
     - target: {fileID: 6934599026606150273, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: cameraTransform
       value: 
