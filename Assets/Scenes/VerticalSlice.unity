@@ -125170,6 +125170,10 @@ PrefabInstance:
       propertyPath: GrappleStamina
       value: 
       objectReference: {fileID: 247971241}
+    - target: {fileID: 6290617412062290127, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: shootLayers.m_Bits
+      value: 164352
+      objectReference: {fileID: 0}
     - target: {fileID: 6665112728080414914, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: playermodelAnim
       value: 
