@@ -152,6 +152,7 @@ public class EnvironmentalEffects : MonoBehaviour
 
             lastBeam = currentBeam;
 
+            //REMINDER: ADD ANIM TO WARNING
             warnings[currentBeam].SetActive(true);
 
             //warning should last for x amount of seconds before the beam is called

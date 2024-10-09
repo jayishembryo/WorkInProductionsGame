@@ -638,6 +638,7 @@ PrefabInstance:
     - {fileID: 7683592465691541541, guid: 529392041b031954ab51290b84961859, type: 3}
     - {fileID: 2841075108437430746, guid: 529392041b031954ab51290b84961859, type: 3}
     - {fileID: 1648457031856746459, guid: 529392041b031954ab51290b84961859, type: 3}
+    - {fileID: 931034526330289050, guid: 529392041b031954ab51290b84961859, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 996795180116363752, guid: 529392041b031954ab51290b84961859, type: 3}
@@ -713,7 +714,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c34d748a886b6334ba68b9a6f008287b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
+  damage: 1
 --- !u!1 &2103023069816164579 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2480099846540930456, guid: 529392041b031954ab51290b84961859, type: 3}
