@@ -5274,6 +5274,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireSpawn: {fileID: 1632707840}
   IceSpawn: {fileID: 0}
+  TideActive: 0
   beams: []
   warnings: []
 --- !u!4 &166124758
@@ -126082,6 +126083,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3179905387032400787, guid: d200edd5ab119e44684301eab920c204, type: 3}
       insertIndex: -1
       addedObject: {fileID: 207295404}
+    - targetCorrespondingSourceObject: {fileID: 7492829355562115334, guid: d200edd5ab119e44684301eab920c204, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7257758199066507370}
     - targetCorrespondingSourceObject: {fileID: 5461298954074936089, guid: d200edd5ab119e44684301eab920c204, type: 3}
       insertIndex: -1
       addedObject: {fileID: 894705072}
@@ -126095,6 +126099,23 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1966916980}
   m_SourcePrefab: {fileID: 100100000, guid: d200edd5ab119e44684301eab920c204, type: 3}
+--- !u!1 &7257758199066507369 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7492829355562115334, guid: d200edd5ab119e44684301eab920c204, type: 3}
+  m_PrefabInstance: {fileID: 7257758199066507368}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7257758199066507370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7257758199066507369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b44e014bad1d7e54daac52649432d0ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8455154482126357282 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5380908942297523488, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}

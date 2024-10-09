@@ -17,7 +17,7 @@ public class EnvironmentalEffects : MonoBehaviour
 
     bool fireActive = false;
     bool iceActive = false;
-    bool tideActive = false;
+    public bool TideActive = false;
     bool beamsActive = false;
 
     public List<GameObject> beams = new List<GameObject>();
@@ -112,7 +112,9 @@ public class EnvironmentalEffects : MonoBehaviour
     public void TideRising()
     {
 
-
+        TideActive = true;
+        //RiseAnim();
+        GameObject.FindObjectOfType<TideAnimations>().RiseAnim();
 
     }
 
@@ -199,10 +201,10 @@ public class EnvironmentalEffects : MonoBehaviour
             beamsActive = false;
 
         }
-        if(tideActive)
+        if(TideActive)
         {
 
-            tideActive = false;
+            TideActive = false;
 
         }
 
