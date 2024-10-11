@@ -1,5 +1,77 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8681925313120606239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Audio/FMODBanks/Desktop/SFX.bank
+  Name: SFX
+  StudioPath: bank:/SFX
+  lastModified: 638642543096965287
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-8603258230971244447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/Groan
+  m_EditorClassIdentifier: 
+  Path: event:/Player/Groan
+  Guid:
+    Data1: 1466461283
+    Data2: 1100492639
+    Data3: -1688614757
+    Data4: -925506740
+  Banks:
+  - {fileID: -8681925313120606239}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-7733461462237512796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemy/TankNormal
+  m_EditorClassIdentifier: 
+  Path: event:/Enemy/TankNormal
+  Guid:
+    Data1: -1178912317
+    Data2: 1230058305
+    Data3: -1827095128
+    Data4: -1916962124
+  Banks:
+  - {fileID: -8681925313120606239}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-7457390552680951247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54,6 +126,98 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-4369740715825346063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Music.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Audio/FMODBanks/Desktop/Music.bank
+  Name: Music
+  StudioPath: bank:/Music
+  lastModified: 638642539683357485
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-3917008525364064446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemy/StingerNormal
+  m_EditorClassIdentifier: 
+  Path: event:/Enemy/StingerNormal
+  Guid:
+    Data1: 1683318350
+    Data2: 1277766085
+    Data3: -1721324653
+    Data4: 989270752
+  Banks:
+  - {fileID: -8681925313120606239}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-3651426267059025672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Audio/FMODBanks/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638642543096399783
+  FileSizes:
+  - Name: 
+    Value: 1550
+  Exists: 1
+--- !u!114 &-3095210778601707324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemy/TankAttack
+  m_EditorClassIdentifier: 
+  Path: event:/Enemy/TankAttack
+  Guid:
+    Data1: -1253029993
+    Data2: 1310220362
+    Data3: 1008940186
+    Data4: -629057476
+  Banks:
+  - {fileID: -8681925313120606239}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-2633122115791773688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99,6 +263,33 @@ MonoBehaviour:
   lastModified: 638632902568160846
   FileSizes: []
   Exists: 1
+--- !u!114 &-183430470540828466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemy/StingerAttack
+  m_EditorClassIdentifier: 
+  Path: event:/Enemy/StingerAttack
+  Guid:
+    Data1: 1635993288
+    Data2: 1133341075
+    Data3: 479655581
+    Data4: -1363871172
+  Banks:
+  - {fileID: -8681925313120606239}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,23 +303,30 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 1230724929348026607}
-  - {fileID: 6868334978939917845}
-  - {fileID: 9113243101405611020}
-  - {fileID: 4995026182121913702}
-  - {fileID: -1918245654055400620}
+  - {fileID: -3651426267059025672}
+  - {fileID: 1395359615569346588}
+  - {fileID: 7586043414472988213}
+  - {fileID: -4369740715825346063}
+  - {fileID: -8681925313120606239}
   EditorEvents:
-  - {fileID: 2822505973964987023}
-  - {fileID: -6912780162676571608}
-  - {fileID: -7457390552680951247}
-  - {fileID: -2633122115791773688}
-  - {fileID: 2049163843473644753}
+  - {fileID: 1269883102013555641}
+  - {fileID: 5039645708435101516}
+  - {fileID: 2822955076052544380}
+  - {fileID: -3917008525364064446}
+  - {fileID: 5116667977846945360}
+  - {fileID: -8603258230971244447}
+  - {fileID: 5550966928937212037}
+  - {fileID: 6916019003222628079}
+  - {fileID: -3095210778601707324}
+  - {fileID: -7733461462237512796}
+  - {fileID: -183430470540828466}
+  - {fileID: 6457585777626169479}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 9113243101405611020}
+  - {fileID: 7586043414472988213}
   StringsBanks:
-  - {fileID: 1230724929348026607}
-  cacheTime: 638632902568160846
+  - {fileID: -3651426267059025672}
+  cacheTime: 638642543096965287
   cacheVersion: 131619
 --- !u!114 &1230724929348026607
 MonoBehaviour:
@@ -149,6 +347,51 @@ MonoBehaviour:
   FileSizes:
   - Name: 
     Value: 1192
+  Exists: 1
+--- !u!114 &1269883102013555641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/Kick
+  m_EditorClassIdentifier: 
+  Path: event:/Player/Kick
+  Guid:
+    Data1: -760842454
+    Data2: 1263064403
+    Data3: 222395549
+    Data4: -1772021935
+  Banks:
+  - {fileID: -8681925313120606239}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &1395359615569346588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Ambiance.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Audio/FMODBanks/Desktop/Ambiance.bank
+  Name: Ambiance
+  StudioPath: bank:/Ambiance
+  lastModified: 638642539683240405
+  FileSizes: []
   Exists: 1
 --- !u!114 &2049163843473644753
 MonoBehaviour:
@@ -204,6 +447,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &2822955076052544380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemy/GhoulAttack
+  m_EditorClassIdentifier: 
+  Path: event:/Enemy/GhoulAttack
+  Guid:
+    Data1: -861896378
+    Data2: 1317767861
+    Data3: -198815587
+    Data4: 74945612
+  Banks:
+  - {fileID: -8681925313120606239}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &4995026182121913702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,6 +492,114 @@ MonoBehaviour:
   lastModified: 638632902568113657
   FileSizes: []
   Exists: 1
+--- !u!114 &5039645708435101516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/WoodWalking
+  m_EditorClassIdentifier: 
+  Path: event:/Player/WoodWalking
+  Guid:
+    Data1: -1080885180
+    Data2: 1339814226
+    Data3: -1956612196
+    Data4: -1709305051
+  Banks:
+  - {fileID: -8681925313120606239}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &5116667977846945360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/StoneWalking
+  m_EditorClassIdentifier: 
+  Path: event:/Player/StoneWalking
+  Guid:
+    Data1: 122354268
+    Data2: 1269325912
+    Data3: -1840531790
+    Data4: 620920362
+  Banks:
+  - {fileID: -8681925313120606239}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &5550966928937212037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/Empowered_Kick
+  m_EditorClassIdentifier: 
+  Path: event:/Player/Empowered_Kick
+  Guid:
+    Data1: -342615452
+    Data2: 1163869419
+    Data3: -1951872072
+    Data4: -11613513
+  Banks:
+  - {fileID: -8681925313120606239}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &6457585777626169479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemy/GhoulNormal
+  m_EditorClassIdentifier: 
+  Path: event:/Enemy/GhoulNormal
+  Guid:
+    Data1: -21880067
+    Data2: 1090020603
+    Data3: -1520504389
+    Data4: 1653870118
+  Banks:
+  - {fileID: -8681925313120606239}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &6868334978939917845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,6 +616,51 @@ MonoBehaviour:
   Name: Ambiance
   StudioPath: bank:/Ambiance
   lastModified: 638632902568080623
+  FileSizes: []
+  Exists: 1
+--- !u!114 &6916019003222628079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Environment/Ship Creaking
+  m_EditorClassIdentifier: 
+  Path: event:/Environment/Ship Creaking
+  Guid:
+    Data1: -1853553010
+    Data2: 1087686046
+    Data3: -1159762038
+    Data4: 530613893
+  Banks:
+  - {fileID: -8681925313120606239}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &7586043414472988213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Audio/FMODBanks/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638642543096379761
   FileSizes: []
   Exists: 1
 --- !u!114 &9113243101405611020
