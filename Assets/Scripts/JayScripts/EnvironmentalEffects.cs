@@ -17,12 +17,26 @@ public class EnvironmentalEffects : MonoBehaviour
 
     bool fireActive = false;
     bool iceActive = false;
-    bool tideActive = false;
+    public bool TideActive = false;
     bool beamsActive = false;
+
+    public List<GameObject> beams = new List<GameObject>();
+    public List<GameObject> warnings = new List<GameObject>();
+
+    int lastBeam;
 
     private void Update()
     {
        
+        while(iceActive && GameObject.FindObjectOfType<PlayerController>().IsTouchingGround == true)
+        {
+
+            //Debug.Log("weeeeeeeeeeeeeeee");
+            GameObject.FindObjectOfType<PlayerController>().physicMaterial.dynamicFriction = 0;
+            //GameObject.FindObjectOfType<PlayerController>().physicMaterial.staticFriction = 0;
+
+        }
+
     }
 
     public void Decide()
@@ -48,19 +62,19 @@ public class EnvironmentalEffects : MonoBehaviour
         if(environment == 1)
         {
 
-
+            TideRising();
 
         }
         if(environment == 2)
         {
 
-
+            BoatFreezes();
 
         }
         if(environment == 3)
         {
 
-
+            EnergyBeams();
 
         }
         
@@ -98,7 +112,9 @@ public class EnvironmentalEffects : MonoBehaviour
     public void TideRising()
     {
 
-
+        TideActive = true;
+        //RiseAnim();
+        GameObject.FindObjectOfType<TideAnimations>().RiseAnim();
 
     }
 
@@ -113,7 +129,47 @@ public class EnvironmentalEffects : MonoBehaviour
     public void EnergyBeams()
     {
 
+        beamsActive = true;
+        StartCoroutine(BeamsActivated());
 
+    }
+
+    IEnumerator BeamsActivated()
+    {
+
+        while (beamsActive)
+        {
+            //randomizes beam/warning called
+            int currentBeam = Random.Range(0, 4);
+
+            //makes sure that it doesn't call the same beam twice in a row
+            if (currentBeam == lastBeam)
+            {
+
+                break;
+
+            }
+
+            lastBeam = currentBeam;
+
+            //REMINDER: ADD ANIM TO WARNING
+            warnings[currentBeam].SetActive(true);
+
+            //warning should last for x amount of seconds before the beam is called
+            yield return new WaitForSeconds(3);
+
+            warnings[currentBeam].SetActive(false);
+
+            beams[currentBeam].SetActive(true);
+
+            yield return new WaitForSeconds(3);
+
+            beams[currentBeam].SetActive(false);
+
+            //loops
+            yield return new WaitForSeconds(5);
+
+        }
 
     }
 
@@ -132,6 +188,24 @@ public class EnvironmentalEffects : MonoBehaviour
 
             IceSpawn.SetActive(false);
             iceActive = false;
+            if(GameObject.FindObjectOfType<PlayerController>().IsTouchingGround == true)
+            {
+
+                GameObject.FindObjectOfType<PlayerController>().physicMaterial.dynamicFriction = 0.6f;
+
+            }
+
+        }
+        if(beamsActive)
+        {
+
+            beamsActive = false;
+
+        }
+        if(TideActive)
+        {
+
+            TideActive = false;
 
         }
 
