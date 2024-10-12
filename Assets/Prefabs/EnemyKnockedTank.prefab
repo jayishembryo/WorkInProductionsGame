@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 2297694828917507748}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.2, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
+  m_LocalScale: {x: 0.4, y: 0.368232, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8914494141670872221}
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 67946a225e9668b409c741d349d0fe86, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b61d2794b4ca7ab41945844eab36d7da, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 2770839071601962939}
   - component: {fileID: 9070251382076492797}
   m_Layer: 0
-  m_Name: EnemyKnockedNormal
+  m_Name: EnemyKnockedTank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -179,7 +179,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8474295532616176723}
   serializedVersion: 4
-  m_Mass: 7.5
+  m_Mass: 18
   m_Drag: 0
   m_AngularDrag: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -234,7 +234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  projSpeed: 119
+  projSpeed: 88
   rb: {fileID: 4271845901635955997}
   lifetime: 0
   burst:
@@ -242,4 +242,4 @@ MonoBehaviour:
   - {fileID: 6893226736054396642, guid: 326596ba55feabb4a898bfd2f5788968, type: 3}
   - {fileID: 6893226736054396642, guid: 7630e605851ad5c45988d69511faa6a7, type: 3}
   - {fileID: 6893226736054396642, guid: 2ede53f92bb8a7a4198847373f84c7fb, type: 3}
-  enemyToSpawn: {fileID: 8474295532616176723, guid: 9a801a72a065d524aa007bc9486081e6, type: 3}
+  enemyToSpawn: {fileID: 8474295532616176723, guid: c8415ee3c611954d880355b6dd87ba07, type: 3}
