@@ -10,6 +10,7 @@ public class EnemyKnockedBehaviour : MonoBehaviour
     [SerializeField] private int lifetime = 0;
     public GameObject[] burst; /// Bursts are gameObjects that are spawned when an enemyKnockedObject hits a surface. 0: burstWall 1: burstWater 2: burstSmack 3: burstEnemy
     public GameObject enemyToSpawn;
+    public EnemyBehaviour EnemyBehaviorInstance;
 
     /// <summary>
     /// This awake function is used to set the bullet to face its target and move in a forward direction when it is spawned.
@@ -82,9 +83,7 @@ public class EnemyKnockedBehaviour : MonoBehaviour
     public void KillEnemy(GameObject killed)
     {
 
-        Destroy(killed); 
-
-        if(killed.GetComponent<EnemyBehaviour>().DoesHeal == true)
+        if (EnemyBehaviorInstance.DoesHeal == true)
         {
 
             //LOOK INTO PARTICLES
@@ -96,6 +95,8 @@ public class EnemyKnockedBehaviour : MonoBehaviour
             Instantiate(burst[4], transform.position, Quaternion.identity);
 
         }
+
+        Destroy(killed); 
 
         FindObjectOfType<SpawnManager>().TotalEnemies -= 1;
 
