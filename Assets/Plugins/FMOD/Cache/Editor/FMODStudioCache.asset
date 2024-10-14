@@ -1,5 +1,32 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8756785581449866716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Environment/AmbientSounds
+  m_EditorClassIdentifier: 
+  Path: event:/Environment/AmbientSounds
+  Guid:
+    Data1: 180549557
+    Data2: 1317076332
+    Data3: -725064015
+    Data4: 1964302018
+  Banks:
+  - {fileID: 1395359615569346588}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 193802
 --- !u!114 &-8681925313120606239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,7 +42,7 @@ MonoBehaviour:
   Path: Assets/Audio/FMODBanks/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638644484656799931
+  lastModified: 638645027903194881
   FileSizes: []
   Exists: 1
 --- !u!114 &-8603258230971244447
@@ -186,10 +213,10 @@ MonoBehaviour:
   Path: Assets/Audio/FMODBanks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638644483366502206
+  lastModified: 638645027902484069
   FileSizes:
   - Name: 
-    Value: 1602
+    Value: 1646
   Exists: 1
 --- !u!114 &-3095210778601707324
 MonoBehaviour:
@@ -290,6 +317,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-134880334998003231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Environment/ShipCreaking
+  m_EditorClassIdentifier: 
+  Path: event:/Environment/ShipCreaking
+  Guid:
+    Data1: -1324960869
+    Data2: 1076969878
+    Data3: -1395505525
+    Data4: 339522925
+  Banks:
+  - {fileID: 1395359615569346588}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 30000
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -316,18 +370,19 @@ MonoBehaviour:
   - {fileID: 5116667977846945360}
   - {fileID: -8603258230971244447}
   - {fileID: 5550966928937212037}
-  - {fileID: 6916019003222628079}
   - {fileID: -3095210778601707324}
   - {fileID: -7733461462237512796}
   - {fileID: -183430470540828466}
   - {fileID: 6457585777626169479}
   - {fileID: 124674482522318899}
+  - {fileID: -134880334998003231}
+  - {fileID: -8756785581449866716}
   EditorParameters: []
   MasterBanks:
   - {fileID: 7586043414472988213}
   StringsBanks:
   - {fileID: -3651426267059025672}
-  cacheTime: 638644484656799931
+  cacheTime: 638645027903194881
   cacheVersion: 131619
 --- !u!114 &124674482522318899
 MonoBehaviour:
@@ -419,7 +474,7 @@ MonoBehaviour:
   Path: Assets/Audio/FMODBanks/Desktop/Ambiance.bank
   Name: Ambiance
   StudioPath: bank:/Ambiance
-  lastModified: 638644484656345900
+  lastModified: 638645027902423889
   FileSizes: []
   Exists: 1
 --- !u!114 &2049163843473644753
@@ -647,34 +702,6 @@ MonoBehaviour:
   lastModified: 638632902568080623
   FileSizes: []
   Exists: 1
---- !u!114 &6916019003222628079
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Environment/Ship Creaking
-  m_EditorClassIdentifier: 
-  Path: event:/Environment/Ship Creaking
-  Guid:
-    Data1: -1853553010
-    Data2: 1087686046
-    Data3: -1159762038
-    Data4: 530613893
-  Banks:
-  - {fileID: 1395359615569346588}
-  - {fileID: -8681925313120606239}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &7586043414472988213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -690,7 +717,7 @@ MonoBehaviour:
   Path: Assets/Audio/FMODBanks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638644483366491701
+  lastModified: 638645027902473891
   FileSizes: []
   Exists: 1
 --- !u!114 &9113243101405611020

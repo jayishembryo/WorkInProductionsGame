@@ -83737,6 +83737,7 @@ GameObject:
   - component: {fileID: 1536215260}
   - component: {fileID: 1536215263}
   - component: {fileID: 1536215264}
+  - component: {fileID: 1536215265}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -83896,6 +83897,19 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!114 &1536215265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536215259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 1749608733}
 --- !u!1 &1545817121
 GameObject:
   m_ObjectHideFlags: 0
@@ -113649,13 +113663,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5383add990b72e46b3a9fb8d4824a5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShipCreaking:
+  AmbienceSounds:
     Guid:
-      Data1: -1853553010
-      Data2: 1087686046
-      Data3: -1159762038
-      Data4: 530613893
-    Path: event:/Environment/Ship Creaking
+      Data1: 180549557
+      Data2: 1317076332
+      Data3: -725064015
+      Data4: 1964302018
+    Path: event:/Environment/AmbientSounds
 --- !u!4 &1749608735
 Transform:
   m_ObjectHideFlags: 0
@@ -113664,7 +113678,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1749608733}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -87.32598, y: -38.9823, z: 220.29846}
+  m_LocalPosition: {x: -16, y: 17.9, z: 1.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
