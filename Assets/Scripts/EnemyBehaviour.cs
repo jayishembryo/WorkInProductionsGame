@@ -79,7 +79,7 @@ public class EnemyBehaviour : MonoBehaviour
         {
 
             DoesHeal = true;
-            GetComponent<SpriteRenderer>().color = Color.green;
+            GetComponentInChildren<SpriteRenderer>().color = Color.green;
 
         }
     }
