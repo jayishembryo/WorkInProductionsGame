@@ -91,7 +91,7 @@ public class EnemyKnockedBehaviour : MonoBehaviour
 
             //MAKE THE PARTICLE EFFECT
             //ADD PARTICLE EFFECT TO LIST
-            //Instantiate(burst[4], transform.position, Quaternion.identity);
+            Instantiate(burst[4], transform.position, Quaternion.identity);
 
         }
 
