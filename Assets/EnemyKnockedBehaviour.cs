@@ -82,9 +82,7 @@ public class EnemyKnockedBehaviour : MonoBehaviour
     public void KillEnemy(GameObject killed)
     {
 
-        Destroy(killed); 
-
-        if(killed.GetComponent<EnemyBehaviour>().DoesHeal == true)
+        if (killed.GetComponent<EnemyBehaviour>().DoesHeal == true)
         {
 
             //LOOK INTO PARTICLES
@@ -93,9 +91,11 @@ public class EnemyKnockedBehaviour : MonoBehaviour
 
             //MAKE THE PARTICLE EFFECT
             //ADD PARTICLE EFFECT TO LIST
-            Instantiate(burst[4], transform.position, Quaternion.identity);
+            //Instantiate(burst[4], transform.position, Quaternion.identity);
 
         }
+
+        Destroy(killed); 
 
         FindObjectOfType<SpawnManager>().TotalEnemies -= 1;
 
