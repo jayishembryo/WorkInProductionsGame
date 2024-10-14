@@ -53,7 +53,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     private Animator anim;
 
-    [SerializeField] private bool doesHeal;
+    [SerializeField] public bool DoesHeal;
 
     private void Awake()
     {
@@ -67,6 +67,21 @@ public class EnemyBehaviour : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
 
         agent.speed = speed;
+
+        int chanceToHeal = Random.Range(0, 10);
+        if (chanceToHeal < 9)
+        {
+
+            DoesHeal = false;
+
+        }
+        else if (chanceToHeal == 9)
+        {
+
+            DoesHeal = true;
+            GetComponent<SpriteRenderer>().color = Color.green;
+
+        }
     }
 
     // Update is called once per frame
