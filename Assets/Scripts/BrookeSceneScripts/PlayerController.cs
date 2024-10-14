@@ -75,6 +75,12 @@ public class PlayerController : MonoBehaviour
 
     public GameObject FireScreen;
 
+    [Header("Slope Handling")]
+    [SerializeField]
+    private float maxSlopeAngle;
+    private RaycastHit slopeHit;
+    [SerializeField]
+    private float playerHeight;
 
     // Creates the controller, gets an instance of the InputManager, and the camera transform.
     private void Start()
@@ -183,6 +189,12 @@ public class PlayerController : MonoBehaviour
 
         rb.AddForce(newVelocity, ForceMode.Acceleration);
         //rb.AddRelativeForce(1000 * Time.fixedDeltaTime * newVelocity, ForceMode.Acceleration);
+        if(OnSlope())
+        {
+            rb.AddForce(GetSlopeMoveDirection() * playerSpeed * 1.1f, ForceMode.Force);
+        }
+        //turns off gravity while on slope to prevent sliding.
+        rb.useGravity = !OnSlope();
     }
 
     public Vector2 GetMoveInput()
@@ -351,6 +363,21 @@ public class PlayerController : MonoBehaviour
             FireScreen.SetActive(false);
 
         }
+    }
+
+    private bool OnSlope()
+    {
+        if(Physics.Raycast(transform.position, Vector3.down, out slopeHit, playerHeight * 0.5f + 0.3f))
+        {
+            float angle = Vector3.Angle(Vector3.up, slopeHit.normal);
+            return angle < maxSlopeAngle && angle != 0;
+        }
+        return false;
+    }
+
+    private Vector3 GetSlopeMoveDirection()
+    {
+        return Vector3.ProjectOnPlane(GetMoveInput(), slopeHit.normal).normalized;
     }
 
 }
