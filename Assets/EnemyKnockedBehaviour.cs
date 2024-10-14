@@ -39,19 +39,6 @@ public class EnemyKnockedBehaviour : MonoBehaviour
         {
             Debug.Log("Knocked Enemy " + gameObject.name + " deleted of old age");
             KillEnemy(gameObject);
-
-            if (EnemyBehaviorInstance.DoesHeal == true)
-            {
-
-                //LOOK INTO PARTICLES
-                float healed = Random.Range(5f, 11f);
-                HealthSystem.instance.Heal(healed);
-
-                //MAKE THE PARTICLE EFFECT
-                //ADD PARTICLE EFFECT TO LIST
-                Instantiate(burst[4], transform.position, Quaternion.identity);
-
-            }
         }
     }
 
@@ -59,9 +46,6 @@ public class EnemyKnockedBehaviour : MonoBehaviour
     {
         if (other.gameObject.CompareTag("KillBarrier"))
         {
-            Instantiate(burst[0], transform.position, Quaternion.identity);
-            KillEnemy(gameObject);
-
             if (EnemyBehaviorInstance.DoesHeal == true)
             {
 
@@ -74,24 +58,13 @@ public class EnemyKnockedBehaviour : MonoBehaviour
                 Instantiate(burst[4], transform.position, Quaternion.identity);
 
             }
+            Instantiate(burst[0], transform.position, Quaternion.identity);
+            KillEnemy(gameObject);
         }
         if (other.gameObject.CompareTag("Water"))
         {
             Instantiate(burst[1], transform.position, Quaternion.identity);
             KillEnemy(gameObject);
-
-            if (EnemyBehaviorInstance.DoesHeal == true)
-            {
-
-                //LOOK INTO PARTICLES
-                float healed = Random.Range(5f, 11f);
-                HealthSystem.instance.Heal(healed);
-
-                //MAKE THE PARTICLE EFFECT
-                //ADD PARTICLE EFFECT TO LIST
-                Instantiate(burst[4], transform.position, Quaternion.identity);
-
-            }
         }
     }
 
@@ -129,6 +102,7 @@ public class EnemyKnockedBehaviour : MonoBehaviour
                 Instantiate(burst[4], transform.position, Quaternion.identity);
 
             }
+
         }
     }
 
