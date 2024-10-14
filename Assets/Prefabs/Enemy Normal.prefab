@@ -268,7 +268,7 @@ MonoBehaviour:
   knocked: 0
   enemyID: 0
   knockedObject: {fileID: 8474295532616176723, guid: 8cf84bf5365b0434988940014a30a4a1, type: 3}
-  doesHeal: 0
+  DoesHeal: 0
 --- !u!136 &2770839071601962939
 CapsuleCollider:
   m_ObjectHideFlags: 0
