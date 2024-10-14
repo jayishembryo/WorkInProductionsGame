@@ -60,6 +60,9 @@ public class SpawnManager : MonoBehaviour
     public TMP_Text NewWave;
 
     private int nextSpawnPoint = 0;
+
+    //attempting to fix issue of new wave starting multiple times in a row
+    public bool Waiting;
     // Start is called before the first frame update
     void Start()
     {
@@ -95,8 +98,9 @@ public class SpawnManager : MonoBehaviour
 
         GroupAssignment();
         TotalEnemies = GameObject.FindObjectsOfType<EnemyBehaviour>().Length;
+        Waiting = false;
         //endSignal = false;
-        
+
         if (waveNumber > 1)
         {
 

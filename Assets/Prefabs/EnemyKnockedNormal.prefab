@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 67946a225e9668b409c741d349d0fe86, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -179,7 +179,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8474295532616176723}
   serializedVersion: 4
-  m_Mass: 5
+  m_Mass: 7.5
   m_Drag: 0
   m_AngularDrag: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -242,4 +242,5 @@ MonoBehaviour:
   - {fileID: 6893226736054396642, guid: 326596ba55feabb4a898bfd2f5788968, type: 3}
   - {fileID: 6893226736054396642, guid: 7630e605851ad5c45988d69511faa6a7, type: 3}
   - {fileID: 6893226736054396642, guid: 2ede53f92bb8a7a4198847373f84c7fb, type: 3}
+  - {fileID: 7907553502098151316, guid: c7f50e1a3715bb24f960160b6d15b269, type: 3}
   enemyToSpawn: {fileID: 8474295532616176723, guid: 9a801a72a065d524aa007bc9486081e6, type: 3}

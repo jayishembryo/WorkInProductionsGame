@@ -82,21 +82,27 @@ public class EnemyKnockedBehaviour : MonoBehaviour
     public void KillEnemy(GameObject killed)
     {
 
-        Destroy(killed); 
-
-       // if(killed.GetComponent<EnemyBehaviour>().doesHeal = true)
+        if (killed.GetComponent<EnemyBehaviour>().DoesHeal == true)
         {
 
+            //LOOK INTO PARTICLES
             float healed = Random.Range(5f, 11f);
             HealthSystem.instance.Heal(healed);
 
+            //MAKE THE PARTICLE EFFECT
+            //ADD PARTICLE EFFECT TO LIST
+            Instantiate(burst[4], transform.position, Quaternion.identity);
+
         }
+
+        Destroy(killed); 
 
         FindObjectOfType<SpawnManager>().TotalEnemies -= 1;
 
-        if (FindObjectOfType<SpawnManager>().TotalEnemies <= 0)
+        if (FindObjectOfType<SpawnManager>().TotalEnemies <= 0 && FindObjectOfType<SpawnManager>().Waiting == false)
         {
 
+            FindObjectOfType<SpawnManager>().Waiting = true;
             FindObjectOfType<SpawnManager>().newWaveStart();
 
         }
