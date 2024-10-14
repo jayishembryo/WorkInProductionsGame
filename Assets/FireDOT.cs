@@ -24,6 +24,7 @@ public class FireDOT : MonoBehaviour
         {
 
             FindObjectOfType<PlayerController>().FireScreen.SetActive(true);
+            FindObjectOfType<PlayerController>().BlazeEffect.SetActive(true);
 
             if (lastAddedToTime > whenToAddTime)
             {
