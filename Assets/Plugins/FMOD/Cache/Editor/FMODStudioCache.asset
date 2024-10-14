@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: Assets/Audio/FMODBanks/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638642543096965287
+  lastModified: 638644484656799931
   FileSizes: []
   Exists: 1
 --- !u!114 &-8603258230971244447
@@ -186,10 +186,10 @@ MonoBehaviour:
   Path: Assets/Audio/FMODBanks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638642543096399783
+  lastModified: 638644483366502206
   FileSizes:
   - Name: 
-    Value: 1550
+    Value: 1602
   Exists: 1
 --- !u!114 &-3095210778601707324
 MonoBehaviour:
@@ -321,13 +321,42 @@ MonoBehaviour:
   - {fileID: -7733461462237512796}
   - {fileID: -183430470540828466}
   - {fileID: 6457585777626169479}
+  - {fileID: 124674482522318899}
   EditorParameters: []
   MasterBanks:
   - {fileID: 7586043414472988213}
   StringsBanks:
   - {fileID: -3651426267059025672}
-  cacheTime: 638642543096965287
+  cacheTime: 638644484656799931
   cacheVersion: 131619
+--- !u!114 &124674482522318899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Environment/OceanWaves
+  m_EditorClassIdentifier: 
+  Path: event:/Environment/OceanWaves
+  Guid:
+    Data1: -866254212
+    Data2: 1108839236
+    Data3: -1841280640
+    Data4: -1501668549
+  Banks:
+  - {fileID: 1395359615569346588}
+  - {fileID: -8681925313120606239}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 193802
 --- !u!114 &1230724929348026607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -390,7 +419,7 @@ MonoBehaviour:
   Path: Assets/Audio/FMODBanks/Desktop/Ambiance.bank
   Name: Ambiance
   StudioPath: bank:/Ambiance
-  lastModified: 638642539683240405
+  lastModified: 638644484656345900
   FileSizes: []
   Exists: 1
 --- !u!114 &2049163843473644753
@@ -637,10 +666,11 @@ MonoBehaviour:
     Data3: -1159762038
     Data4: 530613893
   Banks:
+  - {fileID: 1395359615569346588}
   - {fileID: -8681925313120606239}
   IsStream: 1
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
@@ -660,7 +690,7 @@ MonoBehaviour:
   Path: Assets/Audio/FMODBanks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638642543096379761
+  lastModified: 638644483366491701
   FileSizes: []
   Exists: 1
 --- !u!114 &9113243101405611020
