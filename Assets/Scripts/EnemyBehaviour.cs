@@ -53,7 +53,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     private Animator anim;
 
-    [SerializeField] private bool doesHeal;
+    [SerializeField] public bool DoesHeal;
 
     private void Awake()
     {
@@ -65,6 +65,28 @@ public class EnemyBehaviour : MonoBehaviour
             skid = GetComponent<ParticleSystem>();
         }
         anim = GetComponentInChildren<Animator>();
+
+        int chanceOfHealing = Random.Range(0, 11); 
+
+        if(chanceOfHealing < 10)
+        {
+
+            DoesHeal = false;
+
+        }
+        else if (chanceOfHealing == 10)
+        {
+
+            DoesHeal = true;
+
+        }
+
+        if(DoesHeal)
+        {
+
+            GetComponent<SpriteRenderer>().color = Color.green;
+
+        }
     }
 
     // Update is called once per frame
@@ -211,12 +233,7 @@ public class EnemyBehaviour : MonoBehaviour
                     break;
             }
         }
-        if (other.gameObject.layer == 16)
-        {
 
-            Debug.Log("Enemy fell like a dumb idiot. -20 aura.");
-            DestroyEnemy();
-        }
     }
     private void ReEnableTank()
     {
