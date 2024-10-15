@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1167819431207943127}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 2.06, z: -0.11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -128,7 +128,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 55e7d4d340381b3469ff9181c018011e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -694,8 +694,8 @@ GameObject:
   - component: {fileID: 6119630809766995737}
   - component: {fileID: 7449557632932427471}
   - component: {fileID: 6665112728080414914}
-  - component: {fileID: 1309564412491857265}
   - component: {fileID: 6290617412062290127}
+  - component: {fileID: 3298885297947992780}
   m_Layer: 7
   m_Name: Player 1
   m_TagString: Player
@@ -726,7 +726,7 @@ Transform:
   - {fileID: 3331994596432919265}
   - {fileID: 4336143392425215655}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6934599026606150273
 MonoBehaviour:
@@ -740,7 +740,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beca8c634e42b8f448b999bf7c54c964, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 140
+  playerSpeed: 150
   jumpHeight: 20
   physicMaterial: {fileID: 13400000, guid: e7782c51880ce5d47adfb1c43ae5cb18, type: 2}
   groundSpeedLimit: 17
@@ -790,6 +790,8 @@ MonoBehaviour:
   ScoreboardManager: {fileID: 0}
   playerAnim: {fileID: 0}
   FireScreen: {fileID: 0}
+  maxSlopeAngle: 45
+  playerHeight: 1
 --- !u!54 &6119630809766995737
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -935,27 +937,6 @@ MonoBehaviour:
   CanBeKnockedBack: 1
   CanKick: 1
   playermodelAnim: {fileID: 0}
---- !u!65 &1309564412491857265
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7182574327882956369}
-  m_Material: {fileID: 13400000, guid: e7782c51880ce5d47adfb1c43ae5cb18, type: 2}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6290617412062290127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -982,11 +963,34 @@ MonoBehaviour:
   jointMassScale: 3.81
   jointForceBoost: 101.4
   IsGrappling: 0
-  BodyMaterial: {fileID: 0}
+  BodyMaterial: {fileID: 2100000, guid: 55e7d4d340381b3469ff9181c018011e, type: 2}
   gunModel: {fileID: 7428299833572200738}
   gunFirePoint: {fileID: 6878474525094573333}
   gunFollowPoint: {fileID: 3331994596432919265}
   gunExitPoint: {fileID: 4336143392425215655}
+--- !u!136 &3298885297947992780
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7182574327882956369}
+  m_Material: {fileID: 13400000, guid: e7782c51880ce5d47adfb1c43ae5cb18, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 3
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &7774002295957858768
 GameObject:
   m_ObjectHideFlags: 0
