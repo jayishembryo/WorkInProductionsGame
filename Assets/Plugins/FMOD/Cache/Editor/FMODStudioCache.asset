@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-7457390552680951247
+--- !u!114 &-8438832202679256505
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/StoneWalking
+  m_Name: event:/Enemy/GhoulNormal
   m_EditorClassIdentifier: 
-  Path: event:/StoneWalking
+  Path: event:/Enemy/GhoulNormal
   Guid:
-    Data1: 122354268
-    Data2: 1269325912
-    Data3: -1840531790
-    Data4: 620920362
+    Data1: -21880067
+    Data2: 1090020603
+    Data3: -1520504389
+    Data4: 1653870118
   Banks:
   - {fileID: -1918245654055400620}
   IsStream: 0
@@ -27,7 +27,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-6912780162676571608
+--- !u!114 &-8429598366674984787
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -37,9 +37,90 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/WoodWalking
+  m_Name: event:/Player/Groan
   m_EditorClassIdentifier: 
-  Path: event:/WoodWalking
+  Path: event:/Player/Groan
+  Guid:
+    Data1: 1466461283
+    Data2: 1100492639
+    Data3: -1688614757
+    Data4: -925506740
+  Banks:
+  - {fileID: -1918245654055400620}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-6808602161358360834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemy/GhoulAttack
+  m_EditorClassIdentifier: 
+  Path: event:/Enemy/GhoulAttack
+  Guid:
+    Data1: -861896378
+    Data2: 1317767861
+    Data3: -198815587
+    Data4: 74945612
+  Banks:
+  - {fileID: -1918245654055400620}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-5311534615266462935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemy/StingerNormal
+  m_EditorClassIdentifier: 
+  Path: event:/Enemy/StingerNormal
+  Guid:
+    Data1: 1683318350
+    Data2: 1277766085
+    Data3: -1721324653
+    Data4: 989270752
+  Banks:
+  - {fileID: -1918245654055400620}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-5218614700396117775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/WoodWalking
+  m_EditorClassIdentifier: 
+  Path: event:/Player/WoodWalking
   Guid:
     Data1: -1080885180
     Data2: 1339814226
@@ -54,7 +135,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-2633122115791773688
+--- !u!114 &-5168719468356334069
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -64,14 +145,68 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Empowered_Kick
+  m_Name: event:/Enemy/TankNormal
   m_EditorClassIdentifier: 
-  Path: event:/Empowered_Kick
+  Path: event:/Enemy/TankNormal
+  Guid:
+    Data1: -1178912317
+    Data2: 1230058305
+    Data3: -1827095128
+    Data4: -1916962124
+  Banks:
+  - {fileID: -1918245654055400620}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-2408081932466194601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/Empowered_Kick
+  m_EditorClassIdentifier: 
+  Path: event:/Player/Empowered_Kick
   Guid:
     Data1: -342615452
     Data2: 1163869419
     Data3: -1951872072
     Data4: -11613513
+  Banks:
+  - {fileID: -1918245654055400620}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-2213152692894587350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/StoneWalking
+  m_EditorClassIdentifier: 
+  Path: event:/Player/StoneWalking
+  Guid:
+    Data1: 122354268
+    Data2: 1269325912
+    Data3: -1840531790
+    Data4: 620920362
   Banks:
   - {fileID: -1918245654055400620}
   IsStream: 0
@@ -96,7 +231,7 @@ MonoBehaviour:
   Path: Assets/Audio/FMODBanks/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638634644109685586
+  lastModified: 638645581140444036
   FileSizes: []
   Exists: 1
 --- !u!114 &11400000
@@ -118,17 +253,26 @@ MonoBehaviour:
   - {fileID: 4995026182121913702}
   - {fileID: -1918245654055400620}
   EditorEvents:
-  - {fileID: 2822505973964987023}
-  - {fileID: -6912780162676571608}
-  - {fileID: -7457390552680951247}
-  - {fileID: -2633122115791773688}
-  - {fileID: 2049163843473644753}
+  - {fileID: 2677260496830498368}
+  - {fileID: 1653548645439310352}
+  - {fileID: 3745844269969171670}
+  - {fileID: 3479098889097504899}
+  - {fileID: -5218614700396117775}
+  - {fileID: -6808602161358360834}
+  - {fileID: -5311534615266462935}
+  - {fileID: -2213152692894587350}
+  - {fileID: -8429598366674984787}
+  - {fileID: -2408081932466194601}
+  - {fileID: 6881755465994330183}
+  - {fileID: -5168719468356334069}
+  - {fileID: 3562600873127883942}
+  - {fileID: -8438832202679256505}
   EditorParameters: []
   MasterBanks:
   - {fileID: 9113243101405611020}
   StringsBanks:
   - {fileID: 1230724929348026607}
-  cacheTime: 638634644109685586
+  cacheTime: 638645581766995081
   cacheVersion: 131619
 --- !u!114 &1230724929348026607
 MonoBehaviour:
@@ -145,12 +289,12 @@ MonoBehaviour:
   Path: Assets/Audio/FMODBanks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638634644109632392
+  lastModified: 638645581139826324
   FileSizes:
   - Name: 
-    Value: 1192
+    Value: 1646
   Exists: 1
---- !u!114 &2049163843473644753
+--- !u!114 &1653548645439310352
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -160,24 +304,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ship Creaking
+  m_Name: event:/Environment/ShipCreaking
   m_EditorClassIdentifier: 
-  Path: event:/Ship Creaking
+  Path: event:/Environment/ShipCreaking
   Guid:
-    Data1: -1853553010
-    Data2: 1087686046
-    Data3: -1159762038
-    Data4: 530613893
+    Data1: -1324960869
+    Data2: 1076969878
+    Data3: -1395505525
+    Data4: 339522925
   Banks:
-  - {fileID: -1918245654055400620}
-  IsStream: 1
-  Is3D: 0
+  - {fileID: 6868334978939917845}
+  IsStream: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
---- !u!114 &2822505973964987023
+  Length: 30000
+--- !u!114 &2677260496830498368
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -187,9 +331,37 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Kick
+  m_Name: event:/Environment/OceanWaves
   m_EditorClassIdentifier: 
-  Path: event:/Kick
+  Path: event:/Environment/OceanWaves
+  Guid:
+    Data1: -866254212
+    Data2: 1108839236
+    Data3: -1841280640
+    Data4: -1501668549
+  Banks:
+  - {fileID: -1918245654055400620}
+  - {fileID: 6868334978939917845}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 193802
+--- !u!114 &3479098889097504899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/Kick
+  m_EditorClassIdentifier: 
+  Path: event:/Player/Kick
   Guid:
     Data1: -760842454
     Data2: 1263064403
@@ -204,6 +376,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &3562600873127883942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemy/StingerAttack
+  m_EditorClassIdentifier: 
+  Path: event:/Enemy/StingerAttack
+  Guid:
+    Data1: 1635993288
+    Data2: 1133341075
+    Data3: 479655581
+    Data4: -1363871172
+  Banks:
+  - {fileID: -1918245654055400620}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &3745844269969171670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Environment/AmbientSounds
+  m_EditorClassIdentifier: 
+  Path: event:/Environment/AmbientSounds
+  Guid:
+    Data1: 180549557
+    Data2: 1317076332
+    Data3: -725064015
+    Data4: 1964302018
+  Banks:
+  - {fileID: 6868334978939917845}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 193802
 --- !u!114 &4995026182121913702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,7 +445,7 @@ MonoBehaviour:
   Path: Assets/Audio/FMODBanks/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638634644109632392
+  lastModified: 638642539683357485
   FileSizes: []
   Exists: 1
 --- !u!114 &6868334978939917845
@@ -237,9 +463,36 @@ MonoBehaviour:
   Path: Assets/Audio/FMODBanks/Desktop/Ambiance.bank
   Name: Ambiance
   StudioPath: bank:/Ambiance
-  lastModified: 638634644109580182
+  lastModified: 638645581766995081
   FileSizes: []
   Exists: 1
+--- !u!114 &6881755465994330183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemy/TankAttack
+  m_EditorClassIdentifier: 
+  Path: event:/Enemy/TankAttack
+  Guid:
+    Data1: -1253029993
+    Data2: 1310220362
+    Data3: 1008940186
+    Data4: -629057476
+  Banks:
+  - {fileID: -1918245654055400620}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &9113243101405611020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,6 +508,6 @@ MonoBehaviour:
   Path: Assets/Audio/FMODBanks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638634644109609533
+  lastModified: 638645581139816322
   FileSizes: []
   Exists: 1
