@@ -82,6 +82,8 @@ public class EnemyBehaviour : MonoBehaviour
             GetComponentInChildren<SpriteRenderer>().color = Color.green;
 
         }
+
+        knockedObject.GetComponent<EnemyKnockedBehaviour>().EnemyBehaviorInstance = this;
     }
 
     // Update is called once per frame

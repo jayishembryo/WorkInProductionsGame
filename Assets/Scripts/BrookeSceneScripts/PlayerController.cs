@@ -74,6 +74,7 @@ public class PlayerController : MonoBehaviour
     private Animator playerAnim;
 
     public GameObject FireScreen;
+    public GameObject BlazeEffect;
 
     [Header("Slope Handling")]
     [SerializeField]
@@ -321,6 +322,28 @@ public class PlayerController : MonoBehaviour
         //dashAbility.OnAbilityTrigger();
     }
 
+    public IEnumerator PaddleBounce(int whichSide)
+    {
+        //"whichSide" is to see whether the collided paddle is on the right or left side of the ship.
+        //This will effect the launch angle.
+        // -1: right, 1: left
+        switch (whichSide)
+        {
+            case -1:
+                rb.velocity = Vector3.zero;
+                yield return new WaitForSeconds(.3f);
+                rb.velocity += new Vector3(-30, 70, 0);
+                GetComponent<ParticleSystem>().Play();
+                break;
+            case 1:
+                rb.velocity = Vector3.zero;
+                yield return new WaitForSeconds(.3f);
+                rb.velocity += new Vector3(30, 70, 0);
+                GetComponent<ParticleSystem>().Play();
+                break;
+        }
+    }
+
 
     private void OnDestroy()
     {
@@ -342,6 +365,7 @@ public class PlayerController : MonoBehaviour
         {
 
             FireScreen.SetActive(true);
+            BlazeEffect.SetActive(true);
 
             if (lastAddedToTime > whenToAddTime)
             {
@@ -361,6 +385,7 @@ public class PlayerController : MonoBehaviour
         {
 
             FireScreen.SetActive(false);
+            BlazeEffect.SetActive(false);
 
         }
     }
