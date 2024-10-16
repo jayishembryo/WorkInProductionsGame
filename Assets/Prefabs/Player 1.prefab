@@ -726,7 +726,7 @@ Transform:
   - {fileID: 3331994596432919265}
   - {fileID: 4336143392425215655}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6934599026606150273
 MonoBehaviour:
@@ -790,6 +790,7 @@ MonoBehaviour:
   ScoreboardManager: {fileID: 0}
   playerAnim: {fileID: 0}
   FireScreen: {fileID: 0}
+  BlazeEffect: {fileID: 0}
   maxSlopeAngle: 45
   playerHeight: 1
 --- !u!54 &6119630809766995737
