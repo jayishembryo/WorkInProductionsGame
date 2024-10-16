@@ -10,6 +10,7 @@ public class EnemyKnockedBehaviour : MonoBehaviour
     [SerializeField] private int lifetime = 0;
     public GameObject[] burst; /// Bursts are gameObjects that are spawned when an enemyKnockedObject hits a surface. 0: burstWall 1: burstWater 2: burstSmack 3: burstEnemy
     public GameObject enemyToSpawn;
+    public EnemyBehaviour EnemyBehaviorInstance;
 
     /// <summary>
     /// This awake function is used to set the bullet to face its target and move in a forward direction when it is spawned.
@@ -45,6 +46,18 @@ public class EnemyKnockedBehaviour : MonoBehaviour
     {
         if (other.gameObject.CompareTag("KillBarrier"))
         {
+            if (EnemyBehaviorInstance.DoesHeal == true)
+            {
+
+                //LOOK INTO PARTICLES
+                float healed = Random.Range(5f, 11f);
+                HealthSystem.instance.Heal(healed);
+
+                //MAKE THE PARTICLE EFFECT
+                //ADD PARTICLE EFFECT TO LIST
+                Instantiate(burst[4], transform.position, Quaternion.identity);
+
+            }
             Instantiate(burst[0], transform.position, Quaternion.identity);
             KillEnemy(gameObject);
         }
@@ -76,19 +89,34 @@ public class EnemyKnockedBehaviour : MonoBehaviour
             Instantiate(burst[3], transform.position, Quaternion.identity);
             KillEnemy(collision.gameObject);
             KillEnemy(gameObject);
+
+            if (EnemyBehaviorInstance.DoesHeal == true)
+            {
+
+                //LOOK INTO PARTICLES
+                float healed = Random.Range(5f, 11f);
+                HealthSystem.instance.Heal(healed);
+
+                //MAKE THE PARTICLE EFFECT
+                //ADD PARTICLE EFFECT TO LIST
+                Instantiate(burst[4], transform.position, Quaternion.identity);
+
+            }
+
         }
     }
 
     public void KillEnemy(GameObject killed)
     {
 
-        Destroy(killed);
+        Destroy(killed); 
 
         FindObjectOfType<SpawnManager>().TotalEnemies -= 1;
 
-        if (FindObjectOfType<SpawnManager>().TotalEnemies <= 0)
+        if (FindObjectOfType<SpawnManager>().TotalEnemies <= 0 && FindObjectOfType<SpawnManager>().Waiting == false)
         {
 
+            FindObjectOfType<SpawnManager>().Waiting = true;
             FindObjectOfType<SpawnManager>().newWaveStart();
 
         }

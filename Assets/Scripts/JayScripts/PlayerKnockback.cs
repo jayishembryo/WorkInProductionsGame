@@ -53,6 +53,7 @@ public class PlayerKnockback : MonoBehaviour
         CanKick = true;
         Invoke("Reactivation", 0.5f);
         playermodelAnim.SetTrigger("hurtEnd");
+        FindObjectOfType<PlayerController>().FireScreen.SetActive(false);
 
     }
 

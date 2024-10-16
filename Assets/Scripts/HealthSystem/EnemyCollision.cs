@@ -20,6 +20,7 @@ public class EnemyCollision : MonoBehaviour
         if(other.gameObject.CompareTag("Enemy"))
         {
             EnemyBehaviour otherEnemy = other.gameObject.GetComponent<EnemyBehaviour>();
+            FindObjectOfType<PlayerController>().FireScreen.SetActive(true);
             if (otherEnemy != null)
             {
                 HealthSystem.instance.Damage(otherEnemy.damageToPlayer);
