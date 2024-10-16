@@ -36,7 +36,7 @@ public class EnemyBehaviour : MonoBehaviour
     private float walkPointRange;
 
     //Attacking
-    private float timeBetweenAttacks;
+    [SerializeField] private float timeBetweenAttacks;
     bool alreadyAttacked;
 
     //States
@@ -53,7 +53,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     private Animator anim;
 
-    [SerializeField] private bool doesHeal;
+    [SerializeField] public bool DoesHeal;
 
     private void Awake()
     {
@@ -65,6 +65,25 @@ public class EnemyBehaviour : MonoBehaviour
             skid = GetComponent<ParticleSystem>();
         }
         anim = GetComponentInChildren<Animator>();
+
+        agent.speed = speed;
+
+        int chanceToHeal = Random.Range(0, 10);
+        if (chanceToHeal < 9)
+        {
+
+            DoesHeal = false;
+
+        }
+        else if (chanceToHeal == 9)
+        {
+
+            DoesHeal = true;
+            GetComponentInChildren<SpriteRenderer>().color = Color.green;
+
+        }
+
+        knockedObject.GetComponent<EnemyKnockedBehaviour>().EnemyBehaviorInstance = this;
     }
 
     // Update is called once per frame
@@ -87,7 +106,7 @@ public class EnemyBehaviour : MonoBehaviour
         }
 
         anim.SetFloat("speed", enemyRB.velocity.magnitude);
-        Debug.Log(enemyRB.velocity.magnitude);
+        //Debug.Log(enemyRB.velocity.magnitude);
     }
 
     private void Patrolling()
@@ -130,13 +149,22 @@ public class EnemyBehaviour : MonoBehaviour
 
     private void AttackPlayer()//this is for a claw attack for when the player is up in their face or the other way around.
     {
-        //agent.SetDestination(transform.position); //make the enemy stop moving when attacking.
-
-        transform.LookAt(player.transform.position);
+        switch (enemyID)
+        {
+            default:
+            case 0:
+            case 2:
+                agent.SetDestination(transform.position);
+                break;
+            case 1:
+                agent.SetDestination(player.transform.position);
+                //agent.SetDestination(player.transform.position);
+                break;
+        }
         
-        if(!alreadyAttacked)
-        {   
-            //the attack code would go right here if I felt like it rn. Jake - 9/3/2024
+        if(!alreadyAttacked && agent.enabled)
+        {
+            anim.SetTrigger("attack");
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
@@ -196,13 +224,22 @@ public class EnemyBehaviour : MonoBehaviour
                     EnemyKnocked();
                     break;
                 case 2:
-                    agent.enabled = false;
-                    Vector3 launchDirection = player.transform.position - enemyRB.position;
-                    Vector3 launchDirNormalized = launchDirection.normalized;
-                    float launchVelocity = player.GetComponent<Rigidbody>().velocity.magnitude;
-                    enemyRB.AddForce((launchDirNormalized * launchVelocity));
-                    skid.Play(); // this will throw an error if called when the enemy is not a tank
-                    Invoke("ReEnableTank", 1.8f);
+                    if (GetComponentInChildren<TeeterCheckerScript>().isTeetering == false)
+                    {
+                        anim.SetTrigger("pushed");
+                        agent.enabled = false;
+                        Vector3 launchDirection = player.transform.position - enemyRB.position;
+                        Vector3 launchDirNormalized = launchDirection.normalized;
+                        float launchVelocity = player.GetComponent<Rigidbody>().velocity.magnitude;
+                        enemyRB.AddForce((launchDirNormalized * launchVelocity));
+                        skid.Play(); // this will throw an error if called when the enemy is not a tank
+                        Invoke("ReEnableTank", 1.8f);
+                        StopCoroutine(nameof(TeeterTank));
+                    }
+                    else
+                    {
+                        EnemyKnocked();
+                    }
                     break;
                 case 3:
                     // poo
@@ -217,6 +254,22 @@ public class EnemyBehaviour : MonoBehaviour
             Debug.Log("Enemy fell like a dumb idiot. -20 aura.");
             DestroyEnemy();
         }
+    }
+
+    public IEnumerator TeeterTank()
+    {
+        Debug.Log(gameObject.name + " object is now in teeter!");
+        anim.SetBool("teeter", true);
+        agent.speed = 0;
+        yield return new WaitForSeconds(4f);
+        Debug.Log(gameObject.name + " has fallen out of teeter.");
+        anim.SetBool("teeter", false);
+        GetComponentInChildren<TeeterCheckerScript>().isTeetering = false;
+        anim.SetTrigger("return");
+        agent.speed = speed;
+        yield return new WaitForSeconds(1f);
+        GetComponentInChildren<TeeterCheckerScript>().toldParentToTeeter = false;
+        Debug.Log(gameObject.name + " can now be teetered again.");
     }
     private void ReEnableTank()
     {

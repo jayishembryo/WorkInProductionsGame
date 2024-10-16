@@ -15,8 +15,11 @@ public class EnvironmentalEffects : MonoBehaviour
     public GameObject FireSpawn;
     public GameObject IceSpawn;
 
-    bool fireActive = false;
-    bool iceActive = false;
+    public GameObject FireWarnings;
+    public GameObject IceWarnings;
+
+    public bool FireActive = false;
+    public bool IceActive = false;
     public bool TideActive = false;
     bool beamsActive = false;
 
@@ -28,7 +31,7 @@ public class EnvironmentalEffects : MonoBehaviour
     private void Update()
     {
        
-        while(iceActive && GameObject.FindObjectOfType<PlayerController>().IsTouchingGround == true)
+        while(IceActive && GameObject.FindObjectOfType<PlayerController>().IsTouchingGround == true)
         {
 
             //Debug.Log("weeeeeeeeeeeeeeee");
@@ -104,8 +107,9 @@ public class EnvironmentalEffects : MonoBehaviour
     public void FlamesOfDisaster()
     {
 
-        fireActive = true;
-        FireSpawn.SetActive(true);
+        FireActive = true;
+        //FireSpawn.SetActive(true);
+        FireWarnings.SetActive(true);
 
     }
 
@@ -121,8 +125,9 @@ public class EnvironmentalEffects : MonoBehaviour
     public void BoatFreezes()
     {
 
-        iceActive = true;
-        IceSpawn.SetActive(true);
+        IceActive = true;
+        //IceSpawn.SetActive(true);
+        IceWarnings.SetActive(true);
 
     }
 
@@ -176,18 +181,18 @@ public class EnvironmentalEffects : MonoBehaviour
     public void ResetShip()
     {
 
-        if(fireActive)
+        if(FireActive)
         {
 
             FireSpawn.SetActive(false);
-            fireActive = false;
+            FireActive = false;
 
         }
-        if(iceActive)
+        if(IceActive)
         {
 
             IceSpawn.SetActive(false);
-            iceActive = false;
+            IceActive = false;
             if(GameObject.FindObjectOfType<PlayerController>().IsTouchingGround == true)
             {
 

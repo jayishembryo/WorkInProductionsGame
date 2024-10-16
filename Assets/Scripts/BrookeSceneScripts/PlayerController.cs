@@ -74,7 +74,14 @@ public class PlayerController : MonoBehaviour
     private Animator playerAnim;
 
     public GameObject FireScreen;
+    public GameObject BlazeEffect;
 
+    [Header("Slope Handling")]
+    [SerializeField]
+    private float maxSlopeAngle;
+    private RaycastHit slopeHit;
+    [SerializeField]
+    private float playerHeight;
 
     // Creates the controller, gets an instance of the InputManager, and the camera transform.
     private void Start()
@@ -183,6 +190,12 @@ public class PlayerController : MonoBehaviour
 
         rb.AddForce(newVelocity, ForceMode.Acceleration);
         //rb.AddRelativeForce(1000 * Time.fixedDeltaTime * newVelocity, ForceMode.Acceleration);
+        if(OnSlope())
+        {
+            rb.AddForce(GetSlopeMoveDirection() * playerSpeed * 1.1f, ForceMode.Force);
+        }
+        //turns off gravity while on slope to prevent sliding.
+        rb.useGravity = !OnSlope();
     }
 
     public Vector2 GetMoveInput()
@@ -309,6 +322,28 @@ public class PlayerController : MonoBehaviour
         //dashAbility.OnAbilityTrigger();
     }
 
+    public IEnumerator PaddleBounce(int whichSide)
+    {
+        //"whichSide" is to see whether the collided paddle is on the right or left side of the ship.
+        //This will effect the launch angle.
+        // -1: right, 1: left
+        switch (whichSide)
+        {
+            case -1:
+                rb.velocity = Vector3.zero;
+                yield return new WaitForSeconds(.3f);
+                rb.velocity += new Vector3(-30, 70, 0);
+                GetComponent<ParticleSystem>().Play();
+                break;
+            case 1:
+                rb.velocity = Vector3.zero;
+                yield return new WaitForSeconds(.3f);
+                rb.velocity += new Vector3(30, 70, 0);
+                GetComponent<ParticleSystem>().Play();
+                break;
+        }
+    }
+
 
     private void OnDestroy()
     {
@@ -330,6 +365,7 @@ public class PlayerController : MonoBehaviour
         {
 
             FireScreen.SetActive(true);
+            BlazeEffect.SetActive(true);
 
             if (lastAddedToTime > whenToAddTime)
             {
@@ -349,8 +385,24 @@ public class PlayerController : MonoBehaviour
         {
 
             FireScreen.SetActive(false);
+            BlazeEffect.SetActive(false);
 
         }
+    }
+
+    private bool OnSlope()
+    {
+        if(Physics.Raycast(transform.position, Vector3.down, out slopeHit, playerHeight * 0.5f + 0.3f))
+        {
+            float angle = Vector3.Angle(Vector3.up, slopeHit.normal);
+            return angle < maxSlopeAngle && angle != 0;
+        }
+        return false;
+    }
+
+    private Vector3 GetSlopeMoveDirection()
+    {
+        return Vector3.ProjectOnPlane(GetMoveInput(), slopeHit.normal).normalized;
     }
 
 }
