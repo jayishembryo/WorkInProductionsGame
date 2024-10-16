@@ -5,68 +5,93 @@ using UnityEngine;
 
 public class EnvironmentalEffects : MonoBehaviour
 {
-    public GameObject threatPrefab;
-    public Transform[] positions;
-    
     int environment;
+    //change to match # of environments designed
+    int allEnvironments =  0;
+
     private List<int> alreadyUsed = new List<int>();
 
-    public float decideInterval = 60f;
-    private float timer;
-
     //temporary fix
-    public GameObject Puddle1;
-    public GameObject Puddle2;
-    public GameObject Puddle3;
-    public GameObject Puddle4;
-    public GameObject Puddle5;
-    public GameObject Puddle6;
+    public GameObject FireSpawn;
+    public GameObject IceSpawn;
+
+    public GameObject FireWarnings;
+    public GameObject IceWarnings;
+
+    public bool FireActive = false;
+    public bool IceActive = false;
+    public bool TideActive = false;
+    bool beamsActive = false;
+
+    public List<GameObject> beams = new List<GameObject>();
+    public List<GameObject> warnings = new List<GameObject>();
+
+    int lastBeam;
 
     private void Update()
     {
-        timer += Time.deltaTime;
-        if (timer >= decideInterval)
+       
+        while(IceActive && GameObject.FindObjectOfType<PlayerController>().IsTouchingGround == true)
         {
-            timer = 0f;
-            Decide();
+
+            //Debug.Log("weeeeeeeeeeeeeeee");
+            GameObject.FindObjectOfType<PlayerController>().physicMaterial.dynamicFriction = 0;
+            //GameObject.FindObjectOfType<PlayerController>().physicMaterial.staticFriction = 0;
+
         }
+
     }
 
     public void Decide()
     {
 
-        //make the max value higher as we add more environmental effects
-        if (positions.Length == 0)
+        environment = Random.Range(0, allEnvironments += 1);
+        
+        if(alreadyUsed.Contains(environment))
         {
-            return;
-        }
 
-        if(alreadyUsed.Count >= (positions.Length))
-        {
             Reroll();
             return;
+
         }
 
-        int environment;
-        do
+        if(environment == 0)
         {
-            environment = Random.Range(0, positions.Length);
-        }
-        while (alreadyUsed.Contains(environment));
 
-       // FlamesOfDisaster(environment);
-        alreadyUsed.Add(environment);
+            FlamesOfDisaster();
+            alreadyUsed.Add(environment);
+
+        }
+        if(environment == 1)
+        {
+
+            TideRising();
+
+        }
+        if(environment == 2)
+        {
+
+            BoatFreezes();
+
+        }
+        if(environment == 3)
+        {
+
+            EnergyBeams();
+
+        }
+        
+        //ADD OTHER ENVIRONMENT FUNCTIONS
 
     }
 
     void Reroll()
     {
 
-        //max value can still be changed
-        if(alreadyUsed.Count >= positions.Length)
+        if (alreadyUsed.Count >= allEnvironments)
         {
 
-            //end game here and/or call boss i think
+            //call either the end of the game or boss fight here
 
         }
         else
@@ -82,12 +107,112 @@ public class EnvironmentalEffects : MonoBehaviour
     public void FlamesOfDisaster()
     {
 
-        Puddle1.SetActive(true);
-        Puddle2.SetActive(true);
-        Puddle3.SetActive(true);
-        Puddle4.SetActive(true);
-        Puddle5.SetActive(true);
-        Puddle6.SetActive(true);
+        FireActive = true;
+        //FireSpawn.SetActive(true);
+        FireWarnings.SetActive(true);
+
+    }
+
+    public void TideRising()
+    {
+
+        TideActive = true;
+        //RiseAnim();
+        GameObject.FindObjectOfType<TideAnimations>().RiseAnim();
+
+    }
+
+    public void BoatFreezes()
+    {
+
+        IceActive = true;
+        //IceSpawn.SetActive(true);
+        IceWarnings.SetActive(true);
+
+    }
+
+    public void EnergyBeams()
+    {
+
+        beamsActive = true;
+        StartCoroutine(BeamsActivated());
+
+    }
+
+    IEnumerator BeamsActivated()
+    {
+
+        while (beamsActive)
+        {
+            //randomizes beam/warning called
+            int currentBeam = Random.Range(0, 4);
+
+            //makes sure that it doesn't call the same beam twice in a row
+            if (currentBeam == lastBeam)
+            {
+
+                break;
+
+            }
+
+            lastBeam = currentBeam;
+
+            //REMINDER: ADD ANIM TO WARNING
+            warnings[currentBeam].SetActive(true);
+
+            //warning should last for x amount of seconds before the beam is called
+            yield return new WaitForSeconds(3);
+
+            warnings[currentBeam].SetActive(false);
+
+            beams[currentBeam].SetActive(true);
+
+            yield return new WaitForSeconds(3);
+
+            beams[currentBeam].SetActive(false);
+
+            //loops
+            yield return new WaitForSeconds(5);
+
+        }
+
+    }
+
+    public void ResetShip()
+    {
+
+        if(FireActive)
+        {
+
+            FireSpawn.SetActive(false);
+            FireActive = false;
+
+        }
+        if(IceActive)
+        {
+
+            IceSpawn.SetActive(false);
+            IceActive = false;
+            if(GameObject.FindObjectOfType<PlayerController>().IsTouchingGround == true)
+            {
+
+                GameObject.FindObjectOfType<PlayerController>().physicMaterial.dynamicFriction = 0.6f;
+
+            }
+
+        }
+        if(beamsActive)
+        {
+
+            beamsActive = false;
+
+        }
+        if(TideActive)
+        {
+
+            TideActive = false;
+
+        }
 
     }
 
