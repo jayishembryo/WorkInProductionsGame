@@ -24,6 +24,7 @@ public class HealthSystem : MonoBehaviour
   
 
     public Image HealthFill;
+    [SerializeField] private Gradient healthFillGradient;
 
     void Start()
     {
@@ -46,7 +47,7 @@ public class HealthSystem : MonoBehaviour
         
         // Divison here is done because value of fill is between 0 & 1.
         HealthFill.fillAmount = Mathf.Lerp(HealthFill.fillAmount,
-            (playerRes / maxRes), 0.5f);
+            (playerRes / maxRes), 0.5f); 
 
         
     }

@@ -5502,6 +5502,7 @@ MonoBehaviour:
   - {fileID: 1344541011}
   - {fileID: 1895545907}
   - {fileID: 1850885205}
+  HealthBarAnim: {fileID: 0}
 --- !u!4 &166124758
 Transform:
   m_ObjectHideFlags: 0
@@ -132361,6 +132362,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 55e7d4d340381b3469ff9181c018011e, type: 2}
+    - target: {fileID: 4964857247302402449, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4964857247302402449, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6290617412062290127, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: BodyMaterial
       value: 
@@ -132369,6 +132378,10 @@ PrefabInstance:
       propertyPath: GrappleStamina
       value: 
       objectReference: {fileID: 247971241}
+    - target: {fileID: 6290617412062290127, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: shootLayers.m_Bits
+      value: 33280
+      objectReference: {fileID: 0}
     - target: {fileID: 6665112728080414914, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: playermodelAnim
       value: 
@@ -135718,6 +135731,10 @@ PrefabInstance:
     - target: {fileID: 6241716674522492136, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
       propertyPath: m_MatchWidthOrHeight
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828898245675794598, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

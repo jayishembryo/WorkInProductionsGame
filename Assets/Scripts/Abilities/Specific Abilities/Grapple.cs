@@ -10,7 +10,7 @@ public class Grapple : MonoBehaviour
 {
     private Vector3 hitPoint;
     private SpringJoint joint;
-    private float maxDist = 1000f;
+    private float maxDist = 100000000000f;
     public LayerMask shootLayers;
     private LineRenderer hookRenderer;
     private Transform cam;

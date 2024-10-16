@@ -63,6 +63,10 @@ public class SpawnManager : MonoBehaviour
 
     //attempting to fix issue of new wave starting multiple times in a row
     public bool Waiting;
+
+    //wave UI
+    public List<GameObject> waveBars = new List<GameObject>();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -105,19 +109,6 @@ public class SpawnManager : MonoBehaviour
         {
 
             FindObjectOfType<EnvironmentalEffects>().Decide();
-
-        }
-
-        if (waveNumber <= maxWaveNumber)
-        {
-
-            return;
-
-        }
-        else if (waveNumber > maxWaveNumber)
-        {
-           // Debug.Log("HUH");
-            ScoreboardManager.Instance.YouWin();
 
         }
 
