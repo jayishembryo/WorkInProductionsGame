@@ -135711,13 +135711,13 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1581557666}
-    - target: {fileID: 5492368936605829855, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: GameOverRestart
-      objectReference: {fileID: 0}
     - target: {fileID: 5607057123960240364, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6241716674522492136, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
