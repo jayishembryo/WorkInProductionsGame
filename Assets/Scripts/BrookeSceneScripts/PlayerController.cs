@@ -74,6 +74,7 @@ public class PlayerController : MonoBehaviour
     private Animator playerAnim;
 
     public GameObject FireScreen;
+    public GameObject BlazeEffect;
 
     [Header("Slope Handling")]
     [SerializeField]
@@ -364,6 +365,7 @@ public class PlayerController : MonoBehaviour
         {
 
             FireScreen.SetActive(true);
+            BlazeEffect.SetActive(true);
 
             if (lastAddedToTime > whenToAddTime)
             {
@@ -383,6 +385,7 @@ public class PlayerController : MonoBehaviour
         {
 
             FireScreen.SetActive(false);
+            BlazeEffect.SetActive(false);
 
         }
     }
