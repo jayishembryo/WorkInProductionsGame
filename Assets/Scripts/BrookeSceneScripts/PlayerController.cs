@@ -321,6 +321,28 @@ public class PlayerController : MonoBehaviour
         //dashAbility.OnAbilityTrigger();
     }
 
+    public IEnumerator PaddleBounce(int whichSide)
+    {
+        //"whichSide" is to see whether the collided paddle is on the right or left side of the ship.
+        //This will effect the launch angle.
+        // -1: right, 1: left
+        switch (whichSide)
+        {
+            case -1:
+                rb.velocity = Vector3.zero;
+                yield return new WaitForSeconds(.3f);
+                rb.velocity += new Vector3(-30, 70, 0);
+                GetComponent<ParticleSystem>().Play();
+                break;
+            case 1:
+                rb.velocity = Vector3.zero;
+                yield return new WaitForSeconds(.3f);
+                rb.velocity += new Vector3(30, 70, 0);
+                GetComponent<ParticleSystem>().Play();
+                break;
+        }
+    }
+
 
     private void OnDestroy()
     {
