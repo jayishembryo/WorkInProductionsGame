@@ -65,21 +65,35 @@ public class Dash : AbstractAbility
     {
         ViewmodelScript.viewmodelAnim.SetTrigger("dash");
 
-        Vector3 force = MovementDirection() * forceScalar + upwardVector;
-        if (player.IsGrounded())
-            force = force.normalized * groundSpeed;
+        if (MovementDirection() == Vector3.zero)
+        {
+            Vector3 stillForce = gameObject.transform.forward * forceScalar;
+            if (player.IsGrounded())
+                stillForce = stillForce.normalized * groundSpeed;
 
-        // Zeros out the player's current velocity so dash feels more snappy
-        characterRB.velocity = Vector3.zero;
-        characterRB.AddForce(force, forceMode);
+            // Zeros out the player's current velocity so dash feels more snappy
+            characterRB.velocity = Vector3.zero;
+            characterRB.AddForce(stillForce, forceMode);
+        }
+        else
+        {
+            Vector3 force = MovementDirection() * forceScalar + upwardVector;
+            if (player.IsGrounded())
+                force = force.normalized * groundSpeed;
 
-        //characterController.SimpleMove(force);
+            // Zeros out the player's current velocity so dash feels more snappy
+            characterRB.velocity = Vector3.zero;
+            characterRB.AddForce(force, forceMode);
+
+            //characterController.SimpleMove(force);
+        }
 
         EmpowerKick();
 
         Debug.Log("Dashed");
 
         //StartCoroutine(DelayedSpeedLimit());
+        
     }
 
     IEnumerator DelayedSpeedLimit()
