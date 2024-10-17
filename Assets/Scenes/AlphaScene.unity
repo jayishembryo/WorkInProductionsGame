@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.06791074, g: 0.10743927, b: 0.1721279, a: 1}
+  m_IndirectSpecularColor: {r: 0.06791074, g: 0.10743927, b: 0.17212787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5502,7 +5502,6 @@ MonoBehaviour:
   - {fileID: 1344541011}
   - {fileID: 1895545907}
   - {fileID: 1850885205}
-  HealthBarAnim: {fileID: 0}
 --- !u!4 &166124758
 Transform:
   m_ObjectHideFlags: 0
@@ -5646,7 +5645,7 @@ MonoBehaviour:
   m_VerticalAxis:
     Value: 0
     m_SpeedMode: 0
-    m_MaxSpeed: 500
+    m_MaxSpeed: 300
     m_AccelTime: 0.01
     m_DecelTime: 0.02
     m_InputAxisName: Mouse Y
@@ -5670,7 +5669,7 @@ MonoBehaviour:
   m_HorizontalAxis:
     Value: 0
     m_SpeedMode: 0
-    m_MaxSpeed: 500
+    m_MaxSpeed: 300
     m_AccelTime: 0.01
     m_DecelTime: 0.02
     m_InputAxisName: Mouse X
@@ -32370,6 +32369,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2086840753}
     m_Modifications:
+    - target: {fileID: 6603617725623953706, guid: d1f26b661651dc74283f8c4b9f03bf0a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6603617725623953706, guid: d1f26b661651dc74283f8c4b9f03bf0a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 9.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8298624678124654481, guid: d1f26b661651dc74283f8c4b9f03bf0a, type: 3}
+      propertyPath: m_Name
+      value: IceWall1 (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 3315595186179992382, guid: f36663fd34ad93a4fb6c0bf01ee2f8e0, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -32413,18 +32424,6 @@ PrefabInstance:
     - target: {fileID: 3315595186179992382, guid: f36663fd34ad93a4fb6c0bf01ee2f8e0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6603617725623953706, guid: d1f26b661651dc74283f8c4b9f03bf0a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6603617725623953706, guid: d1f26b661651dc74283f8c4b9f03bf0a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 9.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8298624678124654481, guid: d1f26b661651dc74283f8c4b9f03bf0a, type: 3}
-      propertyPath: m_Name
-      value: IceWall1 (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -74277,6 +74276,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3022656304107100525}
     m_Modifications:
+    - target: {fileID: 1057898139904201570, guid: 3206e4d59671aef49aae0d1e0e80bf44, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1778448360356098563, guid: 3206e4d59671aef49aae0d1e0e80bf44, type: 3}
       propertyPath: rightSide
       value: 1
@@ -79281,6 +79284,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2086840753}
     m_Modifications:
+    - target: {fileID: 6603617725623953706, guid: d1f26b661651dc74283f8c4b9f03bf0a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8298624678124654481, guid: d1f26b661651dc74283f8c4b9f03bf0a, type: 3}
+      propertyPath: m_Name
+      value: IceWall1
+      objectReference: {fileID: 0}
     - target: {fileID: 3315595186179992382, guid: f36663fd34ad93a4fb6c0bf01ee2f8e0, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -79324,14 +79335,6 @@ PrefabInstance:
     - target: {fileID: 3315595186179992382, guid: f36663fd34ad93a4fb6c0bf01ee2f8e0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6603617725623953706, guid: d1f26b661651dc74283f8c4b9f03bf0a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -5.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8298624678124654481, guid: d1f26b661651dc74283f8c4b9f03bf0a, type: 3}
-      propertyPath: m_Name
-      value: IceWall1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -132362,14 +132365,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 55e7d4d340381b3469ff9181c018011e, type: 2}
-    - target: {fileID: 4964857247302402449, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4964857247302402449, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6290617412062290127, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: BodyMaterial
       value: 
@@ -132379,8 +132374,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 247971241}
     - target: {fileID: 6290617412062290127, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
-      propertyPath: shootLayers.m_Bits
-      value: 33280
+      propertyPath: maxDistanceFromPointMultiplier
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 6665112728080414914, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: playermodelAnim
@@ -132915,7 +132910,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: fdf122bb458f3d74495cbe105d260e62, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 80cd5adedde1c294da644e42c7dd37c9, type: 2}
+      objectReference: {fileID: 2100000, guid: 54fcd3fb16661d640bfb8d6612b52555, type: 2}
     - target: {fileID: 919132149155446097, guid: fdf122bb458f3d74495cbe105d260e62, type: 3}
       propertyPath: m_Name
       value: Ship_MastBeam_C_1
@@ -133004,7 +132999,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ed277e3dacb5e8042b4ae96f9b8dcdd7, type: 3}
       propertyPath: m_Layer
-      value: 15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ed277e3dacb5e8042b4ae96f9b8dcdd7, type: 3}
       propertyPath: m_TagString
@@ -133336,7 +133331,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 6ec7b08a5c127ac42b9eec7ce3f251e9, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: c0f0a08c292f23d459db222ea9d5a833, type: 2}
+      objectReference: {fileID: 2100000, guid: 4c85374bda8d0d1498f8d8cc56ad96e8, type: 2}
     - target: {fileID: 919132149155446097, guid: 6ec7b08a5c127ac42b9eec7ce3f251e9, type: 3}
       propertyPath: m_Name
       value: Ship_MastBeam_A_1 (2)
@@ -133418,7 +133413,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: dbc33bf2d3cb7d843bd5518d5c6f7349, type: 3}
       propertyPath: m_Layer
-      value: 15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: dbc33bf2d3cb7d843bd5518d5c6f7349, type: 3}
       propertyPath: m_TagString
@@ -133571,7 +133566,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6059cb6dd0645db4d9dc16b8093e5dca, type: 3}
       propertyPath: m_Layer
-      value: 15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6059cb6dd0645db4d9dc16b8093e5dca, type: 3}
       propertyPath: m_TagString
@@ -133679,7 +133674,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6059cb6dd0645db4d9dc16b8093e5dca, type: 3}
       propertyPath: m_Layer
-      value: 15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6059cb6dd0645db4d9dc16b8093e5dca, type: 3}
       propertyPath: m_TagString
@@ -133949,6 +133944,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 99299a34a014364429b1047e67200e33, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5b1602f0829f7db46aeee08f3a68a796, type: 2}
     - target: {fileID: 919132149155446097, guid: 99299a34a014364429b1047e67200e33, type: 3}
       propertyPath: m_Name
       value: Ship_MastSail_A_1
@@ -134036,7 +134035,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ed277e3dacb5e8042b4ae96f9b8dcdd7, type: 3}
       propertyPath: m_Layer
-      value: 15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ed277e3dacb5e8042b4ae96f9b8dcdd7, type: 3}
       propertyPath: m_TagString
@@ -134476,7 +134475,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ed277e3dacb5e8042b4ae96f9b8dcdd7, type: 3}
       propertyPath: m_Layer
-      value: 15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ed277e3dacb5e8042b4ae96f9b8dcdd7, type: 3}
       propertyPath: m_TagString
@@ -135483,7 +135482,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b599b085bffae8542b794c12ccc0153c, type: 3}
       propertyPath: m_Layer
-      value: 15
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b599b085bffae8542b794c12ccc0153c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -135731,10 +135734,6 @@ PrefabInstance:
     - target: {fileID: 6241716674522492136, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
       propertyPath: m_MatchWidthOrHeight
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6828898245675794598, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -136094,7 +136093,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6059cb6dd0645db4d9dc16b8093e5dca, type: 3}
       propertyPath: m_Layer
-      value: 15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6059cb6dd0645db4d9dc16b8093e5dca, type: 3}
       propertyPath: m_TagString
@@ -136253,7 +136252,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ed277e3dacb5e8042b4ae96f9b8dcdd7, type: 3}
       propertyPath: m_Layer
-      value: 15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ed277e3dacb5e8042b4ae96f9b8dcdd7, type: 3}
       propertyPath: m_TagString
@@ -136537,7 +136536,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 30663c38d36596e4487888804d2599f3, type: 3}
       propertyPath: m_Layer
-      value: 15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 30663c38d36596e4487888804d2599f3, type: 3}
       propertyPath: m_TagString
@@ -136613,7 +136612,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ed277e3dacb5e8042b4ae96f9b8dcdd7, type: 3}
       propertyPath: m_Layer
-      value: 15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ed277e3dacb5e8042b4ae96f9b8dcdd7, type: 3}
       propertyPath: m_TagString
@@ -136979,7 +136978,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6059cb6dd0645db4d9dc16b8093e5dca, type: 3}
       propertyPath: m_Layer
-      value: 15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6059cb6dd0645db4d9dc16b8093e5dca, type: 3}
       propertyPath: m_TagString
@@ -137060,7 +137059,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c502b2e6405caf949bc07c07d3ddcc62, type: 3}
       propertyPath: m_Layer
-      value: 15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c502b2e6405caf949bc07c07d3ddcc62, type: 3}
       propertyPath: m_TagString
@@ -137264,7 +137263,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: fdf122bb458f3d74495cbe105d260e62, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 80cd5adedde1c294da644e42c7dd37c9, type: 2}
+      objectReference: {fileID: 2100000, guid: 54fcd3fb16661d640bfb8d6612b52555, type: 2}
     - target: {fileID: 919132149155446097, guid: fdf122bb458f3d74495cbe105d260e62, type: 3}
       propertyPath: m_Name
       value: Ship_MastBeam_C_1
@@ -137538,6 +137537,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 99299a34a014364429b1047e67200e33, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5b1602f0829f7db46aeee08f3a68a796, type: 2}
     - target: {fileID: 919132149155446097, guid: 99299a34a014364429b1047e67200e33, type: 3}
       propertyPath: m_Name
       value: Ship_MastSail_A_1
@@ -137895,7 +137898,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ed277e3dacb5e8042b4ae96f9b8dcdd7, type: 3}
       propertyPath: m_Layer
-      value: 15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ed277e3dacb5e8042b4ae96f9b8dcdd7, type: 3}
       propertyPath: m_TagString
@@ -137981,7 +137984,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6059cb6dd0645db4d9dc16b8093e5dca, type: 3}
       propertyPath: m_Layer
-      value: 15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6059cb6dd0645db4d9dc16b8093e5dca, type: 3}
       propertyPath: m_TagString
@@ -138257,7 +138260,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6059cb6dd0645db4d9dc16b8093e5dca, type: 3}
       propertyPath: m_Layer
-      value: 15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6059cb6dd0645db4d9dc16b8093e5dca, type: 3}
       propertyPath: m_TagString
@@ -138520,7 +138523,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 6ec7b08a5c127ac42b9eec7ce3f251e9, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: c0f0a08c292f23d459db222ea9d5a833, type: 2}
+      objectReference: {fileID: 2100000, guid: 4c85374bda8d0d1498f8d8cc56ad96e8, type: 2}
     - target: {fileID: 919132149155446097, guid: 6ec7b08a5c127ac42b9eec7ce3f251e9, type: 3}
       propertyPath: m_Name
       value: Ship_MastBeam_A_1 (1)
@@ -138728,7 +138731,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b599b085bffae8542b794c12ccc0153c, type: 3}
       propertyPath: m_Layer
-      value: 15
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b599b085bffae8542b794c12ccc0153c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -139193,7 +139200,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 69c4d0e054ce3714d8e1586829e246c6, type: 3}
       propertyPath: m_Layer
-      value: 15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 69c4d0e054ce3714d8e1586829e246c6, type: 3}
       propertyPath: m_TagString
@@ -139279,7 +139286,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ed277e3dacb5e8042b4ae96f9b8dcdd7, type: 3}
       propertyPath: m_Layer
-      value: 15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ed277e3dacb5e8042b4ae96f9b8dcdd7, type: 3}
       propertyPath: m_TagString
@@ -139804,7 +139811,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c502b2e6405caf949bc07c07d3ddcc62, type: 3}
       propertyPath: m_Layer
-      value: 15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c502b2e6405caf949bc07c07d3ddcc62, type: 3}
       propertyPath: m_TagString
@@ -140462,7 +140469,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 83d52d500715c9048989a4ec67fec52a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 80cd5adedde1c294da644e42c7dd37c9, type: 2}
+      objectReference: {fileID: 2100000, guid: 54fcd3fb16661d640bfb8d6612b52555, type: 2}
     - target: {fileID: 919132149155446097, guid: 83d52d500715c9048989a4ec67fec52a, type: 3}
       propertyPath: m_Name
       value: Ship_MastBeam_B_1
@@ -140958,7 +140965,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6059cb6dd0645db4d9dc16b8093e5dca, type: 3}
       propertyPath: m_Layer
-      value: 15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6059cb6dd0645db4d9dc16b8093e5dca, type: 3}
       propertyPath: m_TagString
@@ -141127,7 +141134,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 83d52d500715c9048989a4ec67fec52a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 80cd5adedde1c294da644e42c7dd37c9, type: 2}
+      objectReference: {fileID: 2100000, guid: 54fcd3fb16661d640bfb8d6612b52555, type: 2}
     - target: {fileID: 919132149155446097, guid: 83d52d500715c9048989a4ec67fec52a, type: 3}
       propertyPath: m_Name
       value: Ship_MastBeam_B_1
@@ -141457,7 +141464,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ed277e3dacb5e8042b4ae96f9b8dcdd7, type: 3}
       propertyPath: m_Layer
-      value: 15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ed277e3dacb5e8042b4ae96f9b8dcdd7, type: 3}
       propertyPath: m_TagString
@@ -141588,7 +141595,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6059cb6dd0645db4d9dc16b8093e5dca, type: 3}
       propertyPath: m_Layer
-      value: 15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6059cb6dd0645db4d9dc16b8093e5dca, type: 3}
       propertyPath: m_TagString
