@@ -11,7 +11,7 @@ public class SpawnManager : MonoBehaviour
     int maxWaveNumber = 2;
     [SerializeField]
     public int TotalEnemies;
-    private int totalEnemiesRemaining;
+    //private int totalEnemiesRemaining;
 
 
     [SerializeField]
@@ -101,7 +101,7 @@ public class SpawnManager : MonoBehaviour
         numberOfStingers = waveOrganizer[waveNumber].totalStingers;
 
         GroupAssignment();
-        TotalEnemies = GameObject.FindObjectsOfType<EnemyBehaviour>().Length;
+        //TotalEnemies = GameObject.FindObjectsOfType<EnemyBehaviour>().Length;
         Waiting = false;
         //endSignal = false;
 

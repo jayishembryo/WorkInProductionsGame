@@ -22,14 +22,16 @@ public class HealthSystem : MonoBehaviour
     [SerializeField] private bool isHit;
     [SerializeField] private float iFrameDuration = 1f;
   
+  
 
     public Image HealthFill;
-    [SerializeField] private Gradient healthFillGradient;
+    [SerializeField] public Gradient HealthFillGradient;
 
     void Start()
     {
         instance = this;
         playerRes = maxRes;
+ 
     }
 
     // Update is called once per frame
@@ -47,9 +49,11 @@ public class HealthSystem : MonoBehaviour
         
         // Divison here is done because value of fill is between 0 & 1.
         HealthFill.fillAmount = Mathf.Lerp(HealthFill.fillAmount,
-            (playerRes / maxRes), 0.5f); 
+            (playerRes / maxRes), 0.5f);
 
-        
+        HealthFill.color = HealthFillGradient.Evaluate(HealthFill.fillAmount);
+
+
     }
 
     public void Damage(float damage)
@@ -89,6 +93,17 @@ public class HealthSystem : MonoBehaviour
     {
 
         playerRes += heal;
+        GameObject.FindObjectOfType<PlayerController>().HealthScreen.SetActive(true);
+        StartCoroutine(Healed());
+
+    }
+
+    IEnumerator Healed()
+    {
+
+        yield return new WaitForSeconds(.5f);
+        GameObject.FindObjectOfType<PlayerController>().HealthScreen.SetActive(false);
+        yield return null;
 
     }
 
