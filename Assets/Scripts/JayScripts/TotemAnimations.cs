@@ -52,6 +52,12 @@ public class TotemAnimations : MonoBehaviour
             callEnvironment.ResetShip();
 
         }
+        else if (callSpawn.NoMoreSpawn == true)
+        {
+
+            //CALL BOSS HERE
+
+        }
 
     }
 

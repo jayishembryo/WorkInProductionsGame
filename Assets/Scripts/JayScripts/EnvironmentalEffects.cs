@@ -14,9 +14,12 @@ public class EnvironmentalEffects : MonoBehaviour
     //temporary fix
     public GameObject FireSpawn;
     public GameObject IceSpawn;
+    public GameObject TideSpawn;
 
     public GameObject FireWarnings;
     public GameObject IceWarnings;
+
+    public Material IceFloor;
 
     public bool FireActive = false;
     public bool IceActive = false;
@@ -26,6 +29,8 @@ public class EnvironmentalEffects : MonoBehaviour
     public List<GameObject> beams = new List<GameObject>();
     public List<GameObject> warnings = new List<GameObject>();
     public List<GameObject> totems = new List<GameObject>();
+    public List<GameObject> floorTiles = new List<GameObject>();
+
     public GameObject ActiveTotem;
     public bool TotemIsActive = false;
 
@@ -123,6 +128,7 @@ public class EnvironmentalEffects : MonoBehaviour
         TideActive = true;
         //RiseAnim();
         GameObject.FindObjectOfType<TideAnimations>().RiseAnim();
+        TideSpawn.SetActive(true);
 
     }
 
@@ -130,6 +136,7 @@ public class EnvironmentalEffects : MonoBehaviour
     {
 
         IceActive = true;
+        GameObject.FindGameObjectsWithTag("Ground").
         //IceSpawn.SetActive(true);
         IceWarnings.SetActive(true);
 
@@ -222,6 +229,8 @@ public class EnvironmentalEffects : MonoBehaviour
         {
 
             TideActive = false;
+            GameObject.FindObjectOfType<TideAnimations>().FallAnim();
+            TideSpawn.SetActive(false);
 
         }
 

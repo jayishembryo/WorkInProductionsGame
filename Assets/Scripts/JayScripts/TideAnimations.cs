@@ -29,22 +29,4 @@ public class TideAnimations : MonoBehaviour
 
     }
 
-    public void EndRisingAnim()
-    {
-
-        if (GameObject.FindObjectOfType<EnvironmentalEffects>().TideActive == false)
-        {
-
-            boat.SetTrigger("Still");
-
-        }
-        else if (GameObject.FindObjectOfType<EnvironmentalEffects>().TideActive == true)
-        {
-
-            RiseAnim();
-
-        }
-
-    }
-
 }

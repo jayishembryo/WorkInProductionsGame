@@ -121,7 +121,6 @@ public class SpawnManager : MonoBehaviour
             GameObject.FindObjectOfType<EnvironmentalEffects>().ActiveTotem.GetComponent<Animator>().SetTrigger("HydraFall");
             WaveBar.fillAmount = 0;
             WaveBarAnim.SetTrigger("BossIncoming");
-            //CALL BOSS HERE
             return;
 
         }
