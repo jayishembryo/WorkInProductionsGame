@@ -131390,7 +131390,7 @@ PrefabInstance:
       objectReference: {fileID: 247971241}
     - target: {fileID: 6290617412062290127, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: shootLayers.m_Bits
-      value: 33280
+      value: 32768
       objectReference: {fileID: 0}
     - target: {fileID: 6290617412062290127, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: maxDistanceFromPointMultiplier
@@ -131980,6 +131980,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2053288351039451700, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3065663145651839788, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
       propertyPath: m_PreserveAspect
       value: 0
@@ -131999,6 +132003,18 @@ PrefabInstance:
     - target: {fileID: 3524290400437911236, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
       propertyPath: m_FillOrigin
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4050541155268352615, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4157353081175729505, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5156565526122700797, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5394963428021777529, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
       propertyPath: m_PreserveAspect
