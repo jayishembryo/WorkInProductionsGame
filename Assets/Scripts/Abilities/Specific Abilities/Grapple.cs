@@ -144,7 +144,7 @@ public class Grapple : MonoBehaviour
 
         }
 
-        Debug.Log("yippee!!!!");
+       // Debug.Log("yippee!!!!");
 
         if (Physics.Raycast(cam.position, cam.forward, out RaycastHit hit, maxDist, shootLayers))
         {
