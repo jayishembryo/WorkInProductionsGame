@@ -271,7 +271,6 @@ public class EnemyBehaviour : MonoBehaviour
     {
         if (other.gameObject.layer == 8)//kick layer for if they get kicked by the player
         {
-            PlayKickSound();
             //defines the different reactions to being kicked.
             switch (enemyID)
             {
@@ -337,6 +336,7 @@ public class EnemyBehaviour : MonoBehaviour
         Debug.Log(gameObject.name + " has been kicked.");
         if (knockedObject != null)
         {
+            PlayKickSound();
             Instantiate(knockedObject, transform.position, Quaternion.identity);
         }
         Destroy(gameObject);

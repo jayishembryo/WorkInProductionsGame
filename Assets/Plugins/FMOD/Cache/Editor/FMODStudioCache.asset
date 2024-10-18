@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8055805629852231930
+--- !u!114 &-8596798069150499771
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,45 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Enemy/StingerAttack
+  m_Name: event:/3D Enemy/GhoulAttack
   m_EditorClassIdentifier: 
-  Path: event:/Enemy/StingerAttack
+  Path: event:/3D Enemy/GhoulAttack
   Guid:
-    Data1: 1635993288
-    Data2: 1133341075
-    Data3: 479655581
-    Data4: -1363871172
+    Data1: 577769977
+    Data2: 1298709561
+    Data3: 1359380899
+    Data4: 1296750603
   Banks:
   - {fileID: -1918245654055400620}
   IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-6088783232944985504
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Enemy/TankNormal
-  m_EditorClassIdentifier: 
-  Path: event:/Enemy/TankNormal
-  Guid:
-    Data1: -1178912317
-    Data2: 1230058305
-    Data3: -1827095128
-    Data4: -1916962124
-  Banks:
-  - {fileID: -1918245654055400620}
-  IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -81,7 +54,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 30000
---- !u!114 &-5542715238607500784
+--- !u!114 &-5523685162020563080
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -91,14 +64,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Enemy/TankAttack
+  m_Name: event:/2D Enemy (Unused)/StingerNormal
   m_EditorClassIdentifier: 
-  Path: event:/Enemy/TankAttack
+  Path: event:/2D Enemy (Unused)/StingerNormal
   Guid:
-    Data1: -1253029993
-    Data2: 1310220362
-    Data3: 1008940186
-    Data4: -629057476
+    Data1: 1683318350
+    Data2: 1277766085
+    Data3: -1721324653
+    Data4: 989270752
   Banks:
   - {fileID: -1918245654055400620}
   IsStream: 0
@@ -204,7 +177,7 @@ MonoBehaviour:
   Path: Assets/Audio/FMODBanks/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638646765794892115
+  lastModified: 638647879127353454
   FileSizes: []
   Exists: 1
 --- !u!114 &11400000
@@ -231,22 +204,56 @@ MonoBehaviour:
   - {fileID: 1021200277146757727}
   - {fileID: 3414010343288573245}
   - {fileID: -4712952617586625008}
-  - {fileID: 9043127107917012457}
-  - {fileID: 7764421234092846671}
   - {fileID: -3360618252140387922}
   - {fileID: 1423934053326182897}
   - {fileID: -3050914857577795145}
-  - {fileID: -5542715238607500784}
-  - {fileID: -6088783232944985504}
-  - {fileID: -8055805629852231930}
-  - {fileID: 4263847864729245510}
+  - {fileID: 9148775803455148143}
+  - {fileID: 4750904846733028267}
+  - {fileID: -5523685162020563080}
+  - {fileID: 2601326039429228979}
+  - {fileID: 4051322070147752492}
+  - {fileID: 5580574672496751067}
+  - {fileID: 2552324333856892664}
+  - {fileID: 754174343166049374}
+  - {fileID: 3507895384571256927}
+  - {fileID: 3326218645299598522}
+  - {fileID: 3264065429416808570}
+  - {fileID: -8596798069150499771}
+  - {fileID: 2961204386710541693}
   EditorParameters: []
   MasterBanks:
   - {fileID: 9113243101405611020}
   StringsBanks:
   - {fileID: 1230724929348026607}
-  cacheTime: 638646765794892115
+  cacheTime: 638647879127353454
   cacheVersion: 131619
+--- !u!114 &754174343166049374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/3D Enemy/TankAttack
+  m_EditorClassIdentifier: 
+  Path: event:/3D Enemy/TankAttack
+  Guid:
+    Data1: -1315062876
+    Data2: 1333881969
+    Data3: -548962424
+    Data4: 1784500385
+  Banks:
+  - {fileID: -1918245654055400620}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &1021200277146757727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,10 +296,10 @@ MonoBehaviour:
   Path: Assets/Audio/FMODBanks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638646765794743993
+  lastModified: 638647879126430747
   FileSizes:
   - Name: 
-    Value: 1646
+    Value: 1996
   Exists: 1
 --- !u!114 &1423934053326182897
 MonoBehaviour:
@@ -321,6 +328,141 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &2552324333856892664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/2D Enemy (Unused)/TankAttack
+  m_EditorClassIdentifier: 
+  Path: event:/2D Enemy (Unused)/TankAttack
+  Guid:
+    Data1: -1253029993
+    Data2: 1310220362
+    Data3: 1008940186
+    Data4: -629057476
+  Banks:
+  - {fileID: -1918245654055400620}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &2601326039429228979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/3D Enemy/StingerAttack
+  m_EditorClassIdentifier: 
+  Path: event:/3D Enemy/StingerAttack
+  Guid:
+    Data1: -1069030574
+    Data2: 1129973693
+    Data3: 944569501
+    Data4: -670017475
+  Banks:
+  - {fileID: -1918245654055400620}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &2961204386710541693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/2D Enemy (Unused)/GhoulNormal
+  m_EditorClassIdentifier: 
+  Path: event:/2D Enemy (Unused)/GhoulNormal
+  Guid:
+    Data1: -21880067
+    Data2: 1090020603
+    Data3: -1520504389
+    Data4: 1653870118
+  Banks:
+  - {fileID: -1918245654055400620}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &3264065429416808570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/2D Enemy (Unused)/StingerAttack
+  m_EditorClassIdentifier: 
+  Path: event:/2D Enemy (Unused)/StingerAttack
+  Guid:
+    Data1: 1635993288
+    Data2: 1133341075
+    Data3: 479655581
+    Data4: -1363871172
+  Banks:
+  - {fileID: -1918245654055400620}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &3326218645299598522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/2D Enemy (Unused)/TankNormal
+  m_EditorClassIdentifier: 
+  Path: event:/2D Enemy (Unused)/TankNormal
+  Guid:
+    Data1: -1178912317
+    Data2: 1230058305
+    Data3: -1827095128
+    Data4: -1916962124
+  Banks:
+  - {fileID: -1918245654055400620}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &3414010343288573245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,20 +477,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Player/Kick
   Guid:
-    Data1: -760842454
-    Data2: 1263064403
-    Data3: 222395549
-    Data4: -1772021935
+    Data1: 1629955433
+    Data2: 1083399660
+    Data3: -1114287476
+    Data4: -943970327
   Banks:
   - {fileID: -1918245654055400620}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &4263847864729245510
+--- !u!114 &3507895384571256927
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -358,14 +500,68 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Enemy/GhoulNormal
+  m_Name: event:/3D Enemy/StingerNormal
   m_EditorClassIdentifier: 
-  Path: event:/Enemy/GhoulNormal
+  Path: event:/3D Enemy/StingerNormal
   Guid:
-    Data1: -21880067
-    Data2: 1090020603
-    Data3: -1520504389
-    Data4: 1653870118
+    Data1: -419311943
+    Data2: 1167967554
+    Data3: 714967471
+    Data4: -1087701925
+  Banks:
+  - {fileID: -1918245654055400620}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &4051322070147752492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/3D Enemy/TankNormal
+  m_EditorClassIdentifier: 
+  Path: event:/3D Enemy/TankNormal
+  Guid:
+    Data1: -1805125276
+    Data2: 1252067088
+    Data3: -1114147170
+    Data4: -2031940609
+  Banks:
+  - {fileID: -1918245654055400620}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &4750904846733028267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/2D Enemy (Unused)/GhoulAttack
+  m_EditorClassIdentifier: 
+  Path: event:/2D Enemy (Unused)/GhoulAttack
+  Guid:
+    Data1: -861896378
+    Data2: 1317767861
+    Data3: -198815587
+    Data4: 74945612
   Banks:
   - {fileID: -1918245654055400620}
   IsStream: 0
@@ -390,9 +586,36 @@ MonoBehaviour:
   Path: Assets/Audio/FMODBanks/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638641827948497179
+  lastModified: 638642539683357485
   FileSizes: []
   Exists: 1
+--- !u!114 &5580574672496751067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/3D Enemy/TimelineTest
+  m_EditorClassIdentifier: 
+  Path: event:/3D Enemy/TimelineTest
+  Guid:
+    Data1: 1058041968
+    Data2: 1294746068
+    Data3: -793071990
+    Data4: 1240127455
+  Banks:
+  - {fileID: -1918245654055400620}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &6868334978939917845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -408,7 +631,7 @@ MonoBehaviour:
   Path: Assets/Audio/FMODBanks/Desktop/Ambiance.bank
   Name: Ambiance
   StudioPath: bank:/Ambiance
-  lastModified: 638646765794743993
+  lastModified: 638647879126349498
   FileSizes: []
   Exists: 1
 --- !u!114 &7520294511024619222
@@ -439,60 +662,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 193802
---- !u!114 &7764421234092846671
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Enemy/StingerNormal
-  m_EditorClassIdentifier: 
-  Path: event:/Enemy/StingerNormal
-  Guid:
-    Data1: 1683318350
-    Data2: 1277766085
-    Data3: -1721324653
-    Data4: 989270752
-  Banks:
-  - {fileID: -1918245654055400620}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &9043127107917012457
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Enemy/GhoulAttack
-  m_EditorClassIdentifier: 
-  Path: event:/Enemy/GhoulAttack
-  Guid:
-    Data1: -861896378
-    Data2: 1317767861
-    Data3: -198815587
-    Data4: 74945612
-  Banks:
-  - {fileID: -1918245654055400620}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &9113243101405611020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -508,6 +677,33 @@ MonoBehaviour:
   Path: Assets/Audio/FMODBanks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638641827948487142
+  lastModified: 638647879126415396
   FileSizes: []
   Exists: 1
+--- !u!114 &9148775803455148143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/3D Enemy/GhoulNormal
+  m_EditorClassIdentifier: 
+  Path: event:/3D Enemy/GhoulNormal
+  Guid:
+    Data1: -1567269062
+    Data2: 1115060187
+    Data3: 1687578536
+    Data4: 441682688
+  Banks:
+  - {fileID: -1918245654055400620}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
