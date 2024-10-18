@@ -410,11 +410,11 @@ MonoBehaviour:
   damageToPlayer: 10
   attackSFX:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -1315062876
+      Data2: 1333881969
+      Data3: -548962424
+      Data4: 1784500385
+    Path: event:/3D Enemy/TankAttack
   kickSFX:
     Guid:
       Data1: 1629955433
@@ -424,11 +424,11 @@ MonoBehaviour:
     Path: event:/Player/Kick
   hitSFX:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -1805125276
+      Data2: 1252067088
+      Data3: -1114147170
+      Data4: -2031940609
+    Path: event:/3D Enemy/TankHit
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8

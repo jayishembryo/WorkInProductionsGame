@@ -158,7 +158,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     public void PlayKickSound()
     {
-        PlaySound(ref hitSFXInstance, hitSFX);
+        PlaySound(ref kickSFXInstance, kickSFX);
     }
     //End of sound related code
 
@@ -232,7 +232,6 @@ public class EnemyBehaviour : MonoBehaviour
     {
         
         health -= damage;
-        PlayHitSound();
 
         if (health <= 0)
         {
@@ -271,6 +270,7 @@ public class EnemyBehaviour : MonoBehaviour
     {
         if (other.gameObject.layer == 8)//kick layer for if they get kicked by the player
         {
+            PlayKickSound();
             //defines the different reactions to being kicked.
             switch (enemyID)
             {
@@ -333,10 +333,10 @@ public class EnemyBehaviour : MonoBehaviour
     }
     private void EnemyKnocked()
     {
+        PlayHitSound();
         Debug.Log(gameObject.name + " has been kicked.");
         if (knockedObject != null)
         {
-            PlayKickSound();
             Instantiate(knockedObject, transform.position, Quaternion.identity);
         }
         Destroy(gameObject);

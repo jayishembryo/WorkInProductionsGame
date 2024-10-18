@@ -43066,57 +43066,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8535369606083946804, guid: 6fa5ec42707156b46be38d6c57f21e7d, type: 3}
   m_PrefabInstance: {fileID: 722224198}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &725249440
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 725249442}
-  - component: {fileID: 725249441}
-  m_Layer: 0
-  m_Name: AmbientEffects
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &725249441
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 725249440}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 015b44d2b3da5dc4494c4e7a0707830d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AmbienceSounds:
-    Guid:
-      Data1: 180549557
-      Data2: 1317076332
-      Data3: -725064015
-      Data4: 1964302018
-    Path: event:/Environment/AmbientSounds
---- !u!4 &725249442
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 725249440}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.48, y: 25.07, z: -2.61}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 29
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &752527555
 GameObject:
   m_ObjectHideFlags: 0
@@ -43307,6 +43256,77 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &793648704
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 793648706}
+  - component: {fileID: 793648705}
+  - component: {fileID: 793648707}
+  m_Layer: 0
+  m_Name: AmbientEffects
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &793648705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793648704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 015b44d2b3da5dc4494c4e7a0707830d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AmbienceSounds:
+    Guid:
+      Data1: 180549557
+      Data2: 1317076332
+      Data3: -725064015
+      Data4: 1964302018
+    Path: event:/Environment/AmbientSounds
+--- !u!4 &793648706
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793648704}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -19.9, y: 22.01, z: -11.37}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 29
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &793648707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793648704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aec1a5ea7da32e4992648886e4f48d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DefaultMusic:
+    Guid:
+      Data1: 140732299
+      Data2: 1206275408
+      Data3: 641023138
+      Data4: -237534656
+    Path: event:/Music/TheStyxCalls
 --- !u!1 &800634248
 GameObject:
   m_ObjectHideFlags: 0
@@ -132482,6 +132502,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 389632348}
     - target: {fileID: 6934599026606150273, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: DashSFX.Path
+      value: event:/Player/Dash
+      objectReference: {fileID: 0}
+    - target: {fileID: 6934599026606150273, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: WalkingSFX.Path
+      value: event:/Player/WoodWalking
+      objectReference: {fileID: 0}
+    - target: {fileID: 6934599026606150273, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: cameraTransform
       value: 
       objectReference: {fileID: 1536215262}
@@ -132489,6 +132517,38 @@ PrefabInstance:
       propertyPath: ScoreboardManager
       value: 
       objectReference: {fileID: 2061349217}
+    - target: {fileID: 6934599026606150273, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: DashSFX.Guid.Data1
+      value: -2042107802
+      objectReference: {fileID: 0}
+    - target: {fileID: 6934599026606150273, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: DashSFX.Guid.Data2
+      value: 1197584503
+      objectReference: {fileID: 0}
+    - target: {fileID: 6934599026606150273, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: DashSFX.Guid.Data3
+      value: -1094566519
+      objectReference: {fileID: 0}
+    - target: {fileID: 6934599026606150273, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: DashSFX.Guid.Data4
+      value: 2124622618
+      objectReference: {fileID: 0}
+    - target: {fileID: 6934599026606150273, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: WalkingSFX.Guid.Data1
+      value: -1080885180
+      objectReference: {fileID: 0}
+    - target: {fileID: 6934599026606150273, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: WalkingSFX.Guid.Data2
+      value: 1339814226
+      objectReference: {fileID: 0}
+    - target: {fileID: 6934599026606150273, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: WalkingSFX.Guid.Data3
+      value: -1956612196
+      objectReference: {fileID: 0}
+    - target: {fileID: 6934599026606150273, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: WalkingSFX.Guid.Data4
+      value: -1709305051
+      objectReference: {fileID: 0}
     - target: {fileID: 7182574327882956369, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: m_Name
       value: Player 1
@@ -132500,6 +132560,26 @@ PrefabInstance:
     - target: {fileID: 7428299833572200738, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7860513757647446076, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: GroanSFX.Path
+      value: event:/Player/Groan
+      objectReference: {fileID: 0}
+    - target: {fileID: 7860513757647446076, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: GroanSFX.Guid.Data1
+      value: 1466461283
+      objectReference: {fileID: 0}
+    - target: {fileID: 7860513757647446076, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: GroanSFX.Guid.Data2
+      value: 1100492639
+      objectReference: {fileID: 0}
+    - target: {fileID: 7860513757647446076, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: GroanSFX.Guid.Data3
+      value: -1688614757
+      objectReference: {fileID: 0}
+    - target: {fileID: 7860513757647446076, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: GroanSFX.Guid.Data4
+      value: -925506740
       objectReference: {fileID: 0}
     - target: {fileID: 8640629303739564876, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: directionAnchor

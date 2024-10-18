@@ -274,7 +274,7 @@ MonoBehaviour:
       Data2: 1115060187
       Data3: 1687578536
       Data4: 441682688
-    Path: event:/3D Enemy/GhoulNormal
+    Path: event:/3D Enemy/GhoulHit
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8
