@@ -254,6 +254,27 @@ MonoBehaviour:
   health: 100.3
   speed: 5
   damageToPlayer: 6
+  attackSFX:
+    Guid:
+      Data1: 577769977
+      Data2: 1298709561
+      Data3: 1359380899
+      Data4: 1296750603
+    Path: event:/3D Enemy/GhoulAttack
+  kickSFX:
+    Guid:
+      Data1: 1629955433
+      Data2: 1083399660
+      Data3: -1114287476
+      Data4: -943970327
+    Path: event:/Player/Kick
+  hitSFX:
+    Guid:
+      Data1: -1567269062
+      Data2: 1115060187
+      Data3: 1687578536
+      Data4: 441682688
+    Path: event:/3D Enemy/GhoulNormal
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8

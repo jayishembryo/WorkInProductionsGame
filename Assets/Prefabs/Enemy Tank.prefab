@@ -408,6 +408,13 @@ MonoBehaviour:
   health: 150
   speed: 3.5
   damageToPlayer: 10
+  AttackSFX:
+    Guid:
+      Data1: -1315062876
+      Data2: 1333881969
+      Data3: -548962424
+      Data4: 1784500385
+    Path: event:/3D Enemy/TankAttack
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8
@@ -422,7 +429,7 @@ MonoBehaviour:
   knocked: 0
   enemyID: 2
   knockedObject: {fileID: 8474295532616176723, guid: ac7b25efbe04ec94a858092af782ea2f, type: 3}
-  doesHeal: 0
+  DoesHeal: 0
 --- !u!136 &2770839071601962939
 CapsuleCollider:
   m_ObjectHideFlags: 0
