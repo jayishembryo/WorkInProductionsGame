@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 9070251382076492797}
   m_Layer: 0
   m_Name: EnemyKnockedStinger
-  m_TagString: Untagged
+  m_TagString: EnemyKnocked
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -243,4 +243,6 @@ MonoBehaviour:
   - {fileID: 6893226736054396642, guid: 7630e605851ad5c45988d69511faa6a7, type: 3}
   - {fileID: 6893226736054396642, guid: 2ede53f92bb8a7a4198847373f84c7fb, type: 3}
   - {fileID: 7907553502098151316, guid: c7f50e1a3715bb24f960160b6d15b269, type: 3}
+  - {fileID: 6893226736054396642, guid: 13d3d8a8633cf4247b6bb7bc189c51ab, type: 3}
   enemyToSpawn: {fileID: 8474295532616176723, guid: 3bc68e634b266d44ab5e8dfe7524ea83, type: 3}
+  EnemyBehaviorInstance: {fileID: 0}
