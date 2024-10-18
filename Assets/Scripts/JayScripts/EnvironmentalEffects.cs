@@ -28,8 +28,6 @@ public class EnvironmentalEffects : MonoBehaviour
 
     int lastBeam;
 
-    public Animator HealthBarAnim;
-
     private void Update()
     {
        
@@ -97,19 +95,7 @@ public class EnvironmentalEffects : MonoBehaviour
     void Reroll()
     {
 
-        if (alreadyUsed.Count >= allEnvironments)
-        {
-
-            HealthBarAnim.SetTrigger("BossIncoming");
-            //BOSS CALLED IN WARNING ANIMATIONS
-
-        }
-        else
-        {
-
-            Decide();
-
-        }
+        Decide();
 
     }
 

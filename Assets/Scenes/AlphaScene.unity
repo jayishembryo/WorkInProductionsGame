@@ -5436,7 +5436,6 @@ MonoBehaviour:
   - {fileID: 1344541011}
   - {fileID: 1895545907}
   - {fileID: 1850885205}
-  HealthBarAnim: {fileID: 0}
 --- !u!4 &166124758
 Transform:
   m_ObjectHideFlags: 0
@@ -131846,6 +131845,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1428552991}
     - target: {fileID: 1323772963714196834, guid: 4451dd64124904048bffdd2e8c3f16b1, type: 3}
+      propertyPath: WaveBar
+      value: 
+      objectReference: {fileID: 3092801834631978300}
+    - target: {fileID: 1323772963714196834, guid: 4451dd64124904048bffdd2e8c3f16b1, type: 3}
+      propertyPath: WaveBarAnim
+      value: 
+      objectReference: {fileID: 3092801834631978299}
+    - target: {fileID: 1323772963714196834, guid: 4451dd64124904048bffdd2e8c3f16b1, type: 3}
       propertyPath: NewWaveTextBox
       value: 
       objectReference: {fileID: 1428552989}
@@ -132018,6 +132025,22 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
+--- !u!95 &3092801834631978299 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8387131478511118848, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
+  m_PrefabInstance: {fileID: 3092801834631978298}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3092801834631978300 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3524290400437911236, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
+  m_PrefabInstance: {fileID: 3092801834631978298}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6816743961254660271
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class SpawnManager : MonoBehaviour
 {
@@ -64,8 +65,8 @@ public class SpawnManager : MonoBehaviour
     //attempting to fix issue of new wave starting multiple times in a row
     public bool Waiting;
 
-    //wave UI
-    public List<GameObject> waveBars = new List<GameObject>();
+    public Image WaveBar;
+    public Animator WaveBarAnim;
 
     // Start is called before the first frame update
     void Start()
@@ -90,6 +91,15 @@ public class SpawnManager : MonoBehaviour
     public void newWaveStart()
     {
 
+        if(waveNumber >= 6)
+        {
+
+            WaveBar.fillAmount = 0;
+            WaveBarAnim.SetTrigger("BossIncoming");
+            //CALL BOSS HERE
+            return;
+
+        }
         //waveTime = Time.time;//update start of current wave
        // groupTime = waveTime;
         waveNumber++;
@@ -110,6 +120,26 @@ public class SpawnManager : MonoBehaviour
 
             FindObjectOfType<EnvironmentalEffects>().Decide();
 
+        }
+
+        switch(waveNumber)
+        {
+            case 0:
+                break;
+            case 1:
+                break;
+            case 2:
+                WaveBar.fillAmount = .85f;
+                break;
+            case 3:
+                WaveBar.fillAmount = .65f;
+                break;
+            case 4:
+                WaveBar.fillAmount = .39f;
+                break;
+            case 5:
+                WaveBar.fillAmount = .19f;
+                break;
         }
 
     }
