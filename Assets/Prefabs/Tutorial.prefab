@@ -7197,6 +7197,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GrappleToEnemy Sign
       objectReference: {fileID: 0}
+    - target: {fileID: 2957394016624780445, guid: 6e6c07ab9df76074dbe0fb3dcaf55faa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3190712959028837530, guid: 6e6c07ab9df76074dbe0fb3dcaf55faa, type: 3}
       propertyPath: m_Texture
       value: 
