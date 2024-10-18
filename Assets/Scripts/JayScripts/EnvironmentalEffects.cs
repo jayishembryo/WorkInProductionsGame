@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class EnvironmentalEffects : MonoBehaviour
 {
-    int environment;
+    public int Environment;
     //change to match # of environments designed
-    int allEnvironments =  3;
+   // int allEnvironments =  3;
 
     private List<int> alreadyUsed = new List<int>();
 
@@ -25,6 +25,9 @@ public class EnvironmentalEffects : MonoBehaviour
 
     public List<GameObject> beams = new List<GameObject>();
     public List<GameObject> warnings = new List<GameObject>();
+    public List<GameObject> totems = new List<GameObject>();
+    public GameObject ActiveTotem;
+    public bool TotemIsActive = false;
 
     int lastBeam;
 
@@ -45,9 +48,9 @@ public class EnvironmentalEffects : MonoBehaviour
     public void Decide()
     {
 
-        environment = Random.Range(0, 4);
+        Environment = Random.Range(0, 4);
         
-        if(alreadyUsed.Contains(environment))
+        if(alreadyUsed.Contains(Environment))
         {
 
             Reroll();
@@ -55,38 +58,43 @@ public class EnvironmentalEffects : MonoBehaviour
 
         }
 
-        if(environment == 0)
-        {
+        totems[Environment].SetActive(true);
+        totems[Environment] = ActiveTotem;
+        TotemIsActive = true;
+        alreadyUsed.Add(Environment);
 
-            FlamesOfDisaster();
-            alreadyUsed.Add(environment);
-            environment = Random.Range(0, allEnvironments += 1);
+        //if(environment == 0)
+        //{
 
-        }
-        if(environment == 1)
-        {
+        //    FlamesOfDisaster();
+        //    alreadyUsed.Add(environment);
+        //    environment = Random.Range(0, allEnvironments += 1);
 
-            TideRising();
-            alreadyUsed.Add(environment);
-            environment = Random.Range(0, allEnvironments += 1);
+        //}
+        //if(environment == 1)
+        //{
 
-        }
-        if(environment == 2)
-        {
+        //    TideRising();
+        //    alreadyUsed.Add(environment);
+        //    environment = Random.Range(0, allEnvironments += 1);
 
-            BoatFreezes();
-            alreadyUsed.Add(environment);
-            environment = Random.Range(0, allEnvironments += 1);
+        //}
+        //if(environment == 2)
+        //{
 
-        }
-        if(environment == 3)
-        {
+        //    BoatFreezes();
+        //    alreadyUsed.Add(environment);
+        //    environment = Random.Range(0, allEnvironments += 1);
 
-            EnergyBeams();
-            alreadyUsed.Add(environment);
-            environment = Random.Range(0, allEnvironments += 1);
+        //}
+        //if(environment == 3)
+        //{
 
-        }
+        //    EnergyBeams();
+        //    alreadyUsed.Add(environment);
+        //    environment = Random.Range(0, allEnvironments += 1);
+
+        //}
         
         //ADD OTHER ENVIRONMENT FUNCTIONS
 
@@ -177,6 +185,13 @@ public class EnvironmentalEffects : MonoBehaviour
     public void ResetShip()
     {
 
+        if(TotemIsActive)
+        {
+
+            ActiveTotem.SetActive(false);
+
+        }
+
         if(FireActive)
         {
 
@@ -209,6 +224,8 @@ public class EnvironmentalEffects : MonoBehaviour
             TideActive = false;
 
         }
+
+        Decide();
 
     }
 

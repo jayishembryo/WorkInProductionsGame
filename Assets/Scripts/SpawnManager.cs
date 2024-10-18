@@ -67,6 +67,7 @@ public class SpawnManager : MonoBehaviour
 
     public Image WaveBar;
     public Animator WaveBarAnim;
+    public bool NoMoreSpawn = false;
 
     // Start is called before the first frame update
     void Start()
@@ -91,38 +92,9 @@ public class SpawnManager : MonoBehaviour
     public void newWaveStart()
     {
 
-        if(waveNumber >= 6)
-        {
-
-            WaveBar.fillAmount = 0;
-            WaveBarAnim.SetTrigger("BossIncoming");
-            //CALL BOSS HERE
-            return;
-
-        }
-        //waveTime = Time.time;//update start of current wave
-       // groupTime = waveTime;
         waveNumber++;
-        StartCoroutine(NewWaveText());
 
-        groupCooldown = waveOrganizer[waveNumber].groupCooldown;
-        numberOfNormals = waveOrganizer[waveNumber].totalNormals;
-        numberOfTanks = waveOrganizer[waveNumber].totalTanks;
-        numberOfStingers = waveOrganizer[waveNumber].totalStingers;
-
-        GroupAssignment();
-        //TotalEnemies = GameObject.FindObjectsOfType<EnemyBehaviour>().Length;
-        Waiting = false;
-        //endSignal = false;
-
-        if (waveNumber > 1)
-        {
-
-            FindObjectOfType<EnvironmentalEffects>().Decide();
-
-        }
-
-        switch(waveNumber)
+        switch (waveNumber)
         {
             case 0:
                 break;
@@ -141,6 +113,59 @@ public class SpawnManager : MonoBehaviour
                 WaveBar.fillAmount = .19f;
                 break;
         }
+
+        if (waveNumber >= 6)
+        {
+
+            NoMoreSpawn = true;
+            GameObject.FindObjectOfType<EnvironmentalEffects>().ActiveTotem.GetComponent<Animator>().SetTrigger("HydraFall");
+            WaveBar.fillAmount = 0;
+            WaveBarAnim.SetTrigger("BossIncoming");
+            //CALL BOSS HERE
+            return;
+
+        }
+
+        if (GameObject.FindObjectOfType<EnvironmentalEffects>().TotemIsActive)
+        {
+
+            GameObject.FindObjectOfType<EnvironmentalEffects>().ActiveTotem.GetComponent<Animator>().SetTrigger("HydraFall");
+            return;
+
+        }
+
+        if (waveNumber > 1)
+        {
+
+            FindObjectOfType<EnvironmentalEffects>().ResetShip();
+            return;
+
+        }
+
+        StartCoroutine(NewWaveText());
+
+        groupCooldown = waveOrganizer[waveNumber].groupCooldown;
+        numberOfNormals = waveOrganizer[waveNumber].totalNormals;
+        numberOfTanks = waveOrganizer[waveNumber].totalTanks;
+        numberOfStingers = waveOrganizer[waveNumber].totalStingers;
+
+        GroupAssignment();
+        Waiting = false;
+
+    }
+
+    public void NewWaveStartTotem()
+    {
+
+        StartCoroutine(NewWaveText());
+
+        groupCooldown = waveOrganizer[waveNumber].groupCooldown;
+        numberOfNormals = waveOrganizer[waveNumber].totalNormals;
+        numberOfTanks = waveOrganizer[waveNumber].totalTanks;
+        numberOfStingers = waveOrganizer[waveNumber].totalStingers;
+
+        GroupAssignment();
+        Waiting = false;
 
     }
 
