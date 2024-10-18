@@ -216,6 +216,21 @@ public class EnemyBehaviour : MonoBehaviour
     {
         if (other.gameObject.layer == 8)//kick layer for if they get kicked by the player
         {
+
+            if (DoesHeal == true)
+            {
+
+                //LOOK INTO PARTICLES
+                float healed = Random.Range(5f, 11f);
+                HealthSystem.instance.Heal(healed);
+
+                //MAKE THE PARTICLE EFFECT
+                //ADD PARTICLE EFFECT TO LIST
+                Instantiate(knockedObject.GetComponent<EnemyKnockedBehaviour>().burst[4], transform.position, Quaternion.identity);
+                DoesHeal = false;
+                GetComponentInChildren<SpriteRenderer>().color = Color.white;
+
+            }
             //defines the different reactions to being kicked.
             switch (enemyID)
             {

@@ -30,4 +30,11 @@ public class WarningAnimations : MonoBehaviour
 
     }
 
+    public void BossImminent()
+    {
+
+        //CALL BOSS HERE YIPPEE
+
+    }
+
 }

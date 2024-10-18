@@ -7,7 +7,7 @@ public class EnvironmentalEffects : MonoBehaviour
 {
     int environment;
     //change to match # of environments designed
-    int allEnvironments =  0;
+    int allEnvironments =  3;
 
     private List<int> alreadyUsed = new List<int>();
 
@@ -45,7 +45,7 @@ public class EnvironmentalEffects : MonoBehaviour
     public void Decide()
     {
 
-        environment = Random.Range(0, allEnvironments += 1);
+        environment = Random.Range(0, 4);
         
         if(alreadyUsed.Contains(environment))
         {
@@ -60,24 +60,31 @@ public class EnvironmentalEffects : MonoBehaviour
 
             FlamesOfDisaster();
             alreadyUsed.Add(environment);
+            environment = Random.Range(0, allEnvironments += 1);
 
         }
         if(environment == 1)
         {
 
             TideRising();
+            alreadyUsed.Add(environment);
+            environment = Random.Range(0, allEnvironments += 1);
 
         }
         if(environment == 2)
         {
 
             BoatFreezes();
+            alreadyUsed.Add(environment);
+            environment = Random.Range(0, allEnvironments += 1);
 
         }
         if(environment == 3)
         {
 
             EnergyBeams();
+            alreadyUsed.Add(environment);
+            environment = Random.Range(0, allEnvironments += 1);
 
         }
         
@@ -88,18 +95,7 @@ public class EnvironmentalEffects : MonoBehaviour
     void Reroll()
     {
 
-        if (alreadyUsed.Count >= allEnvironments)
-        {
-
-            //call either the end of the game or boss fight here
-
-        }
-        else
-        {
-
-            Decide();
-
-        }
+        Decide();
 
     }
 
