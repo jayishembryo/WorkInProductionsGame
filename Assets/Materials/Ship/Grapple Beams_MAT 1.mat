@@ -122,9 +122,9 @@ Material:
     - _LightingCutoff: 0
     - _Metallic: 0
     - _OcclusionStrength: 1
-    - _OutlineDepthSensitivity: 1
-    - _OutlineNormalsSensitivity: 1
-    - _OutlineThickness: 2
+    - _OutlineDepthSensitivity: 0.106
+    - _OutlineNormalsSensitivity: 0.878
+    - _OutlineThickness: 4
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0
@@ -148,7 +148,7 @@ Material:
     - _Offset: {r: 0, g: 0, b: 0, a: 0}
     - _OutlineColor: {r: 1, g: 1, b: 1, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
-    - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
+    - _SpecularColor: {r: 1, g: 1, b: 1, a: 0}
     - _Tiling: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &6643922091330223080
