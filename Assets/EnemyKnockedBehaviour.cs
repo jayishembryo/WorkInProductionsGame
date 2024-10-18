@@ -31,13 +31,14 @@ public class EnemyKnockedBehaviour : MonoBehaviour
     {
         transform.LookAt(player.position);
 
+       
         lifetime++;
         if (lifetime > 10)
         {
         }
         if (lifetime >= 500)
         {
-            Debug.Log("Knocked Enemy " + gameObject.name + " deleted of old age");
+            Debug.Log("knocked enemy " + gameObject.name + " deleted of old age");
             KillEnemy(gameObject);
         }
     }
@@ -61,11 +62,7 @@ public class EnemyKnockedBehaviour : MonoBehaviour
             Instantiate(burst[0], transform.position, Quaternion.identity);
             KillEnemy(gameObject);
         }
-        if (other.gameObject.CompareTag("Water"))
-        {
-            Instantiate(burst[1], transform.position, Quaternion.identity);
-            KillEnemy(gameObject);
-        }
+     
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -90,27 +87,13 @@ public class EnemyKnockedBehaviour : MonoBehaviour
             KillEnemy(collision.gameObject);
             KillEnemy(gameObject);
 
-            if (EnemyBehaviorInstance.DoesHeal == true)
-            {
-
-                //LOOK INTO PARTICLES
-                float healed = Random.Range(5f, 11f);
-                HealthSystem.instance.Heal(healed);
-
-                //MAKE THE PARTICLE EFFECT
-                //ADD PARTICLE EFFECT TO LIST
-                Instantiate(burst[4], transform.position, Quaternion.identity);
-
-            }
-
         }
     }
 
     public void KillEnemy(GameObject killed)
     {
 
-        Destroy(killed); 
-
+        FindObjectOfType<SpawnManager>().TotalEnemies = GameObject.FindObjectsOfType<EnemyBehaviour>().Length;
         FindObjectOfType<SpawnManager>().TotalEnemies -= 1;
 
         if (FindObjectOfType<SpawnManager>().TotalEnemies <= 0 && FindObjectOfType<SpawnManager>().Waiting == false)
@@ -120,6 +103,8 @@ public class EnemyKnockedBehaviour : MonoBehaviour
             FindObjectOfType<SpawnManager>().newWaveStart();
 
         }
+
+        Destroy(killed);
 
     }
 
