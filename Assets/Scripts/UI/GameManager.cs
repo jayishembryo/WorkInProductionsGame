@@ -21,7 +21,10 @@ public class GameManager : MonoBehaviour
     public void LoadHowToPlay()
     {
         HowToPlayScreen.SetActive(true);
-        PauseScreen.SetActive(false);
+        if (PauseScreen != null)
+        {
+            PauseScreen.SetActive(false);
+        }
     }
 
     public void GoBackToPause()
