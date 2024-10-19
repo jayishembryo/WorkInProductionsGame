@@ -20,12 +20,9 @@ public class UIManager : MonoBehaviour
         "positional amplification. Note: Only applies on START!")]
     [SerializeField] private float bgAmp;
 
-    [SerializeField] private bool hasPlayed = false;
-
     // Start is called before the first frame update
     void Start()
     {
-        hasPlayed = false;
         PlayMainMenuAnimations();
     }
 

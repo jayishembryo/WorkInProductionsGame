@@ -940,7 +940,7 @@ MonoBehaviour:
   preset: {fileID: 11400000, guid: b0a7338d4a4cacf41a40f6f5cbfdaa97, type: 2}
   positionShake:
   - noiseType: 0
-    amplitude: {x: 20, y: 20, z: 20}
+    amplitude: {x: 17.5, y: 17.5, z: 17.5}
     frequency: {x: 0.2, y: 0.1, z: 0}
     offset: {x: 0, y: 0, z: 0}
     phase: {x: 0, y: 0, z: 0}
@@ -2678,7 +2678,6 @@ MonoBehaviour:
   sSBG: {fileID: 1082557405}
   boatAmp: 17.5
   bgAmp: 20
-  hasPlayed: 0
 --- !u!114 &608110324
 MonoBehaviour:
   m_ObjectHideFlags: 0

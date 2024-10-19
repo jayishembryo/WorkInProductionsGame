@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class MainMenuSlide : MonoBehaviour
 {
@@ -17,7 +19,7 @@ public class MainMenuSlide : MonoBehaviour
         StartCoroutine(SlideInWithEaseOut());
     }
 
-    private System.Collections.IEnumerator SlideInWithEaseOut()
+    private IEnumerator SlideInWithEaseOut()
     {
         float elapsedTime = 0;
 
