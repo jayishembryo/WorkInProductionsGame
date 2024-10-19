@@ -22,8 +22,14 @@ public class GameManager : MonoBehaviour
 
     }
 
+    // Edit: 10/18/24 - Jacob - This code is goofy as hell; idk who worked on it
+    // previously but its kinda not based. gotta update this soon.
+
+    // MM -> HTP
+    // IN-GAME -> HTP
     public void LoadHowToPlay()
     {
+        OpeningCanvas.SetActive(false);
         HowToPlayScreen.SetActive(true);
         if (PauseScreen != null)
         {
@@ -31,6 +37,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // HTP -> Pause
+    // Settings -> Pause
     public void GoBackToPause()
     {
         PauseScreen.SetActive(true);
@@ -44,28 +52,34 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
     
+    // INSERT SCENE HERE -> Main Menu
     public void GoToMain()
     {
         print("going to main");
         SceneManager.LoadScene("MainMenu");
     }
 
+    // Pause -> Settings
     public void GoToSettings()
     {
         PauseScreen.SetActive(false);
         SettingsScreen.SetActive(true);
     }
 
+    // MM -> Settings
     public void GoToSettingsOnMain()
     {
+        OpeningCanvas.SetActive(false);
         SettingsScreen.SetActive(true);
     }
 
+    // Scene -> In-Game
     public void PlayGame()
     {
         SceneManager.LoadScene("VerticalSlice");
     }
 
+    // Pause -> In-Game
     public void BackToGame()
     {
         PauseScreen.SetActive(false);
@@ -74,18 +88,28 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1.0f;
     }
 
+    // ???
     public void CreditsScreen()
     {
-        //OpeningCanvas.SetActive(false);
+        OpeningCanvas.SetActive(false);
         CreditsCanvas.SetActive(true);
     }
 
+    // Any MM UI -> MM
     public void CreditsToOpening()
     {
         CreditsCanvas.SetActive(false);
         SettingsScreen.SetActive(false);
         HowToPlayScreen.SetActive(false);
         OpeningCanvas.SetActive(true);
+
+        // Jacob Note: Needs to be here to ensure animations continue to
+        // work. Make sure main menu is index 0. Needs to be after main menu
+        // canvas is enabled!
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            FindObjectOfType<UIManager>().PlayMainMenuAnimations();
+        }
     }
 
 }
