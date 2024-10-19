@@ -248,7 +248,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 4b63ab110816587439a3d1088bab7c11, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -422,7 +422,7 @@ MonoBehaviour:
   knocked: 0
   enemyID: 2
   knockedObject: {fileID: 8474295532616176723, guid: ac7b25efbe04ec94a858092af782ea2f, type: 3}
-  doesHeal: 0
+  DoesHeal: 0
 --- !u!136 &2770839071601962939
 CapsuleCollider:
   m_ObjectHideFlags: 0
