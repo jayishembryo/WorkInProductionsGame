@@ -11,7 +11,7 @@ public class BossBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        anim = GetComponent<Animator>();
+        
     }
 
     // Update is called once per frame
@@ -20,13 +20,6 @@ public class BossBehaviour : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("EnemyKnocked"))
-        {
-            TakeDamage();
-        }
-    }
     public void StartNextAttackAtVariableTime()
     {
         Invoke(nameof(PerformAttack), Random.Range(0.7f, 1.95f));
@@ -59,13 +52,6 @@ public class BossBehaviour : MonoBehaviour
                 anim.SetTrigger("ice");
                 break;
         }
-    }
-
-    public void TakeDamage()
-    {
-        anim.SetTrigger("hurt");
-        health -= 1;
-        Debug.Log("Boss has been damaged!");
     }
     public void EnterFloodedState()
     {

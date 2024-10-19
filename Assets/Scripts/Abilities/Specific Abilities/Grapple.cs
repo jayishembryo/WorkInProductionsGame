@@ -171,6 +171,50 @@ public class Grapple : MonoBehaviour
             rb.AddForce((hitPoint - transform.position).normalized * jointForceBoost, ForceMode.Impulse);
 
         }
+
+        if (Physics.Raycast(cam.position, cam.forward, out RaycastHit enemyHit, maxDist, EnemyLayer))
+        {
+            IsGrappling = true;
+
+            hitPoint = enemyHit.point;
+            joint = gameObject.AddComponent<SpringJoint>();
+            joint.autoConfigureConnectedAnchor = false;
+            joint.connectedAnchor = hitPoint;
+
+            float distanceFromPoint = Vector3.Distance(transform.position, hitPoint);
+
+            //The distance grapple will try to keep from grapple point. 
+            joint.maxDistance = distanceFromPoint * .3f;
+            joint.minDistance = distanceFromPoint * .3f;
+
+            joint.spring = jointSpring;
+            joint.damper = jointDamper;
+            joint.massScale = jointMassScale;
+            rb.AddForce((hitPoint - transform.position).normalized * jointForceBoost, ForceMode.Impulse);
+
+        }
+
+        if (Physics.Raycast(cam.position, cam.forward, out RaycastHit stingerHit, maxDist, EnemyLayer))
+        {
+            IsGrappling = true;
+
+            hitPoint = stingerHit.point;
+            joint = gameObject.AddComponent<SpringJoint>();
+            joint.autoConfigureConnectedAnchor = false;
+            joint.connectedAnchor = hitPoint;
+
+            float distanceFromPoint = Vector3.Distance(transform.position, hitPoint);
+
+            //The distance grapple will try to keep from grapple point. 
+            joint.maxDistance = distanceFromPoint * .3f;
+            joint.minDistance = distanceFromPoint * .3f;
+
+            joint.spring = jointSpring;
+            joint.damper = jointDamper;
+            joint.massScale = jointMassScale;
+            rb.AddForce((hitPoint - transform.position).normalized * jointForceBoost, ForceMode.Impulse);
+
+        }
     }
 
     public void StopGrapple()
