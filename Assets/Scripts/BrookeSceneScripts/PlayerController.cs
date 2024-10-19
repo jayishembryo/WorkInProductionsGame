@@ -366,8 +366,8 @@ public class PlayerController : MonoBehaviour
         if(other.gameObject.layer == 13)
         {
 
-            if (FireScreen != null) { FireScreen.SetActive(false); }
-            if (BlazeEffect != null) { BlazeEffect.SetActive(false); }
+            FireScreen.SetActive(true);
+            BlazeEffect.SetActive(true);
 
             if (lastAddedToTime > whenToAddTime)
             {
@@ -386,8 +386,8 @@ public class PlayerController : MonoBehaviour
         if(other.gameObject.layer == 13)
         {
 
-            if (FireScreen != null) { FireScreen.SetActive(false); }
-            if (BlazeEffect != null) { BlazeEffect.SetActive(false); }
+            FireScreen.SetActive(false);
+            BlazeEffect.SetActive(false);
 
         }
     }
