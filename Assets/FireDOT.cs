@@ -9,18 +9,13 @@ public class FireDOT : MonoBehaviour
 
     float whenToAddTime = 1;
     float lastAddedToTime = 0;
-    float lifeTime;
 
     public void FixedUpdate()
     {
 
         lastAddedToTime += Time.fixedDeltaTime;
-        // transform.LookAt(FindObjectOfType<PlayerController>().transform.position);
-        lifeTime += 1f;
-        if (lifeTime >= 300)
-        {
-            Destroy(gameObject);
-        }
+       // transform.LookAt(FindObjectOfType<PlayerController>().transform.position);
+
     }
 
     void OnTriggerStay(Collider other)
