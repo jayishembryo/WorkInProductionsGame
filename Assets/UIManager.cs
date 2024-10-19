@@ -18,23 +18,36 @@ public class UIManager : MonoBehaviour
     [Tooltip("Handles the Background's rotational and positional amplification.")]
     [SerializeField] private float bgAmp;
 
+    [SerializeField] private bool hasPlayed = false;
+
     // Start is called before the first frame update
     void Start()
     {
-        // Boat
-        sSBoat.SetShakerProperty(0, boatAmp, ShakerProperty.Amplitude);
-        sSBoat.SetShakerProperty(1, boatAmp, ShakerProperty.Amplitude);
-        sSM.StartShake("Wade");
-
-        // BG
-        sSBG.SetShakerProperty(0, bgAmp, ShakerProperty.Amplitude);
-        sSBG.SetShakerProperty(1, bgAmp, ShakerProperty.Amplitude);
-        sSM.StartShake("Tide");
+        hasPlayed = false;
+        PlayMainMenuAnimations();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
+    }
+
+    public void PlayMainMenuAnimations()
+    {
+        if (!hasPlayed)
+        {
+            hasPlayed = true;
+
+            // Boat
+            sSBoat.SetShakerProperty(0, boatAmp, ShakerProperty.Amplitude);
+            sSBoat.SetShakerProperty(1, boatAmp, ShakerProperty.Amplitude);
+            sSM.StartShake("Wade");
+
+            // BG
+            sSBG.SetShakerProperty(0, bgAmp, ShakerProperty.Amplitude);
+            sSBG.SetShakerProperty(1, bgAmp, ShakerProperty.Amplitude);
+            sSM.StartShake("Tide");
+        }
     }
 }

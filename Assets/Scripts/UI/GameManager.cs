@@ -14,9 +14,13 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject SettingsScreen;
     [SerializeField] private GameObject OpeningCanvas;
+    [SerializeField] private GameObject CreditsCanvas;
+    private UIManager uiM;
 
-   [SerializeField] private GameObject CreditsCanvas;
-   
+    private void Start()
+    {
+
+    }
 
     public void LoadHowToPlay()
     {
@@ -72,7 +76,7 @@ public class GameManager : MonoBehaviour
 
     public void CreditsScreen()
     {
-        OpeningCanvas.SetActive(false);
+        //OpeningCanvas.SetActive(false);
         CreditsCanvas.SetActive(true);
     }
 
