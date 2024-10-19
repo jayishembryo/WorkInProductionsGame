@@ -34,8 +34,8 @@ TagManager:
   - KillBox
   - MastGrapple
   - Ice
-  - 
-  - 
+  - Stinger
+  - Tide
   - 
   - 
   - 
@@ -50,4 +50,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI Layer 2
+    uniqueID: 4246727937
     locked: 0

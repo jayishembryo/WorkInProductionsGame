@@ -83,6 +83,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float playerHeight;
 
+    [SerializeField] public GameObject HealthScreen;
+
     // Creates the controller, gets an instance of the InputManager, and the camera transform.
     private void Start()
     {

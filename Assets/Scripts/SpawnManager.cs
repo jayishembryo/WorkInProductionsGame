@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class SpawnManager : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class SpawnManager : MonoBehaviour
     int maxWaveNumber = 2;
     [SerializeField]
     public int TotalEnemies;
-    private int totalEnemiesRemaining;
+    //private int totalEnemiesRemaining;
 
 
     [SerializeField]
@@ -63,6 +64,11 @@ public class SpawnManager : MonoBehaviour
 
     //attempting to fix issue of new wave starting multiple times in a row
     public bool Waiting;
+
+    public Image WaveBar;
+    public Animator WaveBarAnim;
+    public bool NoMoreSpawn = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -86,9 +92,55 @@ public class SpawnManager : MonoBehaviour
     public void newWaveStart()
     {
 
-        //waveTime = Time.time;//update start of current wave
-       // groupTime = waveTime;
         waveNumber++;
+
+        switch (waveNumber)
+        {
+            case 0:
+                break;
+            case 1:
+                break;
+            case 2:
+                WaveBar.fillAmount = .85f;
+                break;
+            case 3:
+                WaveBar.fillAmount = .65f;
+                break;
+            case 4:
+                WaveBar.fillAmount = .39f;
+                break;
+            case 5:
+                WaveBar.fillAmount = .19f;
+                break;
+        }
+
+        if (waveNumber >= 6)
+        {
+
+            NoMoreSpawn = true;
+            GameObject.FindObjectOfType<EnvironmentalEffects>().ActiveTotem.GetComponent<Animator>().SetTrigger("HydraFall");
+            WaveBar.fillAmount = 0;
+            WaveBarAnim.SetTrigger("BossIncoming");
+            return;
+
+        }
+
+        if (GameObject.FindObjectOfType<EnvironmentalEffects>().TotemIsActive)
+        {
+
+            GameObject.FindObjectOfType<EnvironmentalEffects>().ActiveTotem.GetComponent<Animator>().SetTrigger("HydraFall");
+            return;
+
+        }
+
+        if (waveNumber > 1)
+        {
+
+            FindObjectOfType<EnvironmentalEffects>().ResetShip();
+            return;
+
+        }
+
         StartCoroutine(NewWaveText());
 
         groupCooldown = waveOrganizer[waveNumber].groupCooldown;
@@ -97,29 +149,22 @@ public class SpawnManager : MonoBehaviour
         numberOfStingers = waveOrganizer[waveNumber].totalStingers;
 
         GroupAssignment();
-        TotalEnemies = GameObject.FindObjectsOfType<EnemyBehaviour>().Length;
         Waiting = false;
-        //endSignal = false;
 
-        if (waveNumber > 1)
-        {
+    }
 
-            FindObjectOfType<EnvironmentalEffects>().Decide();
+    public void NewWaveStartTotem()
+    {
 
-        }
+        StartCoroutine(NewWaveText());
 
-        if (waveNumber <= maxWaveNumber)
-        {
+        groupCooldown = waveOrganizer[waveNumber].groupCooldown;
+        numberOfNormals = waveOrganizer[waveNumber].totalNormals;
+        numberOfTanks = waveOrganizer[waveNumber].totalTanks;
+        numberOfStingers = waveOrganizer[waveNumber].totalStingers;
 
-            return;
-
-        }
-        else if (waveNumber > maxWaveNumber)
-        {
-           // Debug.Log("HUH");
-            ScoreboardManager.Instance.YouWin();
-
-        }
+        GroupAssignment();
+        Waiting = false;
 
     }
 

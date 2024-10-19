@@ -417,7 +417,7 @@ Transform:
   - {fileID: 8905673138717977979}
   - {fileID: 3976180739357951599}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3640821182947190827
 GameObject:
@@ -2275,6 +2275,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 99299a34a014364429b1047e67200e33, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5b1602f0829f7db46aeee08f3a68a796, type: 2}
     - target: {fileID: 919132149155446097, guid: 99299a34a014364429b1047e67200e33, type: 3}
       propertyPath: m_Name
       value: Ship_MastSail_A_1
@@ -6664,6 +6668,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 99299a34a014364429b1047e67200e33, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5b1602f0829f7db46aeee08f3a68a796, type: 2}
     - target: {fileID: 919132149155446097, guid: 99299a34a014364429b1047e67200e33, type: 3}
       propertyPath: m_Name
       value: Ship_MastSail_A_1
