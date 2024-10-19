@@ -5432,7 +5432,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4418401967016514416}
   m_Layer: 0
-  m_Name: Greybox tutorial
+  m_Name: Tutorial Greyboxed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
