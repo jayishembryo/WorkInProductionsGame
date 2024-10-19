@@ -148,7 +148,9 @@ public class Grapple : MonoBehaviour
 
         }
 
-       // Debug.Log("yippee!!!!");
+        GameObject.Find("PlayerViewmodel").GetComponent<Animator>().SetBool("grapple", true);
+
+        // Debug.Log("yippee!!!!");
 
         if (Physics.Raycast(cam.position, cam.forward, out RaycastHit hit, maxDist, GrappleLayer))
         {
@@ -184,35 +186,25 @@ public class Grapple : MonoBehaviour
             float distanceFromPoint = Vector3.Distance(transform.position, hitPoint);
 
             //The distance grapple will try to keep from grapple point. 
-            joint.maxDistance = distanceFromPoint * .3f;
-            joint.minDistance = distanceFromPoint * .3f;
+            joint.maxDistance = distanceFromPoint * maxDistanceFromPointMultiplier;
+            joint.minDistance = distanceFromPoint * minDistanceFromPointMultiplier;
 
             joint.spring = jointSpring;
             joint.damper = jointDamper;
             joint.massScale = jointMassScale;
             rb.AddForce((hitPoint - transform.position).normalized * jointForceBoost, ForceMode.Impulse);
 
+            enemyHit.transform.gameObject.GetComponent<EnemyBehaviour>().Stun();
+
         }
 
-        if (Physics.Raycast(cam.position, cam.forward, out RaycastHit stingerHit, maxDist, EnemyLayer))
+        if (Physics.Raycast(cam.position, cam.forward, out RaycastHit stingerHit, maxDist, StingerLayer))
         {
             IsGrappling = true;
 
             hitPoint = stingerHit.point;
-            joint = gameObject.AddComponent<SpringJoint>();
-            joint.autoConfigureConnectedAnchor = false;
-            joint.connectedAnchor = hitPoint;
-
-            float distanceFromPoint = Vector3.Distance(transform.position, hitPoint);
-
-            //The distance grapple will try to keep from grapple point. 
-            joint.maxDistance = distanceFromPoint * .3f;
-            joint.minDistance = distanceFromPoint * .3f;
-
-            joint.spring = jointSpring;
-            joint.damper = jointDamper;
-            joint.massScale = jointMassScale;
-            rb.AddForce((hitPoint - transform.position).normalized * jointForceBoost, ForceMode.Impulse);
+            enemyHit.transform.gameObject.GetComponent<EnemyBehaviour>().Stun();
+            enemyHit.transform.gameObject.GetComponent<EnemyBehaviour>().agent.SetDestination(GameObject.FindObjectOfType<PlayerController>().transform.position);
 
         }
     }
@@ -221,6 +213,7 @@ public class Grapple : MonoBehaviour
     {
 
         IsGrappling = false;
+        GameObject.Find("PlayerViewmodel").GetComponent<Animator>().SetBool("grapple", false);
 
         if (joint)
 

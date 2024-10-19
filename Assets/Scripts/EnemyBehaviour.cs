@@ -17,7 +17,7 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField]
     private GameObject player;
     [SerializeField]
-    private NavMeshAgent agent;
+    public NavMeshAgent agent;
     [SerializeField]
     public float health;
     [SerializeField]
@@ -299,5 +299,47 @@ public class EnemyBehaviour : MonoBehaviour
             Instantiate(knockedObject, transform.position, Quaternion.identity);
         }
         Destroy(gameObject);
+    }
+
+    public void Stun()
+    {
+
+        if (enemyID == 2)
+        {
+
+            if (GetComponentInChildren<TeeterCheckerScript>().isTeetering == false)
+            {
+                anim.SetTrigger("pushed");
+                agent.enabled = false;
+                Vector3 launchDirection = player.transform.position - enemyRB.position;
+                Vector3 launchDirNormalized = launchDirection.normalized;
+                float launchVelocity = player.GetComponent<Rigidbody>().velocity.magnitude;
+                enemyRB.AddForce((launchDirNormalized * launchVelocity));
+                skid.Play(); // this will throw an error if called when the enemy is not a tank
+                Invoke("ReEnableTank", 1.8f);
+                StopCoroutine(nameof(TeeterTank));
+
+            }
+            else
+            {
+                EnemyKnocked();
+            }
+
+            return;
+
+        }
+
+        anim.SetBool("stunned", true);
+        GetComponent<CapsuleCollider>().enabled = false;
+        Invoke("EndStun", 0.3f);
+
+    }
+
+    public void EndStun()
+    {
+
+        anim.SetBool("stunned", false);
+        GetComponent<CapsuleCollider>().enabled = true;
+
     }
 }
