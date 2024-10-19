@@ -203,10 +203,12 @@ public class PlayerController : MonoBehaviour
 
         rb.AddForce(newVelocity, ForceMode.Acceleration);
         //rb.AddRelativeForce(1000 * Time.fixedDeltaTime * newVelocity, ForceMode.Acceleration);
+        /*
         if(OnSlope())
         {
             rb.AddForce(GetSlopeMoveDirection() * playerSpeed * 1.1f, ForceMode.Force);
         }
+        */
         //turns off gravity while on slope to prevent sliding.
         rb.useGravity = !OnSlope();
 

@@ -12,18 +12,12 @@ public class SpawnManagerForBoss : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating(nameof(SpawnEnemy), 7.1f, 5f);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        InvokeRepeating(nameof(SpawnEnemy), 10f, 5f);
     }
 
     public void SpawnEnemy()
     {
-        Vector3 spawnPicked = spawnPoints[Random.Range(0, 9)].position; // picks a random point 
+        Vector3 spawnPicked = spawnPoints[Random.Range(0, 9)].position; //picks a random point 
         int choseEnemy = Random.Range(0, 6);
         if (choseEnemy <= 3)
         {

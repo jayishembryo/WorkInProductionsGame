@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BossBehaviour : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public class BossBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        anim.SetInteger("health", health);
     }
 
     public void StartNextAttackAtVariableTime()
@@ -57,7 +58,13 @@ public class BossBehaviour : MonoBehaviour
                 break;
         }
     }
-
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("EnemyKnocked"))
+        {
+            TakeDamage();
+        }
+    }
     public void TakeDamage()
     {
         anim.SetTrigger("hurt");
@@ -80,28 +87,29 @@ public class BossBehaviour : MonoBehaviour
         }
     }
     public void SummonMeteor()
-    {
-        
+    {     
         for (int i = 0; i < spawnManager.spawnPoints.Length; i++)
         {
-            Instantiate(attackObjects[2], new Vector3((spawnManager.spawnPoints[i].position.x + Random.Range(-4, 4)), 115f, (spawnManager.spawnPoints[i].position.z + Random.Range(-4, 4))), Quaternion.identity);
+            Instantiate(attackObjects[2], new Vector3((spawnManager.spawnPoints[i].position.x + Random.Range(-4f, 4f)), 115f, (spawnManager.spawnPoints[i].position.z + Random.Range(-4f, 4f))), Quaternion.identity);
         }
-        
-        //For some reason this for loop isnt working and im literally shitting everywhere im just gonna do this instead
-        /*Instantiate(attackObjects[2], new Vector3(spawnManager.spawnPoints[0].position.x, 115f, spawnManager.spawnPoints[0].position.z), Quaternion.identity);
-        Instantiate(attackObjects[2], new Vector3(spawnManager.spawnPoints[1].position.x, 115f, spawnManager.spawnPoints[1].position.z), Quaternion.identity);
-        Instantiate(attackObjects[2], new Vector3(spawnManager.spawnPoints[2].position.x, 115f, spawnManager.spawnPoints[2].position.z), Quaternion.identity);
-        Instantiate(attackObjects[2], new Vector3(spawnManager.spawnPoints[3].position.x, 115f, spawnManager.spawnPoints[0].position.z), Quaternion.identity);
-        Instantiate(attackObjects[2], new Vector3(spawnManager.spawnPoints[4].position.x, 115f, spawnManager.spawnPoints[0].position.z), Quaternion.identity);
-        Instantiate(attackObjects[2], new Vector3(spawnManager.spawnPoints[5].position.x, 115f, spawnManager.spawnPoints[0].position.z), Quaternion.identity);
-        Instantiate(attackObjects[2], new Vector3(spawnManager.spawnPoints[6].position.x, 115f, spawnManager.spawnPoints[0].position.z), Quaternion.identity);
-        Instantiate(attackObjects[2], new Vector3(spawnManager.spawnPoints[7].position.x, 115f, spawnManager.spawnPoints[0].position.z), Quaternion.identity);
-        Instantiate(attackObjects[2], new Vector3(spawnManager.spawnPoints[8].position.x, 115f, spawnManager.spawnPoints[0].position.z), Quaternion.identity);
-        */
     }
     public void EnterFloodedState()
     {
         anim.SetBool("flooded", true);
         Debug.Log("The arena is now flooded!");
+    }
+
+    public void DeathFunctions(int progress)
+    {
+        switch (progress)
+        {
+            case 0:
+                Destroy(spawnManager.gameObject);
+                GameObject.Find("EndScreen").GetComponent<Animation>().Play();
+                break;
+            case 1:
+                SceneManager.LoadScene(0);
+                break;
+        }
     }
 }
