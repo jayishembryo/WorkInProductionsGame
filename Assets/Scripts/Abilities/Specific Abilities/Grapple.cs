@@ -11,7 +11,11 @@ public class Grapple : MonoBehaviour
     private Vector3 hitPoint;
     private SpringJoint joint;
     private float maxDist = 100000000000f;
-    public LayerMask shootLayers;
+
+    public LayerMask GrappleLayer;
+    public LayerMask StingerLayer;
+    public LayerMask EnemyLayer;
+
     private LineRenderer hookRenderer;
     private Transform cam;
 
@@ -144,9 +148,9 @@ public class Grapple : MonoBehaviour
 
         }
 
-        Debug.Log("yippee!!!!");
+       // Debug.Log("yippee!!!!");
 
-        if (Physics.Raycast(cam.position, cam.forward, out RaycastHit hit, maxDist, shootLayers))
+        if (Physics.Raycast(cam.position, cam.forward, out RaycastHit hit, maxDist, GrappleLayer))
         {
             IsGrappling = true;
 
