@@ -5,18 +5,22 @@ using UnityEngine;
 
 public class EnvironmentalEffects : MonoBehaviour
 {
-    int environment;
+    public int Environment;
     //change to match # of environments designed
-    int allEnvironments =  0;
+   // int allEnvironments =  3;
 
     private List<int> alreadyUsed = new List<int>();
 
     //temporary fix
     public GameObject FireSpawn;
     public GameObject IceSpawn;
+    public GameObject TideSpawn;
 
     public GameObject FireWarnings;
     public GameObject IceWarnings;
+
+    public Material IceFloor;
+    public Material ShipFloor;
 
     public bool FireActive = false;
     public bool IceActive = false;
@@ -25,8 +29,18 @@ public class EnvironmentalEffects : MonoBehaviour
 
     public List<GameObject> beams = new List<GameObject>();
     public List<GameObject> warnings = new List<GameObject>();
+    public List<GameObject> totems = new List<GameObject>();
+    //public List<MeshRenderer> floorTiles = new List<GameObject>();
+
+    public GameObject ActiveTotem;
+    public bool TotemIsActive = false;
 
     int lastBeam;
+
+    void Start()
+    {
+
+    }
 
     private void Update()
     {
@@ -45,9 +59,9 @@ public class EnvironmentalEffects : MonoBehaviour
     public void Decide()
     {
 
-        environment = Random.Range(0, allEnvironments += 1);
+        Environment = Random.Range(0, 4);
         
-        if(alreadyUsed.Contains(environment))
+        if(alreadyUsed.Contains(Environment))
         {
 
             Reroll();
@@ -55,31 +69,43 @@ public class EnvironmentalEffects : MonoBehaviour
 
         }
 
-        if(environment == 0)
-        {
+        totems[Environment].SetActive(true);
+        totems[Environment] = ActiveTotem;
+        TotemIsActive = true;
+        alreadyUsed.Add(Environment);
 
-            FlamesOfDisaster();
-            alreadyUsed.Add(environment);
+        //if(environment == 0)
+        //{
 
-        }
-        if(environment == 1)
-        {
+        //    FlamesOfDisaster();
+        //    alreadyUsed.Add(environment);
+        //    environment = Random.Range(0, allEnvironments += 1);
 
-            TideRising();
+        //}
+        //if(environment == 1)
+        //{
 
-        }
-        if(environment == 2)
-        {
+        //    TideRising();
+        //    alreadyUsed.Add(environment);
+        //    environment = Random.Range(0, allEnvironments += 1);
 
-            BoatFreezes();
+        //}
+        //if(environment == 2)
+        //{
 
-        }
-        if(environment == 3)
-        {
+        //    BoatFreezes();
+        //    alreadyUsed.Add(environment);
+        //    environment = Random.Range(0, allEnvironments += 1);
 
-            EnergyBeams();
+        //}
+        //if(environment == 3)
+        //{
 
-        }
+        //    EnergyBeams();
+        //    alreadyUsed.Add(environment);
+        //    environment = Random.Range(0, allEnvironments += 1);
+
+        //}
         
         //ADD OTHER ENVIRONMENT FUNCTIONS
 
@@ -88,18 +114,7 @@ public class EnvironmentalEffects : MonoBehaviour
     void Reroll()
     {
 
-        if (alreadyUsed.Count >= allEnvironments)
-        {
-
-            //call either the end of the game or boss fight here
-
-        }
-        else
-        {
-
-            Decide();
-
-        }
+        Decide();
 
     }
 
@@ -119,11 +134,21 @@ public class EnvironmentalEffects : MonoBehaviour
         TideActive = true;
         //RiseAnim();
         GameObject.FindObjectOfType<TideAnimations>().RiseAnim();
+        TideSpawn.SetActive(true);
 
     }
 
     public void BoatFreezes()
     {
+
+        GameObject[] floors = GameObject.FindGameObjectsWithTag("Ground");
+
+        for (int i = 0; i < floors.Length; i++)
+        {
+
+            floors[i].GetComponent<MeshRenderer>().material = IceFloor;
+
+        }
 
         IceActive = true;
         //IceSpawn.SetActive(true);
@@ -181,6 +206,13 @@ public class EnvironmentalEffects : MonoBehaviour
     public void ResetShip()
     {
 
+        if(TotemIsActive)
+        {
+
+            ActiveTotem.SetActive(false);
+
+        }
+
         if(FireActive)
         {
 
@@ -199,6 +231,14 @@ public class EnvironmentalEffects : MonoBehaviour
                 GameObject.FindObjectOfType<PlayerController>().physicMaterial.dynamicFriction = 0.6f;
 
             }
+            GameObject[] floors = GameObject.FindGameObjectsWithTag("Ground");
+
+            for (int i = 0; i < floors.Length; i++)
+            {
+
+                floors[i].GetComponent<MeshRenderer>().material = ShipFloor;
+
+            }
 
         }
         if(beamsActive)
@@ -211,8 +251,12 @@ public class EnvironmentalEffects : MonoBehaviour
         {
 
             TideActive = false;
+            GameObject.FindObjectOfType<TideAnimations>().FallAnim();
+            TideSpawn.SetActive(false);
 
         }
+
+        Decide();
 
     }
 

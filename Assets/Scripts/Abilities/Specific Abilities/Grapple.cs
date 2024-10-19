@@ -10,8 +10,12 @@ public class Grapple : MonoBehaviour
 {
     private Vector3 hitPoint;
     private SpringJoint joint;
-    private float maxDist = 1000f;
-    public LayerMask shootLayers;
+    private float maxDist = 100000000000f;
+
+    public LayerMask GrappleLayer;
+    public LayerMask StingerLayer;
+    public LayerMask EnemyLayer;
+
     private LineRenderer hookRenderer;
     private Transform cam;
 
@@ -144,9 +148,11 @@ public class Grapple : MonoBehaviour
 
         }
 
-        Debug.Log("yippee!!!!");
+        GameObject.Find("PlayerViewmodel").GetComponent<Animator>().SetBool("grapple", true);
 
-        if (Physics.Raycast(cam.position, cam.forward, out RaycastHit hit, maxDist, shootLayers))
+        // Debug.Log("yippee!!!!");
+
+        if (Physics.Raycast(cam.position, cam.forward, out RaycastHit hit, maxDist, GrappleLayer))
         {
             IsGrappling = true;
 
@@ -167,12 +173,47 @@ public class Grapple : MonoBehaviour
             rb.AddForce((hitPoint - transform.position).normalized * jointForceBoost, ForceMode.Impulse);
 
         }
+
+        if (Physics.Raycast(cam.position, cam.forward, out RaycastHit enemyHit, maxDist, EnemyLayer))
+        {
+            IsGrappling = true;
+
+            hitPoint = enemyHit.point;
+            joint = gameObject.AddComponent<SpringJoint>();
+            joint.autoConfigureConnectedAnchor = false;
+            joint.connectedAnchor = hitPoint;
+
+            float distanceFromPoint = Vector3.Distance(transform.position, hitPoint);
+
+            //The distance grapple will try to keep from grapple point. 
+            joint.maxDistance = distanceFromPoint * maxDistanceFromPointMultiplier;
+            joint.minDistance = distanceFromPoint * minDistanceFromPointMultiplier;
+
+            joint.spring = jointSpring;
+            joint.damper = jointDamper;
+            joint.massScale = jointMassScale;
+            rb.AddForce((hitPoint - transform.position).normalized * jointForceBoost, ForceMode.Impulse);
+
+            enemyHit.transform.gameObject.GetComponent<EnemyBehaviour>().Stun();
+
+        }
+
+        if (Physics.Raycast(cam.position, cam.forward, out RaycastHit stingerHit, maxDist, StingerLayer))
+        {
+            IsGrappling = true;
+
+            hitPoint = stingerHit.point;
+            enemyHit.transform.gameObject.GetComponent<EnemyBehaviour>().Stun();
+            enemyHit.transform.gameObject.GetComponent<EnemyBehaviour>().agent.SetDestination(GameObject.FindObjectOfType<PlayerController>().transform.position);
+
+        }
     }
 
     public void StopGrapple()
     {
 
         IsGrappling = false;
+        GameObject.Find("PlayerViewmodel").GetComponent<Animator>().SetBool("grapple", false);
 
         if (joint)
 
