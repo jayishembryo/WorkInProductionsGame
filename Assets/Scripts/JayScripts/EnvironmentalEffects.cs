@@ -20,6 +20,7 @@ public class EnvironmentalEffects : MonoBehaviour
     public GameObject IceWarnings;
 
     public Material IceFloor;
+    public Material ShipFloor;
 
     public bool FireActive = false;
     public bool IceActive = false;
@@ -29,12 +30,17 @@ public class EnvironmentalEffects : MonoBehaviour
     public List<GameObject> beams = new List<GameObject>();
     public List<GameObject> warnings = new List<GameObject>();
     public List<GameObject> totems = new List<GameObject>();
-    public List<GameObject> floorTiles = new List<GameObject>();
+    //public List<MeshRenderer> floorTiles = new List<GameObject>();
 
     public GameObject ActiveTotem;
     public bool TotemIsActive = false;
 
     int lastBeam;
+
+    void Start()
+    {
+
+    }
 
     private void Update()
     {
@@ -135,8 +141,16 @@ public class EnvironmentalEffects : MonoBehaviour
     public void BoatFreezes()
     {
 
+        GameObject[] floors = GameObject.FindGameObjectsWithTag("Ground");
+
+        for (int i = 0; i < floors.Length; i++)
+        {
+
+            floors[i].GetComponent<MeshRenderer>().material = IceFloor;
+
+        }
+
         IceActive = true;
-        GameObject.FindGameObjectsWithTag("Ground").
         //IceSpawn.SetActive(true);
         IceWarnings.SetActive(true);
 
@@ -215,6 +229,14 @@ public class EnvironmentalEffects : MonoBehaviour
             {
 
                 GameObject.FindObjectOfType<PlayerController>().physicMaterial.dynamicFriction = 0.6f;
+
+            }
+            GameObject[] floors = GameObject.FindGameObjectsWithTag("Ground");
+
+            for (int i = 0; i < floors.Length; i++)
+            {
+
+                floors[i].GetComponent<MeshRenderer>().material = ShipFloor;
 
             }
 
