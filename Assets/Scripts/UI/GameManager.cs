@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
     public void GoToMain()
     {
         print("going to main");
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene(0);
     }
 
     // Pause -> Settings
@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
     // Scene -> In-Game
     public void PlayGame()
     {
-        SceneManager.LoadScene("Tutorial");
+        SceneManager.LoadScene(1);
     }
 
     // Pause -> In-Game
