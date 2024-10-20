@@ -274,7 +274,7 @@ MonoBehaviour:
   - {fileID: 9113243101405611020}
   StringsBanks:
   - {fileID: 1230724929348026607}
-  cacheTime: 638649814674990906
+  cacheTime: 638650253094792087
   cacheVersion: 131619
 --- !u!114 &1021200277146757727
 MonoBehaviour:
@@ -318,7 +318,7 @@ MonoBehaviour:
   Path: Assets/Audio/FMODBanks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638649814674744984
+  lastModified: 638650253094792087
   FileSizes:
   - Name: 
     Value: 1714
@@ -518,7 +518,7 @@ MonoBehaviour:
   Path: Assets/Audio/FMODBanks/Desktop/Ambiance.bank
   Name: Ambiance
   StudioPath: bank:/Ambiance
-  lastModified: 638649814674744984
+  lastModified: 638650253094792087
   FileSizes: []
   Exists: 1
 --- !u!114 &7520294511024619222
@@ -540,8 +540,8 @@ MonoBehaviour:
     Data3: -1841280640
     Data4: -1501668549
   Banks:
-  - {fileID: 6868334978939917845}
   - {fileID: -1918245654055400620}
+  - {fileID: 6868334978939917845}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
