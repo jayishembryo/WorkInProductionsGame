@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.06791074, g: 0.10743927, b: 0.17212787, a: 1}
+  m_IndirectSpecularColor: {r: 0.06791074, g: 0.10743927, b: 0.1721279, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -131845,7 +131845,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3413766053300227710, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: HealthFillGradient.key0.b
-      value: 0.665171
+      value: 0.12641507
       objectReference: {fileID: 0}
     - target: {fileID: 3413766053300227710, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: HealthFillGradient.key0.g
@@ -131853,15 +131853,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3413766053300227710, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: HealthFillGradient.key0.r
-      value: 0.6650944
+      value: 0.12641507
       objectReference: {fileID: 0}
     - target: {fileID: 3413766053300227710, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: HealthFillGradient.key1.b
-      value: 0.759434
+      value: 0.2584905
       objectReference: {fileID: 0}
     - target: {fileID: 3413766053300227710, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: HealthFillGradient.key1.g
-      value: 0.99150944
+      value: 0.97568816
       objectReference: {fileID: 0}
     - target: {fileID: 3413766053300227710, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: HealthFillGradient.key1.r
@@ -131869,11 +131869,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3413766053300227710, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: HealthFillGradient.key2.b
-      value: 0.69411767
+      value: 0.42830187
       objectReference: {fileID: 0}
     - target: {fileID: 3413766053300227710, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: HealthFillGradient.key2.g
-      value: 0.7000475
+      value: 0.4429608
       objectReference: {fileID: 0}
     - target: {fileID: 3413766053300227710, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: HealthFillGradient.key2.r
@@ -131998,6 +131998,26 @@ PrefabInstance:
     - target: {fileID: 7428299833572200738, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7860513757647446076, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: GroanSFX.Path
+      value: event:/Player/Groan
+      objectReference: {fileID: 0}
+    - target: {fileID: 7860513757647446076, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: GroanSFX.Guid.Data1
+      value: 1466461283
+      objectReference: {fileID: 0}
+    - target: {fileID: 7860513757647446076, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: GroanSFX.Guid.Data2
+      value: 1100492639
+      objectReference: {fileID: 0}
+    - target: {fileID: 7860513757647446076, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: GroanSFX.Guid.Data3
+      value: -1688614757
+      objectReference: {fileID: 0}
+    - target: {fileID: 7860513757647446076, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: GroanSFX.Guid.Data4
+      value: -925506740
       objectReference: {fileID: 0}
     - target: {fileID: 8640629303739564876, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: directionAnchor
