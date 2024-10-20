@@ -417,7 +417,7 @@ public class PlayerController : MonoBehaviour
 
     public void GameOverRestart()
     {
-        SceneManager.LoadScene(sceneName: "VerticalSlice");
+        SceneManager.LoadScene(2);
     }
 
     public void OnTriggerStay(Collider other)
