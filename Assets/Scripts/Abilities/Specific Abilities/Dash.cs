@@ -2,8 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using FMODUnity;
-using FMOD.Studio;
 
 public class Dash : AbstractAbility
 {
@@ -47,9 +45,6 @@ public class Dash : AbstractAbility
     delegate Vector3 MovementMethod();
     MovementMethod MovementDirection;
 
-    /*[SerializeField]
-    private EventReference DashSFX;
-    private EventInstance DashSFXInstance;*/
     private void Start()
     {
         upwardVector = new(0, upwardForce, 0);
@@ -63,32 +58,7 @@ public class Dash : AbstractAbility
                 MovementDirection = InputDirection;
                 return;
         }
-
-        //DashSFXInstance = RuntimeManager.CreateInstance(DashSFX);
-        //UpdateSoundPosition();
     }
-
-   /* private void Update()
-    {
-        UpdateSoundPosition();
-    }
-    public void PlayDashSound()
-    {
-        PlaySound(ref DashSFXInstance, DashSFX);
-    }
-    private void PlaySound(ref EventInstance instance, EventReference eventRef)
-    {
-        instance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
-        instance.release();
-        instance = RuntimeManager.CreateInstance(eventRef);
-        instance.set3DAttributes(RuntimeUtils.To3DAttributes(gameObject));
-        instance.start();
-    }
-    private void UpdateSoundPosition()
-    {
-        var attributes = RuntimeUtils.To3DAttributes(gameObject);
-        DashSFXInstance.set3DAttributes(attributes);
-    }*/
 
     // Applies a random impulse force to the character
     protected override void Execute()
@@ -119,7 +89,7 @@ public class Dash : AbstractAbility
         }
 
         EmpowerKick();
-        player.PlayDashSound();
+
         Debug.Log("Dashed");
 
         //StartCoroutine(DelayedSpeedLimit());

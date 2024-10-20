@@ -5,8 +5,6 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
-using FMODUnity;
-using FMOD.Studio;
 
 public class PlayerController : MonoBehaviour
 {
@@ -38,15 +36,6 @@ public class PlayerController : MonoBehaviour
     Dash dashAbility;
     [SerializeField]
     Grapple grappleAbility;
-
-    [Header("SoundEffects")]
-    [SerializeField]
-    private EventReference DashSFX;
-    private EventInstance DashSFXInstance;
-    [SerializeField]
-    private EventReference WalkingSFX;
-    private EventInstance WalkingSFXInstance;
-    private bool isWalkingPlaying = false;
 
     [SerializeField]
     float enemySpawnCD = 0.5f;
@@ -95,8 +84,6 @@ public class PlayerController : MonoBehaviour
     private float playerHeight;
 
     [SerializeField] public GameObject HealthScreen;
-
-    public bool CanBeHit = true;
 
     // Creates the controller, gets an instance of the InputManager, and the camera transform.
     private void Start()
@@ -169,7 +156,6 @@ public class PlayerController : MonoBehaviour
 
     private void Grappling_canceled(InputAction.CallbackContext obj)
     {
-        GameObject.Find("PlayerViewmodel").GetComponent<Animator>().SetTrigger("EndGrapple");
         grapplingInstance.StopGrapple();
         playerAnim.SetBool("point", false);
     }
@@ -206,15 +192,12 @@ public class PlayerController : MonoBehaviour
 
         rb.AddForce(newVelocity, ForceMode.Acceleration);
         //rb.AddRelativeForce(1000 * Time.fixedDeltaTime * newVelocity, ForceMode.Acceleration);
-        /*
         if(OnSlope())
         {
             rb.AddForce(GetSlopeMoveDirection() * playerSpeed * 1.1f, ForceMode.Force);
         }
-        */
         //turns off gravity while on slope to prevent sliding.
         rb.useGravity = !OnSlope();
-
     }
 
     public Vector2 GetMoveInput()
@@ -321,52 +304,9 @@ public class PlayerController : MonoBehaviour
         //move = cameraTransform.forward * move.z + cameraTransform.right * move.x;
         //move.y = 0;
         //transform.position += new Vector3(direction.x, 0.0f, direction.y) * playerSpeed * Time.deltaTime;
-
-        HandleWalkingSound();
-
-        UpdateSoundPosition();
+        
     }
 
-    public void PlayDashSound()
-    {
-        PlaySound(ref DashSFXInstance, DashSFX);
-    }
-    public void PlayWalkingSound()
-    {
-        Debug.Log("Playing Walking Sound...");
-        PlaySound(ref WalkingSFXInstance, WalkingSFX);
-    }
-    private void HandleWalkingSound()
-    {
-        if (isMoving && !isWalkingPlaying)
-        {
-            PlayWalkingSound();
-            isWalkingPlaying = true;
-        }
-        else if (!isMoving && isWalkingPlaying)
-        {
-            StopWalkingSound();
-            isWalkingPlaying = false;
-        }
-    }
-    private void StopWalkingSound()
-    {
-        WalkingSFXInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-    }
-    private void PlaySound(ref EventInstance instance, EventReference eventRef)
-    {
-        instance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
-        instance.release();
-        instance = RuntimeManager.CreateInstance(eventRef);
-        instance.set3DAttributes(RuntimeUtils.To3DAttributes(gameObject));
-        instance.start();
-    }
-    private void UpdateSoundPosition()
-    {
-        var attributes = RuntimeUtils.To3DAttributes(gameObject);
-        DashSFXInstance.set3DAttributes(attributes);
-        WalkingSFXInstance.set3DAttributes(attributes);
-    }
 
     void Kick()
     {

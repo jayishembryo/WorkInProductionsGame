@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class BossBehaviour : MonoBehaviour
 {
@@ -58,19 +57,5 @@ public class BossBehaviour : MonoBehaviour
     {
         anim.SetBool("flooded", true);
         Debug.Log("The arena is now flooded!");
-    }
-
-    public void DeathFunctions(int progress)
-    {
-        switch (progress)
-        {
-            case 0:
-                //Destroy(spawnManager.gameObject);
-                GameObject.Find("EndScreen").GetComponent<Animation>().Play();
-                break;
-            case 1:
-                SceneManager.LoadScene(0);
-                break;
-        }
     }
 }

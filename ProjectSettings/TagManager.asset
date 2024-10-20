@@ -14,8 +14,6 @@ TagManager:
   - PillarDestroyer
   - Water
   - Hurt
-  - EnemyKnocked
-  - Boss
   layers:
   - Default
   - TransparentFX
