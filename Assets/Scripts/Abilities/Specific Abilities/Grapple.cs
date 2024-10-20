@@ -173,7 +173,7 @@ public class Grapple : MonoBehaviour
             rb.AddForce((hitPoint - transform.position).normalized * jointForceBoost, ForceMode.Impulse);
 
         }
-
+        /*
         if (Physics.Raycast(cam.position, cam.forward, out RaycastHit enemyHit, maxDist, EnemyLayer))
         {
             IsGrappling = true;
@@ -206,7 +206,7 @@ public class Grapple : MonoBehaviour
             enemyHit.transform.gameObject.GetComponent<EnemyBehaviour>().Stun();
             enemyHit.transform.gameObject.GetComponent<EnemyBehaviour>().agent.SetDestination(GameObject.FindObjectOfType<PlayerController>().transform.position);
 
-        }
+        }*/
     }
 
     public void StopGrapple()
