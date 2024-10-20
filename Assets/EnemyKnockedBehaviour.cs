@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyKnockedBehaviour : MonoBehaviour
@@ -11,6 +12,9 @@ public class EnemyKnockedBehaviour : MonoBehaviour
     public GameObject[] burst; /// Bursts are gameObjects that are spawned when an enemyKnockedObject hits a surface. 0: burstWall 1: burstWater 2: burstSmack 3: burstEnemy
     public GameObject enemyToSpawn;
     public EnemyBehaviour EnemyBehaviorInstance;
+
+    public ParticleSystem HealthParticles;
+    public ParticleSystem.Particle[] GettingParticles;
 
     /// <summary>
     /// This awake function is used to set the bullet to face its target and move in a forward direction when it is spawned.
@@ -25,6 +29,8 @@ public class EnemyKnockedBehaviour : MonoBehaviour
         Vector3 direction = transform.position - player.position;
         transform.rotation = Quaternion.LookRotation(direction);
         rb.velocity = Camera.main.gameObject.transform.forward * projSpeed;
+
+        HealthParticles = burst[4].GetComponent<ParticleSystem>();
     }
 
     private void Update()
@@ -39,6 +45,35 @@ public class EnemyKnockedBehaviour : MonoBehaviour
         if (lifetime >= 500)
         {
             Debug.Log("knocked enemy " + gameObject.name + " deleted of old age");
+
+            if (EnemyBehaviorInstance.DoesHeal == true)
+            {
+
+                //LOOK INTO PARTICLES
+                float healed = Random.Range(5f, 11f);
+                HealthSystem.instance.Heal(healed);
+
+                //MAKE THE PARTICLE EFFECT
+                //ADD PARTICLE EFFECT TO LIST
+                Instantiate(burst[4], transform.position, Quaternion.identity);
+
+                GettingParticles = new ParticleSystem.Particle[HealthParticles.particleCount];
+                HealthParticles.GetParticles(GettingParticles);
+
+                for(int i = 0; i < GettingParticles.GetUpperBound(0); i++)
+                {
+
+                    float FlyingSpeed = (GettingParticles[i].startLifetime - GettingParticles[i].remainingLifetime) * (10 * Vector3.Distance(player.position, GettingParticles[i].position));
+                    GettingParticles[i].velocity = (player.position - GettingParticles[i].position).normalized * FlyingSpeed;
+                    GettingParticles[i].position = Vector3.Lerp(GettingParticles[i].position, player.position, Time.deltaTime / 2f);
+
+
+                }
+
+                HealthParticles.SetParticles(GettingParticles, GettingParticles.Length);
+
+            }
+
             KillEnemy(gameObject);
         }
     }
@@ -58,8 +93,29 @@ public class EnemyKnockedBehaviour : MonoBehaviour
                 //ADD PARTICLE EFFECT TO LIST
                 Instantiate(burst[4], transform.position, Quaternion.identity);
 
+                GettingParticles = new ParticleSystem.Particle[HealthParticles.particleCount];
+                HealthParticles.GetParticles(GettingParticles);
+
+                for (int i = 0; i < GettingParticles.GetUpperBound(0); i++)
+                {
+
+                    float FlyingSpeed = (GettingParticles[i].startLifetime - GettingParticles[i].remainingLifetime) * (10 * Vector3.Distance(player.position, GettingParticles[i].position));
+                    GettingParticles[i].velocity = (player.position - GettingParticles[i].position).normalized * FlyingSpeed;
+                    GettingParticles[i].position = Vector3.Lerp(GettingParticles[i].position, player.position, Time.deltaTime / 2f);
+
+
+                }
+
+                HealthParticles.SetParticles(GettingParticles, GettingParticles.Length);
+
             }
-            Instantiate(burst[0], transform.position, Quaternion.identity);
+            else
+            {
+
+                Instantiate(burst[0], transform.position, Quaternion.identity);
+
+            }
+
             KillEnemy(gameObject);
         }
      
@@ -83,14 +139,78 @@ public class EnemyKnockedBehaviour : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             Debug.Log("Knocked enemy has collided with: " + collision.gameObject.name);
-            Instantiate(burst[3], transform.position, Quaternion.identity);
+            if (EnemyBehaviorInstance.DoesHeal == true)
+            {
+
+                //LOOK INTO PARTICLES
+                float healed = Random.Range(5f, 11f);
+                HealthSystem.instance.Heal(healed);
+
+                //MAKE THE PARTICLE EFFECT
+                //ADD PARTICLE EFFECT TO LIST
+                Instantiate(burst[4], transform.position, Quaternion.identity);
+
+                GettingParticles = new ParticleSystem.Particle[HealthParticles.particleCount];
+                HealthParticles.GetParticles(GettingParticles);
+
+                for (int i = 0; i < GettingParticles.GetUpperBound(0); i++)
+                {
+
+                    float FlyingSpeed = (GettingParticles[i].startLifetime - GettingParticles[i].remainingLifetime) * (10 * Vector3.Distance(player.position, GettingParticles[i].position));
+                    GettingParticles[i].velocity = (player.position - GettingParticles[i].position).normalized * FlyingSpeed;
+                    GettingParticles[i].position = Vector3.Lerp(GettingParticles[i].position, player.position, Time.deltaTime / 2f);
+
+
+                }
+
+                HealthParticles.SetParticles(GettingParticles, GettingParticles.Length);
+
+            }
+            else
+            {
+
+                Instantiate(burst[3], transform.position, Quaternion.identity);
+
+            }
             KillEnemy(collision.gameObject);
             KillEnemy(gameObject);
         }
         if (collision.gameObject.CompareTag("Boss"))
         {
             Debug.Log("Knocked enemy has collided with: " + collision.gameObject.name);
-            Instantiate(burst[5], transform.position, Quaternion.identity);
+            if (EnemyBehaviorInstance.DoesHeal == true)
+            {
+
+                //LOOK INTO PARTICLES
+                float healed = Random.Range(5f, 11f);
+                HealthSystem.instance.Heal(healed);
+
+                //MAKE THE PARTICLE EFFECT
+                //ADD PARTICLE EFFECT TO LIST
+                Instantiate(burst[4], transform.position, Quaternion.identity);
+
+                GettingParticles = new ParticleSystem.Particle[HealthParticles.particleCount];
+                HealthParticles.GetParticles(GettingParticles);
+
+                for (int i = 0; i < GettingParticles.GetUpperBound(0); i++)
+                {
+
+                    float FlyingSpeed = (GettingParticles[i].startLifetime - GettingParticles[i].remainingLifetime) * (10 * Vector3.Distance(player.position, GettingParticles[i].position));
+                    GettingParticles[i].velocity = (player.position - GettingParticles[i].position).normalized * FlyingSpeed;
+                    GettingParticles[i].position = Vector3.Lerp(GettingParticles[i].position, player.position, Time.deltaTime / 2f);
+
+
+                }
+
+                HealthParticles.SetParticles(GettingParticles, GettingParticles.Length);
+
+            }
+            else
+            {
+
+                Instantiate(burst[5], transform.position, Quaternion.identity);
+
+            }
             KillEnemy(gameObject);
         }
     }

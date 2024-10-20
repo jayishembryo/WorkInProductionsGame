@@ -245,3 +245,4 @@ MonoBehaviour:
   - {fileID: 7907553502098151316, guid: c7f50e1a3715bb24f960160b6d15b269, type: 3}
   enemyToSpawn: {fileID: 8474295532616176723, guid: 9a801a72a065d524aa007bc9486081e6, type: 3}
   EnemyBehaviorInstance: {fileID: 0}
+  HealthParticles: {fileID: 0}

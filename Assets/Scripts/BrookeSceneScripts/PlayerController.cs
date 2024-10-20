@@ -169,9 +169,9 @@ public class PlayerController : MonoBehaviour
 
     private void Grappling_canceled(InputAction.CallbackContext obj)
     {
-        GameObject.Find("PlayerViewmodel").GetComponent<Animator>().SetTrigger("EndGrapple");
+       
         grapplingInstance.StopGrapple();
-        playerAnim.SetBool("point", false);
+        //playerAnim.SetBool("point", false);
     }
 
     private void FixedUpdate()

@@ -46,14 +46,6 @@ public class EnvironmentalEffects : MonoBehaviour
     private void Update()
     {
        
-        while(IceActive && GameObject.FindObjectOfType<PlayerController>().IsTouchingGround == true)
-        {
-
-            //Debug.Log("weeeeeeeeeeeeeeee");
-            GameObject.FindObjectOfType<PlayerController>().physicMaterial.dynamicFriction = 0;
-            //GameObject.FindObjectOfType<PlayerController>().physicMaterial.staticFriction = 0;
-
-        }
 
     }
 
@@ -154,6 +146,7 @@ public class EnvironmentalEffects : MonoBehaviour
         IceActive = true;
         //IceSpawn.SetActive(true);
         IceWarnings.SetActive(true);
+        GameObject.FindObjectOfType<PlayerController>().physicMaterial.dynamicFriction = 0;
 
     }
 
@@ -227,12 +220,7 @@ public class EnvironmentalEffects : MonoBehaviour
 
             IceSpawn.SetActive(false);
             IceActive = false;
-            if(GameObject.FindObjectOfType<PlayerController>().IsTouchingGround == true)
-            {
-
-                GameObject.FindObjectOfType<PlayerController>().physicMaterial.dynamicFriction = 0.6f;
-
-            }
+            GameObject.FindObjectOfType<PlayerController>().physicMaterial.dynamicFriction = 0.6f;
             GameObject[] floors = GameObject.FindGameObjectsWithTag("Ground");
 
             for (int i = 0; i < floors.Length; i++)

@@ -215,6 +215,7 @@ public class Grapple : MonoBehaviour
     public void StopGrapple()
     {
 
+        GameObject.Find("PlayerViewmodel").GetComponent<Animator>().SetTrigger("EndGrapple");
         IsGrappling = false;
         //GameObject.Find("PlayerViewmodel").GetComponent<Animator>().SetTrigger("EndGrapple");
         GameObject.FindObjectOfType<PlayerController>().CanBeHit = true;

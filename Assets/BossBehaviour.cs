@@ -15,12 +15,8 @@ public class BossBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-<<<<<<< Updated upstream
-        
-=======
         anim = GetComponent<Animator>();
         spawnManager = FindObjectOfType<SpawnManagerForBoss>();
->>>>>>> Stashed changes
     }
 
     // Update is called once per frame
@@ -62,51 +58,6 @@ public class BossBehaviour : MonoBehaviour
                 break;
         }
     }
-<<<<<<< Updated upstream
-=======
-
-    public void TakeDamage()
-    {
-        anim.SetTrigger("hurt");
-        health -= 1;
-        Debug.Log("Boss has been damaged!");
-    }
-    public void SummonLighntingArea(int size)
-    {
-        switch (size)
-        {
-            case 0:
-                Instantiate(attackObjects[0], attackSpawnPoints[0].position, Quaternion.identity);
-                break;
-            case 1:
-                Instantiate(attackObjects[1], new Vector3(attackSpawnPoints[1].position.x, attackSpawnPoints[1].position.y, (attackSpawnPoints[1].position.z - 27)), Quaternion.identity);
-                break;
-            default:
-                Debug.Log("Error! Size of Lightning Area outside of knowable range!");
-                break;
-        }
-    }
-    public void SummonMeteor()
-    {
-        
-        for (int i = 0; i < spawnManager.spawnPoints.Length; i++)
-        {
-            Instantiate(attackObjects[2], new Vector3((spawnManager.spawnPoints[i].position.x + Random.Range(-4, 4)), 115f, (spawnManager.spawnPoints[i].position.z + Random.Range(-4, 4))), Quaternion.identity);
-        }
-        
-        //For some reason this for loop isnt working and im literally shitting everywhere im just gonna do this instead
-        /*Instantiate(attackObjects[2], new Vector3(spawnManager.spawnPoints[0].position.x, 115f, spawnManager.spawnPoints[0].position.z), Quaternion.identity);
-        Instantiate(attackObjects[2], new Vector3(spawnManager.spawnPoints[1].position.x, 115f, spawnManager.spawnPoints[1].position.z), Quaternion.identity);
-        Instantiate(attackObjects[2], new Vector3(spawnManager.spawnPoints[2].position.x, 115f, spawnManager.spawnPoints[2].position.z), Quaternion.identity);
-        Instantiate(attackObjects[2], new Vector3(spawnManager.spawnPoints[3].position.x, 115f, spawnManager.spawnPoints[0].position.z), Quaternion.identity);
-        Instantiate(attackObjects[2], new Vector3(spawnManager.spawnPoints[4].position.x, 115f, spawnManager.spawnPoints[0].position.z), Quaternion.identity);
-        Instantiate(attackObjects[2], new Vector3(spawnManager.spawnPoints[5].position.x, 115f, spawnManager.spawnPoints[0].position.z), Quaternion.identity);
-        Instantiate(attackObjects[2], new Vector3(spawnManager.spawnPoints[6].position.x, 115f, spawnManager.spawnPoints[0].position.z), Quaternion.identity);
-        Instantiate(attackObjects[2], new Vector3(spawnManager.spawnPoints[7].position.x, 115f, spawnManager.spawnPoints[0].position.z), Quaternion.identity);
-        Instantiate(attackObjects[2], new Vector3(spawnManager.spawnPoints[8].position.x, 115f, spawnManager.spawnPoints[0].position.z), Quaternion.identity);
-        */
-    }
->>>>>>> Stashed changes
     public void EnterFloodedState()
     {
         anim.SetBool("flooded", true);
