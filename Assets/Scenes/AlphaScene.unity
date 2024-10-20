@@ -124958,6 +124958,11 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
+--- !u!95 &1799556599 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1338001834264264724, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
+  m_PrefabInstance: {fileID: 3092801834631978298}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1813067362
 GameObject:
   m_ObjectHideFlags: 0
@@ -131711,6 +131716,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1870480523}
     - target: {fileID: 3413766053300227710, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: faceAnimator
+      value: 
+      objectReference: {fileID: 1799556599}
+    - target: {fileID: 3413766053300227710, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: HealthFillGradient.ctime1
       value: 32768
       objectReference: {fileID: 0}
@@ -131720,15 +131729,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3413766053300227710, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: HealthFillGradient.key0.b
-      value: 0.6745283
+      value: 0.665171
       objectReference: {fileID: 0}
     - target: {fileID: 3413766053300227710, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: HealthFillGradient.key0.g
-      value: 0.6745283
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3413766053300227710, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: HealthFillGradient.key0.r
-      value: 1
+      value: 0.6650944
       objectReference: {fileID: 0}
     - target: {fileID: 3413766053300227710, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: HealthFillGradient.key1.b
@@ -131744,15 +131753,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3413766053300227710, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: HealthFillGradient.key2.b
-      value: 0.6933962
+      value: 0.69411767
       objectReference: {fileID: 0}
     - target: {fileID: 3413766053300227710, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: HealthFillGradient.key2.g
-      value: 1
+      value: 0.7000475
       objectReference: {fileID: 0}
     - target: {fileID: 3413766053300227710, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: HealthFillGradient.key2.r
-      value: 0.73908615
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3413766053300227710, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: HealthFillGradient.m_NumColorKeys
@@ -132936,7 +132945,7 @@ PrefabInstance:
     - target: {fileID: 6667155879324084467, guid: d200edd5ab119e44684301eab920c204, type: 3}
       propertyPath: m_NavMeshData
       value: 
-      objectReference: {fileID: 23800000, guid: 4bd3f21b2f1c91e4bbd7412e29643b93, type: 2}
+      objectReference: {fileID: 23800000, guid: a30a43b8e46a42d46a823e00f34646c7, type: 2}
     - target: {fileID: 6732426514497087289, guid: d200edd5ab119e44684301eab920c204, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
