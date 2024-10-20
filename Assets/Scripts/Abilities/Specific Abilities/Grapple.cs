@@ -13,8 +13,8 @@ public class Grapple : MonoBehaviour
     private float maxDist = 100000000000f;
 
     public LayerMask GrappleLayer;
-    public LayerMask StingerLayer;
-    public LayerMask EnemyLayer;
+   // public LayerMask StingerLayer;
+    //public LayerMask EnemyLayer;
 
     private LineRenderer hookRenderer;
     private Transform cam;
@@ -148,13 +148,13 @@ public class Grapple : MonoBehaviour
 
         }
 
-        GameObject.Find("PlayerViewmodel").GetComponent<Animator>().SetBool("grapple", true);
-
         // Debug.Log("yippee!!!!");
 
         if (Physics.Raycast(cam.position, cam.forward, out RaycastHit hit, maxDist, GrappleLayer))
         {
             IsGrappling = true;
+
+            GameObject.Find("PlayerViewmodel").GetComponent<Animator>().SetTrigger("Grapple");
 
             hitPoint = hit.point;
             joint = gameObject.AddComponent<SpringJoint>();
@@ -173,7 +173,12 @@ public class Grapple : MonoBehaviour
             rb.AddForce((hitPoint - transform.position).normalized * jointForceBoost, ForceMode.Impulse);
 
         }
+<<<<<<< HEAD
+        
+        /*
+=======
 
+>>>>>>> parent of 3594641 (Merge branch 'working' into enemy-spawning)
         if (Physics.Raycast(cam.position, cam.forward, out RaycastHit enemyHit, maxDist, EnemyLayer))
         {
             IsGrappling = true;
@@ -194,7 +199,7 @@ public class Grapple : MonoBehaviour
             joint.massScale = jointMassScale;
             rb.AddForce((hitPoint - transform.position).normalized * jointForceBoost, ForceMode.Impulse);
 
-            enemyHit.transform.gameObject.GetComponent<EnemyBehaviour>().Stun();
+            GameObject.FindObjectOfType<PlayerController>().CanBeHit = false;
 
         }
 
@@ -203,17 +208,22 @@ public class Grapple : MonoBehaviour
             IsGrappling = true;
 
             hitPoint = stingerHit.point;
-            enemyHit.transform.gameObject.GetComponent<EnemyBehaviour>().Stun();
-            enemyHit.transform.gameObject.GetComponent<EnemyBehaviour>().agent.SetDestination(GameObject.FindObjectOfType<PlayerController>().transform.position);
+            GameObject.FindObjectOfType<PlayerController>().CanBeHit = false;
 
         }
+<<<<<<< HEAD
+        */
+        
+=======
+>>>>>>> parent of 3594641 (Merge branch 'working' into enemy-spawning)
     }
 
     public void StopGrapple()
     {
 
         IsGrappling = false;
-        GameObject.Find("PlayerViewmodel").GetComponent<Animator>().SetBool("grapple", false);
+        //GameObject.Find("PlayerViewmodel").GetComponent<Animator>().SetTrigger("EndGrapple");
+        GameObject.FindObjectOfType<PlayerController>().CanBeHit = true;
 
         if (joint)
 
@@ -240,6 +250,7 @@ public class Grapple : MonoBehaviour
         else if (GrappleTimer >= maxGrappleTimer)
         {
 
+            GameObject.Find("PlayerViewmodel").GetComponent<Animator>().SetTrigger("EndGrapple");
             StopGrapple();
             canGrapple = false;
 

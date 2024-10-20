@@ -8,21 +8,21 @@ public class BossBehaviour : MonoBehaviour
     public int health;
     [SerializeField] private int currentAttack;
     private Animator anim;
-    public Transform[] attackSpawnPoints; // 0: tip of lightning ray, 1: side of boss,
-    public GameObject[] attackObjects; // 0: small lightning area, 1: large lightning area, 2: meteor
-    public SpawnManagerForBoss spawnManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        anim = GetComponent<Animator>();
-        spawnManager = FindObjectOfType<SpawnManagerForBoss>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+<<<<<<< HEAD
         anim.SetInteger("health", health);
+=======
+        
+>>>>>>> parent of 3594641 (Merge branch 'working' into enemy-spawning)
     }
 
     public void StartNextAttackAtVariableTime()
@@ -58,6 +58,7 @@ public class BossBehaviour : MonoBehaviour
                 break;
         }
     }
+<<<<<<< HEAD
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("EnemyKnocked"))
@@ -93,6 +94,8 @@ public class BossBehaviour : MonoBehaviour
             Instantiate(attackObjects[2], new Vector3((spawnManager.spawnPoints[i].position.x + Random.Range(-4f, 4f)), 115f, (spawnManager.spawnPoints[i].position.z + Random.Range(-4f, 4f))), Quaternion.identity);
         }
     }
+=======
+>>>>>>> parent of 3594641 (Merge branch 'working' into enemy-spawning)
     public void EnterFloodedState()
     {
         anim.SetBool("flooded", true);
