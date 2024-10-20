@@ -26,17 +26,20 @@ public class HealthSystem : MonoBehaviour
 
     public Image HealthFill;
     [SerializeField] public Gradient HealthFillGradient;
+    [SerializeField] private Animator faceAnimator;
 
     void Start()
     {
         instance = this;
-        playerRes = maxRes;
+        playerRes = 0;
+        faceAnimator.SetFloat("Damage",playerRes);
  
     }
 
     // Update is called once per frame
     void Update()
     {
+        faceAnimator.SetFloat("Damage",playerRes);
         // Function aided with 
         if(playerRes < 0f)
         {
@@ -62,7 +65,8 @@ public class HealthSystem : MonoBehaviour
         {
             return;
         }
-        playerRes -= damage;
+        playerRes += damage;
+        faceAnimator.SetFloat("Damage",playerRes);
 
         if (knockBack < maxKnockBack)
         {
@@ -92,9 +96,10 @@ public class HealthSystem : MonoBehaviour
     public void Heal(float heal)
     {
 
-        playerRes += heal;
+        playerRes -= heal;
         GameObject.FindObjectOfType<PlayerController>().HealthScreen.SetActive(true);
         StartCoroutine(Healed());
+        
 
     }
 
@@ -102,6 +107,7 @@ public class HealthSystem : MonoBehaviour
     {
 
         yield return new WaitForSeconds(.5f);
+        faceAnimator.SetFloat("Damage",playerRes);
         GameObject.FindObjectOfType<PlayerController>().HealthScreen.SetActive(false);
         yield return null;
 
@@ -115,8 +121,17 @@ public class HealthSystem : MonoBehaviour
 
     public void FireDamage(float damage)
     {
-        playerRes -= damage;
+        playerRes += damage;
+        StartCoroutine(OnFire());
         Debug.Log("Player has taken fire damage");
+    }
+
+    IEnumerator OnFire()//turns on burning effect for player icon
+    {
+        faceAnimator.SetBool("Fire", true);
+        yield return new WaitForSeconds(.5f);
+        faceAnimator.SetBool("Fire", false);
+        yield return null;
     }
 
 }

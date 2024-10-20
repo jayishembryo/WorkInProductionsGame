@@ -11,7 +11,7 @@ public class GroundDetection : MonoBehaviour
         player = transform.parent.GetComponent<PlayerController>();
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         player.SetTouchedGround(true);
     }
