@@ -39,7 +39,7 @@ public class HealthSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        faceAnimator.SetFloat("Damage",playerRes);
+        //faceAnimator.SetFloat("Damage",playerRes);
         // Function aided with 
         if(playerRes < 0f)
         {
