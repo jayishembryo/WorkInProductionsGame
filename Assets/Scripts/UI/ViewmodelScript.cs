@@ -35,11 +35,4 @@ public class ViewmodelScript : MonoBehaviour
         kickScript.ApplyForce();
     }
 
-    public void Grappling()
-    {
-
-        viewmodelAnim.SetTrigger("Loop");
-
-    }
-
 }
