@@ -1,0 +1,80 @@
+{
+    "name": "com.mardt.smoothshakepro",
+    "rootNamespace": "SmoothShakePro",
+    "references": [
+        "GUID:f06555f75b070af458a003d92f9efb00",
+        "GUID:4307f53044263cf4b835bd812fc161a4",
+        "GUID:15fc0a57446b3144c949da3e2b9737a9",
+        "GUID:516a5277b8c3b4f4c8cc86b77b1591ff",
+        "GUID:75469ad4d38634e559750d17036d5f7c",
+        "GUID:fe685ec1767f73d42b749ea8045bfe43",
+        "GUID:df380645f10b7bc4b97d4f5eb6303d95",
+        "GUID:457756d89b35d2941b3e7b37b4ece6f1",
+        "GUID:4dff0be5280058c4eb4a9a1d48b33439"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.unity.cinemachine",
+            "expression": "",
+            "define": "CINEMACHINE"
+        },
+        {
+            "name": "Unity",
+            "expression": "2023",
+            "define": "UNITY_2023"
+        },
+        {
+            "name": "Unity",
+            "expression": "[2020,2021)",
+            "define": "UNITY_2020"
+        },
+        {
+            "name": "com.unity.render-pipelines.universal",
+            "expression": "",
+            "define": "RENDER_UNIVERSAL"
+        },
+        {
+            "name": "com.unity.render-pipelines.high-definition",
+            "expression": "",
+            "define": "RENDER_HDRP"
+        },
+        {
+            "name": "com.unity.xr.interaction.toolkit",
+            "expression": "",
+            "define": "UNITY_XR"
+        },
+        {
+            "name": "com.unity.timeline",
+            "expression": "",
+            "define": "UNITY_TIMELINE"
+        },
+        {
+            "name": "Unity",
+            "expression": "2022",
+            "define": "UNITY_2022"
+        },
+        {
+            "name": "Unity",
+            "expression": "2023.1",
+            "define": "UNITY_2023_1"
+        },
+        {
+            "name": "Unity",
+            "expression": "2023.1",
+            "define": "UNITY_2023_1"
+        },
+        {
+            "name": "Unity",
+            "expression": "6000",
+            "define": "UNITY_6"
+        }
+    ],
+    "noEngineReferences": false
+}

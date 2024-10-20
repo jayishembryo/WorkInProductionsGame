@@ -1,0 +1,302 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c87c2ee9128c8ee4787c4e718ab7063c, type: 3}
+  m_Name: VignetteEyeShake
+  m_EditorClassIdentifier: 
+  timeSettings:
+    fadeValue: 0
+    enableOnStart: 0
+    constantShake: 0
+    loop: 0
+    fadeInDuration: 0
+    fadeInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    holdDuration: 0
+    fadeOutDuration: 1
+    fadeOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.99999994
+        inSlope: -0.014162921
+        outSlope: -0.014162921
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.21188532
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    timescaleMode: 0
+    customTimescale: 1
+  overrides: 1024
+  weightShake: []
+  bloomThresholdShake: []
+  bloomIntensityShake:
+  - noiseType: 0
+    amplitude: 2
+    frequency: 4
+    offset: 0
+    phase: 0
+    randomizePhase: 1
+    maximum: 0
+    stepSize: 0
+    curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 0
+      m_PostInfinity: 0
+      m_RotationOrder: 0
+    blendingMode: 0
+    lifetime: 1
+  bloomScatterShake:
+  - noiseType: 0
+    amplitude: 0.2
+    frequency: 4
+    offset: 0
+    phase: 0
+    randomizePhase: 1
+    maximum: 0
+    stepSize: 0
+    curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 0
+      m_PostInfinity: 0
+      m_RotationOrder: 0
+    blendingMode: 0
+    lifetime: 1
+  channelMixerRedShake:
+  - noiseType: 0
+    amplitude: {x: 25, y: 25, z: 25}
+    frequency: {x: 4, y: 4.5, z: 5}
+    offset: {x: 0, y: 0, z: 0}
+    phase: {x: 0, y: 0, z: 0}
+    randomizePhase: 1
+    maximum: {x: 0, y: 0, z: 0}
+    stepSize: {x: 0, y: 0, z: 0}
+    curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 0
+      m_PostInfinity: 0
+      m_RotationOrder: 0
+    blendingMode: 0
+    lifetime: 1
+  channelMixerGreenShake:
+  - noiseType: 0
+    amplitude: {x: 25, y: 25, z: 25}
+    frequency: {x: 5, y: 4, z: 4.5}
+    offset: {x: 0, y: 0, z: 0}
+    phase: {x: 0, y: 0, z: 0}
+    randomizePhase: 1
+    maximum: {x: 0, y: 0, z: 0}
+    stepSize: {x: 0, y: 0, z: 0}
+    curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 0
+      m_PostInfinity: 0
+      m_RotationOrder: 0
+    blendingMode: 0
+    lifetime: 1
+  channelMixerBlueShake:
+  - noiseType: 0
+    amplitude: {x: 25, y: 25, z: 25}
+    frequency: {x: 4.5, y: 5, z: 4}
+    offset: {x: 0, y: 0, z: 0}
+    phase: {x: 0, y: 0, z: 0}
+    randomizePhase: 1
+    maximum: {x: 0, y: 0, z: 0}
+    stepSize: {x: 0, y: 0, z: 0}
+    curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 0
+      m_PostInfinity: 0
+      m_RotationOrder: 0
+    blendingMode: 0
+    lifetime: 1
+  chromaticAberrationShake: []
+  postExposureShake: []
+  contrastShake: []
+  hueShiftShake: []
+  saturationShake: []
+  filmGrainShake: []
+  lensDistortionIntensityShake:
+  - noiseType: 0
+    amplitude: 0.05
+    frequency: 4
+    offset: 0
+    phase: 0
+    randomizePhase: 1
+    maximum: 0
+    stepSize: 0
+    curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 0
+      m_PostInfinity: 0
+      m_RotationOrder: 0
+    blendingMode: 0
+    lifetime: 1
+  lensDistortionXYMultiplierShake:
+  - noiseType: 0
+    amplitude: {x: 0.5, y: 0.5, z: 0}
+    frequency: {x: 4, y: 4.5, z: 0}
+    offset: {x: -0.5, y: -0.5, z: 0}
+    phase: {x: 0, y: 0, z: 0}
+    randomizePhase: 1
+    maximum: {x: 0, y: 0, z: 0}
+    stepSize: {x: 0, y: 0, z: 0}
+    curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 0
+      m_PostInfinity: 0
+      m_RotationOrder: 0
+    blendingMode: 0
+    lifetime: 1
+  lensDistortionCenterShake: []
+  lensDistortionScaleShake: []
+  motionBlurShake: []
+  paniniProjectionDistanceShake: []
+  paniniProjectionCropShake: []
+  splitToningBalanceShake: []
+  vignetteCenterShake:
+  - noiseType: 0
+    amplitude: {x: 0.05, y: 0.05, z: 0}
+    frequency: {x: 4, y: 4.5, z: 0}
+    offset: {x: 0, y: 0, z: 0}
+    phase: {x: 0, y: 0, z: 0}
+    randomizePhase: 1
+    maximum: {x: 0, y: 0, z: 0}
+    stepSize: {x: 0, y: 0, z: 0}
+    curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 0
+      m_PostInfinity: 0
+      m_RotationOrder: 0
+    blendingMode: 0
+    lifetime: 1
+  vignetteIntensityShake:
+  - noiseType: 8
+    amplitude: 0.5
+    frequency: 2
+    offset: 0.5
+    phase: 0
+    randomizePhase: 0
+    maximum: 0
+    stepSize: 0
+    curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 0
+      m_PostInfinity: 0
+      m_RotationOrder: 0
+    blendingMode: 0
+    lifetime: 1
+  vignetteSmoothnessShake: []
+  whiteBalanceTemperatureShake: []
+  whiteBalanceTintShake: []
+  depthOfFieldGaussianStartEndShake: []
+  depthOfFieldGaussianMaxRadiusShake: []
+  depthOfFieldBokehFocusDistanceShake: []
+  depthOfFieldBokehFocalLengthShake: []
+  depthOfFieldBokehApertureShake: []
+  colorLookupShake: []
+  rgbSplitShake:
+  - noiseType: 0
+    amplitude: {x: 5, y: 5, z: 0}
+    frequency: {x: 4, y: 4.5, z: 0}
+    offset: {x: 0, y: 0, z: 0}
+    phase: {x: 0, y: 0, z: 0}
+    randomizePhase: 1
+    maximum: {x: 0, y: 0, z: 0}
+    stepSize: {x: 0, y: 0, z: 0}
+    curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 0
+      m_PostInfinity: 0
+      m_RotationOrder: 0
+    blendingMode: 0
+    lifetime: 1
+  screenWarpShake:
+  - noiseType: 3
+    amplitude: 2
+    frequency: 1
+    offset: 2
+    phase: 0
+    randomizePhase: 0
+    maximum: 0
+    stepSize: 0
+    curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 0
+      m_PostInfinity: 0
+      m_RotationOrder: 0
+    blendingMode: 0
+    lifetime: 1
+  blurShake:
+  - noiseType: 8
+    amplitude: 5
+    frequency: 5
+    offset: 5
+    phase: 0
+    randomizePhase: 0
+    maximum: 0
+    stepSize: 0
+    curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 0
+      m_PostInfinity: 0
+      m_RotationOrder: 0
+    blendingMode: 0
+    lifetime: 1
+  gaussianBlurShake: []
+  shakeToPreview: 0

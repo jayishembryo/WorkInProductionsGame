@@ -86,6 +86,7 @@ public class EnemyKnockedBehaviour : MonoBehaviour
             Instantiate(burst[3], transform.position, Quaternion.identity);
             KillEnemy(collision.gameObject);
             KillEnemy(gameObject);
+<<<<<<< HEAD
         }
         if (collision.gameObject.CompareTag("Boss"))
         {
@@ -93,25 +94,24 @@ public class EnemyKnockedBehaviour : MonoBehaviour
             Instantiate(burst[3], transform.position, Quaternion.identity);
             Instantiate(burst[2], transform.position, Quaternion.identity);
             KillEnemy(gameObject);
+=======
+
+>>>>>>> parent of 3594641 (Merge branch 'working' into enemy-spawning)
         }
     }
 
     public void KillEnemy(GameObject killed)
     {
-        SpawnManager spawnManager = FindObjectOfType<SpawnManager>();
 
-        if (spawnManager != null)
+        FindObjectOfType<SpawnManager>().TotalEnemies = GameObject.FindObjectsOfType<EnemyBehaviour>().Length;
+        FindObjectOfType<SpawnManager>().TotalEnemies -= 1;
+
+        if (FindObjectOfType<SpawnManager>().TotalEnemies <= 0 && FindObjectOfType<SpawnManager>().Waiting == false)
         {
-            spawnManager.TotalEnemies = GameObject.FindObjectsOfType<EnemyBehaviour>().Length;
-            spawnManager.TotalEnemies -= 1;
 
-            if (spawnManager.TotalEnemies <= 0 && spawnManager.Waiting == false)
-            {
+            FindObjectOfType<SpawnManager>().Waiting = true;
+            FindObjectOfType<SpawnManager>().newWaveStart();
 
-                spawnManager.Waiting = true;
-                spawnManager.newWaveStart();
-
-            }
         }
 
         Destroy(killed);
