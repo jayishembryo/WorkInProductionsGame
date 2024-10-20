@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
-public class MusicManager2 : MonoBehaviour
+public class MusicManager : MonoBehaviour
 {
     [SerializeField] private AudioClip[] sections;
     [SerializeField] private double bpm = 182f;

@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 9070251382076492797}
   m_Layer: 0
   m_Name: EnemyKnockedNormal
-  m_TagString: EnemyKnocked
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -244,4 +244,3 @@ MonoBehaviour:
   - {fileID: 6893226736054396642, guid: 2ede53f92bb8a7a4198847373f84c7fb, type: 3}
   - {fileID: 7907553502098151316, guid: c7f50e1a3715bb24f960160b6d15b269, type: 3}
   enemyToSpawn: {fileID: 8474295532616176723, guid: 9a801a72a065d524aa007bc9486081e6, type: 3}
-  EnemyBehaviorInstance: {fileID: 0}
