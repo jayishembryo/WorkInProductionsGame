@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Net.Http.Headers;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnvironmentalEffects : MonoBehaviour
@@ -209,6 +210,7 @@ public class EnvironmentalEffects : MonoBehaviour
         if(TotemIsActive)
         {
 
+            
             ActiveTotem.SetActive(false);
 
         }

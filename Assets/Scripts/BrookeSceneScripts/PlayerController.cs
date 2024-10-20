@@ -85,6 +85,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] public GameObject HealthScreen;
 
+    public bool CanBeHit = true;
+
     // Creates the controller, gets an instance of the InputManager, and the camera transform.
     private void Start()
     {

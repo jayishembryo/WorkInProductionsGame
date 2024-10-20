@@ -21,10 +21,16 @@ public class EnemyCollision : MonoBehaviour
         {
             EnemyBehaviour otherEnemy = other.gameObject.GetComponent<EnemyBehaviour>();
             FindObjectOfType<PlayerController>().FireScreen.SetActive(true);
-            if (otherEnemy != null)
+            if (otherEnemy != null && GameObject.FindObjectOfType<PlayerController>().CanBeHit)
             {
                 HealthSystem.instance.Damage(otherEnemy.damageToPlayer);
                 Debug.Log(otherEnemy.name + " has damaged player.");
+            }
+            else
+            {
+
+                return;
+
             }
 
             if (playerKnockbackInstance.CanBeKnockedBack == true)
