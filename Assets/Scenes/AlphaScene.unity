@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.06791074, g: 0.10743927, b: 0.1721279, a: 1}
+  m_IndirectSpecularColor: {r: 0.06791074, g: 0.10743927, b: 0.17212787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,6 +123,77 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &31720249
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 31720252}
+  - component: {fileID: 31720251}
+  - component: {fileID: 31720250}
+  m_Layer: 0
+  m_Name: AmbientEffects
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &31720250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31720249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aec1a5ea7da32e4992648886e4f48d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DefaultMusic:
+    Guid:
+      Data1: 140732299
+      Data2: 1206275408
+      Data3: 641023138
+      Data4: -237534656
+    Path: event:/Music/TheStyxCalls
+--- !u!114 &31720251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31720249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 015b44d2b3da5dc4494c4e7a0707830d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AmbienceSounds:
+    Guid:
+      Data1: 1140540187
+      Data2: 1140970339
+      Data3: 136703617
+      Data4: -538746297
+    Path: event:/Environment/SceneAmbientSounds
+--- !u!4 &31720252
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31720249}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -20.06, y: -0.43, z: -11.37}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 31
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &51927780
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -131,6 +202,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2086840753}
     m_Modifications:
+    - target: {fileID: 2445417328879101474, guid: f2ecb309f6fa1fc4fb490e983056f165, type: 3}
+      propertyPath: m_Name
+      value: IceWall2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3951233958188509232, guid: f2ecb309f6fa1fc4fb490e983056f165, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -11.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3951233958188509232, guid: f2ecb309f6fa1fc4fb490e983056f165, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 13.9
+      objectReference: {fileID: 0}
     - target: {fileID: 3315595186179992382, guid: f36663fd34ad93a4fb6c0bf01ee2f8e0, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -174,18 +257,6 @@ PrefabInstance:
     - target: {fileID: 3315595186179992382, guid: f36663fd34ad93a4fb6c0bf01ee2f8e0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2445417328879101474, guid: f2ecb309f6fa1fc4fb490e983056f165, type: 3}
-      propertyPath: m_Name
-      value: IceWall2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3951233958188509232, guid: f2ecb309f6fa1fc4fb490e983056f165, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -11.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3951233958188509232, guid: f2ecb309f6fa1fc4fb490e983056f165, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 13.9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5426,6 +5497,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2737558315888900959, guid: 1b58b8ba1dcdec64b8046263cfa055bd, type: 3}
   m_PrefabInstance: {fileID: 160875809}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &163007155
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 163007156}
+  m_Layer: 7
+  m_Name: AttenuationObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &163007156
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163007155}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1581557664}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &166124756
 GameObject:
   m_ObjectHideFlags: 0
@@ -6504,6 +6606,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2086840753}
     m_Modifications:
+    - target: {fileID: 2445417328879101474, guid: f2ecb309f6fa1fc4fb490e983056f165, type: 3}
+      propertyPath: m_Name
+      value: IceWall2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3951233958188509232, guid: f2ecb309f6fa1fc4fb490e983056f165, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3951233958188509232, guid: f2ecb309f6fa1fc4fb490e983056f165, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -16.1
+      objectReference: {fileID: 0}
     - target: {fileID: 3315595186179992382, guid: f36663fd34ad93a4fb6c0bf01ee2f8e0, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -6547,18 +6661,6 @@ PrefabInstance:
     - target: {fileID: 3315595186179992382, guid: f36663fd34ad93a4fb6c0bf01ee2f8e0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2445417328879101474, guid: f2ecb309f6fa1fc4fb490e983056f165, type: 3}
-      propertyPath: m_Name
-      value: IceWall2 (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3951233958188509232, guid: f2ecb309f6fa1fc4fb490e983056f165, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -3.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 3951233958188509232, guid: f2ecb309f6fa1fc4fb490e983056f165, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -16.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -84985,6 +85087,7 @@ GameObject:
   - component: {fileID: 1536215260}
   - component: {fileID: 1536215263}
   - component: {fileID: 1536215264}
+  - component: {fileID: 1536215265}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -85145,6 +85248,19 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!114 &1536215265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536215259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 163007155}
 --- !u!1 &1545817121
 GameObject:
   m_ObjectHideFlags: 0
@@ -131820,9 +131936,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 389632348}
     - target: {fileID: 6934599026606150273, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: DashSFX.Path
+      value: event:/Player/Dash
+      objectReference: {fileID: 0}
+    - target: {fileID: 6934599026606150273, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: HealthScreen
       value: 
       objectReference: {fileID: 667780798}
+    - target: {fileID: 6934599026606150273, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: WalkingSFX.Path
+      value: event:/Player/WoodWalking
+      objectReference: {fileID: 0}
     - target: {fileID: 6934599026606150273, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: cameraTransform
       value: 
@@ -131831,6 +131955,38 @@ PrefabInstance:
       propertyPath: ScoreboardManager
       value: 
       objectReference: {fileID: 2061349217}
+    - target: {fileID: 6934599026606150273, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: DashSFX.Guid.Data1
+      value: -2042107802
+      objectReference: {fileID: 0}
+    - target: {fileID: 6934599026606150273, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: DashSFX.Guid.Data2
+      value: 1197584503
+      objectReference: {fileID: 0}
+    - target: {fileID: 6934599026606150273, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: DashSFX.Guid.Data3
+      value: -1094566519
+      objectReference: {fileID: 0}
+    - target: {fileID: 6934599026606150273, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: DashSFX.Guid.Data4
+      value: 2124622618
+      objectReference: {fileID: 0}
+    - target: {fileID: 6934599026606150273, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: WalkingSFX.Guid.Data1
+      value: -1080885180
+      objectReference: {fileID: 0}
+    - target: {fileID: 6934599026606150273, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: WalkingSFX.Guid.Data2
+      value: 1339814226
+      objectReference: {fileID: 0}
+    - target: {fileID: 6934599026606150273, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: WalkingSFX.Guid.Data3
+      value: -1956612196
+      objectReference: {fileID: 0}
+    - target: {fileID: 6934599026606150273, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: WalkingSFX.Guid.Data4
+      value: -1709305051
+      objectReference: {fileID: 0}
     - target: {fileID: 7182574327882956369, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: m_Name
       value: Player 1
@@ -131849,7 +132005,10 @@ PrefabInstance:
       objectReference: {fileID: 1536215262}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 210607900284234145, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 163007156}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7182574327882956369, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       insertIndex: -1
