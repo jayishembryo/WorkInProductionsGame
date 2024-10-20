@@ -213,7 +213,7 @@ public class PlayerController : MonoBehaviour
         }
         */
         //turns off gravity while on slope to prevent sliding.
-        rb.useGravity = !OnSlope();
+        //rb.useGravity = !OnSlope();
 
     }
 
@@ -452,7 +452,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private bool OnSlope()
+    /*private bool OnSlope()
     {
         if(Physics.Raycast(transform.position, Vector3.down, out slopeHit, playerHeight * 0.5f + 0.3f))
         {
@@ -465,6 +465,6 @@ public class PlayerController : MonoBehaviour
     private Vector3 GetSlopeMoveDirection()
     {
         return Vector3.ProjectOnPlane(GetMoveInput(), slopeHit.normal).normalized;
-    }
+    }*/
 
 }
