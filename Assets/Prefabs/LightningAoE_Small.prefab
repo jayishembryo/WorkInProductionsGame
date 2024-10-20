@@ -16,9 +16,9 @@ GameObject:
   - component: {fileID: 3294456818726411226}
   - component: {fileID: 5815572107201512705}
   - component: {fileID: 8113868302104092304}
-  - component: {fileID: 2082800588580523430}
+  - component: {fileID: 8175453697192305789}
   m_Layer: 0
-  m_Name: LightningAoE_Large
+  m_Name: LightningAoE_Small
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 543436781480044943}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 20.89637, y: 6.4089127, z: 68.59271}
-  m_LocalScale: {x: 27, y: 27, z: 27}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -48,9 +48,9 @@ Animation:
   m_GameObject: {fileID: 543436781480044943}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: a2c99fa1478dcd940882dfb9986341ae, type: 2}
+  m_Animation: {fileID: 7400000, guid: 2969d82eac344fb4e99d9495857a29f0, type: 2}
   m_Animations:
-  - {fileID: 7400000, guid: a2c99fa1478dcd940882dfb9986341ae, type: 2}
+  - {fileID: 7400000, guid: 2969d82eac344fb4e99d9495857a29f0, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -96,7 +96,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 543436781480044943}
   serializedVersion: 8
-  lengthInSec: 9
+  lengthInSec: 7.77
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -342,8 +342,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.17
-      minScalar: 0.07
+      scalar: 0.27
+      minScalar: 0.1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -925,7 +925,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 37
+      scalar: 27
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -1035,7 +1035,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 47
+        scalar: 37
         minScalar: 30
         maxCurve:
           serializedVersion: 2
@@ -5009,7 +5009,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2082800588580523430
+--- !u!114 &8175453697192305789
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5021,4 +5021,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c34d748a886b6334ba68b9a6f008287b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 3
+  damage: 2
