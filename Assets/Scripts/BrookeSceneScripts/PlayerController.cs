@@ -96,6 +96,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] public GameObject HealthScreen;
 
+    public bool CanBeHit = true;
+
     // Creates the controller, gets an instance of the InputManager, and the camera transform.
     private void Start()
     {
@@ -167,6 +169,7 @@ public class PlayerController : MonoBehaviour
 
     private void Grappling_canceled(InputAction.CallbackContext obj)
     {
+        GameObject.Find("PlayerViewmodel").GetComponent<Animator>().SetTrigger("EndGrapple");
         grapplingInstance.StopGrapple();
         playerAnim.SetBool("point", false);
     }

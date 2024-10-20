@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.06791074, g: 0.10743927, b: 0.17212787, a: 1}
+  m_IndirectSpecularColor: {r: 0.06791074, g: 0.10743927, b: 0.1721279, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -425,6 +425,7 @@ Transform:
   - {fileID: 933578957659974921}
   - {fileID: 128654064926895616}
   - {fileID: 1341022994088424828}
+  - {fileID: 1491876797}
   m_Father: {fileID: 0}
   m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5460,8 +5461,8 @@ MonoBehaviour:
   TideSpawn: {fileID: 2017692741}
   FireWarnings: {fileID: 584746082}
   IceWarnings: {fileID: 658133962}
-  IceFloor: {fileID: 0}
-  ShipFloor: {fileID: 0}
+  IceFloor: {fileID: 2100000, guid: ac6bf8e0e61192848a752c3216680d16, type: 2}
+  ShipFloor: {fileID: 2100000, guid: 80cd5adedde1c294da644e42c7dd37c9, type: 2}
   FireActive: 0
   IceActive: 0
   TideActive: 0
@@ -5480,7 +5481,7 @@ MonoBehaviour:
   - {fileID: 1341022994088424829}
   - {fileID: 128654064926895617}
   - {fileID: 1434795724}
-  ActiveTotem: {fileID: 0}
+  ActiveTotem: {fileID: 1491876796}
   TotemIsActive: 0
 --- !u!4 &166124758
 Transform:
@@ -32230,6 +32231,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2086840753}
     m_Modifications:
+    - target: {fileID: 6603617725623953706, guid: d1f26b661651dc74283f8c4b9f03bf0a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6603617725623953706, guid: d1f26b661651dc74283f8c4b9f03bf0a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 9.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8298624678124654481, guid: d1f26b661651dc74283f8c4b9f03bf0a, type: 3}
+      propertyPath: m_Name
+      value: IceWall1 (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 3315595186179992382, guid: f36663fd34ad93a4fb6c0bf01ee2f8e0, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -32273,18 +32286,6 @@ PrefabInstance:
     - target: {fileID: 3315595186179992382, guid: f36663fd34ad93a4fb6c0bf01ee2f8e0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6603617725623953706, guid: d1f26b661651dc74283f8c4b9f03bf0a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6603617725623953706, guid: d1f26b661651dc74283f8c4b9f03bf0a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 9.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8298624678124654481, guid: d1f26b661651dc74283f8c4b9f03bf0a, type: 3}
-      propertyPath: m_Name
-      value: IceWall1 (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -78920,6 +78921,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2086840753}
     m_Modifications:
+    - target: {fileID: 6603617725623953706, guid: d1f26b661651dc74283f8c4b9f03bf0a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8298624678124654481, guid: d1f26b661651dc74283f8c4b9f03bf0a, type: 3}
+      propertyPath: m_Name
+      value: IceWall1
+      objectReference: {fileID: 0}
     - target: {fileID: 3315595186179992382, guid: f36663fd34ad93a4fb6c0bf01ee2f8e0, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -78963,14 +78972,6 @@ PrefabInstance:
     - target: {fileID: 3315595186179992382, guid: f36663fd34ad93a4fb6c0bf01ee2f8e0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6603617725623953706, guid: d1f26b661651dc74283f8c4b9f03bf0a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -5.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8298624678124654481, guid: d1f26b661651dc74283f8c4b9f03bf0a, type: 3}
-      propertyPath: m_Name
-      value: IceWall1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -84901,6 +84902,37 @@ Transform:
   - {fileID: 160875810}
   m_Father: {fileID: 0}
   m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1491876796
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1491876797}
+  m_Layer: 0
+  m_Name: DummyTotem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1491876797
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491876796}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 151095555}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1500493070 stripped
 GameObject:
@@ -109507,6 +109539,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2086840753}
     m_Modifications:
+    - target: {fileID: 493455935763146272, guid: 192c79fe378f4394eb7e348ba6cef98d, type: 3}
+      propertyPath: m_Name
+      value: IceWall (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4435897028412701481, guid: 192c79fe378f4394eb7e348ba6cef98d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4435897028412701481, guid: 192c79fe378f4394eb7e348ba6cef98d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -11.4
+      objectReference: {fileID: 0}
     - target: {fileID: 3315595186179992382, guid: f36663fd34ad93a4fb6c0bf01ee2f8e0, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -109550,18 +109594,6 @@ PrefabInstance:
     - target: {fileID: 3315595186179992382, guid: f36663fd34ad93a4fb6c0bf01ee2f8e0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 493455935763146272, guid: 192c79fe378f4394eb7e348ba6cef98d, type: 3}
-      propertyPath: m_Name
-      value: IceWall (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4435897028412701481, guid: 192c79fe378f4394eb7e348ba6cef98d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -10.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4435897028412701481, guid: 192c79fe378f4394eb7e348ba6cef98d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -11.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -130012,6 +130044,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2086840753}
     m_Modifications:
+    - target: {fileID: 493455935763146272, guid: 192c79fe378f4394eb7e348ba6cef98d, type: 3}
+      propertyPath: m_Name
+      value: IceWall
+      objectReference: {fileID: 0}
+    - target: {fileID: 4435897028412701481, guid: 192c79fe378f4394eb7e348ba6cef98d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 19.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3315595186179992382, guid: f36663fd34ad93a4fb6c0bf01ee2f8e0, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -130055,14 +130095,6 @@ PrefabInstance:
     - target: {fileID: 3315595186179992382, guid: f36663fd34ad93a4fb6c0bf01ee2f8e0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 493455935763146272, guid: 192c79fe378f4394eb7e348ba6cef98d, type: 3}
-      propertyPath: m_Name
-      value: IceWall
-      objectReference: {fileID: 0}
-    - target: {fileID: 4435897028412701481, guid: 192c79fe378f4394eb7e348ba6cef98d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 19.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -132463,6 +132495,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 545488753223261812, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
+      propertyPath: m_FillAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 545488753223261812, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
+      propertyPath: m_FillClockwise
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 545488753223261812, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1110779864240766043, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
       propertyPath: m_Pivot.x
       value: 0
