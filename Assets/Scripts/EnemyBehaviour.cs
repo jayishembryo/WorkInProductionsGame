@@ -11,6 +11,8 @@ using System.Net.Sockets;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Rendering;
+using FMODUnity;
+using FMOD.Studio;
 
 public class EnemyBehaviour : MonoBehaviour
 {
@@ -25,7 +27,18 @@ public class EnemyBehaviour : MonoBehaviour
     private Rigidbody enemyRB;
     [SerializeField]
     public float damageToPlayer;
-    
+
+    [SerializeField]
+    private EventReference attackSFX;
+    private EventInstance attackSFXInstance;
+    [SerializeField]
+    private EventReference kickSFX;
+    private EventInstance kickSFXInstance;
+    [SerializeField]
+    private EventReference hitSFX;
+    private EventInstance hitSFXInstance;
+
+
     [SerializeField]
     private LayerMask whatIsGround, whatIsPlayer;
 
@@ -84,6 +97,11 @@ public class EnemyBehaviour : MonoBehaviour
         }
 
         knockedObject.GetComponent<EnemyKnockedBehaviour>().EnemyBehaviorInstance = this;
+
+        attackSFXInstance = RuntimeManager.CreateInstance(attackSFX);
+        kickSFXInstance = RuntimeManager.CreateInstance(kickSFX);
+        hitSFXInstance = RuntimeManager.CreateInstance(hitSFX);
+        UpdateSoundPosition();
     }
 
     // Update is called once per frame
@@ -107,7 +125,42 @@ public class EnemyBehaviour : MonoBehaviour
 
         anim.SetFloat("speed", enemyRB.velocity.magnitude);
         //Debug.Log(enemyRB.velocity.magnitude);
+
+        UpdateSoundPosition();
     }
+
+    //Sound Related Code
+    private void UpdateSoundPosition()
+    {
+        var attributes = RuntimeUtils.To3DAttributes(gameObject);
+        attackSFXInstance.set3DAttributes(attributes);
+        kickSFXInstance.set3DAttributes(attributes);
+        hitSFXInstance.set3DAttributes(attributes);
+    }
+
+    private void PlaySound(ref EventInstance instance, EventReference eventRef)
+    {
+        instance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        instance.release();
+        instance = RuntimeManager.CreateInstance(eventRef);
+        instance.set3DAttributes(RuntimeUtils.To3DAttributes(gameObject));
+        instance.start();
+    }
+    public void PlayAttackSound()
+    {
+        PlaySound(ref attackSFXInstance, attackSFX);
+    }
+
+    public void PlayHitSound()
+    {
+        PlaySound(ref hitSFXInstance, hitSFX);
+    }
+
+    public void PlayKickSound()
+    {
+        PlaySound(ref kickSFXInstance, kickSFX);
+    }
+    //End of sound related code
 
     private void Patrolling()
     {
@@ -165,6 +218,7 @@ public class EnemyBehaviour : MonoBehaviour
         if(!alreadyAttacked && agent.enabled)
         {
             anim.SetTrigger("attack");
+            PlayAttackSound();
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
@@ -179,7 +233,7 @@ public class EnemyBehaviour : MonoBehaviour
         
         health -= damage;
 
-        if(health <= 0)
+        if (health <= 0)
         {
             Invoke(nameof(DestroyEnemy), 2f);
         }
@@ -216,21 +270,7 @@ public class EnemyBehaviour : MonoBehaviour
     {
         if (other.gameObject.layer == 8)//kick layer for if they get kicked by the player
         {
-
-            if (DoesHeal == true)
-            {
-
-                //LOOK INTO PARTICLES
-                float healed = Random.Range(5f, 11f);
-                HealthSystem.instance.Heal(healed);
-
-                //MAKE THE PARTICLE EFFECT
-                //ADD PARTICLE EFFECT TO LIST
-                Instantiate(knockedObject.GetComponent<EnemyKnockedBehaviour>().burst[4], transform.position, Quaternion.identity);
-                DoesHeal = false;
-                GetComponentInChildren<SpriteRenderer>().color = Color.white;
-
-            }
+            PlayKickSound();
             //defines the different reactions to being kicked.
             switch (enemyID)
             {
@@ -293,6 +333,7 @@ public class EnemyBehaviour : MonoBehaviour
     }
     private void EnemyKnocked()
     {
+        PlayHitSound();
         Debug.Log(gameObject.name + " has been kicked.");
         if (knockedObject != null)
         {

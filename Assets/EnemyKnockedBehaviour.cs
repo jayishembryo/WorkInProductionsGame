@@ -90,7 +90,8 @@ public class EnemyKnockedBehaviour : MonoBehaviour
         if (collision.gameObject.CompareTag("Boss"))
         {
             Debug.Log("Knocked enemy has collided with: " + collision.gameObject.name);
-            Instantiate(burst[5], transform.position, Quaternion.identity);
+            Instantiate(burst[3], transform.position, Quaternion.identity);
+            Instantiate(burst[2], transform.position, Quaternion.identity);
             KillEnemy(gameObject);
         }
     }
