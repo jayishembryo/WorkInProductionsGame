@@ -215,7 +215,7 @@ public class Grapple : MonoBehaviour
     {
 
         IsGrappling = false;
-        GameObject.Find("PlayerViewmodel").GetComponent<Animator>().SetTrigger("EndGrapple");
+        //GameObject.Find("PlayerViewmodel").GetComponent<Animator>().SetTrigger("EndGrapple");
         GameObject.FindObjectOfType<PlayerController>().CanBeHit = true;
 
         if (joint)
@@ -243,6 +243,7 @@ public class Grapple : MonoBehaviour
         else if (GrappleTimer >= maxGrappleTimer)
         {
 
+            GameObject.Find("PlayerViewmodel").GetComponent<Animator>().SetTrigger("EndGrapple");
             StopGrapple();
             canGrapple = false;
 
