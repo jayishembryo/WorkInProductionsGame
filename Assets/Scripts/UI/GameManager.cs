@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene("VerticalSlice");
+        SceneManager.LoadScene("Tutorial");
     }
 
     public void BackToGame()
