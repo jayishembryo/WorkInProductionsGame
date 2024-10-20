@@ -18,11 +18,7 @@ public class BossBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-<<<<<<< HEAD
-        anim.SetInteger("health", health);
-=======
         
->>>>>>> parent of 3594641 (Merge branch 'working' into enemy-spawning)
     }
 
     public void StartNextAttackAtVariableTime()
@@ -58,44 +54,6 @@ public class BossBehaviour : MonoBehaviour
                 break;
         }
     }
-<<<<<<< HEAD
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("EnemyKnocked"))
-        {
-            TakeDamage();
-        }
-    }
-    public void TakeDamage()
-    {
-        anim.SetTrigger("hurt");
-        health -= 1;
-        Debug.Log("Boss has been damaged!");
-    }
-    public void SummonLighntingArea(int size)
-    {
-        switch (size)
-        {
-            case 0:
-                Instantiate(attackObjects[0], attackSpawnPoints[0].position, Quaternion.identity);
-                break;
-            case 1:
-                Instantiate(attackObjects[1], new Vector3(attackSpawnPoints[1].position.x, attackSpawnPoints[1].position.y, (attackSpawnPoints[1].position.z - 27)), Quaternion.identity);
-                break;
-            default:
-                Debug.Log("Error! Size of Lightning Area outside of knowable range!");
-                break;
-        }
-    }
-    public void SummonMeteor()
-    {     
-        for (int i = 0; i < spawnManager.spawnPoints.Length; i++)
-        {
-            Instantiate(attackObjects[2], new Vector3((spawnManager.spawnPoints[i].position.x + Random.Range(-4f, 4f)), 115f, (spawnManager.spawnPoints[i].position.z + Random.Range(-4f, 4f))), Quaternion.identity);
-        }
-    }
-=======
->>>>>>> parent of 3594641 (Merge branch 'working' into enemy-spawning)
     public void EnterFloodedState()
     {
         anim.SetBool("flooded", true);
@@ -107,7 +65,7 @@ public class BossBehaviour : MonoBehaviour
         switch (progress)
         {
             case 0:
-                Destroy(spawnManager.gameObject);
+                //Destroy(spawnManager.gameObject);
                 GameObject.Find("EndScreen").GetComponent<Animation>().Play();
                 break;
             case 1:

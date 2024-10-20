@@ -86,17 +86,7 @@ public class EnemyKnockedBehaviour : MonoBehaviour
             Instantiate(burst[3], transform.position, Quaternion.identity);
             KillEnemy(collision.gameObject);
             KillEnemy(gameObject);
-<<<<<<< HEAD
-        }
-        if (collision.gameObject.CompareTag("Boss"))
-        {
-            Debug.Log("Knocked enemy has collided with: " + collision.gameObject.name);
-            Instantiate(burst[3], transform.position, Quaternion.identity);
-            Instantiate(burst[2], transform.position, Quaternion.identity);
-            KillEnemy(gameObject);
-=======
 
->>>>>>> parent of 3594641 (Merge branch 'working' into enemy-spawning)
         }
     }
 

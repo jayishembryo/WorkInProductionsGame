@@ -173,12 +173,8 @@ public class Grapple : MonoBehaviour
             rb.AddForce((hitPoint - transform.position).normalized * jointForceBoost, ForceMode.Impulse);
 
         }
-<<<<<<< HEAD
         
         /*
-=======
-
->>>>>>> parent of 3594641 (Merge branch 'working' into enemy-spawning)
         if (Physics.Raycast(cam.position, cam.forward, out RaycastHit enemyHit, maxDist, EnemyLayer))
         {
             IsGrappling = true;
@@ -214,8 +210,6 @@ public class Grapple : MonoBehaviour
 <<<<<<< HEAD
         */
         
-=======
->>>>>>> parent of 3594641 (Merge branch 'working' into enemy-spawning)
     }
 
     public void StopGrapple()
