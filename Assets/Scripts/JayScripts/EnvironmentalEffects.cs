@@ -33,7 +33,6 @@ public class EnvironmentalEffects : MonoBehaviour
     public List<GameObject> totems = new List<GameObject>();
     //public List<MeshRenderer> floorTiles = new List<GameObject>();
 
-    public GameObject ActiveTotem;
     public bool TotemIsActive = false;
 
     int lastBeam;
@@ -63,7 +62,6 @@ public class EnvironmentalEffects : MonoBehaviour
         }
 
         totems[Environment].SetActive(true);
-        totems[Environment] = ActiveTotem;
         TotemIsActive = true;
         alreadyUsed.Add(Environment);
 
@@ -196,8 +194,8 @@ public class EnvironmentalEffects : MonoBehaviour
         if(TotemIsActive)
         {
 
-            
-            ActiveTotem.SetActive(false);
+
+            totems[Environment].SetActive(false);
 
         }
 
