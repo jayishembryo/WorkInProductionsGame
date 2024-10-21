@@ -86,7 +86,7 @@ public class EnemyKnockedBehaviour : MonoBehaviour
             {
 
                 //LOOK INTO PARTICLES
-                float healed = Random.Range(5f, 11f);
+                float healed = Random.Range(10f, 16f);
                 HealthSystem.instance.Heal(healed);
 
                 //MAKE THE PARTICLE EFFECT
@@ -101,7 +101,7 @@ public class EnemyKnockedBehaviour : MonoBehaviour
 
                     float FlyingSpeed = (GettingParticles[i].startLifetime - GettingParticles[i].remainingLifetime) * (10 * Vector3.Distance(player.position, GettingParticles[i].position));
                     GettingParticles[i].velocity = (player.position - GettingParticles[i].position).normalized * FlyingSpeed;
-                    GettingParticles[i].position = Vector3.Lerp(GettingParticles[i].position, player.position, Time.deltaTime / 2f);
+                    GettingParticles[i].position = Vector3.Lerp(GettingParticles[i].position, player.position, Time.deltaTime);
 
 
                 }
@@ -158,7 +158,7 @@ public class EnemyKnockedBehaviour : MonoBehaviour
 
                     float FlyingSpeed = (GettingParticles[i].startLifetime - GettingParticles[i].remainingLifetime) * (10 * Vector3.Distance(player.position, GettingParticles[i].position));
                     GettingParticles[i].velocity = (player.position - GettingParticles[i].position).normalized * FlyingSpeed;
-                    GettingParticles[i].position = Vector3.Lerp(GettingParticles[i].position, player.position, Time.deltaTime / 2f);
+                    GettingParticles[i].position = Vector3.Lerp(GettingParticles[i].position, player.position, Time.deltaTime);
 
 
                 }

@@ -69,6 +69,8 @@ public class SpawnManager : MonoBehaviour
     public Animator WaveBarAnim;
     public bool NoMoreSpawn = false;
 
+    public EnvironmentalEffects EnvironmentChanges;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -118,7 +120,7 @@ public class SpawnManager : MonoBehaviour
         {
 
             NoMoreSpawn = true;
-            GameObject.FindObjectOfType<EnvironmentalEffects>().ActiveTotem.GetComponent<Animator>().SetTrigger("HydraFall");
+            EnvironmentChanges.totems[EnvironmentChanges.Environment].GetComponent<Animator>().SetTrigger("HydraFalls");
             WaveBar.fillAmount = 0;
             WaveBarAnim.SetTrigger("BossIncoming");
             return;
@@ -128,7 +130,8 @@ public class SpawnManager : MonoBehaviour
         if (GameObject.FindObjectOfType<EnvironmentalEffects>().TotemIsActive)
         {
 
-            GameObject.FindObjectOfType<EnvironmentalEffects>().ActiveTotem.GetComponent<Animator>().SetTrigger("HydraFall");
+            //GameObject.FindObjectOfType<TotemAnimations>().GetComponent<Animator>().SetTrigger("HydraFall");
+            EnvironmentChanges.totems[EnvironmentChanges.Environment].GetComponent<Animator>().SetTrigger("HydraFalls");
             return;
 
         }

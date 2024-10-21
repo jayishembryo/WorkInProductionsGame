@@ -16,6 +16,7 @@ TagManager:
   - Hurt
   - EnemyKnocked
   - Boss
+  - First
   layers:
   - Default
   - TransparentFX

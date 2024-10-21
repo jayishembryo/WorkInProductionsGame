@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3703777743273328629}
   - component: {fileID: 514562365626106703}
   - component: {fileID: 6633829442866715523}
+  - component: {fileID: 3025724080017152148}
   m_Layer: 0
   m_Name: DangerCircleA
   m_TagString: Untagged
@@ -106,6 +107,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3025724080017152148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1643648265639293782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3ab24fff672f5e4088d4df51f5a76e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7284967290131505425
 GameObject:
   m_ObjectHideFlags: 0
