@@ -91,7 +91,7 @@ MonoBehaviour:
     Data3: 136703617
     Data4: -538746297
   Banks:
-  - {fileID: -6915442220577882430}
+  - {fileID: -5356693801595425864}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -118,7 +118,7 @@ MonoBehaviour:
     Data3: -1395505525
     Data4: 339522925
   Banks:
-  - {fileID: -6915442220577882430}
+  - {fileID: -5356693801595425864}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -126,6 +126,24 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 193802
+--- !u!114 &-5356693801595425864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Ambience.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Audio/FMODBanks/Desktop/Ambience.bank
+  Name: Ambience
+  StudioPath: bank:/Ambience
+  lastModified: 638650778946601918
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-5042826749408547052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,7 +163,7 @@ MonoBehaviour:
     Data3: -725064015
     Data4: 1964302018
   Banks:
-  - {fileID: -6915442220577882430}
+  - {fileID: -5356693801595425864}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -303,7 +321,7 @@ MonoBehaviour:
   Path: Assets/Audio/FMODBanks/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638650767844508757
+  lastModified: 638650778946827324
   FileSizes: []
   Exists: 1
 --- !u!114 &-1811539366931486798
@@ -377,7 +395,7 @@ MonoBehaviour:
   - {fileID: 9113243101405611020}
   - {fileID: 4995026182121913702}
   - {fileID: -1918245654055400620}
-  - {fileID: -6915442220577882430}
+  - {fileID: -5356693801595425864}
   EditorEvents:
   - {fileID: 7520294511024619222}
   - {fileID: -6015175743630141509}
@@ -401,7 +419,7 @@ MonoBehaviour:
   - {fileID: 9113243101405611020}
   StringsBanks:
   - {fileID: 1230724929348026607}
-  cacheTime: 638650767844508757
+  cacheTime: 638650778946827324
   cacheVersion: 131619
 --- !u!114 &1230724929348026607
 MonoBehaviour:
@@ -418,7 +436,7 @@ MonoBehaviour:
   Path: Assets/Audio/FMODBanks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638650765870661727
+  lastModified: 638650778946627072
   FileSizes:
   - Name: 
     Value: 1778
@@ -519,7 +537,7 @@ MonoBehaviour:
   Path: Assets/Audio/FMODBanks/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638650765870904564
+  lastModified: 638650778946701631
   FileSizes: []
   Exists: 1
 --- !u!114 &5496416690860536393
@@ -622,7 +640,7 @@ MonoBehaviour:
     Data3: -1841280640
     Data4: -1501668549
   Banks:
-  - {fileID: -6915442220577882430}
+  - {fileID: -5356693801595425864}
   - {fileID: -1918245654055400620}
   IsStream: 1
   Is3D: 1
@@ -646,6 +664,6 @@ MonoBehaviour:
   Path: Assets/Audio/FMODBanks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638650765870641653
+  lastModified: 638650778946617966
   FileSizes: []
   Exists: 1
