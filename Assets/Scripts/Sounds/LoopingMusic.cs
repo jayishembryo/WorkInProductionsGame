@@ -1,47 +1,30 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using FMODUnity;
 using FMOD.Studio;
 
-public class LoopingMusic : MonoBehaviour
+public class MusicManager : MonoBehaviour
 {
     [SerializeField]
-    private EventReference DefaultMusic;
+    private EventReference TheStyxCalls;
 
-    private EventInstance soundInstance;
+    private EventInstance musicInstance;
 
-    private void Awake()
+    private void Start()
     {
-        // Create an FMOD Event Instance based on the provided event reference
-        soundInstance = RuntimeManager.CreateInstance(DefaultMusic);
-
-        PlaySoundLoop();
+        StartMusic();
     }
 
-    private void Update()
+    private void StartMusic()
     {
-        UpdateSoundPosition();
-    }
-
-    private void UpdateSoundPosition()
-    {
-        var attributes = RuntimeUtils.To3DAttributes(gameObject);
-        soundInstance.set3DAttributes(attributes);
-    }
-
-    private void PlaySoundLoop()
-    {
-        // Start playing the sound instance
-        soundInstance.start();
-    }
-
-    public void StopSound()
-    {
-        // Just in Case
-        soundInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        musicInstance = RuntimeManager.CreateInstance(TheStyxCalls);
+        musicInstance.start();
     }
 
     private void OnDestroy()
     {
-        soundInstance.release();
+        musicInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        musicInstance.release();
     }
 }

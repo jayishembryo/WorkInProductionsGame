@@ -54,6 +54,24 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 193802
+--- !u!114 &-6915442220577882430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Ambience.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Audio/FMODBanks/Desktop/Ambience.bank
+  Name: Ambience
+  StudioPath: bank:/Ambience
+  lastModified: 638650750451195463
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-6683298111713105170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73,7 +91,7 @@ MonoBehaviour:
     Data3: 136703617
     Data4: -538746297
   Banks:
-  - {fileID: 6868334978939917845}
+  - {fileID: -6915442220577882430}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -100,7 +118,7 @@ MonoBehaviour:
     Data3: -1395505525
     Data4: 339522925
   Banks:
-  - {fileID: 6868334978939917845}
+  - {fileID: -6915442220577882430}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -127,7 +145,7 @@ MonoBehaviour:
     Data3: -725064015
     Data4: 1964302018
   Banks:
-  - {fileID: 6868334978939917845}
+  - {fileID: -6915442220577882430}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -285,7 +303,7 @@ MonoBehaviour:
   Path: Assets/Audio/FMODBanks/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638650616860282745
+  lastModified: 638650723939395709
   FileSizes: []
   Exists: 1
 --- !u!114 &-1811539366931486798
@@ -356,10 +374,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 1230724929348026607}
-  - {fileID: 6868334978939917845}
   - {fileID: 9113243101405611020}
   - {fileID: 4995026182121913702}
   - {fileID: -1918245654055400620}
+  - {fileID: -6915442220577882430}
   EditorEvents:
   - {fileID: 7520294511024619222}
   - {fileID: -6015175743630141509}
@@ -383,7 +401,7 @@ MonoBehaviour:
   - {fileID: 9113243101405611020}
   StringsBanks:
   - {fileID: 1230724929348026607}
-  cacheTime: 638650616860282745
+  cacheTime: 638650750451250862
   cacheVersion: 131619
 --- !u!114 &1230724929348026607
 MonoBehaviour:
@@ -400,7 +418,7 @@ MonoBehaviour:
   Path: Assets/Audio/FMODBanks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638650616860020345
+  lastModified: 638650750451250862
   FileSizes:
   - Name: 
     Value: 1778
@@ -501,7 +519,7 @@ MonoBehaviour:
   Path: Assets/Audio/FMODBanks/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638650616860122117
+  lastModified: 638650723938992282
   FileSizes: []
   Exists: 1
 --- !u!114 &5496416690860536393
@@ -545,14 +563,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Music/TheStyxCalls
   Guid:
-    Data1: 140732299
-    Data2: 1206275408
-    Data3: 641023138
-    Data4: -237534656
+    Data1: 1504483032
+    Data2: 1091168524
+    Data3: -272961107
+    Data4: -230126535
   Banks:
   - {fileID: 4995026182121913702}
   IsStream: 1
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -585,24 +603,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &6868334978939917845
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Ambiance.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMODBanks/Desktop/Ambiance.bank
-  Name: Ambiance
-  StudioPath: bank:/Ambiance
-  lastModified: 638650616859996495
-  FileSizes: []
-  Exists: 1
 --- !u!114 &7520294511024619222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -622,8 +622,8 @@ MonoBehaviour:
     Data3: -1841280640
     Data4: -1501668549
   Banks:
-  - {fileID: 6868334978939917845}
   - {fileID: -1918245654055400620}
+  - {fileID: -6915442220577882430}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -646,6 +646,6 @@ MonoBehaviour:
   Path: Assets/Audio/FMODBanks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638650616860010254
+  lastModified: 638650750451240738
   FileSizes: []
   Exists: 1
