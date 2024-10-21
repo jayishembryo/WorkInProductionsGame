@@ -48,7 +48,15 @@ public class EnemyCollision : MonoBehaviour
         if(other.gameObject.CompareTag("Enemy"))
         {
             EnemyBehaviour otherEnemy = other.gameObject.GetComponent<EnemyBehaviour>();
-            FindObjectOfType<PlayerController>().FireScreen.SetActive(true);
+            
+            PlayerController playerController = FindObjectOfType<PlayerController>();
+            if(playerController.FireScreen != null)
+            {
+
+                playerController.FireScreen.SetActive(true);
+
+            }
+
             if (otherEnemy != null && GameObject.FindObjectOfType<PlayerController>().CanBeHit)
             {
                 HealthSystem.instance.Damage(otherEnemy.damageToPlayer);
