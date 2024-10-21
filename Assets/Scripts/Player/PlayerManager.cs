@@ -39,6 +39,6 @@ public class PlayerManager : MonoBehaviour
 
     public void AddFood(float amt)
     {
-       // playerEater.AddFood(amt);
+        // playerEater.AddFood(amt);
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TotemAnimations : MonoBehaviour
 {
@@ -55,7 +56,7 @@ public class TotemAnimations : MonoBehaviour
         else if (callSpawn.NoMoreSpawn == true)
         {
 
-            //CALL BOSS HERE
+            SceneManager.LoadScene(3);
 
         }
 

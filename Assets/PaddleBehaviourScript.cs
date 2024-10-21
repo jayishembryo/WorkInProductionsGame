@@ -42,7 +42,7 @@ public class PaddleBehaviourScript : MonoBehaviour
             }
             anim.SetTrigger("bounce");
             Debug.Log("Player has collided with " + gameObject.name + "!");
-            Invoke(nameof(ResetBounceTrigger), .6f);
+            Invoke(nameof(ResetBounceTrigger), .7f);
         }
     }
 

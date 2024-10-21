@@ -417,7 +417,7 @@ public class PlayerController : MonoBehaviour
 
     public void GameOverRestart()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void OnTriggerStay(Collider other)
