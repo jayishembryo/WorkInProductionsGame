@@ -10,21 +10,31 @@ public class WarningAnimations : MonoBehaviour
     public void EndAnimation()
     {
 
-        if(GameObject.FindObjectOfType<EnvironmentalEffects>().FireActive && !animEnded)
+        if(GameObject.FindObjectOfType<EnvironmentalEffects>().FireActive)
         {
 
-            GameObject.FindObjectOfType<EnvironmentalEffects>().FireWarnings.SetActive(false);
-            GameObject.FindObjectOfType<EnvironmentalEffects>().FireSpawn.SetActive(true);
-            animEnded = true;
+            if(this.tag == "First")
+            {
+
+                GameObject.FindObjectOfType<EnvironmentalEffects>().FireWarnings.SetActive(false);
+                GameObject.FindObjectOfType<EnvironmentalEffects>().FireSpawn.SetActive(true);
+
+            }
+            
 
         }
 
-        if(GameObject.FindObjectOfType<EnvironmentalEffects>().IceActive && !animEnded)
+        if(GameObject.FindObjectOfType<EnvironmentalEffects>().IceActive)
         {
 
-            GameObject.FindObjectOfType<EnvironmentalEffects>().IceWarnings.SetActive(false);
-            GameObject.FindObjectOfType<EnvironmentalEffects>().IceSpawn.SetActive(true);
-            animEnded = true;
+            if (this.tag == "First")
+            {
+
+                GameObject.FindObjectOfType<EnvironmentalEffects>().IceWarnings.SetActive(false);
+                GameObject.FindObjectOfType<EnvironmentalEffects>().IceSpawn.SetActive(true);
+
+
+            }
 
         }
 
