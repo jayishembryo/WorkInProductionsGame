@@ -11079,7 +11079,6 @@ MonoBehaviour:
   - {fileID: 1895545907}
   - {fileID: 1850885205}
   totems: []
-  ActiveTotem: {fileID: 0}
   TotemIsActive: 0
 --- !u!4 &166124758
 Transform:
@@ -68654,6 +68653,11 @@ Transform:
   m_Father: {fileID: 816988305}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1052467655 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1677641778402951697, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
+  m_PrefabInstance: {fileID: 3092801834631978298}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1054280917
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -101245,11 +101249,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1408619486}
   m_SourcePrefab: {fileID: 100100000, guid: 83d52d500715c9048989a4ec67fec52a, type: 3}
---- !u!1 &1500493070 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6427140150311171346, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
-  m_PrefabInstance: {fileID: 3092801834631978298}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1503625735 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: dafdf0dc3d9ae6a42a5c870ef459acf9, type: 3}
@@ -151046,6 +151045,10 @@ PrefabInstance:
       value: event:/Player/Dash
       objectReference: {fileID: 0}
     - target: {fileID: 6934599026606150273, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
+      propertyPath: HealthScreen
+      value: 
+      objectReference: {fileID: 1052467655}
+    - target: {fileID: 6934599026606150273, guid: d26b1e38a6db87446b51b7a0e4e03a8c, type: 3}
       propertyPath: WalkingSFX.Path
       value: event:/Player/StoneWalking
       objectReference: {fileID: 0}
@@ -151744,6 +151747,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5360025172379082361, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1581557666}
+    - target: {fileID: 5360025172379082361, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GameOverRestart
+      objectReference: {fileID: 0}
     - target: {fileID: 5607057123960240364, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -151756,6 +151767,11 @@ PrefabInstance:
       addedObject: {fileID: 1445080174}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
+--- !u!1 &3092801834631978299 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1722838713130821361, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
+  m_PrefabInstance: {fileID: 3092801834631978298}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6816743961254660271
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -151835,11 +151851,11 @@ PrefabInstance:
     - target: {fileID: 7930592150206927151, guid: aa907b7dc527c754da81f171e42953aa, type: 3}
       propertyPath: MainMenuButton
       value: 
-      objectReference: {fileID: 1500493070}
+      objectReference: {fileID: 0}
     - target: {fileID: 7930592150206927151, guid: aa907b7dc527c754da81f171e42953aa, type: 3}
       propertyPath: mainMenuButton
       value: 
-      objectReference: {fileID: 1500493070}
+      objectReference: {fileID: 3092801834631978299}
     - target: {fileID: 7930592150206927151, guid: aa907b7dc527c754da81f171e42953aa, type: 3}
       propertyPath: stop.m_PersistentCalls.m_Calls.Array.size
       value: 1
