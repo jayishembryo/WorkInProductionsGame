@@ -22,9 +22,6 @@ public class AudioSliders : MonoBehaviour
         SFX = FMODUnity.RuntimeManager.GetBus("bus:/SFX");
         Ambience = FMODUnity.RuntimeManager.GetBus("bus:/Ambience");
         Master = FMODUnity.RuntimeManager.GetBus("bus:/");
-
-        Master.setVolume(0.2f); // Test with a lower volume to see if it takes effect
-        Debug.Log("Set Master Volume to 0.2");
     }
 
     void Update()
