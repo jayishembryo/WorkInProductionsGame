@@ -237,7 +237,11 @@ public class PlayerController : MonoBehaviour
     public void Jump()
     {
         if (!IsTouchingGround)
+        {
+
             return;
+
+        }
 
         rb.velocity += new Vector3(0, jumpHeight, 0);
     }

@@ -13,7 +13,14 @@ public class GroundDetection : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        player.SetTouchedGround(true);
+
+        if(other.gameObject.CompareTag("Ground"))
+        {
+
+            player.SetTouchedGround(true);
+
+        }
+        
     }
 
     private void OnTriggerExit(Collider other)
