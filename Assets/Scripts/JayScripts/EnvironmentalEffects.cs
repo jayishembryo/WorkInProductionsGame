@@ -126,7 +126,7 @@ public class EnvironmentalEffects : MonoBehaviour
 
         TideActive = true;
         //RiseAnim();
-        GameObject.FindObjectOfType<TideAnimations>().RiseAnim();
+        //GameObject.FindObjectOfType<TideAnimations>().RiseAnim();
         TideSpawn.SetActive(true);
 
     }
@@ -153,6 +153,7 @@ public class EnvironmentalEffects : MonoBehaviour
     public void EnergyBeams()
     {
 
+        Debug.Log("?????");
         beamsActive = true;
         StartCoroutine(BeamsActivated());
 
@@ -161,20 +162,12 @@ public class EnvironmentalEffects : MonoBehaviour
     IEnumerator BeamsActivated()
     {
 
+        Debug.Log("EEK");
+
         while (beamsActive)
         {
             //randomizes beam/warning called
             int currentBeam = Random.Range(0, 4);
-
-            //makes sure that it doesn't call the same beam twice in a row
-            if (currentBeam == lastBeam)
-            {
-
-                break;
-
-            }
-
-            lastBeam = currentBeam;
 
             //REMINDER: ADD ANIM TO WARNING
             warnings[currentBeam].SetActive(true);
@@ -191,7 +184,7 @@ public class EnvironmentalEffects : MonoBehaviour
             beams[currentBeam].SetActive(false);
 
             //loops
-            yield return new WaitForSeconds(5);
+            yield return new WaitForSeconds(3);
 
         }
 
@@ -241,7 +234,7 @@ public class EnvironmentalEffects : MonoBehaviour
         {
 
             TideActive = false;
-            GameObject.FindObjectOfType<TideAnimations>().FallAnim();
+            //GameObject.FindObjectOfType<TideAnimations>().FallAnim();
             TideSpawn.SetActive(false);
 
         }

@@ -26762,6 +26762,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 658133963}
     m_Modifications:
+    - target: {fileID: 1643648265639293782, guid: 6fa5ec42707156b46be38d6c57f21e7d, type: 3}
+      propertyPath: m_TagString
+      value: First
+      objectReference: {fileID: 0}
     - target: {fileID: 7284967290131505425, guid: 6fa5ec42707156b46be38d6c57f21e7d, type: 3}
       propertyPath: m_Name
       value: Warning
@@ -111251,6 +111255,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 584746083}
     m_Modifications:
+    - target: {fileID: 1643648265639293782, guid: 6fa5ec42707156b46be38d6c57f21e7d, type: 3}
+      propertyPath: m_TagString
+      value: First
+      objectReference: {fileID: 0}
     - target: {fileID: 7284967290131505425, guid: 6fa5ec42707156b46be38d6c57f21e7d, type: 3}
       propertyPath: m_Name
       value: Warning
@@ -127993,7 +128001,7 @@ Transform:
   m_GameObject: {fileID: 2017692741}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 681169872}
@@ -129333,6 +129341,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6427140150311171346, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6884563375060182649, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
       propertyPath: m_LocalScale.x
       value: 4
@@ -129647,7 +129659,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoatMovingAnimator
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5252891418356194585, guid: d200edd5ab119e44684301eab920c204, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
