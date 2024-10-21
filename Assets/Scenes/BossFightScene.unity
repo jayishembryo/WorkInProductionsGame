@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.06791074, g: 0.10743927, b: 0.17212787, a: 1}
+  m_IndirectSpecularColor: {r: 0.06791074, g: 0.10743927, b: 0.1721279, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -40185,6 +40185,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 6603617725623953706, guid: d1f26b661651dc74283f8c4b9f03bf0a, type: 3}
   m_PrefabInstance: {fileID: 630220141}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &630974562 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2115755161409455031, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
+  m_PrefabInstance: {fileID: 3092801834631978298}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &644276861 stripped
 GameObject:
@@ -153836,9 +153841,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3136697830498203125, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
+    - target: {fileID: 2115755161409455031, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913446537963942469, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913446537963942469, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4552341388836480990, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1581557666}
+    - target: {fileID: 4552341388836480990, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GameOverRestart
       objectReference: {fileID: 0}
     - target: {fileID: 5360025172379082361, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -153856,15 +153877,10 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1110779864240766043, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
-      insertIndex: -1
+      insertIndex: 14
       addedObject: {fileID: 1445080174}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
---- !u!1 &3092801834631978299 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1722838713130821361, guid: 20e0e7dd6e126a946930be2649f8599b, type: 3}
-  m_PrefabInstance: {fileID: 3092801834631978298}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6816743961254660271
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -153948,7 +153964,7 @@ PrefabInstance:
     - target: {fileID: 7930592150206927151, guid: aa907b7dc527c754da81f171e42953aa, type: 3}
       propertyPath: mainMenuButton
       value: 
-      objectReference: {fileID: 3092801834631978299}
+      objectReference: {fileID: 630974562}
     - target: {fileID: 7930592150206927151, guid: aa907b7dc527c754da81f171e42953aa, type: 3}
       propertyPath: stop.m_PersistentCalls.m_Calls.Array.size
       value: 1
